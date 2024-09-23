@@ -8,6 +8,14 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
+    "paths": {
+      "lib-magnetar-quill": [
+        "./dist/lib-magnetar-quill"
+      ],
+      "magnetar-quill": [
+        "./dist/magnetar-quill"
+      ]
+    },
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
