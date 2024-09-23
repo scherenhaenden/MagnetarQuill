@@ -935,16 +935,6 @@
 
 ---
 
-#### 9. **Customization & Theming**
-   - **Theme Options**:
-     - Support for both **light** and **dark modes**.
-   - **Custom Themes**:
-     - Allow users to define their own **color schemes** and layout styles.
-   - **Language Localization**:
-     - Multiple languages for the editor interface, supporting **German**, **English**, **Spanish**, etc.
-
----
-
 ### **9. Customization & Theming - Detailed Specification**
 
 ---
@@ -1178,11 +1168,137 @@
 ---
 
 
-#### 11. **Security**
-   - **Content Sanitization**:
-     - All HTML input and output will be sanitized to prevent **XSS attacks** or **malicious content** from being injected into the editor.
-   - **Validation**:
-     - Ensure proper validation of user-uploaded files (e.g., images, videos) to prevent security vulnerabilities.
+### **11. Security - Detailed Specification**
+
+---
+
+#### **11.1 Content Sanitization**
+
+- **Overview**:
+  - The editor must ensure that all content entering and leaving the system is **sanitized** to prevent **Cross-Site Scripting (XSS) attacks** and the injection of **malicious content**. This applies to both user-generated HTML and third-party content embedded in the document (e.g., from copy-pasting or external integrations).
+
+- **Sanitizing HTML Input**:
+  - **Behavior**:
+    - All HTML input (whether from user-pasted content, file imports, or plugin-generated HTML) must be **sanitized** to strip out potentially dangerous elements (e.g., `<script>`, `<iframe>`, inline event handlers like `onload`, and other executable code).
+    - Retain only **whitelisted tags** and attributes that are safe for rendering, such as `<b>`, `<i>`, `<u>`, `<p>`, and formatting elements.
+    - Allow **safe attributes** such as `href`, `src`, `alt`, and `title`, while ensuring that attributes like `javascript:` in links are blocked.
+  
+  - **Implementation**:
+    - Use a sanitization library (e.g., **DOMPurify**, **sanitize-html**) to clean up input before it is rendered or stored in the document.
+    - Ensure that any HTML content passed through the editor (whether via direct input or third-party plugins) is subject to the sanitization process.
+  
+- **Sanitizing HTML Output**:
+  - **Behavior**:
+    - Before exporting or saving the document as HTML, sanitize the content again to remove any residual or dynamically added unsafe elements.
+    - Ensure that when exporting to other formats (e.g., PDF, RTF, Markdown), no executable scripts or malicious tags are included in the export process.
+  
+  - **Implementation**:
+    - Apply the same sanitization logic to the document output, ensuring that unsafe elements, tags, and attributes are stripped from the final document.
+
+- **Handling Embedded Media**:
+  - **Behavior**:
+    - For media elements like images and videos, sanitize the `src` attributes to prevent the injection of unsafe content (e.g., ensure links cannot include `javascript:` URLs).
+    - **Iframes and Embeds**: Disallow or heavily restrict the use of `<iframe>` and `<embed>` tags unless explicitly trusted. For trusted sources (e.g., YouTube embeds), sanitize the input to ensure safe usage.
+
+- **Rich Text Pasting**:
+  - **Behavior**:
+    - When users paste content from external sources (e.g., websites, word processors), ensure that external styles, scripts, or potentially harmful content are stripped out.
+    - The editor should preserve **safe formatting** (e.g., text styles, headers) while rejecting dangerous elements.
+  
+  - **Example**: If a user pastes content with embedded `<script>` tags from a webpage, those scripts must be removed before rendering the content in the editor.
+
+---
+
+#### **11.2 Validation of Uploaded Files**
+
+- **Overview**:
+  - To ensure that user-uploaded files (e.g., images, videos, documents) do not introduce vulnerabilities, the editor will implement **file validation** to check for supported formats and prevent the uploading of potentially harmful files.
+
+- **File Type Validation**:
+  - **Supported File Types**:
+    - Images: JPEG, PNG, GIF, SVG.
+    - Videos: MP4, WebM.
+    - Documents: PDF, TXT, Markdown.
+  - **Behavior**:
+    - When a user attempts to upload a file, the system should first verify that the file type is allowed by checking the file’s MIME type and extension.
+    - Reject any unsupported file types (e.g., executables or scripts) and provide a clear error message to the user.
+
+- **File Size Validation**:
+  - **Behavior**:
+    - Implement a **maximum file size** limit for uploaded files to prevent users from uploading excessively large files that could degrade performance or lead to security vulnerabilities (e.g., denial-of-service attacks via large uploads).
+    - If the file exceeds the size limit, the system should reject the upload and notify the user with an appropriate message (e.g., "File size exceeds the maximum limit of X MB").
+
+- **Virus Scanning**:
+  - **Optional Feature**:
+    - If feasible, integrate with a third-party service or API (e.g., **ClamAV**, **VirusTotal**) to scan uploaded files for viruses or malicious content before they are allowed into the editor.
+    - This ensures that malicious files (e.g., infected PDFs, corrupted images) are blocked at the upload stage.
+
+- **Sanitization of Uploaded Files**:
+  - **Images**: Strip any unnecessary metadata from uploaded images (e.g., EXIF data) to reduce the risk of metadata-based attacks.
+  - **PDFs**: Sanitize PDFs to remove any embedded scripts or links that could trigger malicious behavior when opened. Only allow PDFs with simple, clean content (e.g., text and images).
+  - **Videos**: Ensure that uploaded videos cannot contain embedded links or executable code that could be harmful when viewed.
+
+- **Preview Handling**:
+  - **Behavior**:
+    - When files (e.g., images, videos) are uploaded, provide a **safe preview** that allows users to view the content before embedding it in the document.
+    - For files that cannot be previewed (e.g., unsupported formats), display a fallback message rather than attempting to render unsafe content.
+
+---
+
+#### **11.3 Security Best Practices**
+
+- **CSRF Protection**:
+  - Implement **Cross-Site Request Forgery (CSRF)** protection for any form submissions or data-saving actions in the editor. This prevents unauthorized actions being triggered by malicious third-party sites.
+  - Use CSRF tokens that are unique to each session and are validated with every request that modifies content.
+
+- **HTTPS Enforcement**:
+  - Ensure that the editor is served over **HTTPS** to protect against **man-in-the-middle attacks**. All user data, including document content, media uploads, and settings, should be encrypted in transit.
+
+- **Role-Based Access Control (RBAC)**:
+  - If the editor supports multi-user collaboration or admin features, implement **role-based access control** to restrict sensitive actions (e.g., plugin installation, file uploads) to authorized users only.
+
+- **Content Security Policy (CSP)**:
+  - Set up a **Content Security Policy** to prevent unauthorized scripts, iframes, or resources from being loaded into the editor. This adds an extra layer of defense against XSS attacks.
+  - Define a whitelist of trusted sources for content (e.g., trusted media providers) and block all others.
+
+- **X-Frame-Options**:
+  - Set the `X-Frame-Options` header to prevent the editor from being embedded in external iframes, which helps mitigate **clickjacking attacks**.
+
+---
+
+### **User Flow for Security Features**
+
+- **Pasting External Content**:
+  - When a user pastes content from an external source (e.g., a webpage or another document), the editor sanitizes the input to remove unsafe elements. Users can still see the pasted content with its original formatting, but any unsafe scripts or styles are stripped out.
+  
+- **Uploading Files**:
+  - When a user uploads an image, video, or document, the file is immediately validated for type, size, and security. If the file passes the checks, it is embedded into the document. If not, the user receives an error message explaining the issue (e.g., "Unsupported file type" or "File size too large").
+  
+- **Secure Document Handling**:
+  - Before saving or exporting a document, the content is sanitized again to ensure no unsafe HTML elements or attributes are included. The user can export a clean, safe version of their document in the desired format (HTML, PDF, etc.).
+
+---
+
+### **Performance Considerations**
+
+- **Sanitization Efficiency**:
+  - Ensure that content sanitization is performed quickly and efficiently, especially for large documents with many media elements or complex formatting. Use optimized libraries to avoid slowing down the editor.
+  
+- **File Validation Performance**:
+  - Ensure that file type and size validation are handled immediately upon upload to prevent performance lags or interruptions in the user’s workflow. For virus scanning or sanitization of large files, consider background processing to maintain responsiveness.
+
+---
+
+### **Edge Cases**
+
+- **Bypass Attempts**:
+  - Handle cases where users attempt to bypass sanitization (e.g., by embedding malicious content in allowed tags like `<img>` or `<a>`). Ensure that all attributes are properly sanitized to avoid indirect XSS attacks.
+
+- **Corrupted Files**:
+  - If a user attempts to upload a corrupted or incomplete file, provide clear feedback on why the file is rejected. For example, if the file type is manipulated or the file does not fully load, reject it and inform the user.
+
+- **File Duplication**:
+  - If a user attempts to upload the same file multiple times, handle the duplication gracefully by reusing the existing file reference instead of re-uploading, while ensuring the validation and sanitization process is not skipped.
 
 ---
 
