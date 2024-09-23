@@ -1,9 +1,10 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild} from '@angular/core';
 
 @Component({
-  selector: 'lib-lib-magnetar-quill',
+  selector: 'lib-magnetar-quill',
   standalone: true,
   imports: [],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './lib-magnetar-quill.component.html',
   styleUrl: './lib-magnetar-quill.component.less'
 })
