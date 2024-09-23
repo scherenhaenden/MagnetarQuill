@@ -1,0 +1,10 @@
+<div class="toolbar">
+  <button (click)="toggleBold()" title="Bold"><b>B</b></button>
+  <button (click)="toggleItalic()" title="Italic"><i>I</i></button>
+  <button (click)="toggleUnderline()" title="Underline"><u>U</u></button>
+  <button (click)="toggleStrikethrough()" title="Strikethrough"><s>S</s></button>
+</div>
+
+<div class="editor" contenteditable="true" #editor>
+  <!-- Text content goes here -->
+</div>
