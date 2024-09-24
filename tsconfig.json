@@ -11,9 +11,6 @@
     "paths": {
       "lib-magnetar-quill": [
         "./dist/lib-magnetar-quill"
-      ],
-      "magnetar-quill": [
-        "./dist/magnetar-quill"
       ]
     },
     "noFallthroughCasesInSwitch": true,

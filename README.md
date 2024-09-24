@@ -254,9 +254,9 @@ Follow us for updates, news, and more:
 | Step  | Feature Description                                   | Status       | Version Name         |
 |-------|-------------------------------------------------------|--------------|----------------------|
 | 1     | Project Setup and Angular Initialization              | ✅ Completed  | Version 0.1 - Setup  |
-| 2     | Implement Bold, Italic, Underline, Strikethrough       | 🟢 In Progress | Version 0.2 - Basic Text Formatting |
-| 3     | Font Family and Font Size Dropdowns                   | 🟡 Pending    | Version 0.3 - Font Options |
-| 4     | Text & Background Color Pickers                       | 🟡 Pending    | Version 0.4 - Color Selection |
+| 2     | Implement Bold, Italic, Underline, Strikethrough       | ✅ Completed  | Version 0.2 - Basic Text Formatting |
+| 3     | Font Family and Font Size Dropdowns                   | 🟢 In Progress | Version 0.3 - Font Options |
+| 4     | Text & Background Color Pickers                       | 🟢 In Progress | Version 0.4 - Color Selection |
 | 5     | Ordered and Unordered Lists                           | 🔴 Not Started| Version 0.5 - Lists and Alignment |
 | 6     | Custom Headers (H1-H6)                                | 🔴 Not Started| Version 0.6 - Headers and Block Elements |
 | 7     | Image Insertion and Editing                           | 🔴 Not Started| Version 0.7 - Image Support |
@@ -273,3 +273,5 @@ Follow us for updates, news, and more:
 | 18    | Full-Screen Mode                                      | 🔴 Not Started| Version 0.18 - Full-Screen |
 | 19    | Light and Dark Theme Support                          | 🔴 Not Started| Version 0.19 - Theme Customization |
 | 20    | Plugin System for Custom Toolbar Tools                | 🔴 Not Started| Version 0.20 - Plugin Support |
+
+These adjustments reflect the current state of your progress.

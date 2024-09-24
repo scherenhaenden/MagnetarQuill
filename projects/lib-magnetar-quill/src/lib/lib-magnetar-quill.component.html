@@ -1,4 +1,25 @@
 <div class="toolbar">
+  <select (change)="onFontFamilyChange($event)">
+    <option value="Arial">Arial</option>
+    <option value="Times New Roman">Times New Roman</option>
+    <option value="Courier New">Courier New</option>
+    <!-- Add more fonts as needed -->
+  </select>
+
+  <select (change)="onFontSizeChange($event)">
+    <option value="12px">12px</option>
+    <option value="14px">14px</option>
+    <option value="16px">16px</option>
+    <option value="18px">18px</option>
+    <option value="20px">20px</option>
+    <!-- Add more sizes as needed -->
+  </select>
+
+  <button (click)="clearFormatting()" title="Clear Formatting">Clear</button>
+
+  <input type="color" (change)="onTextColorChange($event)" title="Text Color">
+  <input type="color" (change)="onBackgroundColorChange($event)" title="Background Color">
+
   <button (click)="toggleBold()" title="Bold"><b>B</b></button>
   <button (click)="toggleItalic()" title="Italic"><i>I</i></button>
   <button (click)="toggleUnderline()" title="Underline"><u>U</u></button>
