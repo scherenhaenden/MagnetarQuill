@@ -7,19 +7,19 @@
 ---
 
 ## 2. Specification (Next Target)
-- **Status**: ![⚠️](https://img.shields.io/badge/Status-In_Progress-yellow)
+- **Status**: ![✔️](https://img.shields.io/badge/Status-Done-brightgreen)
 - **Description**: Define the detailed specification, including UI layout, data structures, and the behavior of all features. This will serve as the foundation for technical documentation and code implementation.
 
 ---
 
 ## 3. Technical Documentation (Future)
-- **Status**: ![❌](https://img.shields.io/badge/Status-Not_Started-red)
+- **Status**: ![✔️](https://img.shields.io/badge/Status-Done-brightgreen)
 - **Description**: Create technical documentation to support developers in understanding the architecture, components, and plugin structure.
 
 ---
 
 ## 4. Core Feature Implementation (Future)
-- **Status**: ![❌](https://img.shields.io/badge/Status-Not_Started-red)
+- **Status**: ![⚠️](https://img.shields.io/badge/Status-In_Progress-yellow)
 - **Description**: Implement the core functionality of the editor, including basic formatting, media handling, and undo/redo features.
 
 ---
