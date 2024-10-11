@@ -1,17 +1,15 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
-import { EditorComponent } from "./components/editor/editor.component";
+import { Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'lib-magnetar-quill',
+  selector: 'lib-toolbar',
   standalone: true,
-  imports: [ToolbarComponent, EditorComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  templateUrl: './lib-magnetar-quill.component.html',
-  styleUrl: './lib-magnetar-quill.component.less'
+  imports: [],
+  templateUrl: './toolbar.component.html',
+  styleUrl: './toolbar.component.less'
 })
-export class LibMagnetarQuillComponent implements OnInit, OnDestroy {
-  @ViewChild('editor', { static: true }) public editor!: ElementRef<HTMLDivElement>;
+export class ToolbarComponent implements OnInit, OnDestroy {
+
+  
 
 
   ngOnInit(): void {
@@ -250,4 +248,7 @@ public clearFormatting(): void {
       }
     }
   }
+
 }
+
+
