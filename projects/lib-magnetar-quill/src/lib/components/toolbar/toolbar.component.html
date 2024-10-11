@@ -1,0 +1,49 @@
+<div class="toolbar">
+    <select (change)="onFontFamilyChange($event)">
+      <option value="Arial">Arial</option>
+      <option value="Times New Roman">Times New Roman</option>
+      <option value="Courier New">Courier New</option>
+      <!-- Add more fonts as needed -->
+    </select>
+  
+    <select (change)="onFontSizeChange($event)">
+      <option value="12px">12px</option>
+      <option value="14px">14px</option>
+      <option value="16px">16px</option>
+      <option value="18px">18px</option>
+      <option value="20px">20px</option>
+      <!-- Add more sizes as needed -->
+    </select>
+  
+    <button (click)="clearFormatting()" title="Clear Formatting">Clear</button>
+  
+    <input type="color" (change)="onTextColorChange($event)" title="Text Color">
+    <input type="color" (change)="onBackgroundColorChange($event)" title="Background Color">
+  
+    <button (click)="toggleBold()" title="Bold"><b>B</b></button>
+    <button (click)="toggleItalic()" title="Italic"><i>I</i></button>
+    <button (click)="toggleUnderline()" title="Underline"><u>U</u></button>
+    <button (click)="toggleStrikethrough()" title="Strikethrough"><s>S</s></button>
+  
+    <button (click)="setTextAlign('left')" title="Align Left">Left</button>
+    <button (click)="setTextAlign('center')" title="Align Center">Center</button>
+    <button (click)="setTextAlign('right')" title="Align Right">Right</button>
+    <button (click)="setTextAlign('justify')" title="Justify">Justify</button>
+  
+    <!-- ./components/toolbar/toolbar.component.html -->
+  <select (change)="setLineSpacing($event)">
+    <option value="1.0">1.0</option>
+    <option value="1.15">1.15</option>
+    <option value="1.5">1.5</option>
+    <option value="2.0">2.0</option>
+  </select>
+  
+  
+  <!-- ./components/toolbar/toolbar.component.html -->
+  <button (click)="toggleSuperscript()" title="Superscript">Sup</button>
+  <button (click)="toggleSubscript()" title="Subscript">Sub</button>
+  
+  
+  
+  
+  </div>
