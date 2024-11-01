@@ -36,6 +36,34 @@ Handle importing/exporting content in multiple formats (HTML, Markdown, RTF, PDF
 - **Supported Formats**: HTML (for web-based usage), Markdown (for lightweight exports), PDF (print-ready), and RTF.
 - **Handling Large Files**: Use worker threads to offload file operations to prevent UI blocking.
 
+
+#### **2.4 Toolbar Component**
+
+The **Toolbar Component** in **MagnetarQuill** provides users with essential text formatting and layout tools. It interacts with the **FormattingService** and manages various text styling options.
+
+- **Location**: `src/app/lib/components/toolbar`
+- **Files**:
+  - `toolbar.component.html`: Defines the HTML structure and UI elements.
+  - `toolbar.component.ts`: Contains logic and event handling.
+  - `toolbar.component.less`: Styles for the toolbar.
+
+- **Key UI Elements**:
+  - **Font Selection**: Dropdowns for font family and size.
+  - **Text Styling**: Buttons for bold, italic, underline, and strikethrough.
+  - **Color Pickers**: Inputs for text color and background color.
+  - **Alignment & Spacing**: Alignment buttons and line spacing dropdown.
+  - **Special Formatting**: Superscript and subscript toggles.
+
+#### Service Integration
+
+The **FormattingService** centralizes formatting logic, ensuring toolbar actions reflect accurately in the editor:
+
+- **applyFontFamily**: Sets font family.
+- **applyFontSize**: Changes font size.
+- **setTextColor** and **setBackgroundColor**: Apply color settings.
+- **toggleFormat**: Toggles styles (bold, italic, etc.).
+- **setAlignment**: Manages paragraph alignment.
+
 ---
 
 ### **3. Frontend Architecture**
@@ -47,7 +75,7 @@ Handle importing/exporting content in multiple formats (HTML, Markdown, RTF, PDF
 - **User Profile Module**: Handles user settings, theme preferences, and access levels.
 
 #### **3.2. Component Breakdown**
-- **Toolbar Component**: Contains formatting options (bold, italic, etc.) and custom tools added by plugins.
+- **Toolbar Component**: Contains formatting options (bold, italic, underline, etc.), color pickers, font controls, alignment tools, and custom tools added by plugins. Refer to **Section 2.4 Toolbar Component** for a detailed breakdown of functionality and service interactions.
 - **Editor Component**: The core editable area where users input and structure text.
 - **Sidebar/Inspector**: Optional section for detailed object properties (e.g., image alt text, dimensions).
 - **Plugin Manager**: UI for managing plugins (install, activate, deactivate).
