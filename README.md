@@ -1,6 +1,3 @@
-Here's a detailed and fancy **README.md** template for your **MagnetarQuill** project, covering all essential aspects while adding some flair:
-
----
 
 # **MagnetarQuill** 🖋✨  
 > **The Next-Gen Universe-Inspired WYSIWYG Editor - Built with Angular** 🚀💫  
