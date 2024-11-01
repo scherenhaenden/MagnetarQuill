@@ -2,7 +2,7 @@
 # **MagnetarQuill** 🖋✨  
 > **The Next-Gen Universe-Inspired WYSIWYG Editor - Built with Angular** 🚀💫  
 
-![MagnetarQuill](https://dummyimage.com/800x400/000/fff&text=MagnetarQuill+Logo)
+![MagnetarQuill](magnetar-quill.png)
 
 **MagnetarQuill** is a versatile, extensible, and powerful **WYSIWYG editor** built with **Angular**, designed to streamline content creation with **rich text**, **media**, **tables**, and more. MagnetarQuill stands out with its **plugin architecture**, **cross-browser support**, and stunning **theming options**.
 
