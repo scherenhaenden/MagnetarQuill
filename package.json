@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "build-lib": "ng build magnetar-quill",
     "build-lib-watch": "ng build lib-magnetar-quill --watch --configuration development",
-    "serve-with-lib": "ng build lib-magnetar-quill --watch & ng serve",
+    "serve-with-lib": "ng build lib-magnetar-quill && ng serve --port 4200",
     "test": "ng test"
   },
   "private": true,
