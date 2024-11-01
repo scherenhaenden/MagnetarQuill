@@ -1,5 +1,15 @@
-<lib-toolbar  class="toolbar"> </lib-toolbar>
+<lib-toolbar
+  (toggleHtmlView)="toggleHtmlView()"
+  (insertImageFromUrl)="editor.insertImageFromUrl($event)"
+  [imageToEdit]="imageToEdit"
+  (clearImageToEdit)="clearImageToEdit()"
+  class="toolbar">
+</lib-toolbar>
 
-
-<lib-editor class="editor" contenteditable="true" ></lib-editor>
-
+<lib-editor
+  #editor
+  [isHtmlView]="isHtmlView"
+  (requestImageEdit)="openImageEditModal($event)"
+  class="editor"
+  contenteditable="true">
+</lib-editor>

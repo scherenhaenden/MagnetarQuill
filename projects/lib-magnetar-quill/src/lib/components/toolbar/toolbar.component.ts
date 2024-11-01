@@ -1,32 +1,57 @@
-import { Component, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  HostListener,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+  ViewChild
+} from '@angular/core';
+import {FormattingService} from "../../services/formatting.service";
+import {NgIf} from "@angular/common";
+import {FormsModule} from "@angular/forms";
+import {ImageInternalData} from "../../models/image-internal-data";
 
 @Component({
   selector: 'lib-toolbar',
   standalone: true,
-  imports: [],
+  imports: [
+    NgIf,
+    FormsModule
+  ],
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.less'
 })
 export class ToolbarComponent implements OnInit, OnDestroy {
 
-  
+
+  constructor(public formattingService: FormattingService) {}
 
 
   ngOnInit(): void {
     document.addEventListener('keydown', this.handleShortcuts.bind(this));
   }
-  
+
   ngOnDestroy(): void {
     document.removeEventListener('keydown', this.handleShortcuts.bind(this));
   }
-  
+
+  @Output() toggleHtmlView = new EventEmitter<void>();
+
+  // Emit the toggle event
+  public onToggleHtmlView(): void {
+    this.toggleHtmlView.emit();
+  }
+
   private handleShortcuts(event: KeyboardEvent): void {
     // Handle Superscript (Ctrl+Shift+= or Cmd+Shift+=)
     if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === '=') {
       event.preventDefault(); // Prevent default behavior
       this.toggleSuperscript();
     }
-  
+
     // Handle Subscript (Ctrl+= or Cmd+=)
     if ((event.ctrlKey || event.metaKey) && event.key === '=') {
       event.preventDefault(); // Prevent default behavior
@@ -37,22 +62,32 @@ export class ToolbarComponent implements OnInit, OnDestroy {
 
   // Bold Toggle
   public toggleBold(): void {
-    this.applyStyle('font-weight', 'bold');
+    this.formattingService.applyStyle('font-weight', 'bold');
+  }
+
+  // Method to toggle ordered list
+  public toggleOrderedList(): void {
+    this.formattingService.toggleList('ordered');
+  }
+
+  // Method to toggle unordered list
+  public toggleUnorderedList(): void {
+    this.formattingService.toggleList('unordered');
   }
 
   // Italic Toggle
   public toggleItalic(): void {
-    this.applyStyle('font-style', 'italic');
+    this.formattingService.applyStyle('font-style', 'italic');
   }
 
   // Underline Toggle
   public toggleUnderline(): void {
-    this.applyStyle('text-decoration', 'underline');
+    this.formattingService.applyStyle('text-decoration', 'underline');
   }
 
   // Strikethrough Toggle
   public toggleStrikethrough(): void {
-    this.applyStyle('text-decoration', 'line-through');
+    this.formattingService.applyStyle('text-decoration', 'line-through');
   }
 
   // Font Family
@@ -60,27 +95,27 @@ export class ToolbarComponent implements OnInit, OnDestroy {
 public onFontFamilyChange(event: Event): void {
   const target = event.target as HTMLSelectElement;
   const fontFamily = target.value || '';  // Empty string for default
-  this.applyStyle('font-family', fontFamily);
+  this.formattingService.applyStyle('font-family', fontFamily);
 }
 
   // Font Size
   public onFontSizeChange(event: Event): void {
     const target = event.target as HTMLSelectElement;
     const fontSize = target.value || '';  // Empty string for default
-    this.applyStyle('font-size', fontSize);
+    this.formattingService.applyStyle('font-size', fontSize);
   }
 
   // Text Color
   public onTextColorChange(event: Event): void {
     const target = event.target as HTMLInputElement;
-    this.applyStyle('color', target.value);
+    this.formattingService.applyStyle('color', target.value);
   }
 
   // Background Color
   public onBackgroundColorChange(event: Event): void {
     const target = event.target as HTMLInputElement;
     const elements = this.getSelectedElements();
-  
+
     elements.forEach((element: HTMLElement) => {
       element.style.backgroundColor = target.value;
     });
@@ -89,16 +124,16 @@ public onFontFamilyChange(event: Event): void {
   private getSelectedElements(): HTMLElement[] {
     const selection = window.getSelection();
     const elements: HTMLElement[] = [];
-  
+
     if (selection && !selection.isCollapsed) {
       const range = selection.getRangeAt(0);
       let container: Node = range.commonAncestorContainer;
-  
+
       // If the container is a text node, find its parent element
       if (container.nodeType === Node.TEXT_NODE) {
         container = container.parentElement as HTMLElement;
       }
-  
+
       // Check if the container is a paragraph or contains multiple paragraphs
       if (container instanceof HTMLElement) {
         if (container.tagName === 'P') {
@@ -113,7 +148,7 @@ public onFontFamilyChange(event: Event): void {
         }
       }
     }
-  
+
     return elements;
   }
 
@@ -123,10 +158,10 @@ public onFontFamilyChange(event: Event): void {
     if (selection && selection.rangeCount > 0) {
       const range = selection.getRangeAt(0);
       const selectedText = range.extractContents();
-  
+
       // Check if the selection is already wrapped in <sup> or <sub>
       const parentNode = range.commonAncestorContainer.parentElement;
-  
+
       if (parentNode && parentNode.tagName.toLowerCase() === tagName) {
         // If the tag is already applied, unwrap it by replacing the parent with its children
         const children = Array.from(parentNode.childNodes);  // Convert NodeList to an array
@@ -136,7 +171,7 @@ public onFontFamilyChange(event: Event): void {
         const wrapper = document.createElement(tagName);
         wrapper.appendChild(selectedText);
         range.insertNode(wrapper);
-      
+
         // Adjust the selection to end after the newly inserted node
         selection.removeAllRanges();
         const newRange = document.createRange();
@@ -145,17 +180,54 @@ public onFontFamilyChange(event: Event): void {
       }
     }
   }
-  
-  
 
 
 
+  public imageUrl: string = '';
+  public altText: string = '';
+  public width: number | null = null;
+  public height: number | null = null;
+  public border: number = 0;
+  public hPadding: number = 0;
+  public vPadding: number = 0;
+  public alignment: string = 'left';
+
+
+  @Input() imageToEdit: ImageInternalData | null = null;
+  @Output() clearImageToEdit = new EventEmitter<void>();
+
+
+  @Output() insertImageFromUrl = new EventEmitter<ImageInternalData>(); // Emit the image URL to the parent or editor
+  public showImageModal: boolean = false;
+
+
+  public openImageModal(): void {
+    this.showImageModal = true;
+  }
+
+  public closeImageModal(): void {
+    this.showImageModal = false;
+    this.imageUrl = ''; // Reset the URL field
+  }
+
+  public insertImage(): void {
+    if (this.imageUrl.trim()) {
+      this.insertImageFromUrl.emit({
+        url: this.imageUrl,
+        alt: this.altText,
+        width: this.width,
+        height: this.height,
+        border: this.border,
+        hPadding: this.hPadding,
+        vPadding: this.vPadding,
+        alignment: this.alignment,
+      });
+      this.closeImageModal();
+    }
+  }
 
 
 
-
-
-  
   // Method to clear formatting
 public clearFormatting(): void {
   const selection = window.getSelection();
@@ -171,30 +243,21 @@ public clearFormatting(): void {
 
 
   // Method to apply styles to the selected text
-  private applyStyle(styleName: string, value: string): void {
-    const selection = window.getSelection();
-    if (selection && selection.rangeCount > 0) {
-      const range = selection.getRangeAt(0);
-      const selectedText = range.extractContents();
-      const span = document.createElement('span');
-      span.style[styleName as any] = value;
-      span.appendChild(selectedText);
-      range.insertNode(span);
-    }
-  }
 
   public setTextAlign(alignment: string): void {
+
+    console.log(alignment);
     const selection = window.getSelection();
-  
+
     if (selection && !selection.isCollapsed) {
       const range = selection.getRangeAt(0);
       let container: Node = range.commonAncestorContainer;
-  
+
       // If the container is a text node, find its parent element
       if (container.nodeType === Node.TEXT_NODE) {
         container = container.parentElement as HTMLElement;
       }
-  
+
       // Check if the container is an element and then apply text alignment
       if (container instanceof HTMLElement && container.tagName === 'P') {
         // Apply alignment to a single paragraph
@@ -212,21 +275,27 @@ public clearFormatting(): void {
   public toggleSuperscript(): void {
     this.wrapSelectionWithTag('sup');
   }
-  
+
   public toggleSubscript(): void {
     this.wrapSelectionWithTag('sub');
   }
-  
+
 
   public setLineSpacing(event: Event): void {
     const target = event.target as HTMLSelectElement;
     const elements = this.getSelectedElements();
-  
+
     elements.forEach((element: HTMLElement) => {
       element.style.lineHeight = target.value;
     });
   }
-  
+
+  // Apply the selected header level
+  public applyHeader(event: Event): void {
+    const target = event.target as HTMLSelectElement;
+    this.formattingService.applyHeader(target.value);
+  }
+
 
   // Keydown event for shortcuts
   @HostListener('window:keydown', ['$event'])
@@ -249,6 +318,7 @@ public clearFormatting(): void {
     }
   }
 
+  protected readonly HTMLSelectElement = HTMLSelectElement;
 }
 
 

@@ -1,4 +1,20 @@
-<div class="editor" contenteditable="true" #editor>
-    <!-- Text content goes here -->
-  </div>
-  
+<!-- WYSIWYG Editor View -->
+<div class="editor" contenteditable="true" #editor [hidden]="isHtmlView">
+  <!-- User content goes here -->
+</div>
+
+<!-- HTML View -->
+<textarea
+  class="editor"
+  [value]="getEditorContent()"
+  (input)="setEditorContent($event)"
+  [hidden]="!isHtmlView">
+</textarea>
+
+<!-- Context Menu -->
+<div *ngIf="showContextMenu"
+     class="context-menu"
+     [style.top.px]="contextMenuPosition.y"
+     [style.left.px]="contextMenuPosition.x">
+  <button (click)="openImageEdit()">Edit Properties</button>
+</div>

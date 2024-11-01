@@ -1,6 +1,7 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { EditorComponent } from "./components/editor/editor.component";
+import {ImageInternalData} from "./models/image-internal-data";
 
 @Component({
   selector: 'lib-magnetar-quill',
@@ -11,24 +12,43 @@ import { EditorComponent } from "./components/editor/editor.component";
   styleUrl: './lib-magnetar-quill.component.less'
 })
 export class LibMagnetarQuillComponent implements OnInit, OnDestroy {
-  @ViewChild('editor', { static: true }) public editor!: ElementRef<HTMLDivElement>;
+
+  public isHtmlView: boolean = false;
+
+  // Toggle the HTML view state
+  public toggleHtmlView(): void {
+    this.isHtmlView = !this.isHtmlView;
+  }
+
+
+  public imageToEdit: ImageInternalData | null = null;
+
+  // Method to open the image edit modal from the editor's context menu
+  public openImageEditModal(imageData: ImageInternalData): void {
+    this.imageToEdit = imageData;
+  }
+
+  // Method to reset the image data once editing is done
+  public clearImageToEdit(): void {
+    this.imageToEdit = null;
+  }
 
 
   ngOnInit(): void {
     document.addEventListener('keydown', this.handleShortcuts.bind(this));
   }
-  
+
   ngOnDestroy(): void {
     document.removeEventListener('keydown', this.handleShortcuts.bind(this));
   }
-  
+
   private handleShortcuts(event: KeyboardEvent): void {
     // Handle Superscript (Ctrl+Shift+= or Cmd+Shift+=)
     if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === '=') {
       event.preventDefault(); // Prevent default behavior
       this.toggleSuperscript();
     }
-  
+
     // Handle Subscript (Ctrl+= or Cmd+=)
     if ((event.ctrlKey || event.metaKey) && event.key === '=') {
       event.preventDefault(); // Prevent default behavior
@@ -82,7 +102,7 @@ public onFontFamilyChange(event: Event): void {
   public onBackgroundColorChange(event: Event): void {
     const target = event.target as HTMLInputElement;
     const elements = this.getSelectedElements();
-  
+
     elements.forEach((element: HTMLElement) => {
       element.style.backgroundColor = target.value;
     });
@@ -91,16 +111,16 @@ public onFontFamilyChange(event: Event): void {
   private getSelectedElements(): HTMLElement[] {
     const selection = window.getSelection();
     const elements: HTMLElement[] = [];
-  
+
     if (selection && !selection.isCollapsed) {
       const range = selection.getRangeAt(0);
       let container: Node = range.commonAncestorContainer;
-  
+
       // If the container is a text node, find its parent element
       if (container.nodeType === Node.TEXT_NODE) {
         container = container.parentElement as HTMLElement;
       }
-  
+
       // Check if the container is a paragraph or contains multiple paragraphs
       if (container instanceof HTMLElement) {
         if (container.tagName === 'P') {
@@ -115,7 +135,7 @@ public onFontFamilyChange(event: Event): void {
         }
       }
     }
-  
+
     return elements;
   }
 
@@ -125,10 +145,10 @@ public onFontFamilyChange(event: Event): void {
     if (selection && selection.rangeCount > 0) {
       const range = selection.getRangeAt(0);
       const selectedText = range.extractContents();
-  
+
       // Check if the selection is already wrapped in <sup> or <sub>
       const parentNode = range.commonAncestorContainer.parentElement;
-  
+
       if (parentNode && parentNode.tagName.toLowerCase() === tagName) {
         // If the tag is already applied, unwrap it by replacing the parent with its children
         const children = Array.from(parentNode.childNodes);  // Convert NodeList to an array
@@ -138,7 +158,7 @@ public onFontFamilyChange(event: Event): void {
         const wrapper = document.createElement(tagName);
         wrapper.appendChild(selectedText);
         range.insertNode(wrapper);
-      
+
         // Adjust the selection to end after the newly inserted node
         selection.removeAllRanges();
         const newRange = document.createRange();
@@ -147,8 +167,6 @@ public onFontFamilyChange(event: Event): void {
       }
     }
   }
-  
-  
 
 
 
@@ -157,7 +175,9 @@ public onFontFamilyChange(event: Event): void {
 
 
 
-  
+
+
+
   // Method to clear formatting
 public clearFormatting(): void {
   const selection = window.getSelection();
@@ -187,16 +207,16 @@ public clearFormatting(): void {
 
   public setTextAlign(alignment: string): void {
     const selection = window.getSelection();
-  
+
     if (selection && !selection.isCollapsed) {
       const range = selection.getRangeAt(0);
       let container: Node = range.commonAncestorContainer;
-  
+
       // If the container is a text node, find its parent element
       if (container.nodeType === Node.TEXT_NODE) {
         container = container.parentElement as HTMLElement;
       }
-  
+
       // Check if the container is an element and then apply text alignment
       if (container instanceof HTMLElement && container.tagName === 'P') {
         // Apply alignment to a single paragraph
@@ -214,21 +234,21 @@ public clearFormatting(): void {
   public toggleSuperscript(): void {
     this.wrapSelectionWithTag('sup');
   }
-  
+
   public toggleSubscript(): void {
     this.wrapSelectionWithTag('sub');
   }
-  
+
 
   public setLineSpacing(event: Event): void {
     const target = event.target as HTMLSelectElement;
     const elements = this.getSelectedElements();
-  
+
     elements.forEach((element: HTMLElement) => {
       element.style.lineHeight = target.value;
     });
   }
-  
+
 
   // Keydown event for shortcuts
   @HostListener('window:keydown', ['$event'])

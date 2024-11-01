@@ -3,10 +3,74 @@
     gap: 10px;
     margin-bottom: 10px;
   }
-  
+
   .toolbar button {
     background: #fff;
     border: 1px solid #ccc;
     padding: 5px;
     cursor: pointer;
   }
+
+.toolbar button.active {
+  background-color: #ddd; /* Adjust color as needed */
+  font-weight: bold;
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.modal-overlay {
+  /* Your existing styles */
+}
+
+.modal-content {
+  /* Your existing styles */
+  max-width: 400px;
+}
+
+.modal-content label {
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+.modal-content input, .modal-content select {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+}
+
+.preview {
+  margin-top: 10px;
+  text-align: center;
+}
+.preview img {
+  max-width: 100%; /* Ensure the preview fits within the modal */
+}
+
