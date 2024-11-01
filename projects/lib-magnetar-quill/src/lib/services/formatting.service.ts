@@ -131,6 +131,28 @@ export class FormattingService {
     }
   }
 
+  public wrapSelectionWithTag(tagName: string): void {
+    const selection = window.getSelection();
+    if (selection && selection.rangeCount > 0) {
+      const range = selection.getRangeAt(0);
+      const selectedText = range.extractContents();
+      const parentNode = range.commonAncestorContainer.parentElement;
+      if (parentNode && parentNode.tagName.toLowerCase() === tagName) {
+        const children = Array.from(parentNode.childNodes);
+        parentNode.replaceWith(...children);
+      } else {
+        const wrapper = document.createElement(tagName);
+        wrapper.appendChild(selectedText);
+        range.insertNode(wrapper);
+        selection.removeAllRanges();
+        const newRange = document.createRange();
+        newRange.setStartAfter(wrapper);
+        selection.addRange(newRange);
+      }
+    }
+  }
+
+
   private removeFormatting(styleName: string, value: string): void {
     const selection = window.getSelection();
     if (selection && selection.rangeCount > 0) {

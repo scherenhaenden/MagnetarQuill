@@ -1,17 +1,32 @@
 .editor {
   border: 1px solid #ccc;
-  padding: 10px;
-  min-height: 200px;
+  padding: 15px;
+  min-height: 250px;
   width: 100%;
   box-sizing: border-box;
-  font-family: inherit;
-  font-size: 14px; /* Adjust this to match your toolbar's font size */
-  line-height: 1.5;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .editor[contenteditable="true"] {
   outline: none; /* Removes focus outline for contenteditable */
 }
+/* Fixed height with scrollbar */
+.editor.fixed-height {
+  max-height: 400px; /* Set your preferred max height */
+  overflow-y: auto; /* Scrollbar appears when content exceeds max height */
+}
+
+/* Auto-expand mode */
+.editor.auto-expand {
+  max-height: none; /* Removes height limit */
+  overflow-y: visible; /* Allows it to grow without scrollbar */
+}
+
 
 textarea.editor {
   resize: none; /* Prevents the textarea from being resizable */
@@ -20,25 +35,36 @@ textarea.editor {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  border-radius: 8px;
 }
+
 
 
 .context-menu {
   position: absolute;
   background: white;
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   z-index: 1000;
+  border-radius: 8px;
+  overflow: hidden;
+  animation: fadeIn 0.2s ease;
 }
+
 .context-menu button {
   display: block;
   width: 100%;
-  padding: 5px;
+  padding: 8px 10px;
   background: none;
   border: none;
   text-align: left;
   cursor: pointer;
+  font-size: 14px;
+  color: #333;
+  transition: background 0.2s ease;
 }
+
 .context-menu button:hover {
-  background: #eee;
+  background: #f1f1f1;
+  color: #007bff;
 }
