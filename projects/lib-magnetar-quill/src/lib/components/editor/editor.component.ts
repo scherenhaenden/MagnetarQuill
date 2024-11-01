@@ -10,6 +10,7 @@ import {
 } from '@angular/core';
 import {NgIf} from "@angular/common";
 import {ImageInternalData} from "../../models/image-internal-data";
+import {FormattingService} from "../../services/formatting.service";
 
 @Component({
   selector: 'lib-editor',
@@ -28,6 +29,14 @@ export class EditorComponent implements AfterViewInit, OnChanges, DoCheck {
    // Track if HTML view is active
   @Input() isHtmlView: boolean = false;
   @Output() requestImageEdit = new EventEmitter<ImageInternalData>();
+
+  constructor(private formattingService: FormattingService) {}
+
+  @HostListener('mouseup')
+  @HostListener('keyup')
+  public onSelectionChange(): void {
+    this.formattingService.updateFormatStates();
+  }
 
 
   public contextMenuPosition = { x: 0, y: 0 };

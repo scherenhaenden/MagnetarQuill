@@ -27,7 +27,7 @@ import {ImageInternalData} from "../../models/image-internal-data";
 export class ToolbarComponent implements OnInit, OnDestroy {
 
 
-  constructor(private formattingService: FormattingService) {}
+  constructor(public formattingService: FormattingService) {}
 
 
   ngOnInit(): void {
@@ -62,7 +62,7 @@ export class ToolbarComponent implements OnInit, OnDestroy {
 
   // Bold Toggle
   public toggleBold(): void {
-    this.applyStyle('font-weight', 'bold');
+    this.formattingService.applyStyle('font-weight', 'bold');
   }
 
   // Method to toggle ordered list
@@ -77,17 +77,17 @@ export class ToolbarComponent implements OnInit, OnDestroy {
 
   // Italic Toggle
   public toggleItalic(): void {
-    this.applyStyle('font-style', 'italic');
+    this.formattingService.applyStyle('font-style', 'italic');
   }
 
   // Underline Toggle
   public toggleUnderline(): void {
-    this.applyStyle('text-decoration', 'underline');
+    this.formattingService.applyStyle('text-decoration', 'underline');
   }
 
   // Strikethrough Toggle
   public toggleStrikethrough(): void {
-    this.applyStyle('text-decoration', 'line-through');
+    this.formattingService.applyStyle('text-decoration', 'line-through');
   }
 
   // Font Family
@@ -95,20 +95,20 @@ export class ToolbarComponent implements OnInit, OnDestroy {
 public onFontFamilyChange(event: Event): void {
   const target = event.target as HTMLSelectElement;
   const fontFamily = target.value || '';  // Empty string for default
-  this.applyStyle('font-family', fontFamily);
+  this.formattingService.applyStyle('font-family', fontFamily);
 }
 
   // Font Size
   public onFontSizeChange(event: Event): void {
     const target = event.target as HTMLSelectElement;
     const fontSize = target.value || '';  // Empty string for default
-    this.applyStyle('font-size', fontSize);
+    this.formattingService.applyStyle('font-size', fontSize);
   }
 
   // Text Color
   public onTextColorChange(event: Event): void {
     const target = event.target as HTMLInputElement;
-    this.applyStyle('color', target.value);
+    this.formattingService.applyStyle('color', target.value);
   }
 
   // Background Color
@@ -243,17 +243,6 @@ public clearFormatting(): void {
 
 
   // Method to apply styles to the selected text
-  private applyStyle(styleName: string, value: string): void {
-    const selection = window.getSelection();
-    if (selection && selection.rangeCount > 0) {
-      const range = selection.getRangeAt(0);
-      const selectedText = range.extractContents();
-      const span = document.createElement('span');
-      span.style[styleName as any] = value;
-      span.appendChild(selectedText);
-      range.insertNode(span);
-    }
-  }
 
   public setTextAlign(alignment: string): void {
 

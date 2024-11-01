@@ -26,12 +26,36 @@
     <input type="color" (change)="onTextColorChange($event)" title="Text Color">
     <input type="color" (change)="onBackgroundColorChange($event)" title="Background Color">
 
-    <button (click)="toggleBold()" title="Bold"><b>B</b></button>
-    <button (click)="toggleItalic()" title="Italic"><i>I</i></button>
-    <button (click)="toggleUnderline()" title="Underline"><u>U</u></button>
-    <button (click)="toggleStrikethrough()" title="Strikethrough"><s>S</s></button>
+  <button
+    (click)="formattingService.toggleBold()"
+    [class.active]="formattingService.boldActive()"
+    title="Bold">
+    <b>B</b>
+  </button>
 
-    <button (click)="setTextAlign('left')" title="Align Left">Left</button>
+  <button
+    (click)="formattingService.toggleItalic()"
+    [class.active]="formattingService.italicActive()"
+    title="Italic">
+    <i>I</i>
+  </button>
+
+  <button
+    (click)="formattingService.toggleUnderline()"
+    [class.active]="formattingService.underlineActive()"
+    title="Underline">
+    <u>U</u>
+  </button>
+
+  <button
+    (click)="formattingService.toggleStrikethrough()"
+    [class.active]="formattingService.strikethroughActive()"
+    title="Strikethrough">
+    <s>S</s>
+  </button>
+
+
+  <button (click)="setTextAlign('left')" title="Align Left">Left</button>
     <button (click)="setTextAlign('center')" title="Align Center">Center</button>
     <button (click)="setTextAlign('right')" title="Align Right">Right</button>
     <button (click)="setTextAlign('justify')" title="Justify">Justify</button>
