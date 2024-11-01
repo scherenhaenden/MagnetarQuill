@@ -257,13 +257,13 @@ Here’s the updated table with the latest progress:
 | 3     | Font Family and Font Size Dropdowns                   | ✅ Completed  | Version 0.3 - Font Options |
 | 4     | Text & Background Color Pickers                       | ✅ Completed  | Version 0.4 - Color Selection |
 | 5     | Text Alignment & Line Spacing                         | ✅ Completed  | Version 0.5 - Text Alignment & Spacing |
-| 6     | Ordered and Unordered Lists                           | 🔴 Not Started| Version 0.6 - Lists and Alignment |
-| 7     | Custom Headers (H1-H6)                                | 🔴 Not Started| Version 0.7 - Headers and Block Elements |
-| 8     | Image Insertion and Editing                           | 🔴 Not Started| Version 0.8 - Image Support |
-| 9     | Copy-Paste Image Support                              | 🔴 Not Started| Version 0.9 - Image Clipboard |
-| 10    | Table Insertion and Editing                           | 🔴 Not Started| Version 0.10 - Table Management |
-| 11    | Object Context Menu                                   | 🔴 Not Started| Version 0.11 - Object Management |
-| 12    | Drag-and-Drop Object Repositioning                    | 🔴 Not Started| Version 0.12 - Object Repositioning |
+| 6     | Ordered and Unordered Lists                           | ✅ Completed | Version 0.6 - Lists and Alignment |
+| 7     | Custom Headers (H1-H6)                                | ✅ Completed | Version 0.7 - Headers and Block Elements |
+| 8     | Image Insertion and Editing                           | 🔄 In Progress| Version 0.8 - Image Support |
+| 9     | Copy-Paste Image Support                              | 🔄 In Progress| Version 0.9 - Image Clipboard |
+| 10    | Table Insertion and Editing                           | 🔄 In Progress| Version 0.10 - Table Management |
+| 11    | Object Context Menu                                   | 🔄 In Progress| Version 0.11 - Object Management |
+| 12    | Drag-and-Drop Object Repositioning                    | 🔄 In Progress| Version 0.12 - Object Repositioning |
 | 13    | Rich Text Copy-Paste Support                          | 🔴 Not Started| Version 0.13 - Rich Text Clipboard |
 | 14    | Text Sanitization on Paste                            | 🔴 Not Started| Version 0.14 - Paste Sanitization |
 | 15    | Undo/Redo Functionality                               | 🔴 Not Started| Version 0.15 - Undo/Redo |
