@@ -1,11 +1,17 @@
 <div class="toolbar">
+
+  <!-- Toggle HTML View Button -->
+  <button (click)="onToggleHtmlView()" title="Toggle HTML View">
+    Toggle HTML View
+  </button>
+
     <select (change)="onFontFamilyChange($event)">
       <option value="Arial">Arial</option>
       <option value="Times New Roman">Times New Roman</option>
       <option value="Courier New">Courier New</option>
       <!-- Add more fonts as needed -->
     </select>
-  
+
     <select (change)="onFontSizeChange($event)">
       <option value="12px">12px</option>
       <option value="14px">14px</option>
@@ -14,22 +20,22 @@
       <option value="20px">20px</option>
       <!-- Add more sizes as needed -->
     </select>
-  
+
     <button (click)="clearFormatting()" title="Clear Formatting">Clear</button>
-  
+
     <input type="color" (change)="onTextColorChange($event)" title="Text Color">
     <input type="color" (change)="onBackgroundColorChange($event)" title="Background Color">
-  
+
     <button (click)="toggleBold()" title="Bold"><b>B</b></button>
     <button (click)="toggleItalic()" title="Italic"><i>I</i></button>
     <button (click)="toggleUnderline()" title="Underline"><u>U</u></button>
     <button (click)="toggleStrikethrough()" title="Strikethrough"><s>S</s></button>
-  
+
     <button (click)="setTextAlign('left')" title="Align Left">Left</button>
     <button (click)="setTextAlign('center')" title="Align Center">Center</button>
     <button (click)="setTextAlign('right')" title="Align Right">Right</button>
     <button (click)="setTextAlign('justify')" title="Justify">Justify</button>
-  
+
     <!-- ./components/toolbar/toolbar.component.html -->
   <select (change)="setLineSpacing($event)">
     <option value="1.0">1.0</option>
@@ -37,13 +43,80 @@
     <option value="1.5">1.5</option>
     <option value="2.0">2.0</option>
   </select>
-  
-  
+
+    <!-- Ordered and Unordered List Buttons -->
+    <button (click)="toggleOrderedList()" title="Ordered List">
+      <span>1.</span>
+    </button>
+    <button (click)="toggleUnorderedList()" title="Unordered List">
+      <span>&bull;</span>
+    </button>
+
+
   <!-- ./components/toolbar/toolbar.component.html -->
   <button (click)="toggleSuperscript()" title="Superscript">Sup</button>
   <button (click)="toggleSubscript()" title="Subscript">Sub</button>
-  
-  
-  
-  
+
+  <!-- Header Level Dropdown -->
+  <select (change)="applyHeader($event)" title="Header Level">
+    <option value="" selected>Normal</option>
+    <option value="h1">H1</option>
+    <option value="h2">H2</option>
+    <option value="h3">H3</option>
+    <option value="h4">H4</option>
+    <option value="h5">H5</option>
+    <option value="h6">H6</option>
+  </select>
+
+  <button (click)="openImageModal()">Insert Image</button>
+
+
+
+
+
+</div>
+
+<!-- Image Insertion Modal -->
+<div *ngIf="showImageModal" class="modal-overlay">
+  <div class="modal-content">
+    <h3>Insert Image from URL</h3>
+    <label>URL*</label>
+    <input type="text" [(ngModel)]="imageUrl" placeholder="Enter Image URL">
+
+    <label>Alternative Text</label>
+    <input type="text" [(ngModel)]="altText" placeholder="Image description">
+
+    <label>Width</label>
+    <input type="number" [(ngModel)]="width" placeholder="Width">
+
+    <label>Height</label>
+    <input type="number" [(ngModel)]="height" placeholder="Height">
+
+    <label>Border</label>
+    <input type="number" [(ngModel)]="border" placeholder="Border width">
+
+    <label>Horizontal Padding</label>
+    <input type="number" [(ngModel)]="hPadding" placeholder="Horizontal padding">
+
+    <label>Vertical Padding</label>
+    <input type="number" [(ngModel)]="vPadding" placeholder="Vertical padding">
+
+    <label>Alignment</label>
+    <select [(ngModel)]="alignment">
+      <option value="left">Left</option>
+      <option value="center">Center</option>
+      <option value="right">Right</option>
+    </select>
+
+    <div class="preview">
+      <h4>Preview</h4>
+      <img [src]="imageUrl" [style.width.px]="width" [style.height.px]="height" [style.borderWidth.px]="border"
+           [style.padding]="hPadding + 'px ' + vPadding + 'px'" [style.textAlign]="alignment">
+    </div>
+
+    <div class="modal-actions">
+      <button (click)="insertImage()">Insert</button>
+      <button (click)="closeImageModal()">Cancel</button>
+    </div>
   </div>
+</div>

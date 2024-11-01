@@ -1,8 +1,44 @@
-
-
 .editor {
-    border: 1px solid #ccc;
-    padding: 10px;
-    min-height: 200px;
-  }
-  
+  border: 1px solid #ccc;
+  padding: 10px;
+  min-height: 200px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 14px; /* Adjust this to match your toolbar's font size */
+  line-height: 1.5;
+}
+
+.editor[contenteditable="true"] {
+  outline: none; /* Removes focus outline for contenteditable */
+}
+
+textarea.editor {
+  resize: none; /* Prevents the textarea from being resizable */
+  overflow: auto; /* Shows scrollbars only if needed */
+  outline: none; /* Consistent focus behavior with contenteditable */
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+
+.context-menu {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+.context-menu button {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+.context-menu button:hover {
+  background: #eee;
+}
