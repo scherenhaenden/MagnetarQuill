@@ -1,7 +1,17 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, HostListener, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  ElementRef, EventEmitter,
+  HostListener,
+  Input,
+  OnDestroy,
+  OnInit, Output,
+  ViewChild
+} from '@angular/core';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { EditorComponent } from "./components/editor/editor.component";
 import {ImageInternalData} from "./models/image-internal-data";
+import {ContentService} from "./services/content.service";
 
 @Component({
   selector: 'magnetar-quill',
@@ -12,6 +22,22 @@ import {ImageInternalData} from "./models/image-internal-data";
   styleUrl: './lib-magnetar-quill.component.less'
 })
 export class LibMagnetarQuillComponent implements OnInit, OnDestroy {
+
+
+  // add input and output for emit hear
+  // Input for receiving initial content from the parent
+  @Input() set content(value: string) {
+    //this.editorHtmlContent = value;
+    this.contentService.setEditorContent(value); // Set initial content in service
+  }
+
+  // Output to emit content changes to the parent
+  @Output() contentChange = new EventEmitter<string>();
+
+  constructor(private contentService: ContentService) {
+  }
+
+
 
   public isHtmlView: boolean = false;
 
@@ -72,10 +98,7 @@ export class LibMagnetarQuillComponent implements OnInit, OnDestroy {
     this.applyStyle('text-decoration', 'underline');
   }
 
-  // Strikethrough Toggle
-  public toggleStrikethrough(): void {
-    this.applyStyle('text-decoration', 'line-through');
-  }
+
 
   // Font Family
   // Update to handle default values

@@ -1,11 +1,65 @@
-import { Injectable } from '@angular/core';
+import {Injectable, signal, WritableSignal} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FormattingService {
 
+  // Signals to track formatting states
+  public boldActive = signal(false);
+  public italicActive = signal(false);
+  public underlineActive = signal(false);
+  public strikethroughActive = signal(false);
+
   constructor() { }
+
+
+  // Method to update formatting states based on the current selection
+  public updateFormatStates(): void {
+    console.log("something");
+    const selection = window.getSelection();
+    if (selection && selection.rangeCount > 0) {
+      const container = selection.getRangeAt(0).commonAncestorContainer.parentElement;
+      if (container) {
+        this.boldActive.set(container.style.fontWeight === 'bold');
+        this.italicActive.set(container.style.fontStyle === 'italic');
+        this.underlineActive.set(container.style.textDecoration.includes('underline'));
+        this.strikethroughActive.set(container.style.textDecoration.includes('line-through'));
+      }
+    }
+  }
+
+  // General toggle function to apply or remove styles based on current active state
+  private toggler(activeSignal: WritableSignal<boolean>, styleName: string, value: string): void {
+    if (activeSignal()) {
+      this.removeFormatting(styleName, value);
+    } else {
+      this.applyStyle(styleName, value);
+    }
+    activeSignal.update(active => !active);
+  }
+
+
+
+
+  public toggleBold(): void {
+    this.toggler(this.boldActive, 'font-weight', 'bold');
+  }
+
+  public toggleItalic(): void {
+    this.toggler(this.italicActive, 'font-style', 'italic');
+  }
+
+  public toggleUnderline(): void {
+    this.toggler(this.underlineActive, 'text-decoration', 'underline');
+  }
+
+  public toggleStrikethrough(): void {
+    this.toggler(this.strikethroughActive, 'text-decoration', 'line-through');
+  }
+
+
+
 
   // Toggle list type (ordered or unordered)
   public toggleList(type: 'ordered' | 'unordered'): void {
@@ -52,4 +106,71 @@ export class FormattingService {
       selection.addRange(range);
     }
   }
+
+
+  public applyStyle(styleName: string, value: string): void {
+    const selection = window.getSelection();
+    if (selection && selection.rangeCount > 0) {
+      const range = selection.getRangeAt(0);
+      const selectedText = range.extractContents();
+      const span = document.createElement('span');
+      span.style[styleName as any] = value;
+      span.appendChild(selectedText);
+      range.insertNode(span);
+    }
+  }
+
+
+  private unwrap(element: HTMLElement): void {
+    const parent = element.parentNode;
+    if (parent) {
+      while (element.firstChild) {
+        parent.insertBefore(element.firstChild, element);
+      }
+      parent.removeChild(element);
+    }
+  }
+
+  public wrapSelectionWithTag(tagName: string): void {
+    const selection = window.getSelection();
+    if (selection && selection.rangeCount > 0) {
+      const range = selection.getRangeAt(0);
+      const selectedText = range.extractContents();
+      const parentNode = range.commonAncestorContainer.parentElement;
+      if (parentNode && parentNode.tagName.toLowerCase() === tagName) {
+        const children = Array.from(parentNode.childNodes);
+        parentNode.replaceWith(...children);
+      } else {
+        const wrapper = document.createElement(tagName);
+        wrapper.appendChild(selectedText);
+        range.insertNode(wrapper);
+        selection.removeAllRanges();
+        const newRange = document.createRange();
+        newRange.setStartAfter(wrapper);
+        selection.addRange(newRange);
+      }
+    }
+  }
+
+
+  private removeFormatting(styleName: string, value: string): void {
+    const selection = window.getSelection();
+    if (selection && selection.rangeCount > 0) {
+      const range = selection.getRangeAt(0);
+      const fragment = range.cloneContents();
+
+      // Look for all span elements in the selection
+      const spans = fragment.querySelectorAll('span');
+      spans.forEach((span) => {
+        if (span.style[styleName as any] === value) {
+          this.unwrap(span);
+        }
+      });
+
+      // Clear the existing selection and insert the unwrapped fragment
+      range.deleteContents();
+      range.insertNode(fragment);
+    }
+  }
+
 }
