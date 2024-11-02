@@ -47,9 +47,16 @@ MagnetarQuill is packed with features to meet all your content creation needs:
 
 ## **Installation** 🛠
 
-### Prerequisites:
-- **Node.js** (v14.x or higher)
-- **Angular CLI** (v12.x or higher)
+### Prerequisites
+- **Node.js** (v16.x or higher) and **Angular CLI** (v17.3.0 or higher) — *only needed if you plan to build or customize MagnetarQuill within an Angular environment.*
+
+> **Note**: For general use in frameworks like React or Vue, or in vanilla JavaScript, you can use MagnetarQuill as a standalone web component without Angular-specific prerequisites.
+
+To install the MagnetarQuill library from npm, run the following command:
+
+```bash
+npm i --save magnetar-quill
+```
 
 ### Step 1: Clone the Repository
 
