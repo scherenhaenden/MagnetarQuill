@@ -14,7 +14,7 @@ import {ImageInternalData} from "./models/image-internal-data";
 import {ContentService} from "./services/content.service";
 
 @Component({
-  selector: 'lib-magnetar-quill',
+  selector: 'magnetar-quill',
   standalone: true,
   imports: [ToolbarComponent, EditorComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
