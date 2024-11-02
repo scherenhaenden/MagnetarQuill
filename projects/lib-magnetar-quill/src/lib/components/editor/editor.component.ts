@@ -4,38 +4,128 @@ import {
   DoCheck,
   ElementRef, EventEmitter,
   HostListener, Input,
-  OnChanges, Output,
+  OnChanges, OnInit, Output,
   SimpleChanges,
   ViewChild
 } from '@angular/core';
-import {NgIf} from "@angular/common";
+import {NgClass, NgIf} from "@angular/common";
 import {ImageInternalData} from "../../models/image-internal-data";
 import {FormattingService} from "../../services/formatting.service";
+import {ContentService} from "../../services/content.service";
 
 @Component({
   selector: 'lib-editor',
   standalone: true,
   imports: [
-    NgIf
+    NgIf,
+    NgClass
   ],
   templateUrl: './editor.component.html',
   styleUrl: './editor.component.less'
 })
-export class EditorComponent implements AfterViewInit, OnChanges, DoCheck {
+export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoCheck {
 
-  @ViewChild('editor', { static: true }) public editor!: ElementRef<HTMLDivElement>;
+  @ViewChild('editorWysiwyg', { static: true }) public editorWysiwyg!: ElementRef<HTMLDivElement>;
+  @ViewChild('editorHtml', { static: true }) public editorHtml!: ElementRef<HTMLTextAreaElement>;
+
+
+
+
+  public editorHtmlContent: string = '';
+
+  private editorHtmlBackup!: HTMLTextAreaElement;
   private editorBackup!: HTMLDivElement;
   private parentElement!: HTMLElement;
    // Track if HTML view is active
   @Input() isHtmlView: boolean = false;
   @Output() requestImageEdit = new EventEmitter<ImageInternalData>();
 
-  constructor(private formattingService: FormattingService) {}
+  constructor(private formattingService: FormattingService,
+              private contentService: ContentService
+
+  ) {
+    this.isHtmlView = false;
+    this.formattingService.updateFormatStates();
+
+  }
+
+  ngOnInit() {
+    //this.editorWysiwyg.nativeElement.addEventListener('paste', this.onPaste.bind(this));
+    // Subscribe to the content observable to keep the editor synced
+
+    this.editorHtmlContent = this.contentService.getEditorContent();
+    this.editorWysiwyg.nativeElement.innerHTML = this.editorHtmlContent;
+    console.log('editorHtmlContent', this.editorHtmlContent);
+
+
+
+    this.contentService.editorContent$.subscribe(content => {
+      this.editorHtmlContent = content;
+    });
+
+  }
+
+  public onContentChange(htmlContent: string): void {
+    // Update the content in the service whenever it changes
+    this.contentService.setEditorContent(htmlContent);
+    this.ensurePlaceholder();
+  }
+
+  public sanitizePaste: boolean = true; // Default to true, enabling sanitization
+
+  // Toggle the paste sanitization
+  public toggleSanitizePaste(): void {
+    this.sanitizePaste = !this.sanitizePaste;
+  }
+
+  public onPaste(event: ClipboardEvent): void {
+
+    if(!this.sanitizePaste) {
+      return;
+
+    }
+
+    event.preventDefault();
+
+    // Get text from clipboard as plain text
+    const text = event.clipboardData?.getData('text/plain') || '';
+
+    // Insert sanitized text at cursor position
+    this.insertTextAtCursor(text);
+  }
+
+  private insertTextAtCursor(text: string): void {
+    const selection = window.getSelection();
+    if (!selection || selection.rangeCount === 0) return;
+
+    const range = selection.getRangeAt(0);
+    range.deleteContents();
+    range.insertNode(document.createTextNode(text));
+
+    // Move the cursor after the inserted text
+    range.setStartAfter(range.endContainer);
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }
+
+
 
   @HostListener('mouseup')
   @HostListener('keyup')
   public onSelectionChange(): void {
     this.formattingService.updateFormatStates();
+  }
+
+  public scrollToTopOnFocus(): void {
+    this.editorWysiwyg.nativeElement.scrollTop = 0; // Scrolls to the top of the editor
+  }
+
+
+
+  public isFixedHeight: boolean = true;
+
+  public toggleEditorHeight(): void {
+    this.isFixedHeight = !this.isFixedHeight;
   }
 
 
@@ -97,31 +187,52 @@ export class EditorComponent implements AfterViewInit, OnChanges, DoCheck {
   }
 
   public getEditorContent(): string {
-    return this.editor.nativeElement.innerHTML;
+    return this.editorWysiwyg.nativeElement.innerHTML;
   }
 
   public setEditorContent(event: Event): void {
     const content = (event.target as HTMLInputElement).value;
-    this.editor.nativeElement.innerHTML = content;
+    this.editorWysiwyg.nativeElement.innerHTML = content;
   }
 
   ngAfterViewInit(): void {
-    // Store a reference to the parent node
-    this.parentElement = this.editor.nativeElement.parentNode as HTMLElement;
 
-    // Clone the editor element and store it as a backup
-    this.editorBackup = this.editor.nativeElement.cloneNode(true) as HTMLDivElement;
+    if(this.isHtmlView) {
+      //editorHtmlBackup
+      // Store a reference to the parent node
+      this.parentElement = this.editorHtmlBackup.parentElement as HTMLElement;
 
-    // Monitor changes to detect if the editor is removed
-    const observer = new MutationObserver(() => this.checkAndRestoreEditor());
-    observer.observe(this.parentElement, { childList: true });
+      // Clone the editor element and store it as a backup
+      this.editorHtmlBackup = this.editorHtmlBackup.cloneNode(true) as HTMLTextAreaElement;
+
+      // Monitor changes to detect if the editor is removed
+      const observer = new MutationObserver(() => this.checkAndRestoreEditor());
+      observer.observe(this.parentElement, { childList: true });
+
+    }
+    else{
+
+      // Store a reference to the parent node
+      this.parentElement = this.editorWysiwyg.nativeElement.parentNode as HTMLElement;
+
+      // Clone the editor element and store it as a backup
+      this.editorBackup = this.editorWysiwyg.nativeElement.cloneNode(true) as HTMLDivElement;
+
+      // Monitor changes to detect if the editor is removed
+      const observer = new MutationObserver(() => this.checkAndRestoreEditor());
+      observer.observe(this.parentElement, { childList: true });
+
+    }
+
+
+
   }
   // Method to check and restore the editor element if deleted
   private checkAndRestoreEditor(): void {
-    if (!this.parentElement.contains(this.editor.nativeElement)) {
+    if (!this.parentElement.contains(this.editorWysiwyg.nativeElement)) {
       // Restore the editor element from backup
       this.parentElement.appendChild(this.editorBackup);
-      this.editor = new ElementRef(this.editorBackup); // Reassign the editor ViewChild
+      this.editorWysiwyg = new ElementRef(this.editorBackup); // Reassign the editor ViewChild
     }
   }
 
@@ -159,7 +270,7 @@ export class EditorComponent implements AfterViewInit, OnChanges, DoCheck {
 
   // Method to ensure editor always has a placeholder or content
   private ensurePlaceholder(): void {
-    const editor = this.editor.nativeElement;
+    const editor = this.editorWysiwyg.nativeElement;
     console.log(editor.innerText);
     if (editor.innerText.trim() === '') {
       editor.innerHTML = '<p><br></p>'; // Add an empty paragraph as a placeholder
@@ -167,9 +278,7 @@ export class EditorComponent implements AfterViewInit, OnChanges, DoCheck {
   }
 
   // Method to listen to changes and enforce the placeholder
-  public onContentChange(): void {
-    this.ensurePlaceholder();
-  }
+
 
 
 

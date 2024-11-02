@@ -1,14 +1,39 @@
 <!-- WYSIWYG Editor View -->
-<div class="editor" contenteditable="true" #editor [hidden]="isHtmlView">
+
+<button (click)="toggleEditorHeight()">
+  {{ isFixedHeight ? 'Enable Auto-Expand' : 'Enable Fixed Height' }}
+</button>
+
+<button (click)="toggleSanitizePaste()">
+  {{ sanitizePaste ? 'Disable Paste Sanitization' : 'Enable Paste Sanitization' }}
+</button>
+
+
+
+<div
+  class="editor"
+  contenteditable="true"
+  #editorWysiwyg
+  [hidden]="isHtmlView"
+  [ngClass]="{ 'fixed-height': isFixedHeight, 'auto-expand': !isFixedHeight }"
+  (focus)="scrollToTopOnFocus()"
+  (paste)="onPaste($event)"
+  (input)="onContentChange(editorWysiwyg.innerHTML)">
   <!-- User content goes here -->
 </div>
 
+
+
 <!-- HTML View -->
 <textarea
+          #editorHtml
   class="editor"
   [value]="getEditorContent()"
   (input)="setEditorContent($event)"
-  [hidden]="!isHtmlView">
+  [hidden]="!isHtmlView"
+  [ngClass]="{ 'fixed-height': isFixedHeight, 'auto-expand': !isFixedHeight }" contenteditable="true"
+  (focus)="scrollToTopOnFocus()"
+>
 </textarea>
 
 <!-- Context Menu -->

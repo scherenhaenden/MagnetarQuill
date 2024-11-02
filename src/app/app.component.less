@@ -2,17 +2,21 @@
 .app-container {
   display: flex;
   justify-content: center;   /* Horizontally center */
-  align-items: center;       /* Vertically center */
-  height: 100vh;             /* Full viewport height */
+  align-items: flex-start;   /* Align to the top for natural scrolling */
+  min-height: 100vh;         /* Allow the container to grow beyond viewport if needed */
+  padding: 20px;             /* Extra padding for breathing room */
   background-color: #f0f0f0; /* Light background to contrast the editor */
+  overflow: auto;            /* Auto-scroll if content overflows */
 }
 
 /* Style the editor container */
 .lib-magnetar-quill-container {
-  width: 80%;                /* 80% of the parent width */
-  max-width: 1200px;          /* Maximum width of the editor */
-  padding: 20px;              /* Padding for spacing */
-  border-radius: 8px;         /* Rounded corners */
-  background-color: white;    /* Editor background */
+  width: 100%;               /* Full width, adapt based on app-container */
+  max-width: 800px;          /* Max width of the editor */
+  padding: 20px;             /* Padding for spacing */
+  border-radius: 8px;        /* Rounded corners */
+  background-color: white;   /* Editor background */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  overflow-y: auto;          /* Scroll vertically inside the editor if content overflows */
+  max-height: 90vh;          /* Keep within the viewport but allow for more content */
 }
