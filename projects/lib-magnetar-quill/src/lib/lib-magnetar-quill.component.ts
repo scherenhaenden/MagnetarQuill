@@ -4,7 +4,7 @@ import { EditorComponent } from "./components/editor/editor.component";
 import {ImageInternalData} from "./models/image-internal-data";
 
 @Component({
-  selector: 'lib-magnetar-quill',
+  selector: 'magnetar-quill',
   standalone: true,
   imports: [ToolbarComponent, EditorComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
