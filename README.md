@@ -9,6 +9,10 @@
 Inspired by the most extreme phenomena in the universe, the **Magnetar**, and combined with the elegance of a quill, this editor takes your text editing experience beyond the ordinary.
 
 ---
+## **Current view** 🌟
+![MagnetarQuill](magnetar-quill-example.png)
+
+---
 
 ## **Table of Contents** 📚
 - [Features](#features)
