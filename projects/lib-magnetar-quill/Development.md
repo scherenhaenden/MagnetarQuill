@@ -22,3 +22,7 @@ Run `ng test lib-magnetar-quill` to execute the unit tests via [Karma](https://k
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+ng build lib-magnetar-quill
+cd dist/lib-magnetar-quill
+npm publish --access public
