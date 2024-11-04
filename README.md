@@ -25,6 +25,8 @@ Inspired by the most extreme phenomena in the universe, the **Magnetar**, and co
 - [Roadmap](#roadmap-)
 - [Contributing](#contributing-)
 - [License](#license-)
+- [Stay Connected](#stay-connected-)
+- [Project Progress](#project-progress-)
 
 ---
 
@@ -255,9 +257,7 @@ Follow us for updates, news, and more:
 - **GitHub Discussions**: [MagnetarQuill Discussions](https://github.com/scherenhaenden/magnetarquill/discussions)
 
 ---
-### Project Progress
-
-### Project Progress
+## **Project Progress** 🏗️
 
 Here’s the updated table with the latest progress:
 
