@@ -251,8 +251,9 @@ MagnetarQuill is licensed under the **MIT License**. See the [LICENSE](LICENSE) 
 ## **Stay Connected** 💬
 
 Follow us for updates, news, and more:
-- **Twitter**: [@MagnetarQuill](https://twitter.com/magnetarquill)
-- **GitHub Discussions**: [MagnetarQuill Discussions](https://github.com/yourusername/magnetarquill/discussions)
+
+- **GitHub Discussions**: [MagnetarQuill Discussions](https://github.com/scherenhaenden/MagnetarQuill/discussions)
+
 
 ---
 ### Project Progress
