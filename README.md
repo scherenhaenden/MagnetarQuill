@@ -15,16 +15,18 @@ Inspired by the most extreme phenomena in the universe, the **Magnetar**, and co
 ---
 
 ## **Table of Contents** 📚
-- [Features](#features)
-- [Installation](#installation)
-- [Quick Start](#quick-start)
-- [Usage](#usage)
-- [Plugin Architecture](#plugin-architecture)
-- [Theming & Customization](#theming--customization)
-- [Available Commands](#available-commands)
-- [Roadmap](#roadmap)
-- [Contributing](#contributing)
-- [License](#license)
+- [Features](#features-)
+- [Installation](#installation-)
+- [Quick Start](#quick-start-)
+- [Usage](#usage-)
+- [Plugin Architecture](#plugin-architecture-)
+- [Theming & Customization](#theming--customization-)
+- [Available Commands](#available-commands-)
+- [Roadmap](#roadmap-)
+- [Contributing](#contributing-)
+- [License](#license-)
+- [Stay Connected](#stay-connected-)
+- [Project Progress](#project-progress-)
 
 ---
 
@@ -251,14 +253,11 @@ MagnetarQuill is licensed under the **MIT License**. See the [LICENSE](LICENSE) 
 ## **Stay Connected** 💬
 
 Follow us for updates, news, and more:
-
 - **GitHub Discussions**: [MagnetarQuill Discussions](https://github.com/scherenhaenden/MagnetarQuill/discussions)
 
 
 ---
-### Project Progress
-
-### Project Progress
+## **Project Progress** 🏗️
 
 Here’s the updated table with the latest progress:
 
