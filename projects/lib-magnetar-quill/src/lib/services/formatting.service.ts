@@ -18,6 +18,7 @@ export class FormattingService {
   public updateFormatStates(): void {
     console.log("something");
     const selection = window.getSelection();
+    console.log("selection", selection);
     if (selection && selection.rangeCount > 0) {
       const container = selection.getRangeAt(0).commonAncestorContainer.parentElement;
       if (container) {
