@@ -13,3 +13,14 @@
   class="editor"
   >
 </lib-editor>
+
+
+<lib-image-modal
+
+  *ngIf="showImageModal"
+  [isEditMode]="showImageModal"
+  [(imageModalComponentModel)]="imageModalComponentModel"
+  (cancel)="clearImageToEdit()"
+
+
+></lib-image-modal>

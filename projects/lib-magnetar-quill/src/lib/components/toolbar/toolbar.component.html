@@ -94,14 +94,26 @@
 
   <button (click)="openImageModal()">Insert Image</button>
 
-
-
-
-
 </div>
 
-<!-- Image Insertion Modal -->
-<div *ngIf="showImageModal" class="modal-overlay">
+
+<lib-image-modal
+
+  *ngIf="showImageModal"
+  [isEditMode]="showImageModal"
+  [(imageModalComponentModel)]="imageModalComponentModel"
+  (cancel)="showImageModal = false"
+
+></lib-image-modal>
+
+<!-- Image Insertion Modal
+   (closeImageModal)="closeImageModal($event)"
+                 (insertImage)="insertImage($event)"
+
+
+
+
+<div *ngIf="false" class="modal-overlay">
   <div class="modal-content">
     <h3>Insert Image from URL</h3>
     <label>URL*</label>
@@ -139,8 +151,12 @@
     </div>
 
     <div class="modal-actions">
-      <button (click)="insertImage()">Insert</button>
+
       <button (click)="closeImageModal()">Cancel</button>
     </div>
   </div>
 </div>
+-->
+
+<!-- Image Insertion Modal -->
+

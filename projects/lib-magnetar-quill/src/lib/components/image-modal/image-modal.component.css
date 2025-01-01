@@ -1,0 +1,197 @@
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 8px;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toolbar button {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 14px;
+}
+
+.toolbar button:hover {
+  background-color: #e7e9ec;
+}
+
+.toolbar button.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border-color: #007bff;
+}
+
+.toolbar select, .toolbar input[type="color"] {
+  border: 1px solid #ccc;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 350px;
+  max-width: 90%;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.modal-content label {
+  font-weight: bold;
+  display: block;
+  margin-top: 15px;
+  color: #333;
+}
+
+.modal-content input, .modal-content select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.preview {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.preview img {
+  max-width: 100%;
+  border-radius: 5px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Modal Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 800px; /* Allow enough space for the preview and form */
+  max-height: 90vh; /* Prevent overflow beyond the window height */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease;
+  overflow: auto; /* Add scrolling if content exceeds the modal's height */
+}
+
+.modal-body {
+  display: flex;
+  gap: 20px;
+}
+
+.preview {
+  flex: 1;
+  max-width: 40%; /* Limit the preview to 40% of the modal width */
+  text-align: center;
+}
+
+.preview img {
+  max-width: 100%;
+  max-height: 300px; /* Ensure the preview doesn't exceed a reasonable size */
+  border-radius: 5px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.form-section {
+  flex: 2; /* Take up the remaining space for the form */
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.form-section input, .form-section select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.modal-actions button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal-actions button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+}
+
+.modal-actions button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.modal-actions button[type="button"] {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.modal-actions button[type="button"]:hover {
+  background-color: #ddd;
+}
+
+

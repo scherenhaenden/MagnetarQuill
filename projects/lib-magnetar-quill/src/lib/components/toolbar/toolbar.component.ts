@@ -7,19 +7,22 @@ import {
   OnDestroy,
   OnInit,
   Output,
-  ViewChild
+  ViewChild, WritableSignal
 } from '@angular/core';
 import { FormattingService } from "../../services/formatting.service";
 import { NgIf } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { ImageInternalData } from "../../models/image-internal-data";
+import {ImageModalComponent} from "../image-modal/image-modal.component";
+import {ImageModalComponentModel} from "../../models/image-modal-component-model";
 
 @Component({
   selector: 'lib-toolbar',
   standalone: true,
   imports: [
     NgIf,
-    FormsModule
+    FormsModule,
+    ImageModalComponent
   ],
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.less'
@@ -150,7 +153,7 @@ export class ToolbarComponent implements OnInit, OnDestroy {
     this.imageUrl = '';
   }
 
-  public insertImage(): void {
+  public insertImage( imageModalComponentModel: ImageModalComponentModel): void {
     if (this.imageUrl.trim()) {
       this.insertImageFromUrl.emit({
         url: this.imageUrl,
@@ -236,5 +239,6 @@ export class ToolbarComponent implements OnInit, OnDestroy {
     }
   }
 
-  protected readonly HTMLSelectElement = HTMLSelectElement;
+  protected readonly hTMLSelectElement = HTMLSelectElement;
+  public imageModalComponentModel!: ImageModalComponentModel | WritableSignal<ImageModalComponentModel>;
 }

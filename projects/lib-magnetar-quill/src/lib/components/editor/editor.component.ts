@@ -13,6 +13,8 @@ import {ImageInternalData} from "../../models/image-internal-data";
 import {FormattingService} from "../../services/formatting.service";
 import {ContentService} from "../../services/content.service";
 import {FormsModule} from "@angular/forms";
+import {ImageModalComponentModel} from "../../models/image-modal-component-model";
+import {ImageHtmlElementImageModalComponentMapper} from "../../mappers/image-html-element-image-modal-component-mapper";
 
 @Component({
   selector: 'lib-editor',
@@ -29,18 +31,31 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
 
   @ViewChild('editorWysiwyg', { static: true }) public editorWysiwyg!: ElementRef<HTMLDivElement>;
   @ViewChild('editorHtml', { static: true }) public editorHtml!: ElementRef<HTMLTextAreaElement>;
-
-
-
-
   public editorHtmlContent: string = '';
+
+  private imageHtmlElementImageModalComponentMapper: ImageHtmlElementImageModalComponentMapper = new ImageHtmlElementImageModalComponentMapper();
 
   private editorHtmlBackup!: HTMLTextAreaElement;
   private editorBackup!: HTMLDivElement;
   private parentElement!: HTMLElement;
    // Track if HTML view is active
   @Input() isHtmlView: boolean = false;
-  @Output() requestImageEdit = new EventEmitter<ImageInternalData>();
+  @Output() requestImageEdit = new EventEmitter<ImageModalComponentModel>();
+
+  private _requestImageInsert: ImageModalComponentModel | null = null;
+
+  @Input()
+  get requestImageInsert(): ImageModalComponentModel | null {
+    return this._requestImageInsert;
+  }
+  set requestImageInsert(value: ImageModalComponentModel | null) {
+    this._requestImageInsert = value;
+    if (value) {
+      // Perform any additional logic when value changes
+      console.log('Image data set for insertion:', value);
+      this.selectedImage= this.imageHtmlElementImageModalComponentMapper.mapImageModalComponentToImageHtmlElement(value as ImageModalComponentModel);
+    }
+  }
 
   constructor(private formattingService: FormattingService,
               private contentService: ContentService
@@ -57,9 +72,6 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
 
     this.editorHtmlContent = this.contentService.getEditorContent();
     this.editorWysiwyg.nativeElement.innerHTML = this.editorHtmlContent;
-    console.log('editorHtmlContent', this.editorHtmlContent);
-
-
 
     this.contentService.editorContent$.subscribe(content => {
       this.editorHtmlContent = content;
@@ -82,14 +94,10 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
 
   public onPaste(event: ClipboardEvent): void {
 
-
-    console.log('onPaste', event);
-
     if(!this.sanitizePaste) {
       return;
 
     }
-
     event.preventDefault();
 
     const clipboardData = event.clipboardData;
@@ -110,7 +118,7 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
     // Check for HTML data (paths or Base64 strings)
     const htmlData = clipboardData.getData('text/html');
     if (htmlData) {
-      this.insertHtmlAtCursor(htmlData);
+      this.contentService.insertHtmlAtCursor(htmlData);
       return;
     }
 
@@ -118,7 +126,7 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
     const text = clipboardData.getData('text/plain') || '';
 
     // Insert sanitized text at cursor position
-    this.insertTextAtCursor(text);
+    this.contentService.insertTextAtCursor(text);
   }
 
   private handleImagePaste(file: File): void {
@@ -126,36 +134,16 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
     reader.onload = (event: ProgressEvent<FileReader>) => {
       const imageUrl = event.target?.result as string;
       const img = `<img src="${imageUrl}" alt="Pasted Image" style="max-width:100%; height:auto;">`;
-      this.insertHtmlAtCursor(img);
+      this.contentService.insertHtmlAtCursor(img);
     };
     reader.readAsDataURL(file);
   }
 
-  private insertHtmlAtCursor(html: string): void {
-    const selection = window.getSelection();
-    if (selection && selection.rangeCount > 0) {
-      const range = selection.getRangeAt(0);
-      const fragment = document.createRange().createContextualFragment(html);
-      range.deleteContents(); // Remove the current selection
-      range.insertNode(fragment); // Insert the HTML fragment
-    }
-  }
 
 
 
-  private insertTextAtCursor(text: string): void {
-    const selection = window.getSelection();
-    if (!selection || selection.rangeCount === 0) return;
 
-    const range = selection.getRangeAt(0);
-    range.deleteContents();
-    range.insertNode(document.createTextNode(text));
 
-    // Move the cursor after the inserted text
-    range.setStartAfter(range.endContainer);
-    selection.removeAllRanges();
-    selection.addRange(range);
-  }
 
 
 
@@ -199,19 +187,15 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
     this.showContextMenu = true;
   }
 
+
+
   // Open image edit modal with selected image data
   public openImageEdit(): void {
     if (this.selectedImage) {
-      const imageData: ImageInternalData = {
-        url: this.selectedImage.src,
-        alt: this.selectedImage.alt,
-        width: this.selectedImage.width || null,
-        height: this.selectedImage.height || null,
-        border: parseInt(this.selectedImage.style.borderWidth || '0', 10),
-        hPadding: parseInt(this.selectedImage.style.paddingLeft || '0', 10),
-        vPadding: parseInt(this.selectedImage.style.paddingTop || '0', 10),
-        alignment: this.selectedImage.style.textAlign || 'left',
-      };
+
+      const imageData = this.imageHtmlElementImageModalComponentMapper.mapImageHtmlElementToImageModalComponent(this.selectedImage);
+
+      console.log('imageData', imageData);
       this.requestImageEdit.emit(imageData);
       this.showImageModal = true;
       this.showContextMenu = false; // Close context menu after selection
@@ -219,21 +203,7 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
   }
 
   public insertImageFromUrl(imageData: ImageInternalData): void {
-    const img = document.createElement('img');
-    img.src = imageData.url;
-    img.alt = imageData.alt || '';
-    img.style.width = imageData.width ? `${imageData.width}px` : 'auto';
-    img.style.height = imageData.height ? `${imageData.height}px` : 'auto';
-    img.style.borderWidth = `${imageData.border}px`;
-    img.style.padding = `${imageData.vPadding}px ${imageData.hPadding}px`;
-    img.style.textAlign = imageData.alignment ?? 'left';
-
-    const selection = window.getSelection();
-    if (selection && selection.rangeCount > 0) {
-      const range = selection.getRangeAt(0);
-      range.insertNode(img);
-      range.collapse(false);
-    }
+    this.contentService.insertImageFromUrl(imageData);
   }
 
   public getEditorContent(): string {
@@ -328,39 +298,7 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
   }
 
   // Method to listen to changes and enforce the placeholder
-
-
-
-
-  public imageUrl: string = '';
-  public altText: string = '';
-  public width: number | null = null;
-  public height: number | null = null;
-  public border: number = 0;
-  public hPadding: number = 0;
-  public vPadding: number = 0;
-  public alignment: string = 'left';
-
   public showImageModal: boolean = false;
-
-
-  public openImageModalForEdit(): void {
-    if (this.selectedImage) {
-      this.imageUrl = this.selectedImage.src;
-      this.altText = this.selectedImage.alt;
-      this.width = this.selectedImage.width || null;
-      this.height = this.selectedImage.height || null;
-      this.border = parseInt(this.selectedImage.style.borderWidth || '0', 10);
-      this.hPadding = parseInt(this.selectedImage.style.paddingLeft || '0', 10);
-      this.vPadding = parseInt(this.selectedImage.style.paddingTop || '0', 10);
-      this.alignment = this.selectedImage.style.textAlign || 'left';
-
-      this.showImageModal = true; // Show the modal
-    }
-  }
-
-
-
 
 
   public deleteImage(): void {
@@ -369,24 +307,4 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
       //this.showContextMenu = false;
     }
   }
-
-  public applyImageEdits(): void {
-    if (this.selectedImage) {
-      this.selectedImage.src = this.imageUrl;
-      this.selectedImage.alt = this.altText;
-      this.selectedImage.style.width = this.width ? `${this.width}px` : 'auto';
-      this.selectedImage.style.height = this.height ? `${this.height}px` : 'auto';
-      this.selectedImage.style.borderWidth = `${this.border}px`;
-      this.selectedImage.style.padding = `${this.vPadding}px ${this.hPadding}px`;
-      this.selectedImage.style.textAlign = this.alignment;
-    }
-    this.closeImageModal();
-  }
-
-  public closeImageModal(): void {
-    this.showImageModal = false;
-  }
-
-
-
 }

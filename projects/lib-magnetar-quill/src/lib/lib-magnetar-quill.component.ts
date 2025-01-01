@@ -6,22 +6,43 @@ import {
   Input,
   OnDestroy,
   OnInit, Output,
-  ViewChild
+  ViewChild, WritableSignal
 } from '@angular/core';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { EditorComponent } from "./components/editor/editor.component";
 import {ImageInternalData} from "./models/image-internal-data";
 import {ContentService} from "./services/content.service";
+import {ImageModalComponent} from "./components/image-modal/image-modal.component";
+import {NgIf} from "@angular/common";
+import {ImageModalComponentModel} from "./models/image-modal-component-model";
 
 @Component({
   selector: 'magnetar-quill',
   standalone: true,
-  imports: [ToolbarComponent, EditorComponent],
+    imports: [ToolbarComponent, EditorComponent, ImageModalComponent, NgIf],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './lib-magnetar-quill.component.html',
   styleUrl: './lib-magnetar-quill.component.less'
 })
 export class LibMagnetarQuillComponent implements OnInit, OnDestroy {
+
+
+
+  public showImageModal: boolean = false;
+  //public imageModalComponentModel!: ImageModalComponentModel;
+  private _imageModalComponentModel!: ImageModalComponentModel;
+
+
+  public get imageModalComponentModel(): ImageModalComponentModel  {
+    return this._imageModalComponentModel;
+  }
+
+  set imageModalComponentModel(value: ImageModalComponentModel ) {
+    if (value) {
+      this._imageModalComponentModel = value;
+      console.log('Model updated:', value);
+    }
+  }
 
 
   // add input and output for emit hear
@@ -51,12 +72,18 @@ export class LibMagnetarQuillComponent implements OnInit, OnDestroy {
 
   // Method to open the image edit modal from the editor's context menu
   public openImageEditModal(imageData: ImageInternalData): void {
+    this.showImageModal = true;
+    console.log('imageData', imageData);
+    this.imageModalComponentModel = imageData as ImageModalComponentModel;
     this.imageToEdit = imageData;
   }
 
   // Method to reset the image data once editing is done
   public clearImageToEdit(): void {
-    this.imageToEdit = null;
+    //this.imageToEdit = null;
+    this.showImageModal = false;
+
+
   }
 
 

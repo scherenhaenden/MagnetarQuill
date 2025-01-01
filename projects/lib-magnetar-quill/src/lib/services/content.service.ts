@@ -7,7 +7,20 @@ import {BehaviorSubject} from "rxjs";
 })
 export class ContentService {
 
-  constructor() { }
+
+  // Observable to track the HTML content of the editor
+  private editorContent = new BehaviorSubject<string>('');
+  editorContent$ = this.editorContent.asObservable();
+
+  // Method to update the content
+  public setEditorContent(htmlContent: string): void {
+    this.editorContent.next(htmlContent);
+  }
+
+  // Method to retrieve the current content as a snapshot
+  public getEditorContent(): string {
+    return this.editorContent.getValue();
+  }
 
   // Method to insert an image
   // Method to insert image as HTML content
@@ -21,20 +34,47 @@ export class ContentService {
     this.setEditorContent(updatedContent);
   }
 
-  // Observable to track the HTML content of the editor
-  private editorContent = new BehaviorSubject<string>('');
-  editorContent$ = this.editorContent.asObservable();
 
-  // Method to update the content
-  public setEditorContent(htmlContent: string): void {
-    console.log('htmlContent', htmlContent);
-    this.editorContent.next(htmlContent);
+  public insertHtmlAtCursor(html: string): void {
+    const selection = window.getSelection();
+    if (selection && selection.rangeCount > 0) {
+      const range = selection.getRangeAt(0);
+      const fragment = document.createRange().createContextualFragment(html);
+      range.deleteContents(); // Remove the current selection
+      range.insertNode(fragment); // Insert the HTML fragment
+    }
   }
 
-  // Method to retrieve the current content as a snapshot
-  public getEditorContent(): string {
-    console.log('getEditorContent', this.editorContent.getValue());
-    return this.editorContent.getValue();
+  public insertTextAtCursor(text: string): void {
+    const selection = window.getSelection();
+    if (!selection || selection.rangeCount === 0) return;
+
+    const range = selection.getRangeAt(0);
+    range.deleteContents();
+    range.insertNode(document.createTextNode(text));
+
+    // Move the cursor after the inserted text
+    range.setStartAfter(range.endContainer);
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }
+
+  public insertImageFromUrl(imageData: ImageInternalData): void {
+    const img = document.createElement('img');
+    img.src = imageData.url;
+    img.alt = imageData.alt || '';
+    img.style.width = imageData.width ? `${imageData.width}px` : 'auto';
+    img.style.height = imageData.height ? `${imageData.height}px` : 'auto';
+    img.style.borderWidth = `${imageData.border}px`;
+    img.style.padding = `${imageData.vPadding}px ${imageData.hPadding}px`;
+    img.style.textAlign = imageData.alignment ?? 'left';
+
+    const selection = window.getSelection();
+    if (selection && selection.rangeCount > 0) {
+      const range = selection.getRangeAt(0);
+      range.insertNode(img);
+      range.collapse(false);
+    }
   }
 
 

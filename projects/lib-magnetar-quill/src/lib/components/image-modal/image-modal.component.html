@@ -1,0 +1,57 @@
+<div *ngIf="true" class="modal-overlay">
+  <div class="modal-content">
+    <h3>{{ isEditMode ? 'Edit Image Properties' : 'Insert Image from URL' }}</h3>
+    <div class="modal-body">
+      <!-- Left Preview Section -->
+      <div class="preview">
+        <h4>Preview</h4>
+        <img [src]="imageModalComponentModel.url"
+             [style.width.px]="imageModalComponentModel.width"
+             [style.height.px]="imageModalComponentModel.height"
+             [style.borderWidth.px]="imageModalComponentModel.border"
+             [style.padding]="imageModalComponentModel.hPadding + 'px ' + imageModalComponentModel.vPadding + 'px'"
+             [style.textAlign]="imageModalComponentModel.alignment" />
+      </div>
+      <!-- Right Form Section -->
+      <div class="form-section">
+        <label>URL*</label>
+        <input type="text" [(ngModel)]="imageModalComponentModel.url" placeholder="Enter Image URL" required />
+
+        <label>Alternative Text</label>
+        <input type="text" [(ngModel)]="imageModalComponentModel.alt" placeholder="Image description" />
+
+        <label>Width</label>
+        <input type="number" [(ngModel)]="imageModalComponentModel.width" placeholder="Width" (input)="updateHeight()" />
+
+        <label>
+          <input type="checkbox" [(ngModel)]="maintainAspectRatio" (change)="toggleAspectRatio()" />
+          Maintain Aspect Ratio
+        </label>
+
+        <label>Height</label>
+        <input type="number" [(ngModel)]="imageModalComponentModel.height" placeholder="Height" [readonly]="maintainAspectRatio" />
+
+
+        <label>Border</label>
+        <input type="number" [(ngModel)]="imageModalComponentModel.border" placeholder="Border width" />
+
+        <label>Horizontal Padding</label>
+        <input type="number" [(ngModel)]="imageModalComponentModel.hPadding" placeholder="Horizontal padding" />
+
+        <label>Vertical Padding</label>
+        <input type="number" [(ngModel)]="imageModalComponentModel.vPadding" placeholder="Vertical padding" />
+
+        <label>Alignment</label>
+        <select [(ngModel)]="imageModalComponentModel.alignment">
+          <option value="left">Left</option>
+          <option value="center">Center</option>
+          <option value="right">Right</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button (click)="onSubmit()">{{ isEditMode ? 'Save' : 'Insert' }}</button>
+      <button (click)="onCancel()">Cancel</button>
+    </div>
+  </div>
+</div>

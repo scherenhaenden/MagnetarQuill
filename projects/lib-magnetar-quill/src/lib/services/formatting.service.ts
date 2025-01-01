@@ -59,9 +59,6 @@ export class FormattingService {
     this.toggler(this.strikethroughActive, 'text-decoration', 'line-through');
   }
 
-
-
-
   // Toggle list type (ordered or unordered)
   public toggleList(type: 'ordered' | 'unordered'): void {
     const selection = window.getSelection();
