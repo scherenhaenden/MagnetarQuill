@@ -16,9 +16,9 @@ export class FormattingService {
 
   // Method to update formatting states based on the current selection
   public updateFormatStates(): void {
-    console.log("something");
+
     const selection = window.getSelection();
-    console.log("selection", selection);
+
     if (selection && selection.rangeCount > 0) {
       const container = selection.getRangeAt(0).commonAncestorContainer.parentElement;
       if (container) {

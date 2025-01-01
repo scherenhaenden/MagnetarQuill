@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {NgIf} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ImageModalComponentModel} from "../../models/image-modal-component-model";
+import {ImageService} from "../../services/image.service";
 
 @Component({
   selector: 'lib-image-modal',
@@ -20,7 +21,7 @@ export class ImageModalComponent {
   private originalAspectRatio: number | null = null; // Store the original aspect ratio
 
 
-  constructor() {
+  constructor(private imageService: ImageService) {
   }
 
   @Input() isEditMode: boolean = true;
@@ -30,10 +31,13 @@ export class ImageModalComponent {
   @Output() save = new EventEmitter<ImageModalComponentModel>();
   @Output() cancel = new EventEmitter<void>();
 
-  public onSubmit(): void {
+  public onSubmit(): ImageModalComponentModel {
+    this.imageService.applyImageEdits();
     this.save.emit(this.imageModalComponentModel);
     this.imageModalComponentModelChange.emit(this.imageModalComponentModel)// Emit the updated model
     this.cancel.emit();
+    return this.imageModalComponentModel;
+
   }
 
   public onCancel(): void {

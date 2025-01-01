@@ -1,4 +1,5 @@
 import {
+  ChangeDetectorRef,
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
   ElementRef, EventEmitter,
@@ -15,6 +16,7 @@ import {ContentService} from "./services/content.service";
 import {ImageModalComponent} from "./components/image-modal/image-modal.component";
 import {NgIf} from "@angular/common";
 import {ImageModalComponentModel} from "./models/image-modal-component-model";
+import {ImageService} from "./services/image.service";
 
 @Component({
   selector: 'magnetar-quill',
@@ -26,7 +28,7 @@ import {ImageModalComponentModel} from "./models/image-modal-component-model";
 })
 export class LibMagnetarQuillComponent implements OnInit, OnDestroy {
 
-
+  public updateModel: ImageModalComponentModel = new ImageModalComponentModel();
 
   public showImageModal: boolean = false;
   //public imageModalComponentModel!: ImageModalComponentModel;
@@ -40,7 +42,10 @@ export class LibMagnetarQuillComponent implements OnInit, OnDestroy {
   set imageModalComponentModel(value: ImageModalComponentModel ) {
     if (value) {
       this._imageModalComponentModel = value;
-      console.log('Model updated:', value);
+      this.updateModel = null!
+      this.updateModel = value;
+      this.cdRef.detectChanges();
+
     }
   }
 
@@ -55,7 +60,9 @@ export class LibMagnetarQuillComponent implements OnInit, OnDestroy {
   // Output to emit content changes to the parent
   @Output() contentChange = new EventEmitter<string>();
 
-  constructor(private contentService: ContentService) {
+  constructor(private contentService: ContentService,
+              public imageService: ImageService,
+              private cdRef: ChangeDetectorRef) {
   }
 
 
@@ -68,22 +75,14 @@ export class LibMagnetarQuillComponent implements OnInit, OnDestroy {
   }
 
 
-  public imageToEdit: ImageInternalData | null = null;
-
   // Method to open the image edit modal from the editor's context menu
-  public openImageEditModal(imageData: ImageInternalData): void {
+  public openImageEditModal(): void {
     this.showImageModal = true;
-    console.log('imageData', imageData);
-    this.imageModalComponentModel = imageData as ImageModalComponentModel;
-    this.imageToEdit = imageData;
   }
 
   // Method to reset the image data once editing is done
   public clearImageToEdit(): void {
-    //this.imageToEdit = null;
     this.showImageModal = false;
-
-
   }
 
 
