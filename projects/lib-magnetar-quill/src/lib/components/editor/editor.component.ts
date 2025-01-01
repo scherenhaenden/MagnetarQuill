@@ -12,13 +12,15 @@ import {NgClass, NgIf} from "@angular/common";
 import {ImageInternalData} from "../../models/image-internal-data";
 import {FormattingService} from "../../services/formatting.service";
 import {ContentService} from "../../services/content.service";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'lib-editor',
   standalone: true,
   imports: [
     NgIf,
-    NgClass
+    NgClass,
+    FormsModule
   ],
   templateUrl: './editor.component.html',
   styleUrl: './editor.component.less'
@@ -80,6 +82,9 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
 
   public onPaste(event: ClipboardEvent): void {
 
+
+    console.log('onPaste', event);
+
     if(!this.sanitizePaste) {
       return;
 
@@ -87,12 +92,56 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
 
     event.preventDefault();
 
-    // Get text from clipboard as plain text
-    const text = event.clipboardData?.getData('text/plain') || '';
+    const clipboardData = event.clipboardData;
+    if (!clipboardData) return;
+
+    // Check for image data
+    for (let i = 0; i < clipboardData.items.length; i++) {
+      const item = clipboardData.items[i];
+      if (item.type.startsWith('image/')) {
+        const file = item.getAsFile();
+        if (file) {
+          this.handleImagePaste(file);
+          return; // Exit after processing image
+        }
+      }
+    }
+
+    // Check for HTML data (paths or Base64 strings)
+    const htmlData = clipboardData.getData('text/html');
+    if (htmlData) {
+      this.insertHtmlAtCursor(htmlData);
+      return;
+    }
+
+    // Fallback for plain text pasting
+    const text = clipboardData.getData('text/plain') || '';
 
     // Insert sanitized text at cursor position
     this.insertTextAtCursor(text);
   }
+
+  private handleImagePaste(file: File): void {
+    const reader = new FileReader();
+    reader.onload = (event: ProgressEvent<FileReader>) => {
+      const imageUrl = event.target?.result as string;
+      const img = `<img src="${imageUrl}" alt="Pasted Image" style="max-width:100%; height:auto;">`;
+      this.insertHtmlAtCursor(img);
+    };
+    reader.readAsDataURL(file);
+  }
+
+  private insertHtmlAtCursor(html: string): void {
+    const selection = window.getSelection();
+    if (selection && selection.rangeCount > 0) {
+      const range = selection.getRangeAt(0);
+      const fragment = document.createRange().createContextualFragment(html);
+      range.deleteContents(); // Remove the current selection
+      range.insertNode(fragment); // Insert the HTML fragment
+    }
+  }
+
+
 
   private insertTextAtCursor(text: string): void {
     const selection = window.getSelection();
@@ -164,6 +213,7 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
         alignment: this.selectedImage.style.textAlign || 'left',
       };
       this.requestImageEdit.emit(imageData);
+      this.showImageModal = true;
       this.showContextMenu = false; // Close context menu after selection
     }
   }
