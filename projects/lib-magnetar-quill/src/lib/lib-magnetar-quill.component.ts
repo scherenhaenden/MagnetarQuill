@@ -1,4 +1,5 @@
 import {
+  ChangeDetectorRef,
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
   ElementRef, EventEmitter,
@@ -6,22 +7,47 @@ import {
   Input,
   OnDestroy,
   OnInit, Output,
-  ViewChild
+  ViewChild, WritableSignal
 } from '@angular/core';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { EditorComponent } from "./components/editor/editor.component";
 import {ImageInternalData} from "./models/image-internal-data";
 import {ContentService} from "./services/content.service";
+import {ImageModalComponent} from "./components/image-modal/image-modal.component";
+import {NgIf} from "@angular/common";
+import {ImageModalComponentModel} from "./models/image-modal-component-model";
+import {ImageService} from "./services/image.service";
 
 @Component({
   selector: 'magnetar-quill',
   standalone: true,
-  imports: [ToolbarComponent, EditorComponent],
+    imports: [ToolbarComponent, EditorComponent, ImageModalComponent, NgIf],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './lib-magnetar-quill.component.html',
   styleUrl: './lib-magnetar-quill.component.less'
 })
 export class LibMagnetarQuillComponent implements OnInit, OnDestroy {
+
+  public updateModel: ImageModalComponentModel = new ImageModalComponentModel();
+
+  public showImageModal: boolean = false;
+  //public imageModalComponentModel!: ImageModalComponentModel;
+  private _imageModalComponentModel!: ImageModalComponentModel;
+
+
+  public get imageModalComponentModel(): ImageModalComponentModel  {
+    return this._imageModalComponentModel;
+  }
+
+  set imageModalComponentModel(value: ImageModalComponentModel ) {
+    if (value) {
+      this._imageModalComponentModel = value;
+      this.updateModel = null!
+      this.updateModel = value;
+      this.cdRef.detectChanges();
+
+    }
+  }
 
 
   // add input and output for emit hear
@@ -34,7 +60,9 @@ export class LibMagnetarQuillComponent implements OnInit, OnDestroy {
   // Output to emit content changes to the parent
   @Output() contentChange = new EventEmitter<string>();
 
-  constructor(private contentService: ContentService) {
+  constructor(private contentService: ContentService,
+              public imageService: ImageService,
+              private cdRef: ChangeDetectorRef) {
   }
 
 
@@ -47,16 +75,14 @@ export class LibMagnetarQuillComponent implements OnInit, OnDestroy {
   }
 
 
-  public imageToEdit: ImageInternalData | null = null;
-
   // Method to open the image edit modal from the editor's context menu
-  public openImageEditModal(imageData: ImageInternalData): void {
-    this.imageToEdit = imageData;
+  public openImageEditModal(): void {
+    this.showImageModal = true;
   }
 
   // Method to reset the image data once editing is done
   public clearImageToEdit(): void {
-    this.imageToEdit = null;
+    this.showImageModal = false;
   }
 
 

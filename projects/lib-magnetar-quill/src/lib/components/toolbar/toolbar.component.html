@@ -94,53 +94,17 @@
 
   <button (click)="openImageModal()">Insert Image</button>
 
-
-
-
-
 </div>
 
-<!-- Image Insertion Modal -->
-<div *ngIf="showImageModal" class="modal-overlay">
-  <div class="modal-content">
-    <h3>Insert Image from URL</h3>
-    <label>URL*</label>
-    <input type="text" [(ngModel)]="imageUrl" placeholder="Enter Image URL">
 
-    <label>Alternative Text</label>
-    <input type="text" [(ngModel)]="altText" placeholder="Image description">
+<lib-image-modal
 
-    <label>Width</label>
-    <input type="number" [(ngModel)]="width" placeholder="Width">
+  *ngIf="showImageModal"
+  [isEditMode]="showImageModal"
+  [(imageModalComponentModel)]="imageModalComponentModel"
+  (cancel)="showImageModal = false"
 
-    <label>Height</label>
-    <input type="number" [(ngModel)]="height" placeholder="Height">
+></lib-image-modal>
 
-    <label>Border</label>
-    <input type="number" [(ngModel)]="border" placeholder="Border width">
 
-    <label>Horizontal Padding</label>
-    <input type="number" [(ngModel)]="hPadding" placeholder="Horizontal padding">
 
-    <label>Vertical Padding</label>
-    <input type="number" [(ngModel)]="vPadding" placeholder="Vertical padding">
-
-    <label>Alignment</label>
-    <select [(ngModel)]="alignment">
-      <option value="left">Left</option>
-      <option value="center">Center</option>
-      <option value="right">Right</option>
-    </select>
-
-    <div class="preview">
-      <h4>Preview</h4>
-      <img [src]="imageUrl" [style.width.px]="width" [style.height.px]="height" [style.borderWidth.px]="border"
-           [style.padding]="hPadding + 'px ' + vPadding + 'px'" [style.textAlign]="alignment">
-    </div>
-
-    <div class="modal-actions">
-      <button (click)="insertImage()">Insert</button>
-      <button (click)="closeImageModal()">Cancel</button>
-    </div>
-  </div>
-</div>

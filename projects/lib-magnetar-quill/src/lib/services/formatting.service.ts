@@ -16,8 +16,9 @@ export class FormattingService {
 
   // Method to update formatting states based on the current selection
   public updateFormatStates(): void {
-    console.log("something");
+
     const selection = window.getSelection();
+
     if (selection && selection.rangeCount > 0) {
       const container = selection.getRangeAt(0).commonAncestorContainer.parentElement;
       if (container) {
@@ -57,9 +58,6 @@ export class FormattingService {
   public toggleStrikethrough(): void {
     this.toggler(this.strikethroughActive, 'text-decoration', 'line-through');
   }
-
-
-
 
   // Toggle list type (ordered or unordered)
   public toggleList(type: 'ordered' | 'unordered'): void {

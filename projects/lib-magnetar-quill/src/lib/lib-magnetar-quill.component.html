@@ -1,7 +1,7 @@
 <lib-toolbar
   (toggleHtmlView)="toggleHtmlView()"
   (insertImageFromUrl)="editor.insertImageFromUrl($event)"
-  [imageToEdit]="imageToEdit"
+  [imageToEdit]="updateModel"
   (clearImageToEdit)="clearImageToEdit()"
   class="toolbar">
 </lib-toolbar>
@@ -9,7 +9,33 @@
 <lib-editor
   #editor
   [isHtmlView]="isHtmlView"
-  (requestImageEdit)="openImageEditModal($event)"
+  (editPicture)="openImageEditModal()"
   class="editor"
   >
 </lib-editor>
+
+
+<lib-image-modal
+  *ngIf="showImageModal"
+  [imageModalComponentModel]="this.imageService.selectedImage()!"
+  (cancel)="clearImageToEdit()"
+></lib-image-modal>
+
+<!--
+(save)="saveChanges($event)"
+
+<lib-image-modal
+
+  *ngIf="showImageModal"
+  [isEditMode]="showImageModal"
+  [(imageModalComponentModel)]="imageModalComponentModel"
+  (cancel)="clearImageToEdit()"
+  (imageModalComponentModelChange)="imageModalComponentModel"
+
+
+></lib-image-modal>
+
+
+-->
+
+

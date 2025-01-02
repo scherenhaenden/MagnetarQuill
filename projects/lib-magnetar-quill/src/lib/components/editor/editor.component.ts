@@ -12,36 +12,61 @@ import {NgClass, NgIf} from "@angular/common";
 import {ImageInternalData} from "../../models/image-internal-data";
 import {FormattingService} from "../../services/formatting.service";
 import {ContentService} from "../../services/content.service";
+import {FormsModule} from "@angular/forms";
+import {ImageModalComponentModel} from "../../models/image-modal-component-model";
+import {ImageHtmlElementImageModalComponentMapper} from "../../mappers/image-html-element-image-modal-component-mapper";
+import {ImageService} from "../../services/image.service";
 
 @Component({
   selector: 'lib-editor',
   standalone: true,
   imports: [
     NgIf,
-    NgClass
+    NgClass,
+    FormsModule
   ],
   templateUrl: './editor.component.html',
   styleUrl: './editor.component.less'
 })
 export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoCheck {
 
+
+
   @ViewChild('editorWysiwyg', { static: true }) public editorWysiwyg!: ElementRef<HTMLDivElement>;
   @ViewChild('editorHtml', { static: true }) public editorHtml!: ElementRef<HTMLTextAreaElement>;
-
-
-
-
   public editorHtmlContent: string = '';
+
+  private imageHtmlElementImageModalComponentMapper: ImageHtmlElementImageModalComponentMapper = new ImageHtmlElementImageModalComponentMapper();
 
   private editorHtmlBackup!: HTMLTextAreaElement;
   private editorBackup!: HTMLDivElement;
   private parentElement!: HTMLElement;
    // Track if HTML view is active
   @Input() isHtmlView: boolean = false;
-  @Output() requestImageEdit = new EventEmitter<ImageInternalData>();
+  @Output() requestImageEdit = new EventEmitter<ImageModalComponentModel>();
+  @Output() editPicture = new EventEmitter<void>();
+
+  private _requestImageInsert: ImageModalComponentModel | null = null;
+
+  @Input()
+  get requestImageInsert(): ImageModalComponentModel | null {
+    return this._requestImageInsert;
+  }
+  set requestImageInsert(value: ImageModalComponentModel | null) {
+
+    console.log('requestImageInsert', value);
+
+    this._requestImageInsert = value;
+    if (value) {
+      // Perform any additional logic when value changes
+      console.log('Image data set for insertion:', value);
+      this.selectedImage= this.imageHtmlElementImageModalComponentMapper.mapImageModalComponentToImageHtmlElement(value as ImageModalComponentModel);
+    }
+  }
 
   constructor(private formattingService: FormattingService,
-              private contentService: ContentService
+              private contentService: ContentService,
+              private imageService: ImageService
 
   ) {
     this.isHtmlView = false;
@@ -55,9 +80,6 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
 
     this.editorHtmlContent = this.contentService.getEditorContent();
     this.editorWysiwyg.nativeElement.innerHTML = this.editorHtmlContent;
-    console.log('editorHtmlContent', this.editorHtmlContent);
-
-
 
     this.contentService.editorContent$.subscribe(content => {
       this.editorHtmlContent = content;
@@ -79,37 +101,92 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
   }
 
   public onPaste(event: ClipboardEvent): void {
-
-    if(!this.sanitizePaste) {
+    if (!this.sanitizePaste) {
       return;
-
     }
 
-    event.preventDefault();
+    event.preventDefault(); // Prevent default paste behavior
 
-    // Get text from clipboard as plain text
-    const text = event.clipboardData?.getData('text/plain') || '';
+    const clipboardData = event.clipboardData;
+    console.log('clipboardData', clipboardData);
 
-    // Insert sanitized text at cursor position
-    this.insertTextAtCursor(text);
+    if (!clipboardData) return;
+
+    // Check for image data
+    for (let i = 0; i < clipboardData.items.length; i++) {
+      const item = clipboardData.items[i];
+      if (item.type.startsWith('image/')) {
+        const file = item.getAsFile();
+        if (file) {
+          this.handleImagePaste(file);
+          return; // Exit after processing image
+        }
+      }
+    }
+
+    // Check for HTML data
+    const htmlData = clipboardData.getData('text/html');
+    if (htmlData) {
+      const sanitizedHtml = this.sanitizeHtml(htmlData); // Sanitize HTML content
+      const normalizedHtml = this.normalizeLineBreaks(sanitizedHtml); // Normalize line breaks
+      this.contentService.insertHtmlAtCursor(normalizedHtml); // Insert cleaned HTML
+      return;
+    }
+
+    // Fallback for plain text pasting
+    const text = clipboardData.getData('text/plain') || '';
+    this.contentService.insertTextAtCursor(text); // Insert plain text
   }
 
-  private insertTextAtCursor(text: string): void {
-    const selection = window.getSelection();
-    if (!selection || selection.rangeCount === 0) return;
 
-    const range = selection.getRangeAt(0);
-    range.deleteContents();
-    range.insertNode(document.createTextNode(text));
+  private sanitizeHtml(html: string): string {
+    // Remove <meta> tags
+    html = html.replace(/<meta[^>]*>/gi, '');
 
-    // Move the cursor after the inserted text
-    range.setStartAfter(range.endContainer);
-    selection.removeAllRanges();
-    selection.addRange(range);
+    // Remove all inline styles
+    html = html.replace(/style="[^"]*"/gi, '');
+
+    // Remove unwanted tags (e.g., <script>, <iframe>)
+    html = html.replace(/<(script|iframe|embed|object)[^>]*>.*?<\/\1>/gi, '');
+
+    return html;
+  }
+
+  private normalizeLineBreaks(html: string): string {
+
+    console.log('normalizeLineBreaks', html);
+    // Replace multiple consecutive <br> tags with a single <br>
+    html = html.replace(/(<br\s*\/?>\s*){2,}/gi, '<br>');
+
+    // Remove any existing <p> tags to avoid nested paragraphs
+    html = html.replace(/<\/?p[^>]*>/gi, '');
+
+    // Replace <br> tags with closing and opening paragraph tags
+    html = html.replace(/(?:<br\s*\/?>)+/gi, '</p><p>');
+
+    // Ensure the entire content is wrapped in a single <p> if it doesn't already start/end with <p>
+    if (!html.startsWith('<p>')) {
+      html = `<p>${html}`;
+    }
+    if (!html.endsWith('</p>')) {
+      html = `${html}</p>`;
+    }
+
+    return html;
   }
 
 
 
+
+  private handleImagePaste(file: File): void {
+    const reader = new FileReader();
+    reader.onload = (event: ProgressEvent<FileReader>) => {
+      const imageUrl = event.target?.result as string;
+      const img = `<img src="${imageUrl}" alt="Pasted Image" style="max-width:100%; height:auto;">`;
+      this.contentService.insertHtmlAtCursor(img);
+    };
+    reader.readAsDataURL(file);
+  }
   @HostListener('mouseup')
   @HostListener('keyup')
   public onSelectionChange(): void {
@@ -150,50 +227,106 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
     this.showContextMenu = true;
   }
 
+
+
   // Open image edit modal with selected image data
   public openImageEdit(): void {
     if (this.selectedImage) {
-      const imageData: ImageInternalData = {
-        url: this.selectedImage.src,
-        alt: this.selectedImage.alt,
-        width: this.selectedImage.width || null,
-        height: this.selectedImage.height || null,
-        border: parseInt(this.selectedImage.style.borderWidth || '0', 10),
-        hPadding: parseInt(this.selectedImage.style.paddingLeft || '0', 10),
-        vPadding: parseInt(this.selectedImage.style.paddingTop || '0', 10),
-        alignment: this.selectedImage.style.textAlign || 'left',
-      };
+
+      this.imageService.setSelectedImageOnEditor(this.imageHtmlElementImageModalComponentMapper.mapImageHtmlElementToImageModalComponent(this.selectedImage));
+
+      const imageData = this.imageHtmlElementImageModalComponentMapper.mapImageHtmlElementToImageModalComponent(this.selectedImage);
+
+      console.log('imageData', imageData);
       this.requestImageEdit.emit(imageData);
+      this.editPicture.emit();
+      this.showImageModal = true;
       this.showContextMenu = false; // Close context menu after selection
     }
   }
 
   public insertImageFromUrl(imageData: ImageInternalData): void {
-    const img = document.createElement('img');
-    img.src = imageData.url;
-    img.alt = imageData.alt || '';
-    img.style.width = imageData.width ? `${imageData.width}px` : 'auto';
-    img.style.height = imageData.height ? `${imageData.height}px` : 'auto';
-    img.style.borderWidth = `${imageData.border}px`;
-    img.style.padding = `${imageData.vPadding}px ${imageData.hPadding}px`;
-    img.style.textAlign = imageData.alignment ?? 'left';
-
-    const selection = window.getSelection();
-    if (selection && selection.rangeCount > 0) {
-      const range = selection.getRangeAt(0);
-      range.insertNode(img);
-      range.collapse(false);
-    }
+    this.contentService.insertImageFromUrl(imageData);
   }
 
   public getEditorContent(): string {
-    return this.editorWysiwyg.nativeElement.innerHTML;
+    return this.splitIntoParagraphs(this.editorWysiwyg.nativeElement.innerHTML);
   }
 
   public setEditorContent(event: Event): void {
     const content = (event.target as HTMLInputElement).value;
-    this.editorWysiwyg.nativeElement.innerHTML = content;
+    this.editorWysiwyg.nativeElement.innerHTML = this.splitIntoParagraphs(content);
   }
+
+  /**
+   * Moves the trailing <br> from inside a <p> tag to outside it,
+   * and then adds an extra empty paragraph (<p>&nbsp;</p>) after.
+   *
+   * Example:
+   * Input:
+   *   <p ...>Some text<br></p>
+   *
+   * Output:
+   *   <p ...>Some text</p><br><p>&nbsp;</p>
+   *
+   * @param input - The HTML string to transform
+   * @returns The transformed HTML string
+   */
+  public fixParagraphWithBrAndSpace(input: string): string {
+    // Regex Explanation:
+    //
+    // 1) (<p[^>]*>)    : Captures the opening <p> tag with any attributes.
+    // 2) ([\s\S]*?)    : Captures all content within <p>, in a non-greedy manner.
+    // 3) (<br\s*\/?>)  : Matches <br> or <br/>, capturing it.
+    // 4) \s*<\/p>      : Matches optional whitespace, then the closing </p> tag.
+    //
+    // Replacement:
+    //   $1$2</p><br><p>&nbsp;</p>
+    //
+    // This effectively:
+    //   1) Keeps the opening <p> and any attributes ($1)
+    //   2) Keeps all paragraph content ($2)
+    //   3) Closes the paragraph (</p>)
+    //   4) Moves the <br> outside the </p>
+    //   5) Adds an extra empty paragraph <p>&nbsp;</p>
+
+    const pattern = /(<p[^>]*>)([\s\S]*?)(<br\s*\/?>)\s*<\/p>/g;
+    return input.replace(pattern, '$1$2</p>$3<p>&nbsp;</p>');
+  }
+
+
+  public splitIntoParagraphs(htmlContent: string): string {
+
+
+
+
+    // Step 1: Remove any improperly nested <p> tags
+    let cleanedContent = htmlContent.replace(/<p>\s*<p[^>]*>/gi, '<p>'); // Replace nested opening <p> tags
+    cleanedContent = cleanedContent.replace(/<\/p>\s*<\/p>/gi, '</p>'); // Replace nested closing </p> tags
+    cleanedContent = cleanedContent.replace(/<\/p>\s*<p>/gi, '</p><p>'); // Ensure proper separation of paragraphs
+
+    // Step 2: Replace consecutive <br> tags with a marker for splitting
+    const marker = '###SPLIT###';
+    cleanedContent = cleanedContent.replace(/(<br\s*\/?>\s*){2,}/gi, marker);
+
+    // Step 3: Split the content by the marker
+    const parts = cleanedContent.split(marker).map(part => part.trim());
+
+    // Step 4: Wrap each part in a <p> tag, ensuring no nested <p> tags
+    const structuredContent = parts
+      .filter(part => part !== '') // Ignore empty parts
+      .map(part => `<p>${part}</p>`)
+      .join('');
+
+    // Step 5: Final cleanup to ensure no invalid nesting remains
+    //return structuredContent.replace(/<p>\s*<\/p>/g, ''); // Remove empty <p> tags
+    console.log('htmlContent:1', htmlContent);
+    htmlContent = this.fixParagraphWithBrAndSpace(htmlContent);
+    console.log('htmlContent:2', htmlContent);
+    return htmlContent;
+  }
+
+
 
   ngAfterViewInit(): void {
 
@@ -278,39 +411,7 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
   }
 
   // Method to listen to changes and enforce the placeholder
-
-
-
-
-  public imageUrl: string = '';
-  public altText: string = '';
-  public width: number | null = null;
-  public height: number | null = null;
-  public border: number = 0;
-  public hPadding: number = 0;
-  public vPadding: number = 0;
-  public alignment: string = 'left';
-
   public showImageModal: boolean = false;
-
-
-  public openImageModalForEdit(): void {
-    if (this.selectedImage) {
-      this.imageUrl = this.selectedImage.src;
-      this.altText = this.selectedImage.alt;
-      this.width = this.selectedImage.width || null;
-      this.height = this.selectedImage.height || null;
-      this.border = parseInt(this.selectedImage.style.borderWidth || '0', 10);
-      this.hPadding = parseInt(this.selectedImage.style.paddingLeft || '0', 10);
-      this.vPadding = parseInt(this.selectedImage.style.paddingTop || '0', 10);
-      this.alignment = this.selectedImage.style.textAlign || 'left';
-
-      this.showImageModal = true; // Show the modal
-    }
-  }
-
-
-
 
 
   public deleteImage(): void {
@@ -319,24 +420,4 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
       //this.showContextMenu = false;
     }
   }
-
-  public applyImageEdits(): void {
-    if (this.selectedImage) {
-      this.selectedImage.src = this.imageUrl;
-      this.selectedImage.alt = this.altText;
-      this.selectedImage.style.width = this.width ? `${this.width}px` : 'auto';
-      this.selectedImage.style.height = this.height ? `${this.height}px` : 'auto';
-      this.selectedImage.style.borderWidth = `${this.border}px`;
-      this.selectedImage.style.padding = `${this.vPadding}px ${this.hPadding}px`;
-      this.selectedImage.style.textAlign = this.alignment;
-    }
-    this.closeImageModal();
-  }
-
-  public closeImageModal(): void {
-    this.showImageModal = false;
-  }
-
-
-
 }
