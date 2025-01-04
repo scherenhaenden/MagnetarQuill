@@ -1,11 +1,17 @@
+app-root {
+  background: black;
+}
+
+
 /* Root app component styles */
 .app-container {
   display: flex;
   justify-content: center;   /* Horizontally center */
   align-items: flex-start;   /* Align to the top for natural scrolling */
-  min-height: 100vh;         /* Allow the container to grow beyond viewport if needed */
+  min-height: 200vh;         /* Allow the container to grow beyond viewport if needed */
   padding: 20px;             /* Extra padding for breathing room */
   background-color: #f0f0f0; /* Light background to contrast the editor */
+  background: black;
   overflow: auto;            /* Auto-scroll if content overflows */
 }
 
@@ -18,5 +24,5 @@
   background-color: white;   /* Editor background */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
   overflow-y: auto;          /* Scroll vertically inside the editor if content overflows */
-  max-height: 90vh;          /* Keep within the viewport but allow for more content */
+  max-height: 2000vh;          /* Keep within the viewport but allow for more content */
 }
