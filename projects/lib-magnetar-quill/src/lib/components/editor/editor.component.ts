@@ -320,9 +320,9 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
 
     // Step 5: Final cleanup to ensure no invalid nesting remains
     //return structuredContent.replace(/<p>\s*<\/p>/g, ''); // Remove empty <p> tags
-    console.log('htmlContent:1', htmlContent);
+    //console.log('htmlContent:1', htmlContent);
     htmlContent = this.fixParagraphWithBrAndSpace(htmlContent);
-    console.log('htmlContent:2', htmlContent);
+    //console.log('htmlContent:2', htmlContent);
     return htmlContent;
   }
 
