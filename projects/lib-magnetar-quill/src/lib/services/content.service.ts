@@ -78,4 +78,26 @@ export class ContentService {
   }
 
 
+  public getSelectedElements(): HTMLElement[] {
+    const selection = window.getSelection();
+    const elements: HTMLElement[] = [];
+    if (selection && !selection.isCollapsed) {
+      const range = selection.getRangeAt(0);
+      let container: Node = range.commonAncestorContainer;
+      if (container.nodeType === Node.TEXT_NODE) {
+        container = container.parentElement as HTMLElement;
+      }
+      if (container instanceof HTMLElement) {
+        if (container.tagName === 'P') {
+          elements.push(container);
+        } else {
+          container.querySelectorAll('p').forEach(paragraph => elements.push(paragraph));
+        }
+      }
+    }
+    return elements;
+  }
+
+
+
 }
