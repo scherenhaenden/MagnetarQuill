@@ -30,8 +30,6 @@ import {ImageService} from "../../services/image.service";
 })
 export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoCheck {
 
-
-
   @ViewChild('editorWysiwyg', { static: true }) public editorWysiwyg!: ElementRef<HTMLDivElement>;
   @ViewChild('editorHtml', { static: true }) public editorHtml!: ElementRef<HTMLTextAreaElement>;
   public editorHtmlContent: string = '';
