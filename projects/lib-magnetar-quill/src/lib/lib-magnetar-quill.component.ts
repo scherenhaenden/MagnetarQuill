@@ -18,11 +18,12 @@ import {NgIf} from "@angular/common";
 import {ImageModalComponentModel} from "./models/image-modal-component-model";
 import {ImageService} from "./services/image.service";
 import {FormattingService} from "./services/formatting.service";
+import {ClickOutsideDirective} from "./directives/click-outside.directive";
 
 @Component({
   selector: 'magnetar-quill',
   standalone: true,
-    imports: [ToolbarComponent, EditorComponent, ImageModalComponent, NgIf],
+  imports: [ToolbarComponent, EditorComponent, ImageModalComponent, NgIf, ClickOutsideDirective],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './lib-magnetar-quill.component.html',
   styleUrl: './lib-magnetar-quill.component.less'
@@ -32,6 +33,18 @@ export class LibMagnetarQuillComponent implements OnInit, OnDestroy {
   public updateModel: ImageModalComponentModel = new ImageModalComponentModel();
 
   public showImageModal: boolean = false;
+  @ViewChild('imageModelComponent') imageModalRef!: ImageModalComponent;
+
+  public closeModal(): void {
+    if(this.showImageModal) {
+      this.showImageModal = false;
+
+    }
+
+  }
+
+
+
   //public imageModalComponentModel!: ImageModalComponentModel;
   private _imageModalComponentModel!: ImageModalComponentModel;
 
@@ -147,4 +160,6 @@ export class LibMagnetarQuillComponent implements OnInit, OnDestroy {
       }
     }
   }
+
+
 }

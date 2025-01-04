@@ -246,7 +246,8 @@ Please read our [Contributing Guidelines](CONTRIBUTING.md) for more details.
 
 ## **License** 📄
 
-MagnetarQuill is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for more information.
+MagnetarQuill is licensed under the **Creative Commons Attribution 4.0 International (CC BY 4.0)** License. You are free to use, distribute, and build upon this work, as long as proper attribution is given. See the [LICENSE](LICENSE) file for more details.
+
 
 ---
 
