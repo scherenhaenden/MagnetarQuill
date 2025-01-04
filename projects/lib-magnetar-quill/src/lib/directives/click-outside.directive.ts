@@ -1,5 +1,4 @@
 import {Directive, ElementRef, EventEmitter, HostListener, OnDestroy, Output} from '@angular/core';
-import {debounceTime, filter, fromEvent, Subscription} from "rxjs";
 
 @Directive({
   selector: '[libClickOutside]',
@@ -10,19 +9,12 @@ export class ClickOutsideDirective {
   private debounceTimer: any = null; // Tracks the debounce timer
 
   private runnerNonAcceptingDuringthisTime = true;
-  private didThisRun = false;
 
   constructor(private elementRef: ElementRef) {}
 
   @HostListener('document:click', ['$event.target'])
   public onDocumentClick(targetElement: HTMLElement): void {
-
-    console.warn("ClickOutsideDirective event listener called");
-
     const clickedInside = this.elementRef.nativeElement.contains(targetElement);
-    console.warn("ClickOutsideDirective clicked inside?", clickedInside);
-
-    console.warn("ClickOutsideDirective event listener called", clickedInside);
     if (!clickedInside) {
 
       if (this.runnerNonAcceptingDuringthisTime) {
@@ -38,17 +30,12 @@ export class ClickOutsideDirective {
     }
   }
 
-  private startDebounce(): void {
-    this.debounceTimer = setTimeout(() => {
-      this.debounceTimer = null; // Clear the timer after the debounce time
-    }, 500); // Debounce time in milliseconds
-  }
+
 
   private async setRunnerAesTrueAfterTaskRan(): Promise<void> {
     await this.runnerTask();
     this.runnerNonAcceptingDuringthisTime = false;
   }
-
 
 
   private runnerTask(): Promise<void> {

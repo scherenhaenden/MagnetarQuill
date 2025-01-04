@@ -35,34 +35,6 @@ export class LibMagnetarQuillComponent implements OnInit, OnDestroy {
   public showImageModal: boolean = false;
   @ViewChild('imageModelComponent') imageModalRef!: ImageModalComponent;
 
-
-  // Listen for clicks on the document
-  @HostListener('document:click', ['$event'])
-  public onDocumentClick(event: MouseEvent): void {
-
-    if(this.showImageModal && this.imageModalRef !== null && this.imageModalRef !== undefined) {
-
-      //this.imageModalRef.
-
-
-
-      //console.log('this.imageModalRef', this.imageModalRef);
-      //console.log('event',event);
-
-      // if clicked outside of the htmlelement
-
-
-
-      /*const clickedInside = this.imageModalRef?.nativeElement.contains(event.target);
-      if (!clickedInside && this.showImageModal) {
-        this.showImageModal = false;
-      }*/
-
-    }
-
-
-  }
-
   public closeModal(): void {
     if(this.showImageModal) {
       this.showImageModal = false;

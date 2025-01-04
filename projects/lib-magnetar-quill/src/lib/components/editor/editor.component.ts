@@ -16,6 +16,7 @@ import {FormsModule} from "@angular/forms";
 import {ImageModalComponentModel} from "../../models/image-modal-component-model";
 import {ImageHtmlElementImageModalComponentMapper} from "../../mappers/image-html-element-image-modal-component-mapper";
 import {ImageService} from "../../services/image.service";
+import {ClickOutsideDirective} from "../../directives/click-outside.directive";
 
 @Component({
   selector: 'lib-editor',
@@ -23,7 +24,8 @@ import {ImageService} from "../../services/image.service";
   imports: [
     NgIf,
     NgClass,
-    FormsModule
+    FormsModule,
+    ClickOutsideDirective
   ],
   templateUrl: './editor.component.html',
   styleUrl: './editor.component.less'
@@ -225,6 +227,10 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
     this.showContextMenu = true;
   }
 
+  public hideContextMenu(): void {
+    this.showContextMenu = false;
+  }
+
 
 
   // Open image edit modal with selected image data
@@ -235,7 +241,6 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
 
       const imageData = this.imageHtmlElementImageModalComponentMapper.mapImageHtmlElementToImageModalComponent(this.selectedImage);
 
-      console.log('imageData', imageData);
       this.requestImageEdit.emit(imageData);
       this.editPicture.emit();
       this.showImageModal = true;

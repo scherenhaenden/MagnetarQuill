@@ -18,8 +18,6 @@
 <lib-image-modal
   #imageModelComponent
   *ngIf="showImageModal"
-  libClickOutside
-  (clickOutside)="closeModal()"
   [imageModalComponentModel]="this.imageService.selectedImage()!"
   (cancel)="clearImageToEdit()" >
 

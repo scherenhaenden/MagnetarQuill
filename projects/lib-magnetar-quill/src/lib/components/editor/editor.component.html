@@ -39,6 +39,10 @@
 <!-- Context Menu -->
 <div *ngIf="showContextMenu"
      class="context-menu"
+     libClickOutside
+     (clickOutside)="hideContextMenu()"
+
+
      [style.top.px]="contextMenuPosition.y"
      [style.left.px]="contextMenuPosition.x">
   <button (click)="openImageEdit()">Edit Properties</button>
