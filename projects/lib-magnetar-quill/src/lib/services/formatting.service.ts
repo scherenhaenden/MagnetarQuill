@@ -32,12 +32,17 @@ export class FormattingService {
 
   // General toggle function to apply or remove styles based on current active state
   private toggler(activeSignal: WritableSignal<boolean>, styleName: string, value: string): void {
+    console.log('activeSignal', activeSignal())
+    console.log('styleName', styleName)
+    console.log('value', value)
     if (activeSignal()) {
       this.removeFormatting(styleName, value);
+      activeSignal.set(false)
     } else {
       this.applyStyle(styleName, value);
+      activeSignal.set(true)
     }
-    activeSignal.update(active => !active);
+    //activeSignal.update(active => !active);
   }
 
 
