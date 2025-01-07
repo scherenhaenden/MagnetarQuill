@@ -98,6 +98,4 @@ export class ContentService {
     return elements;
   }
 
-
-
 }
