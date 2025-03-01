@@ -16,6 +16,7 @@ import {FormsModule} from "@angular/forms";
 import {ImageModalComponentModel} from "../../models/image-modal-component-model";
 import {ImageHtmlElementImageModalComponentMapper} from "../../mappers/image-html-element-image-modal-component-mapper";
 import {ImageService} from "../../services/image.service";
+import {ClickOutsideDirective} from "../../directives/click-outside.directive";
 
 @Component({
   selector: 'lib-editor',
@@ -23,14 +24,13 @@ import {ImageService} from "../../services/image.service";
   imports: [
     NgIf,
     NgClass,
-    FormsModule
+    FormsModule,
+    ClickOutsideDirective
   ],
   templateUrl: './editor.component.html',
   styleUrl: './editor.component.less'
 })
 export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoCheck {
-
-
 
   @ViewChild('editorWysiwyg', { static: true }) public editorWysiwyg!: ElementRef<HTMLDivElement>;
   @ViewChild('editorHtml', { static: true }) public editorHtml!: ElementRef<HTMLTextAreaElement>;
@@ -227,6 +227,10 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
     this.showContextMenu = true;
   }
 
+  public hideContextMenu(): void {
+    this.showContextMenu = false;
+  }
+
 
 
   // Open image edit modal with selected image data
@@ -237,7 +241,6 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
 
       const imageData = this.imageHtmlElementImageModalComponentMapper.mapImageHtmlElementToImageModalComponent(this.selectedImage);
 
-      console.log('imageData', imageData);
       this.requestImageEdit.emit(imageData);
       this.editPicture.emit();
       this.showImageModal = true;
@@ -320,9 +323,9 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
 
     // Step 5: Final cleanup to ensure no invalid nesting remains
     //return structuredContent.replace(/<p>\s*<\/p>/g, ''); // Remove empty <p> tags
-    console.log('htmlContent:1', htmlContent);
+    //console.log('htmlContent:1', htmlContent);
     htmlContent = this.fixParagraphWithBrAndSpace(htmlContent);
-    console.log('htmlContent:2', htmlContent);
+    //console.log('htmlContent:2', htmlContent);
     return htmlContent;
   }
 
