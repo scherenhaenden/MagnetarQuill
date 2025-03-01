@@ -184,6 +184,24 @@ export class FormattingService {
   }
 
 
+  /**
+   * Removes the specified formatting from the selected text in the document.
+   * This method searches for all `<span>` elements within the current selection
+   * and unwraps those that have a specific style property set to a given value.
+   *
+   * @param {string} styleName - The name of the CSS style property to check against.
+   * @param {string} value - The value of the CSS style property that should be removed.
+   *
+   * @returns {void} This method does not return a value.
+   *
+   * @throws {Error} Throws an error if the selection is invalid or if there are issues
+   *                 accessing the document's selection.
+   *
+   * @example
+   * // Example usage:
+   * removeFormatting('color', 'red');
+   * // This will remove all spans with red text color from the current selection.
+   */
   public removeFormatting(styleName: string, value: string): void {
     const selection = window.getSelection();
     if (selection && selection.rangeCount > 0) {
