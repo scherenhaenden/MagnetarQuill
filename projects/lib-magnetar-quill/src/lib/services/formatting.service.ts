@@ -184,7 +184,7 @@ export class FormattingService {
   }
 
 
-  private removeFormatting(styleName: string, value: string): void {
+  public removeFormatting(styleName: string, value: string): void {
     const selection = window.getSelection();
     if (selection && selection.rangeCount > 0) {
       const range = selection.getRangeAt(0);
