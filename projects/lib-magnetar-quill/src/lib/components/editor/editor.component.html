@@ -18,7 +18,10 @@
   [ngClass]="{ 'fixed-height': isFixedHeight, 'auto-expand': !isFixedHeight }"
   (focus)="scrollToTopOnFocus()"
   (paste)="onPaste($event)"
-  (input)="onContentChange(editorWysiwyg.innerHTML)">
+  (input)="onContentChange(editorWysiwyg.innerHTML)"
+  (keydown)="onContentChange(editorWysiwyg.innerHTML)"
+
+>
   <!-- User content goes here -->
 </div>
 

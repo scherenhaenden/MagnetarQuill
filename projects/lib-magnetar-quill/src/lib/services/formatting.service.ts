@@ -10,25 +10,31 @@ export class FormattingService {
   public italicActive = signal(false);
   public underlineActive = signal(false);
   public strikethroughActive = signal(false);
+  public strongActive = signal(false);
 
   constructor() { }
 
 
   // Method to update formatting states based on the current selection
   public updateFormatStates(): void {
-
     const selection = window.getSelection();
-
     if (selection && selection.rangeCount > 0) {
-      const container = selection.getRangeAt(0).commonAncestorContainer.parentElement;
-      if (container) {
+      let container: Node | null = selection.getRangeAt(0).commonAncestorContainer;
+      while (container && container.nodeType !== Node.ELEMENT_NODE) {
+        container = container.parentNode;
+      }
+      if (container instanceof HTMLElement) {
         this.boldActive.set(container.style.fontWeight === 'bold');
         this.italicActive.set(container.style.fontStyle === 'italic');
         this.underlineActive.set(container.style.textDecoration.includes('underline'));
         this.strikethroughActive.set(container.style.textDecoration.includes('line-through'));
+        // Check if the container is a <strong> element
+        this.strongActive.set(container.tagName.toLowerCase() === 'strong');
       }
     }
   }
+
+
 
   // General toggle function to apply or remove styles based on current active state
   private toggler(activeSignal: WritableSignal<boolean>, styleName: string, value: string): void {
@@ -46,6 +52,42 @@ export class FormattingService {
   public toggleBold(): void {
     this.toggler(this.boldActive, 'font-weight', 'bold');
   }
+
+  public toggleStrong(): void {
+    const selection = window.getSelection();
+    if (!selection || selection.rangeCount === 0) {
+      return;
+    }
+
+    const range = selection.getRangeAt(0);
+    let currentElement: Node | null = range.commonAncestorContainer;
+    // Traverse up until we get an element node
+    while (currentElement && currentElement.nodeType !== Node.ELEMENT_NODE) {
+      currentElement = (currentElement as Element).parentElement;
+    }
+
+    if (currentElement instanceof HTMLElement && currentElement.tagName.toLowerCase() === 'strong') {
+      // Unwrap the <strong> element and update the signal
+      this.unwrap(currentElement);
+      this.strongActive.set(false);
+    } else {
+      // Wrap the selected content in a <strong> element
+      const strongElement = document.createElement('strong');
+      strongElement.appendChild(range.extractContents());
+      range.insertNode(strongElement);
+
+      // Adjust the selection to cover the new <strong> element
+      selection.removeAllRanges();
+      const newRange = document.createRange();
+      newRange.selectNodeContents(strongElement);
+      selection.addRange(newRange);
+
+      this.strongActive.set(true);
+    }
+  }
+
+
+
 
   public toggleItalic(): void {
     this.toggler(this.italicActive, 'font-style', 'italic');
@@ -170,5 +212,7 @@ export class FormattingService {
       range.insertNode(fragment);
     }
   }
+
+
 
 }
