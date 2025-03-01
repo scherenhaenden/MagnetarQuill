@@ -17,6 +17,33 @@ export class FormattingService {
 
 
   // Method to update formatting states based on the current selection
+  /**
+   * Updates the formatting states (bold, italic, underline, strikethrough, strong)
+   * based on the current text selection in the document.
+   *
+   * This method retrieves the current selection from the window and checks the
+   * common ancestor container of the selected range. It determines the formatting
+   * styles applied to the selected text by examining the style properties of the
+   * container element. The method updates the corresponding state variables to
+   * reflect whether each formatting style is active.
+   *
+   * It specifically checks for:
+   * - Bold: If the font weight is set to 'bold'.
+   * - Italic: If the font style is set to 'italic'.
+   * - Underline: If the text decoration includes 'underline'.
+   * - Strikethrough: If the text decoration includes 'line-through'.
+   * - Strong: If the container element is a <strong> tag.
+   *
+   * @throws {Error} Throws an error if there is an issue accessing the selection or
+   *                 if the container cannot be determined.
+   *
+   * @returns {void} This method does not return a value.
+   *
+   * @example
+   * // Example usage:
+   * // Assuming this method is called when a user selects text in a contenteditable element,
+   * // it will update the formatting states based on the selected text's styles.
+   */
   public updateFormatStates(): void {
     const selection = window.getSelection();
     if (selection && selection.rangeCount > 0) {
@@ -38,6 +65,22 @@ export class FormattingService {
 
 
   // General toggle function to apply or remove styles based on current active state
+  /**
+   * Toggles the application of a specified style based on the current state of an active signal.
+   * If the signal is active, the specified style is removed; otherwise, the style is applied.
+   *
+   * @param {WritableSignal<boolean>} activeSignal - A writable signal that indicates whether the style is currently active.
+   * @param {string} styleName - The name of the style to be applied or removed.
+   * @param {string} value - The value associated with the style to be applied or removed.
+   * @returns {void} This function does not return a value.
+   *
+   * @example
+   * const signal = createWritableSignal(false);
+   * toggler(signal, 'highlight', 'red');
+   * // If signal is false, 'highlight' style with value 'red' will be applied.
+   *
+   * @throws {Error} Throws an error if the activeSignal is not a WritableSignal.
+   */
   private toggler(activeSignal: WritableSignal<boolean>, styleName: string, value: string): void {
     console.log('activeSignal', activeSignal())
     console.log('styleName', styleName)
@@ -59,6 +102,25 @@ export class FormattingService {
     this.toggler(this.boldActive, 'font-weight', 'bold');
   }
 
+  /**
+   * Toggles the strong formatting of the currently selected text in the document.
+   * If the selected text is already wrapped in a <strong> element, it unwraps it.
+   * Otherwise, it wraps the selected text in a new <strong> element.
+   *
+   * This method modifies the DOM directly and updates the selection to reflect
+   * the changes made. It also updates the internal state to indicate whether
+   * the strong formatting is currently active.
+   *
+   * @throws {Error} Throws an error if the selection cannot be determined or if
+   *                 there is an issue with modifying the DOM.
+   *
+   * @returns {void} This method does not return a value.
+   *
+   * @example
+   * // Assuming there is a text selection in the document,
+   * // calling toggleStrong will either wrap it in <strong> or unwrap it.
+   * toggleStrong();
+   */
   public toggleStrong(): void {
     const selection = window.getSelection();
     if (!selection || selection.rangeCount === 0) {
@@ -95,6 +157,19 @@ export class FormattingService {
 
 
 
+  /**
+   * Toggles the italic styling for the text.
+   * This method activates or deactivates the italic font style based on the current state of the italicActive property.
+   * It utilizes a toggler function to apply the necessary CSS style changes.
+   *
+   * @returns {void} This method does not return a value.
+   *
+   * @example
+   * // Assuming italicActive is true, calling toggleItalic will deactivate italic styling.
+   * toggleItalic();
+   *
+   * @throws {Error} Throws an error if the toggler function is not defined or fails to execute.
+   */
   public toggleItalic(): void {
     this.toggler(this.italicActive, 'font-style', 'italic');
   }

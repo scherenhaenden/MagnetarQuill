@@ -87,6 +87,21 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
 
   }
 
+  /**
+   * Handles the change in content by updating the service with the new HTML content.
+   * This method normalizes line breaks, splits the content into paragraphs,
+   * and ensures that the placeholder is maintained.
+   *
+   * @param {string} htmlContent - The HTML content that has been updated.
+   * @returns {void} This method does not return a value.
+   *
+   * @example
+   * // Example usage of onContentChange
+   * const newContent = "<p>New paragraph.</p>";
+   * instance.onContentChange(newContent);
+   *
+   * @throws {Error} Throws an error if the content cannot be processed.
+   */
   public onContentChange(htmlContent: string): void {
     // Update the content in the service whenever it changes
 
@@ -332,6 +347,21 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
   }
 
 
+  /**
+   * Splits the provided HTML content into properly structured paragraphs.
+   * This method cleans up improperly nested <p> tags, replaces consecutive
+   * <br> tags with a marker for splitting, and wraps each part in <p> tags.
+   *
+   * @param {string} htmlContent - The HTML content to be processed.
+   * @returns {string} The structured HTML content with paragraphs properly formatted.
+   *
+   * @example
+   * const input = "<p>First paragraph.<br><br>Second paragraph.</p>";
+   * const output = splitIntoParagraphs(input);
+   * // output will be "<p>First paragraph.</p><p>Second paragraph.</p>"
+   *
+   * @throws {Error} Throws an error if the input content is not a valid string.
+   */
   public splitIntoParagraphs(htmlContent: string): string {
 
 
