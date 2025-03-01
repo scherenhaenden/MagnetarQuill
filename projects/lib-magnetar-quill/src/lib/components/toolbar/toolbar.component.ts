@@ -15,6 +15,7 @@ import { FormsModule } from "@angular/forms";
 import { ImageInternalData } from "../../models/image-internal-data";
 import {ImageModalComponent} from "../image-modal/image-modal.component";
 import {ImageModalComponentModel} from "../../models/image-modal-component-model";
+import {ContentService} from "../../services/content.service";
 
 @Component({
   selector: 'lib-toolbar',
@@ -46,7 +47,9 @@ export class ToolbarComponent implements OnInit, OnDestroy {
   public vPadding: number = 0;
   public alignment: string = 'left';
 
-  constructor(public formattingService: FormattingService) {}
+  constructor(public formattingService: FormattingService,
+              private contentService: ContentService
+              ) {}
 
   // Lifecycle Hooks
   ngOnInit(): void {
@@ -108,7 +111,7 @@ export class ToolbarComponent implements OnInit, OnDestroy {
 
       // Handle multi-paragraph selections by splitting the range
       if (container instanceof HTMLElement) {
-        const paragraphs = this.splitRangeIntoParagraphs(range);
+        const paragraphs = this.formattingService.splitRangeIntoParagraphs(range);
 
         paragraphs.forEach((paragraph) => {
           if (paragraph instanceof HTMLElement && paragraph.tagName === 'P') {
@@ -142,41 +145,13 @@ export class ToolbarComponent implements OnInit, OnDestroy {
         container.style.textAlign = alignment;
       } else {
         // Traverse up the DOM to find the nearest parent <p> element
-        const parentParagraph = this.findParentParagraph(container as HTMLElement);
+        const parentParagraph = this.formattingService.findParentParagraph(container as HTMLElement);
         if (parentParagraph) {
           parentParagraph.style.textAlign = alignment;
         }
       }
     }
   }
-
-  // Helper: Split the selected range into individual paragraphs
-  private splitRangeIntoParagraphs(range: Range): HTMLElement[] {
-    const fragment = range.cloneContents();
-    const paragraphs: HTMLElement[] = [];
-
-    fragment.childNodes.forEach((node) => {
-      if (node instanceof HTMLElement && node.tagName === 'P') {
-        paragraphs.push(node);
-      } else if (node.nodeType === Node.TEXT_NODE) {
-        // Wrap standalone text in a <p> for consistency
-        const wrapper = document.createElement('p');
-        wrapper.textContent = node.textContent?.trim() || '';
-        paragraphs.push(wrapper);
-      }
-    });
-
-    return paragraphs;
-  }
-
-  // Helper method to find the nearest parent <p> element
-  private findParentParagraph(element: HTMLElement): HTMLElement | null {
-    while (element && element.tagName !== 'P') {
-      element = element.parentElement as HTMLElement;
-    }
-    return element?.tagName === 'P' ? element : null;
-  }
-
   public justifyContent(alignment: 'left' | 'center' | 'right' | 'justify'): void {
 
     console.log('justifyContent');
@@ -230,32 +205,6 @@ export class ToolbarComponent implements OnInit, OnDestroy {
   }
 
 
-  public applyStyle(styleName: string, value: string): void {
-    const selection = window.getSelection();
-    if (!selection || selection.rangeCount === 0) return;
-
-    const range = selection.getRangeAt(0);
-    const fragment = range.cloneContents();
-    const nodes = Array.from(fragment.childNodes);
-
-    nodes.forEach(node => {
-      if (node.nodeType === Node.ELEMENT_NODE) {
-        const element = node as HTMLElement;
-        element.style[styleName as any] = value;
-      } else {
-        // Wrap text nodes in a <span> to apply the style
-        const span = document.createElement('span');
-        span.style[styleName as any] = value;
-        span.textContent = node.textContent;
-        range.insertNode(span);
-      }
-    });
-
-    range.deleteContents();
-    range.insertNode(fragment);
-  }
-
-
 // Helper for checking if an element is block-level
   private isBlockElement(element: HTMLElement): boolean {
     const blockElements = ['P', 'DIV', 'SECTION', 'ARTICLE'];
@@ -265,7 +214,7 @@ export class ToolbarComponent implements OnInit, OnDestroy {
 
   public setLineSpacing(event: Event): void {
     const target = event.target as HTMLSelectElement;
-    const elements = this.getSelectedElements();
+    const elements = this.contentService.getSelectedElements();
     elements.forEach((element: HTMLElement) => element.style.lineHeight = target.value);
   }
 
@@ -293,7 +242,7 @@ export class ToolbarComponent implements OnInit, OnDestroy {
 
   public onBackgroundColorChange(event: Event): void {
     const target = event.target as HTMLInputElement;
-    const elements = this.getSelectedElements();
+    const elements = this.contentService.getSelectedElements();
     elements.forEach((element: HTMLElement) => element.style.backgroundColor = target.value);
   }
 
@@ -350,27 +299,6 @@ export class ToolbarComponent implements OnInit, OnDestroy {
       this.toggleSubscript();
     }
   }
-
-  private getSelectedElements(): HTMLElement[] {
-    const selection = window.getSelection();
-    const elements: HTMLElement[] = [];
-    if (selection && !selection.isCollapsed) {
-      const range = selection.getRangeAt(0);
-      let container: Node = range.commonAncestorContainer;
-      if (container.nodeType === Node.TEXT_NODE) {
-        container = container.parentElement as HTMLElement;
-      }
-      if (container instanceof HTMLElement) {
-        if (container.tagName === 'P') {
-          elements.push(container);
-        } else {
-          container.querySelectorAll('p').forEach(paragraph => elements.push(paragraph));
-        }
-      }
-    }
-    return elements;
-  }
-
 
   // Keydown Event for Formatting Shortcuts
   @HostListener('window:keydown', ['$event'])

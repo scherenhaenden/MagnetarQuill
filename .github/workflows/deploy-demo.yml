@@ -1,0 +1,40 @@
+name: Deploy Angular Library Demo
+
+on:
+  push:
+    branches:
+      - master  # Trigger Workflow bei Änderungen im main-Branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Code aus dem Repository holen
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Node.js installieren
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # 3. Abhängigkeiten installieren
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Library bauen
+      - name: Build Angular Library
+        run: npm run build-lib
+
+      # 5. Demo-Projekt mit Library bauen
+      - name: Build Demo Project
+        run: npm run build -- --base-href=/MagnetarQuill/
+
+      # 6. Dateien mit GitHub Pages veröffentlichen
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: dist/[projekt-name]

@@ -16,26 +16,11 @@
 
 
 <lib-image-modal
+  #imageModelComponent
   *ngIf="showImageModal"
   [imageModalComponentModel]="this.imageService.selectedImage()!"
-  (cancel)="clearImageToEdit()"
-></lib-image-modal>
+  (cancel)="clearImageToEdit()" >
 
-<!--
-(save)="saveChanges($event)"
-
-<lib-image-modal
-
-  *ngIf="showImageModal"
-  [isEditMode]="showImageModal"
-  [(imageModalComponentModel)]="imageModalComponentModel"
-  (cancel)="clearImageToEdit()"
-  (imageModalComponentModelChange)="imageModalComponentModel"
-
-
-></lib-image-modal>
-
-
--->
+</lib-image-modal>
 
 
