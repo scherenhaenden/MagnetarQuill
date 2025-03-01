@@ -27,6 +27,13 @@
     <input type="color" (change)="onBackgroundColorChange($event)" title="Background Color">
 
   <button
+    (click)="formattingService.toggleStrong()"
+    [class.active]="formattingService.strongActive()"
+    title="Bold">
+    <b>Strong</b>
+  </button>
+
+  <button
     (click)="formattingService.toggleBold()"
     [class.active]="formattingService.boldActive()"
     title="Bold">

@@ -89,6 +89,9 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
 
   public onContentChange(htmlContent: string): void {
     // Update the content in the service whenever it changes
+
+    htmlContent = this.fixParagraphWithBrAndSpace(htmlContent); // Normalize line breaks
+    htmlContent = this.splitIntoParagraphs(htmlContent);
     this.contentService.setEditorContent(htmlContent);
     this.ensurePlaceholder();
   }
@@ -297,10 +300,39 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
     return input.replace(pattern, '$1$2</p>$3<p>&nbsp;</p>');
   }
 
+  /**
+   * Splits paragraphs containing two or more consecutive <br> tags into
+   * multiple paragraphs.
+   *
+   * @param input The HTML string to transform
+   * @returns The transformed HTML string
+   */
+  public fixParagraphWithMultipleBrs(input: string): string {
+    const paragraphPattern = /<p[^>]*>[\s\S]*?<\/p>/g;
+    return input.replace(paragraphPattern, (paragraph) => {
+      // Extract content within the <p> tags, excluding the tags themselves.
+      const content = paragraph.slice(paragraph.indexOf(">") + 1, paragraph.lastIndexOf("</p>"));
+
+      // Split the content by two or more <br> tags (with optional whitespace and /)
+      const brPattern = /(?:<br\s*\/?>\s*){2,}/gi;
+      const parts = content.split(brPattern);
+
+      // Reconstruct into separate paragraphs.  Add &nbsp; to empty paragraphs.
+      let result = '';
+      for (const part of parts) {
+        const trimmedPart = part.trim();
+        if (trimmedPart.length > 0) {
+          result += `<p>${trimmedPart}</p>`;
+        } else {
+          result += '<p>&nbsp;</p>';
+        }
+      }
+      return result;
+    });
+  }
+
 
   public splitIntoParagraphs(htmlContent: string): string {
-
-
 
 
     // Step 1: Remove any improperly nested <p> tags
