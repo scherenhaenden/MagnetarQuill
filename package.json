@@ -10,7 +10,8 @@
     "build-lib-watch": "nx build lib-magnetar-quill --watch --configuration development",
     "serve-with-lib": "nx build lib-magnetar-quill && nx serve --port 4200",
     "serve-with-lib-linux": "nx build lib-magnetar-quill --watch && nx serve --port 4200",
-    "test": "nx test"
+    "test": "nx test",
+    "lint": "nx lint"
   },
   "private": true,
   "dependencies": {

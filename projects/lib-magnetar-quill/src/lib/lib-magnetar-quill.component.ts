@@ -2,16 +2,13 @@ import {
   ChangeDetectorRef,
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
-  ElementRef, EventEmitter,
-  HostListener,
+  EventEmitter,
   Input,
-  OnDestroy,
-  OnInit, Output,
-  ViewChild, WritableSignal
+  Output,
+  ViewChild
 } from '@angular/core';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { EditorComponent } from "./components/editor/editor.component";
-import {ImageInternalData} from "./models/image-internal-data";
 import {ContentService} from "./services/content.service";
 import {ImageModalComponent} from "./components/image-modal/image-modal.component";
 import {NgIf} from "@angular/common";
@@ -28,7 +25,7 @@ import {ClickOutsideDirective} from "./directives/click-outside.directive";
   templateUrl: './lib-magnetar-quill.component.html',
   styleUrl: './lib-magnetar-quill.component.less'
 })
-export class LibMagnetarQuillComponent implements OnInit, OnDestroy {
+export class LibMagnetarQuillComponent {
 
   public updateModel: ImageModalComponentModel = new ImageModalComponentModel();
 
@@ -99,67 +96,4 @@ export class LibMagnetarQuillComponent implements OnInit, OnDestroy {
   public clearImageToEdit(): void {
     this.showImageModal = false;
   }
-
-
-  ngOnInit(): void {
-
-  }
-
-  ngOnDestroy(): void {
-  }
-
-
-  private getSelectedElements(): HTMLElement[] {
-    const selection = window.getSelection();
-    const elements: HTMLElement[] = [];
-
-    if (selection && !selection.isCollapsed) {
-      const range = selection.getRangeAt(0);
-      let container: Node = range.commonAncestorContainer;
-
-      // If the container is a text node, find its parent element
-      if (container.nodeType === Node.TEXT_NODE) {
-        container = container.parentElement as HTMLElement;
-      }
-
-      // Check if the container is a paragraph or contains multiple paragraphs
-      if (container instanceof HTMLElement) {
-        if (container.tagName === 'P') {
-          // Single paragraph
-          elements.push(container);
-        } else {
-          // Multiple paragraphs
-          const paragraphs = container.querySelectorAll('p');
-          paragraphs.forEach((paragraph: HTMLElement) => {
-            elements.push(paragraph);
-          });
-        }
-      }
-    }
-
-    return elements;
-  }
-
-  // Keydown event for shortcuts
-  @HostListener('window:keydown', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent): void {
-    if (event.ctrlKey || event.metaKey) {
-      switch (event.key.toLowerCase()) {
-        case 'b':
-          event.preventDefault();
-          this.formattingService.toggleBold();
-          break;
-        case 'i':
-          event.preventDefault();
-          this.formattingService.toggleItalic();
-          break;
-        case 'u':
-          event.preventDefault();
-          this.formattingService.toggleUnderline();
-          break;
-      }
-    }
-  }
-
-
 }

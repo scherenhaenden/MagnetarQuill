@@ -5,6 +5,7 @@
   "sourceRoot": "projects/lib-magnetar-quill/src",
   "prefix": "lib",
   "targets": {
+    /* ───────────────────── BUILD ───────────────────── */
     "build": {
       "executor": "@angular-devkit/build-angular:ng-packagr",
       "options": {
@@ -23,6 +24,7 @@
         "{workspaceRoot}/dist/lib-magnetar-quill"
       ]
     },
+
     "test": {
       "executor": "@angular-devkit/build-angular:karma",
       "options": {
@@ -31,6 +33,18 @@
           "zone.js",
           "zone.js/testing"
         ]
+      }
+    },
+
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+
+        "lintFilePatterns": [
+          "projects/lib-magnetar-quill/**/*.ts",
+          "projects/lib-magnetar-quill/**/*.html"
+        ],
+        "maxWarnings": -1
       }
     }
   }
