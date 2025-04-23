@@ -140,10 +140,10 @@ Open your browser at [http://localhost:4200](https://www.google.com/search?q=htt
 
 Inside the cloned project directory:
 
-  - `ng serve`: Start the development server.
-  - `ng build`: Build the library/project for production.
-  - `ng test`: Run unit tests.
-  - `ng lint`: Lint the codebase for errors.
+  - `nx serve`: Start the development server.
+  - `nx build`: Build the library/project for production.
+  - `nx test`: Run unit tests.
+  - `nx lint`: Lint the codebase for errors.
 
 -----
 
