@@ -1,13 +1,9 @@
 import {
   Component,
-  ElementRef,
   EventEmitter,
-  HostListener,
   Input,
-  OnDestroy,
-  OnInit,
   Output,
-  ViewChild, WritableSignal
+  WritableSignal
 } from '@angular/core';
 import { FormattingService } from "../../services/formatting.service";
 import { NgIf } from "@angular/common";
@@ -28,7 +24,7 @@ import {ContentService} from "../../services/content.service";
   templateUrl: './toolbar.component.html',
   styleUrl: './toolbar.component.less'
 })
-export class ToolbarComponent implements OnInit, OnDestroy {
+export class ToolbarComponent {
 
   // Toolbar properties
   @Output() toggleHtmlView = new EventEmitter<void>();
@@ -51,38 +47,29 @@ export class ToolbarComponent implements OnInit, OnDestroy {
               private contentService: ContentService
               ) {}
 
-  // Lifecycle Hooks
-  ngOnInit(): void {
-    document.addEventListener('keydown', this.handleShortcuts.bind(this));
-  }
-
-  ngOnDestroy(): void {
-    document.removeEventListener('keydown', this.handleShortcuts.bind(this));
-  }
-
   // Text Formatting Methods
   public toggleBold(): void {
-    this.formattingService.applyStyle('font-weight', 'bold');
+    this.formattingService.toggleBold();
   }
 
   public toggleItalic(): void {
-    this.formattingService.applyStyle('font-style', 'italic');
+    this.formattingService.toggleItalic();
   }
 
   public toggleUnderline(): void {
-    this.formattingService.applyStyle('text-decoration', 'underline');
+    this.formattingService.toggleUnderline();
   }
 
   public toggleStrikethrough(): void {
-    this.formattingService.applyStyle('text-decoration', 'line-through');
+    this.formattingService.toggleStrikethrough();
   }
 
   public toggleSuperscript(): void {
-    this.formattingService.wrapSelectionWithTag('sup');
+    this.formattingService.toggleSuperscript();
   }
 
   public toggleSubscript(): void {
-    this.formattingService.wrapSelectionWithTag('sub');
+    this.formattingService.toggleSubscript();
   }
 
   // List Formatting Methods
@@ -96,7 +83,6 @@ export class ToolbarComponent implements OnInit, OnDestroy {
 
   // Alignment and Spacing
   public setTextAlign(alignment: string): void {
-    //this.justifyContent(alignment as 'left' | 'center' | 'right' | 'justify');
 
     let selection = window.getSelection();
 
@@ -151,39 +137,6 @@ export class ToolbarComponent implements OnInit, OnDestroy {
         }
       }
     }
-  }
-  public justifyContent(alignment: 'left' | 'center' | 'right' | 'justify'): void {
-
-    console.log('justifyContent');
-
-
-    const selection = window.getSelection();
-    if (!selection || selection.rangeCount === 0) return;
-
-    const range = selection.getRangeAt(0);
-    const fragment = range.cloneContents();
-    const nodes = Array.from(fragment.childNodes);
-
-    nodes.forEach(node => {
-      if (node.nodeType === Node.ELEMENT_NODE) {
-        const element = node as HTMLElement;
-
-        // Apply alignment to block-level elements
-        if (this.isBlockElement(element)) {
-          element.style.textAlign = alignment;
-        } else {
-          // Wrap inline elements with <span>
-          const span = document.createElement('span');
-          span.style.textAlign = alignment;
-          span.appendChild(node.cloneNode(true));
-          range.insertNode(span);
-        }
-      }
-    });
-
-    // Remove the old content and replace it with justified content
-    range.deleteContents();
-    range.insertNode(fragment);
   }
 
   public wrapSelectionInBlock(blockTag: string): void {
@@ -286,38 +239,6 @@ export class ToolbarComponent implements OnInit, OnDestroy {
       span.style.cssText = '';
       span.appendChild(selectedText);
       range.insertNode(span);
-    }
-  }
-
-  // Helper Methods
-  private handleShortcuts(event: KeyboardEvent): void {
-    if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === '=') {
-      event.preventDefault();
-      this.toggleSuperscript();
-    } else if ((event.ctrlKey || event.metaKey) && event.key === '=') {
-      event.preventDefault();
-      this.toggleSubscript();
-    }
-  }
-
-  // Keydown Event for Formatting Shortcuts
-  @HostListener('window:keydown', ['$event'])
-  handleKeyboardEvent(event: KeyboardEvent): void {
-    if (event.ctrlKey || event.metaKey) {
-      switch (event.key.toLowerCase()) {
-        case 'b':
-          event.preventDefault();
-          this.toggleBold();
-          break;
-        case 'i':
-          event.preventDefault();
-          this.toggleItalic();
-          break;
-        case 'u':
-          event.preventDefault();
-          this.toggleUnderline();
-          break;
-      }
     }
   }
 

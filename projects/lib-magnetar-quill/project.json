@@ -1,0 +1,51 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "lib-magnetar-quill",
+  "projectType": "library",
+  "sourceRoot": "projects/lib-magnetar-quill/src",
+  "prefix": "lib",
+  "targets": {
+    /* ───────────────────── BUILD ───────────────────── */
+    "build": {
+      "executor": "@angular-devkit/build-angular:ng-packagr",
+      "options": {
+        "project": "projects/lib-magnetar-quill/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "projects/lib-magnetar-quill/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "projects/lib-magnetar-quill/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production",
+      "outputs": [
+        "{workspaceRoot}/dist/lib-magnetar-quill"
+      ]
+    },
+
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "tsConfig": "projects/lib-magnetar-quill/tsconfig.spec.json",
+        "polyfills": [
+          "zone.js",
+          "zone.js/testing"
+        ]
+      }
+    },
+
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "options": {
+
+        "lintFilePatterns": [
+          "projects/lib-magnetar-quill/**/*.ts",
+          "projects/lib-magnetar-quill/**/*.html"
+        ],
+        "maxWarnings": -1
+      }
+    }
+  }
+}
