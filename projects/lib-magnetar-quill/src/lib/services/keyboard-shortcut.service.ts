@@ -43,7 +43,7 @@ export class KeyboardShortcutService implements OnDestroy {
       console.error('FormattingService is not available in KeyboardShortcutService.');
       return;
     }
-    
+
     // Ignore shortcuts if typing inside an input, textarea etc., unless specifically allowed
     const targetElement = ev.target as HTMLElement;
     if (targetElement?.isContentEditable === false && ['INPUT', 'TEXTAREA', 'SELECT'].includes(targetElement?.tagName)) {
