@@ -26,7 +26,7 @@ export class KeyboardShortcutService implements OnDestroy {
     console.log('KeyboardShortcutService initialized and listener added.'); // Debug log
   }
 
-  /** remove listener when the service is destroyed */
+  /** @public */
   public ngOnDestroy(): void {
     window.removeEventListener('keydown', this.handleKeydown, true);
     this.destroy$.next();
