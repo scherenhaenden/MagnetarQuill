@@ -21,7 +21,7 @@
       <!-- Add more sizes as needed -->
     </select>
 
-    <button (click)="clearFormatting()" title="Clear Formatting">Clear</button>
+    <button (click)="formattingService.clearFormatting()" title="Clear Formatting">Clear</button>
 
     <input type="color" (change)="onTextColorChange($event)" title="Text Color">
     <input type="color" (change)="onBackgroundColorChange($event)" title="Background Color">
