@@ -82,9 +82,6 @@ export class FormattingService {
    * @throws {Error} Throws an error if the activeSignal is not a WritableSignal.
    */
   private toggler(activeSignal: WritableSignal<boolean>, styleName: string, value: string): void {
-    console.log('activeSignal', activeSignal())
-    console.log('styleName', styleName)
-    console.log('value', value)
     if (activeSignal()) {
       this.removeFormatting(styleName, value);
       activeSignal.set(false)
@@ -92,7 +89,6 @@ export class FormattingService {
       this.applyStyle(styleName, value);
       activeSignal.set(true)
     }
-    //activeSignal.update(active => !active);
   }
 
 
@@ -430,6 +426,24 @@ export class FormattingService {
     return element?.tagName === 'P' ? element : null;
   }
 
+  /** Retrieves paragraphs or list-items in selection or at caret */
+  private getTargetBlocks(): HTMLElement[] {
+    let elements = this.contentService.getSelectedElements();
+    if (elements.length === 0) {
+      const sel = window.getSelection();
+      if (!sel || sel.rangeCount === 0) { return []; }
+      let node = sel.getRangeAt(0).commonAncestorContainer as Node;
+      while (node && !(node instanceof HTMLElement) ||
+      node && !['P','LI','DIV','SECTION','ARTICLE'].includes((node as HTMLElement).tagName)) {
+        node = node.parentNode as Node;
+      }
+      if (node instanceof HTMLElement) {
+        elements = [node];
+      }
+    }
+    return elements;
+  }
+
 
 
   public onBackgroundColorChange(event: Event): void {
@@ -438,5 +452,66 @@ export class FormattingService {
     elements.forEach((element: HTMLElement) => element.style.backgroundColor = target.value);
   }
 
+  /** Pixels added on every indent action (≈ 2 em) */
+  private static readonly INDENT_STEP_PX = 20;
 
+
+  /** Increase indent on selected blocks */
+  public indent(): void {
+    const blocks = this.getTargetBlocks();
+    blocks.forEach(el => this.adjustIndent(el, +FormattingService.INDENT_STEP_PX));
+  }
+
+  /** Adjusts margin-left by step (positive or negative) */
+  private adjustIndent(el: HTMLElement, delta: number): void {
+    const current = parseInt(getComputedStyle(el).marginLeft, 10) || 0;
+    const next = Math.max(current + delta, 0);
+    el.style.marginLeft = `${next}px`;
+  }
+
+  /** Wraps or unwraps the selection in a block tag */
+  private wrapOrUnwrapBlock(tag: 'blockquote' | 'pre'): void {
+    const sel = window.getSelection();
+    if (!sel || sel.rangeCount === 0) { return; }
+    const range = sel.getRangeAt(0);
+
+    // Determine ancestor block
+    let ancestor = range.commonAncestorContainer as Node;
+    while (ancestor && ancestor.nodeType !== Node.ELEMENT_NODE) {
+      ancestor = ancestor.parentNode as Node;
+    }
+    const el = ancestor as HTMLElement;
+
+    // If inside same block, unwrap
+    if (el.tagName.toLowerCase() === tag) {
+      this.unwrap(el);
+      return;
+    }
+
+    // Else wrap
+    const wrapper = document.createElement(tag);
+    wrapper.appendChild(range.extractContents());
+    range.insertNode(wrapper);
+
+    sel.removeAllRanges();
+    const newRange = document.createRange();
+    newRange.selectNodeContents(wrapper);
+    sel.addRange(newRange);
+  }
+
+
+  /** Decrease indent on selected blocks */
+  public outdent(): void {
+    const blocks = this.getTargetBlocks();
+    blocks.forEach(el => this.adjustIndent(el, -FormattingService.INDENT_STEP_PX));
+  }
+  /** Toggles the selected text (or current paragraph) as a block-quote. */
+  public blockquote(): void {
+    this.wrapOrUnwrapBlock('blockquote');
+  }
+
+  /** Toggles the selected text (or current paragraph) as a code block (`<pre>`). */
+  public codeBlock(): void {
+    this.wrapOrUnwrapBlock('pre');
+  }
 }
