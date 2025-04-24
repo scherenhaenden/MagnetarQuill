@@ -172,17 +172,6 @@ export class ToolbarComponent {
     this.toggleHtmlView.emit();
   }
 
-  public clearFormatting(): void {
-    const selection = window.getSelection();
-    if (selection && selection.rangeCount > 0) {
-      const range = selection.getRangeAt(0);
-      const selectedText = range.extractContents();
-      const span = document.createElement('span');
-      span.style.cssText = '';
-      span.appendChild(selectedText);
-      range.insertNode(span);
-    }
-  }
 
   protected readonly hTMLSelectElement = HTMLSelectElement;
   public imageModalComponentModel!: ImageModalComponentModel | WritableSignal<ImageModalComponentModel>;

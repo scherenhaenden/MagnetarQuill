@@ -236,6 +236,18 @@ export class FormattingService {
     }
   }
 
+  public clearFormatting(): void {
+    const selection = window.getSelection();
+    if (selection && selection.rangeCount > 0) {
+      const range = selection.getRangeAt(0);
+      const selectedText = range.extractContents();
+      const span = document.createElement('span');
+      span.style.cssText = '';
+      span.appendChild(selectedText);
+      range.insertNode(span);
+    }
+  }
+
 
   public applyStyleV2(styleName: string, value: string): void {
     const selection = window.getSelection();
