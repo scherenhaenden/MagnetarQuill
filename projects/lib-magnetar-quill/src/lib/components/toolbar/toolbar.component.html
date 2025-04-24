@@ -62,10 +62,10 @@
   </button>
 
 
-  <button (click)="setTextAlign('left')" title="Align Left">Left</button>
-    <button (click)="setTextAlign('center')" title="Align Center">Center</button>
-    <button (click)="setTextAlign('right')" title="Align Right">Right</button>
-    <button (click)="setTextAlign('justify')" title="Justify">Justify</button>
+  <button (click)="formattingService.setTextAlign('left')" title="Align Left">Left</button>
+    <button (click)="formattingService.setTextAlign('center')" title="Align Center">Center</button>
+    <button (click)="formattingService.setTextAlign('right')" title="Align Right">Right</button>
+    <button (click)="formattingService.setTextAlign('justify')" title="Justify">Justify</button>
 
     <!-- ./components/toolbar/toolbar.component.html -->
   <select (change)="setLineSpacing($event)">
