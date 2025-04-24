@@ -1,71 +1,123 @@
 
-# **MagnetarQuill** 🖋✨  
-> **The Next-Gen Universe-Inspired WYSIWYG Editor - Built with Angular** 🚀💫  
+# **MagnetarQuill** 🖋✨
+> **The Next-Gen Universe-Inspired WYSIWYG Editor - Built with Angular** 🚀💫
 
 ![MagnetarQuill](magnetar-quill.png)
 
-**MagnetarQuill** is a versatile, extensible, and powerful **WYSIWYG editor** built with **Angular**, designed to streamline content creation with **rich text**, **media**, **tables**, and more. MagnetarQuill stands out with its **plugin architecture**, **cross-browser support**, and stunning **theming options**.
+**MagnetarQuill** is a versatile, extensible, and powerful **WYSIWYG editor component** built with **Angular**, designed to streamline content creation.
 
-Inspired by the most extreme phenomena in the universe, the **Magnetar**, and combined with the elegance of a quill, this editor takes your text editing experience beyond the ordinary.
+Inspired by the most extreme phenomena in the universe, the **Magnetar**, and combined with the elegance of a quill, this editor aims to take your text editing experience beyond the ordinary.
 
 ---
 ## **Current view** 🌟
+*(Assuming magnetar-quill-example.png shows the current state based on completed features)*
 ![MagnetarQuill](magnetar-quill-example.png)
 
 ---
 
 ## **Table of Contents** 📚
+- [Status](#status-🏗️)
 - [Features](#features-🌟)
 - [Installation](#installation-🛠)
-- [Quick Start](#quick-start-🚀)
-- [Usage](#usage-✍️)
-- [Plugin Architecture](#plugin-architecture-🔌)
-- [Theming & Customization](#theming--customization-🎨)
-- [Available Commands](#available-commands-📜)
+- [Quick Start (Usage in Angular)](#quick-start-usage-in-angular-🚀)
+- [Contributing & Local Development](#contributing--local-development-🧑‍💻)
+- [Available Commands (for Development)](#available-commands-for-development-📜)
 - [Roadmap](#roadmap-🛣)
-- [Contributing](#contributing-🤝)
 - [License](#license-📄)
 - [Stay Connected](#stay-connected-💬)
-- [Project Progress](#project-progress-🏗️)
+
+---
+
+## **Status** 🏗️
+
+MagnetarQuill is currently under active development. See the [Project Progress](#project-progress-📊) section for detailed status.
 
 ---
 
 ## **Features** 🌟
 
-MagnetarQuill is packed with features to meet all your content creation needs:
+Based on the current completed progress, MagnetarQuill offers:
 
-- 🖋 **Text Formatting**: Support for **bold**, **italic**, **underline**, **strikethrough**, and more.
-- 🎨 **Custom Fonts and Colors**: Easily change fonts, text colors, and background colors.
-- 📝 **Headers & Lists**: Support for custom headers (H1-H6) and ordered/unordered lists.
-- 📷 **Insert Media**: Insert and edit images, videos, links, and more.
-- 📊 **Tables & Block Elements**: Create and manage tables, blockquotes, and code blocks.
-- ✂ **Rich Clipboard Support**: Cut, copy, and paste rich text, media, and external content.
-- 🔄 **Undo/Redo History**: Track changes with multi-step undo/redo support.
-- 🌐 **Cross-Browser & Responsive**: Full support across Chrome, Firefox, Safari, Edge, and mobile browsers.
-- 🎛 **Plugin Architecture**: Extend MagnetarQuill with custom plugins for endless possibilities.
-- 🎨 **Theme Support**: Light, dark, and fully customizable themes with localization options.
-- 💾 **Export & Import**: Save your work as **HTML**, **Markdown**, **RTF**, or **PDF**.
+- 🖋 **Basic Text Formatting**: Support for **bold**, **italic**, **underline**, **strikethrough**.
+- 🎨 **Font Options**: Change font family and font size via dropdowns.
+- 🎨 **Color Selection**: Apply text and background colors using color pickers.
+- 📐 **Text Alignment & Spacing**: Includes options for text alignment and line spacing.
+- 📝 **Lists**: Support for ordered and unordered lists.
+- 📄 **Headers**: Support for custom headers (H1-H6).
+
+*(More features like image support, tables, clipboard enhancements, file export/import, and the plugin system are planned or in progress - see Roadmap and Progress below).*
 
 ---
 
 ## **Installation** 🛠
 
-### Prerequisites
-- **Node.js** (v16.x or higher) and **Angular CLI** (v17.3.0 or higher) — *only needed if you plan to build or customize MagnetarQuill within an Angular environment.*
-
-> **Note**: For general use in frameworks like React or Vue, or in vanilla JavaScript, you can use MagnetarQuill as a standalone web component without Angular-specific prerequisites.
-
-To install the MagnetarQuill library from npm, run the following command:
+To use the MagnetarQuill component in your Angular project, install the library from npm (once published):
 
 ```bash
 npm i --save magnetar-quill
-```
+````
+
+*(Note: Ensure the package is published to npm for this command to work.)*
+
+### **Prerequisites for Using the Library**
+
+  - An existing **Angular** project (v17.3.0 or higher recommended).
+
+-----
+
+## **Quick Start (Usage in Angular)** 🚀
+
+1.  Import the standalone `LibMagnetarQuillComponent` into your Angular component or module where you want to use the editor:
+
+    ```typescript
+    // Example in a standalone Angular component
+    import { Component } from '@angular/core';
+    import { LibMagnetarQuillComponent } from 'magnetar-quill'; // Adjust path if needed after install
+    import { FormsModule } from '@angular/forms'; // Needed for ngModel
+
+    @Component({
+      selector: 'app-my-editor-page',
+      standalone: true,
+      imports: [ LibMagnetarQuillComponent, FormsModule ], // Import the component
+      template: `
+        <h2>My Editor</h2>
+        <lib-magnetar-quill [(ngModel)]="documentContent"></lib-magnetar-quill>
+        <hr>
+        <h3>Content Preview:</h3>
+        <div [innerHTML]="documentContent | safeHtml"></div>
+      ` // safeHtml pipe would be needed for rendering raw HTML
+    })
+    export class MyEditorPageComponent {
+      documentContent: string = '<p>Start editing here...</p>';
+    }
+    ```
+
+    *(Note: You might need a pipe like `safeHtml` to securely render the HTML output from the editor)*
+
+2.  Add the component tag to your template and use `[(ngModel)]` for two-way binding of the editor's HTML content:
+
+    ```html
+    <lib-magnetar-quill [(ngModel)]="documentContent"></lib-magnetar-quill>
+    ```
+
+3.  You can now use the editor in your application\!
+
+-----
+
+## **Contributing & Local Development** 🧑‍💻
+
+If you want to contribute to MagnetarQuill or run the demo application locally:
+
+### Prerequisites for Development
+
+  - **Node.js** (v16.x or higher)
+  - **Angular CLI** (v17.3.0 or higher)
 
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/magnetarquill.git
-cd magnetarquill
+git clone [https://github.com/scherenhaenden/MagnetarQuill.git](https://github.com/scherenhaenden/MagnetarQuill.git)
+cd MagnetarQuill
 ```
 
 ### Step 2: Install Dependencies
@@ -80,185 +132,43 @@ npm install
 ng serve
 ```
 
-Open your browser at [http://localhost:4200](http://localhost:4200) to see **MagnetarQuill** in action!
+Open your browser at [http://localhost:4200](https://www.google.com/search?q=http://localhost:4200) to see the **MagnetarQuill** demo application.
 
----
+-----
 
-## **Quick Start** 🚀
+## **Available Commands (for Development)** 📜
 
-To get up and running with **MagnetarQuill**:
+Inside the cloned project directory:
 
-1. Import the core `MagnetarQuillModule` into your **Angular** application.
-   
-    ```typescript
-    import { MagnetarQuillModule } from 'magnetarquill';
+  - `ng serve`: Start the development server.
+  - `ng build`: Build the library/project for production.
+  - `ng test`: Run unit tests.
+  - `ng lint`: Lint the codebase for errors.
 
-    @NgModule({
-      imports: [MagnetarQuillModule],
-      declarations: [AppComponent],
-      bootstrap: [AppComponent],
-    })
-    export class AppModule {}
-    ```
-
-2. Add the **MagnetarQuill** component to your template:
-   
-    ```html
-    <magnetar-quill [(ngModel)]="documentContent"></magnetar-quill>
-    ```
-
-3. Start editing with a galaxy of rich features at your fingertips!
-
----
-
-## **Usage** ✍️
-
-### **Text Formatting**
-
-Format text using **bold**, **italic**, **underline**, and **strikethrough** options:
-```html
-<magnetar-quill></magnetar-quill>
-```
-
-You can also style text with **headers**, **lists**, and **blockquotes**:
-```html
-<magnetar-quill [formatOptions]="['headers', 'lists', 'blockquotes']"></magnetar-quill>
-```
-
-### **Image and Media Insertion**
-
-Upload and edit images with resizing, alignment, and captions:
-```html
-<magnetar-quill [mediaOptions]="['images', 'videos']"></magnetar-quill>
-```
-
-### **Clipboard Support**
-
-MagnetarQuill handles pasted content seamlessly:
-```html
-<magnetar-quill enableClipboardSupport="true"></magnetar-quill>
-```
-
-### **File Export & Import**
-
-Save your work in different formats like **HTML**, **RTF**, or **Markdown**:
-```typescript
-const htmlContent = this.editor.exportAsHTML();
-const markdownContent = this.editor.exportAsMarkdown();
-```
-
----
-
-## **Plugin Architecture** 🔌
-
-MagnetarQuill is built with extensibility in mind. You can easily add custom plugins to extend functionality.
-
-### **Creating a Plugin**
-
-1. Create a new plugin that adds a custom toolbar button:
-    ```typescript
-    const myPlugin = {
-      name: 'customButton',
-      action: () => {
-        console.log('Custom button clicked!');
-      },
-    };
-    ```
-
-2. Register the plugin with **MagnetarQuill**:
-    ```typescript
-    this.editor.registerPlugin(myPlugin);
-    ```
-
-### **Available Plugin Hooks**
-
-- **onTextChange**: Listen for text changes.
-- **onObjectInsertion**: Trigger actions on media insert.
-- **onFormattingChange**: Track formatting updates.
-
-Extend the editor with limitless possibilities! 🎉
-
----
-
-## **Theming & Customization** 🎨
-
-MagnetarQuill provides full support for **light** and **dark** themes, along with the ability to create **custom themes**.
-
-### **Light/Dark Mode Switch**
-
-Toggle between light and dark modes:
-```html
-<magnetar-quill [theme]="dark ? 'dark' : 'light'"></magnetar-quill>
-```
-
-### **Custom Themes**
-
-Create your own theme by defining custom styles:
-```typescript
-const customTheme = {
-  textColor: '#4a4a4a',
-  backgroundColor: '#f0f0f0',
-  toolbarColor: '#333',
-};
-
-this.editor.applyTheme(customTheme);
-```
-
----
-
-## **Available Commands** 📜
-
-- `ng serve`: Start the development server.
-- `ng build`: Build the project for production.
-- `ng test`: Run unit tests.
-- `ng lint`: Lint the codebase for errors.
-
----
+-----
 
 ## **Roadmap** 🛣
 
-🔭 **Upcoming Features**:
-- Integration with **Google Docs** and **Microsoft Word**.
-- More advanced **collaborative editing** tools.
-- Enhanced **accessibility features**.
-- **Mobile optimization** for touch devices.
-- **Real-time spell checking** via external plugins.
+🔭 **Planned & In-Progress Features**:
 
----
+  - 📷 Image Insertion, Editing, and Clipboard Support
+  - 📊 Table Insertion and Editing
+  - ✨ Object Context Menu & Drag-and-Drop Repositioning
+  - ✂ Rich Text Copy-Paste Support & Sanitization
+  - 🔄 Undo/Redo Functionality with Multi-Step History
+  - 💾 HTML and Markdown Export/Import
+  - 🖥 Full-Screen Mode
+  - 🎨 Light/Dark Theme Support & Customization
+  - 🔌 Plugin System for Custom Toolbar Tools & Extensions
+  - 🤝 Advanced collaborative editing tools (Potential Future Enhancement)
+  - ✅ Enhanced accessibility features (Potential Future Enhancement)
+  - 📱 Mobile optimization for touch devices (Potential Future Enhancement)
 
-## **Contributing** 🤝
+*(See the detailed progress table below for current status)*
 
-We welcome contributions! Here's how you can help:
-1. **Fork the repository**.
-2. **Create a new branch** for your feature or bug fix:
-   ```bash
-   git checkout -b feature/my-awesome-feature
-   ```
-3. **Commit your changes** and open a pull request:
-   ```bash
-   git push origin feature/my-awesome-feature
-   ```
-4. We’ll review your PR and merge it!
+-----
 
-Please read our [Contributing Guidelines](CONTRIBUTING.md) for more details.
-
----
-
-## **License** 📄
-
-MagnetarQuill is licensed under the **Creative Commons Attribution 4.0 International (CC BY 4.0)** License. You are free to use, distribute, and build upon this work, as long as proper attribution is given. See the [LICENSE](LICENSE) file for more details.
-
-
----
-
-## **Stay Connected** 💬
-
-Follow us for updates, news, and more:
-- **GitHub Discussions**: [MagnetarQuill Discussions](https://github.com/scherenhaenden/MagnetarQuill/discussions)
-
-
----
-## **Project Progress** 🏗️
+## **Project Progress** 📊
 
 Here’s the updated table with the latest progress:
 
@@ -269,8 +179,8 @@ Here’s the updated table with the latest progress:
 | 3     | Font Family and Font Size Dropdowns                   | ✅ Completed  | Version 0.3 - Font Options |
 | 4     | Text & Background Color Pickers                       | ✅ Completed  | Version 0.4 - Color Selection |
 | 5     | Text Alignment & Line Spacing                         | ✅ Completed  | Version 0.5 - Text Alignment & Spacing |
-| 6     | Ordered and Unordered Lists                           | ✅ Completed | Version 0.6 - Lists and Alignment |
-| 7     | Custom Headers (H1-H6)                                | ✅ Completed | Version 0.7 - Headers and Block Elements |
+| 6     | Ordered and Unordered Lists                           | ✅ Completed | Version 0.6 - Lists |
+| 7     | Custom Headers (H1-H6)                                | ✅ Completed | Version 0.7 - Headers |
 | 8     | Image Insertion and Editing                           | 🔄 In Progress| Version 0.8 - Image Support |
 | 9     | Copy-Paste Image Support                              | 🔄 In Progress| Version 0.9 - Image Clipboard |
 | 10    | Table Insertion and Editing                           | 🔄 In Progress| Version 0.10 - Table Management |
@@ -285,4 +195,37 @@ Here’s the updated table with the latest progress:
 | 19    | Full-Screen Mode                                      | 🔴 Not Started| Version 0.19 - Full-Screen |
 | 20    | Light and Dark Theme Support                          | 🔴 Not Started| Version 0.20 - Theme Customization |
 | 21    | Plugin System for Custom Toolbar Tools                | 🔴 Not Started| Version 0.21 - Plugin Support |
+
+*(Status Key: ✅ Completed | 🔄 In Progress | 🔴 Not Started)*
+
+-----
+
+## **Contributing** 🤝
+
+We welcome contributions\! Here's how you can help:
+
+1.  **Fork the repository** (`https://github.com/scherenhaenden/MagnetarQuill.git`).
+2.  **Create a new branch** for your feature or bug fix:
+    ```bash
+    git checkout -b feature/my-awesome-feature
+    ```
+3.  **Commit your changes** and open a pull request against the main repository.
+4.  We’ll review your PR and merge it\!
+
+Please read our [Contributing Guidelines](https://www.google.com/search?q=CONTRIBUTING.md) (if available) for more details.
+
+-----
+
+## **License** 📄
+
+MagnetarQuill is licensed under the **Creative Commons Attribution 4.0 International (CC BY 4.0)** License. You are free to use, distribute, and build upon this work, as long as proper attribution is given. See the [LICENSE](https://www.google.com/search?q=LICENSE) file for more details.
+
+-----
+
+## **Stay Connected** 💬
+
+Follow development progress or ask questions:
+
+  - **GitHub Issues**: [MagnetarQuill Issues](https://github.com/scherenhaenden/MagnetarQuill/issues)
+  - **GitHub Discussions**: [MagnetarQuill Discussions](https://github.com/scherenhaenden/MagnetarQuill/discussions)
 

@@ -228,7 +228,6 @@ export class FormattingService {
     }
   }
 
-
   public applyStyle(styleName: string, value: string): void {
     const selection = window.getSelection();
     if (selection && selection.rangeCount > 0) {
@@ -277,6 +276,14 @@ export class FormattingService {
       }
       parent.removeChild(element);
     }
+  }
+
+  public toggleSuperscript(): void {
+    this.wrapSelectionWithTag('sup');
+  }
+
+  public toggleSubscript(): void {
+    this.wrapSelectionWithTag('sub');
   }
 
   public wrapSelectionWithTag(tagName: string): void {
