@@ -228,6 +228,13 @@ export class FormattingService {
     }
   }
 
+  /**
+   * Applies a style to the currently selected text in the document.
+   *
+   * @param {string} styleName - The name of the CSS property to apply (e.g., 'color', 'font-size').
+   * @param {string} value - The value to set for the specified CSS property.
+   * @throws {Error} If there is no active selection in the document.
+   */
   public applyStyle(styleName: string, value: string): void {
     const selection = window.getSelection();
     if (selection && selection.rangeCount > 0) {
@@ -278,14 +285,33 @@ export class FormattingService {
     }
   }
 
+  /**
+   * Toggles superscript formatting for the currently selected text.
+   *
+   * @returns {void}
+   */
   public toggleSuperscript(): void {
     this.wrapSelectionWithTag('sup');
   }
 
+  /**
+   * Toggles subscript formatting for the current selection.
+   *
+   * Wraps the selected text with a 'sub' HTML tag to apply subscript styling.
+   *
+   * @returns {void}
+   */
   public toggleSubscript(): void {
     this.wrapSelectionWithTag('sub');
   }
 
+  /**
+   * Wraps the currently selected text within a specified HTML tag.
+   *
+   * @param {string} tagName - The name of the HTML tag to wrap the selection with (e.g., 'strong', 'em').
+   * @returns {void}
+   * @throws {Error} If no text is selected or if there's an issue creating or inserting the wrapper element.
+   */
   public wrapSelectionWithTag(tagName: string): void {
     const selection = window.getSelection();
     if (selection && selection.rangeCount > 0) {
