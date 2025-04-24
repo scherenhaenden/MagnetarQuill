@@ -48,26 +48,64 @@ export class ToolbarComponent {
               ) {}
 
   // Text Formatting Methods
+  /**
+   * Toggles the bold formatting of the current text selection or insertion point.
+   *
+   * @returns {void} - This method does not return any value.
+   */
   public toggleBold(): void {
     this.formattingService.toggleBold();
   }
 
+  /**
+   * Toggles the italic formatting for the current selection or element.
+   *
+   * @returns {void} - This function does not return any value.
+   *
+   * Example usage:
+   * instance.toggleItalic();
+   */
   public toggleItalic(): void {
     this.formattingService.toggleItalic();
   }
 
+  /**
+   * Toggles underline formatting on the current selection.
+   *
+   * This method uses the `formattingService` to switch between applying and removing an underline from the selected text.
+   */
   public toggleUnderline(): void {
     this.formattingService.toggleUnderline();
   }
 
+  /**
+   * Toggles the strikethrough formatting on the current selection or at the cursor position.
+   *
+   * @function
+   * @name toggleStrikethrough
+   * @returns {void}
+   */
   public toggleStrikethrough(): void {
     this.formattingService.toggleStrikethrough();
   }
 
+  /**
+   * Toggles the superscript formatting for the currently selected text.
+   *
+   * This method uses the `formattingService` to apply or remove superscript formatting based on the current selection.
+   */
   public toggleSuperscript(): void {
     this.formattingService.toggleSuperscript();
   }
 
+  /**
+   * Toggles the subscript formatting on the current selection or at the cursor position.
+   *
+   * @function toggleSubscript
+   * @memberof FormattingController
+   * @instance
+   * @returns {void}
+   */
   public toggleSubscript(): void {
     this.formattingService.toggleSubscript();
   }
@@ -82,6 +120,15 @@ export class ToolbarComponent {
   }
 
   // Alignment and Spacing
+  /**
+   * Sets the text alignment of selected paragraph elements.
+   *
+   * @param {string} alignment - The desired text alignment ('left', 'center', 'right', 'justify').
+   * @returns {void}
+   *
+   * @example
+   * setTextAlign('center');
+   */
   public setTextAlign(alignment: string): void {
 
     let selection = window.getSelection();
@@ -139,6 +186,13 @@ export class ToolbarComponent {
     }
   }
 
+  /**
+   * Wraps the currently selected text in a block-level HTML element specified by `blockTag`.
+   *
+   * @param {string} blockTag - The tag name of the block element to create and insert around the selection.
+   * @returns {void}
+   * @throws {Error} Throws an error if no selection is found or if the selection range count is zero.
+   */
   public wrapSelectionInBlock(blockTag: string): void {
     const selection = window.getSelection();
     if (!selection || selection.rangeCount === 0) return;
