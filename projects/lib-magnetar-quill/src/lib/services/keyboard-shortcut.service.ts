@@ -90,16 +90,16 @@ export class KeyboardShortcutService implements OnDestroy {
       // List Formatting
       case ShortcutAction.OrderedList:     this.fmt.toggleList('ordered');   break; // Assumes fmt service has this
       case ShortcutAction.UnorderedList:   this.fmt.toggleList('unordered'); break; // Assumes fmt service has this
-      //case ShortcutAction.Indent:          this.fmt.indent();                break; // Assumes fmt service has this
-      //case ShortcutAction.Outdent:         this.fmt.outdent();               break; // Assumes fmt service has this
+      case ShortcutAction.Indent:          this.fmt.indent();                break; // Assumes fmt service has this
+      case ShortcutAction.Outdent:         this.fmt.outdent();               break; // Assumes fmt service has this
 
       // History
       case ShortcutAction.Undo:            /* this.history.undo(); */ console.warn(`Undo action triggered, requires HistoryService implementation.`); break; // Assumes history service exists
       case ShortcutAction.Redo:            /* this.history.redo(); */ console.warn(`Redo action triggered, requires HistoryService implementation.`); break; // Assumes history service exists
 
       // Block Formatting Examples
-      //case ShortcutAction.Blockquote:      this.fmt.formatBlock('blockquote'); break; // Assumes fmt service has formatBlock
-      //case ShortcutAction.CodeBlock:       this.fmt.formatBlock('pre');        break; // Assumes fmt service has formatBlock (using <pre> for code)
+      case ShortcutAction.Blockquote:      this.fmt.blockquote(); break; // Assumes fmt service has formatBlock
+      case ShortcutAction.CodeBlock:       this.fmt.codeBlock();        break; // Assumes fmt service has formatBlock (using <pre> for code)
 
       // Default case for actions defined in enum but not handled here yet
       default:

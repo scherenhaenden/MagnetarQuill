@@ -81,64 +81,6 @@ export class ToolbarComponent {
     this.formattingService.toggleList('unordered');
   }
 
-  // Alignment and Spacing
-  public setTextAlign(alignment: string): void {
-
-    let selection = window.getSelection();
-
-    if (selection && !selection.isCollapsed) {
-      const range = selection.getRangeAt(0);
-      let container: Node = range.commonAncestorContainer;
-
-      // If the container is a text node, get its parent
-      if (container.nodeType === Node.TEXT_NODE) {
-        container = container.parentElement as HTMLElement;
-      }
-
-      // Handle multi-paragraph selections by splitting the range
-      if (container instanceof HTMLElement) {
-        const paragraphs = this.formattingService.splitRangeIntoParagraphs(range);
-
-        paragraphs.forEach((paragraph) => {
-          if (paragraph instanceof HTMLElement && paragraph.tagName === 'P') {
-            paragraph.style.textAlign = alignment;
-          }
-        });
-      }
-    } else {
-      console.warn('No valid selection found.');
-    }
-
-    console.log('setTextAlign');
-
-     selection = window.getSelection();
-
-     console.log('selection', selection);
-
-    if (selection && !selection.isCollapsed) {
-      const range = selection.getRangeAt(0);
-      let container: Node = range.commonAncestorContainer;
-
-      console.log('container', container);
-
-      // If the container is a text node, find its parent element
-      if (container.nodeType === Node.TEXT_NODE) {
-        container = container.parentElement as HTMLElement;
-      }
-
-      // If the container is a <p> element, apply the alignment
-      if (container instanceof HTMLElement && container.tagName === 'P') {
-        container.style.textAlign = alignment;
-      } else {
-        // Traverse up the DOM to find the nearest parent <p> element
-        const parentParagraph = this.formattingService.findParentParagraph(container as HTMLElement);
-        if (parentParagraph) {
-          parentParagraph.style.textAlign = alignment;
-        }
-      }
-    }
-  }
-
   public wrapSelectionInBlock(blockTag: string): void {
     const selection = window.getSelection();
     if (!selection || selection.rangeCount === 0) return;
