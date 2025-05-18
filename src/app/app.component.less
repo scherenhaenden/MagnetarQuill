@@ -1,5 +1,5 @@
 app-root {
-  background: black;
+  background: yellow;
 }
 
 
@@ -11,7 +11,7 @@ app-root {
   min-height: 200vh;         /* Allow the container to grow beyond viewport if needed */
   padding: 20px;             /* Extra padding for breathing room */
   background-color: #f0f0f0; /* Light background to contrast the editor */
-  background: black;
+  background: red;
   overflow: auto;            /* Auto-scroll if content overflows */
 }
 
@@ -25,4 +25,10 @@ app-root {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
   overflow-y: auto;          /* Scroll vertically inside the editor if content overflows */
   max-height: 2000vh;          /* Keep within the viewport but allow for more content */
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column; /* 👈 This makes children stack vertically */
+  gap: 20px;               /* Optional: spacing between editor and output */
 }
