@@ -110,7 +110,7 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
     htmlContent = this.splitIntoParagraphs(htmlContent);
     this.contentService.setEditorContent(htmlContent);
     this.ensurePlaceholder();
-    this.contentChanged.emit(htmlContent); // 👈 ADD THIS
+    this.contentChanged.emit(htmlContent);
 
   }
 
