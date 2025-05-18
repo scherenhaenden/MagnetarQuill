@@ -65,7 +65,11 @@ export class LibMagnetarQuillComponent {
   // Input for receiving initial content from the parent
   @Input() set content(value: string) {
     //this.editorHtmlContent = value;
+    console.log('value', value);
     this.contentService.setEditorContent(value); // Set initial content in service
+    console.log('value2', value);
+    this.contentChange.emit(value);
+    console.log('value3', value);
   }
 
   // Output to emit content changes to the parent
@@ -95,5 +99,10 @@ export class LibMagnetarQuillComponent {
   // Method to reset the image data once editing is done
   public clearImageToEdit(): void {
     this.showImageModal = false;
+  }
+
+  public onEditorContentChanged(newContent: string): void {
+    this.contentChange.emit(newContent); // Send to outside world
+
   }
 }
