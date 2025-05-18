@@ -1,5 +1,14 @@
 <div class="app-container">
   <div class="lib-magnetar-quill-container">
-    <magnetar-quill [(content)]="testText" ></magnetar-quill>
+    <magnetar-quill [(content)]="testText"></magnetar-quill>
+  </div>
+
+  <button (click)="showOutput = !showOutput">
+    {{ showOutput ? 'Hide' : 'Show' }} Output
+  </button>
+
+  <div *ngIf="showOutput" class="output-area">
+    <h3>Rendered Output:</h3>
+    <div [innerHTML]="testText" class="rendered-html"></div>
   </div>
 </div>
