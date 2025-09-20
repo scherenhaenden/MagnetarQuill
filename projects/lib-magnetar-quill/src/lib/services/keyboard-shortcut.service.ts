@@ -39,7 +39,7 @@ export class KeyboardShortcutService implements OnDestroy {
   // Using an arrow function assigned to a property preserves `this` context
   private readonly handleKeydown = (ev: KeyboardEvent): void => {
 
-    if(this.fmt === null || this.fmt === undefined) {
+    if(!this.fmt) {
       console.error('FormattingService is not available in KeyboardShortcutService.');
       return;
     }
