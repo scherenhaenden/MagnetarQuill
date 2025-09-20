@@ -27,7 +27,7 @@ export class AppComponent implements AfterViewInit {
 
   @ViewChild('mainContent', { static: false }) mainContent?: ElementRef;
 
-  constructor(private cdr: ChangeDetectorRef) {
+  constructor() {
     // Lade den Test-Text beim Start
     this.testText = TestText.testText;
   }
