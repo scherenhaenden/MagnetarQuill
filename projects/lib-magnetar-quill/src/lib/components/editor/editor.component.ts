@@ -45,6 +45,7 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
   @Input() isHtmlView: boolean = false;
   @Output() requestImageEdit = new EventEmitter<ImageModalComponentModel>();
   @Output() editPicture = new EventEmitter<void>();
+  @Output() contentChanged = new EventEmitter<string>();
 
   private _requestImageInsert: ImageModalComponentModel | null = null;
 
@@ -109,6 +110,8 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
     htmlContent = this.splitIntoParagraphs(htmlContent);
     this.contentService.setEditorContent(htmlContent);
     this.ensurePlaceholder();
+    this.contentChanged.emit(htmlContent);
+
   }
 
   public sanitizePaste: boolean = true; // Default to true, enabling sanitization
@@ -469,7 +472,6 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
   // Method to ensure editor always has a placeholder or content
   private ensurePlaceholder(): void {
     const editor = this.editorWysiwyg.nativeElement;
-    console.log(editor.innerText);
     if (editor.innerText.trim() === '') {
       editor.innerHTML = '<p><br></p>'; // Add an empty paragraph as a placeholder
     }

@@ -10,6 +10,7 @@
   #editor
   [isHtmlView]="isHtmlView"
   (editPicture)="openImageEditModal()"
+  (contentChanged)="onEditorContentChanged($event)"
   class="editor"
   >
 </lib-editor>
