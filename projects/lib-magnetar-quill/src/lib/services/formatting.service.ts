@@ -251,7 +251,7 @@ export class FormattingService {
     const range = selection.getRangeAt(0);
     const fragment = range.cloneContents();
 
-    // Baue ein temporäres Container-Element, um HTML zu erzeugen
+    // Build a temporary container element to generate HTML
     const cleanedContainer = document.createElement('div');
     Array.from(fragment.childNodes).forEach(node => {
       const stripped = this.stripFormattingNode(node);
@@ -260,7 +260,7 @@ export class FormattingService {
 
     const html = cleanedContainer.innerHTML || '';
 
-    // Versuche, die Änderung über execCommand einzufügen (Browser verwaltet Undo/Selection)
+    // Try to insert the change via execCommand (Browser manages Undo/Selection)
     let success = false;
     try {
       success = document.execCommand('insertHTML', false, html);
@@ -269,14 +269,14 @@ export class FormattingService {
     }
 
     if (success) {
-      // Browser hat die Ersetzung und Undo/Selection üblicherweise korrekt gesetzt.
+      // Browser has usually set the replacement and Undo/Selection correctly.
       return;
     }
 
-    // Fallback: klassische DOM-Einfügung (erst löschen, dann einfügen)
+    // Fallback: classic DOM insertion (first delete, then insert)
     const wrapper = document.createElement('span');
     wrapper.style.cssText = '';
-    // Verschiebe die vorbereiteten Kinder vom temporären Container in den Wrapper
+    // Move the prepared children from the temporary container to the wrapper
     while (cleanedContainer.firstChild) {
       wrapper.appendChild(cleanedContainer.firstChild);
     }
@@ -284,7 +284,7 @@ export class FormattingService {
     range.deleteContents();
     range.insertNode(wrapper);
 
-    // Auswahl auf den eingefügten Inhalt setzen
+    // Set selection to the inserted content
     selection.removeAllRanges();
     const newRange = document.createRange();
     newRange.selectNodeContents(wrapper);
