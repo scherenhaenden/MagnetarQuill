@@ -359,41 +359,8 @@ private stripFormattingNode(node: Node): Node {
 
   // Fallback: empty text node
   return document.createTextNode('');
-}
-
-
-  /** Recursively strips styles/attributes from nodes.
-   *  - Block tags are preserved (no attributes/styles) and their children are processed.
-   *  - Inline tags are flattened to their text content (children processed and appended).
-   */
-  private stripFormattingNode(node: Node): Node {
-    if (node.nodeType === Node.TEXT_NODE) {
-      return document.createTextNode(node.textContent || '');
-    }
-
-    if (node.nodeType === Node.ELEMENT_NODE) {
-      const el = node as HTMLElement;
-      const tag = el.tagName.toUpperCase();
-
-      if (FormattingService.BLOCK_TAGS.has(tag)) {
-        const newEl = document.createElement(tag.toLowerCase());
-        Array.from(el.childNodes).forEach(child => {
-          newEl.appendChild(this.stripFormattingNode(child));
-        });
-        return newEl;
-      } else {
-        // Inline: flatten children into a fragment (no inline tags / styles)
-        const frag = document.createDocumentFragment();
-        Array.from(el.childNodes).forEach(child => {
-          frag.appendChild(this.stripFormattingNode(child));
-        });
-        return frag;
-      }
-    }
-
-    // Fallback: return empty text node
-    return document.createTextNode('');
   }
+
 
 
   public applyStyleV2(styleName: string, value: string): void {
