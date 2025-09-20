@@ -1,7 +1,7 @@
 <div class="app-container">
   <header class="app-header">
     <h1 class="app-title">MagnetarQuill Demo</h1>
-    <p class="app-subtitle">Teste den WYSIWYG-Editor in Echtzeit</p>
+    <p class="app-subtitle">Test the WYSIWYG Editor in Real Time</p>
   </header>
 
   <div class="main-content" #mainContent>
@@ -18,23 +18,23 @@
     <!-- Resize Handle -->
     <div class="resize-handle"
          (mousedown)="onResizeStart($event)"
-         title="Ziehen um die Größe anzupassen">
+         title="Drag to adjust size">
       <div class="resize-line"></div>
     </div>
 
     <div class="preview-section"
          [style.width.%]="previewWidth">
       <div class="preview-header">
-        <h2 class="section-title">Live-Vorschau</h2>
+        <h2 class="section-title">Live Preview</h2>
         <button (click)="showOutput = !showOutput" class="toggle-btn">
-          {{ showOutput ? 'Verbergen' : 'Anzeigen' }}
+          {{ showOutput ? 'Hide' : 'Show' }}
         </button>
       </div>
 
       <div *ngIf="showOutput" class="output-area">
         <div [innerHTML]="testText" class="rendered-html"></div>
         <div *ngIf="!testText || testText.trim().length === 0" class="empty-state">
-          Beginne mit dem Schreiben im Editor...
+          Start writing in the editor...
         </div>
       </div>
     </div>
