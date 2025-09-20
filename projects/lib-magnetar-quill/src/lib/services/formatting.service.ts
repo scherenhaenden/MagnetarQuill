@@ -242,54 +242,124 @@ export class FormattingService {
   ]);
 
   // typescript
-  public clearFormatting(): void {
-    const selection = window.getSelection();
-    if (!selection || selection.rangeCount === 0 || selection.isCollapsed) {
-      return;
-    }
+// projects/lib-magnetar-quill/src/lib/services/formatting.service.ts
+// TypeScript
 
-    const range = selection.getRangeAt(0);
-    const fragment = range.cloneContents();
+private static readonly VOID_TAGS = new Set([
+  'BR','IMG','HR','INPUT','SOURCE','VIDEO','AREA','BASE','COL','EMBED','LINK','META','PARAM','TRACK','WBR'
+]);
 
-    // Build a temporary container element to generate HTML
-    const cleanedContainer = document.createElement('div');
-    Array.from(fragment.childNodes).forEach(node => {
-      const stripped = this.stripFormattingNode(node);
-      cleanedContainer.appendChild(stripped);
-    });
-
-    const html = cleanedContainer.innerHTML || '';
-
-    // Try to insert the change via execCommand (Browser manages Undo/Selection)
-    let success = false;
-    try {
-      success = document.execCommand('insertHTML', false, html);
-    } catch (e) {
-      success = false;
-    }
-
-    if (success) {
-      // Browser has usually set the replacement and Undo/Selection correctly.
-      return;
-    }
-
-    // Fallback: classic DOM insertion (first delete, then insert)
-    const wrapper = document.createElement('span');
-    wrapper.style.cssText = '';
-    // Move the prepared children from the temporary container to the wrapper
-    while (cleanedContainer.firstChild) {
-      wrapper.appendChild(cleanedContainer.firstChild);
-    }
-
-    range.deleteContents();
-    range.insertNode(wrapper);
-
-    // Set selection to the inserted content
-    selection.removeAllRanges();
-    const newRange = document.createRange();
-    newRange.selectNodeContents(wrapper);
-    selection.addRange(newRange);
+public clearFormatting(): void {
+  const selection = window.getSelection();
+  if (!selection || selection.rangeCount === 0 || selection.isCollapsed) {
+    return;
   }
+
+  const range = selection.getRangeAt(0);
+  const fragment = range.cloneContents();
+
+  // Build a temporary container element to generate HTML
+  const cleanedContainer = document.createElement('div');
+  Array.from(fragment.childNodes).forEach(node => {
+    const stripped = this.stripFormattingNode(node);
+    // stripFormattingNode may return a DocumentFragment or Node
+    cleanedContainer.appendChild(stripped);
+  });
+
+  // If nothing to insert, bail out
+  if (!cleanedContainer.hasChildNodes()) {
+    return;
+  }
+
+  const html = cleanedContainer.innerHTML || '';
+
+  // Try to insert the change via execCommand (Browser manages Undo/Selection)
+  let success = false;
+  try {
+    success = document.execCommand('insertHTML', false, html);
+  } catch (e) {
+    success = false;
+  }
+
+  if (success) {
+    // Browser handled replacement; nothing more to do.
+    return;
+  }
+
+  // Fallback: insert nodes via DOM (preserve structure, restore selection)
+  // Move prepared children into a fragment to insert
+  const insertFragment = document.createDocumentFragment();
+  while (cleanedContainer.firstChild) {
+    insertFragment.appendChild(cleanedContainer.firstChild);
+  }
+
+  const nodesToInsert = Array.from(insertFragment.childNodes) as Node[];
+  if (nodesToInsert.length === 0) {
+    return;
+  }
+
+  // Replace selection with the prepared fragment
+  range.deleteContents();
+  range.insertNode(insertFragment);
+
+  // Restore selection to cover the newly inserted nodes
+  selection.removeAllRanges();
+  const newRange = document.createRange();
+  newRange.setStartBefore(nodesToInsert[0]);
+  newRange.setEndAfter(nodesToInsert[nodesToInsert.length - 1]);
+  selection.addRange(newRange);
+}
+
+
+private stripFormattingNode(node: Node): Node {
+  if (node.nodeType === Node.TEXT_NODE) {
+    // Preserve text content as-is
+    return document.createTextNode(node.textContent || '');
+  }
+
+  if (node.nodeType === Node.ELEMENT_NODE) {
+    const el = node as HTMLElement;
+    const tag = el.tagName.toUpperCase();
+
+    // Preserve block tags (no attributes/styles) and recursively strip children
+    if (FormattingService.BLOCK_TAGS.has(tag)) {
+      const newEl = document.createElement(tag.toLowerCase());
+      Array.from(el.childNodes).forEach(child => {
+        newEl.appendChild(this.stripFormattingNode(child));
+      });
+      return newEl;
+    }
+
+    // Preserve void elements (keep essential attributes for images)
+    if (FormattingService.VOID_TAGS && FormattingService.VOID_TAGS.has(tag) || FormattingService.VOID_TAGS === undefined && FormattingService.VOID_TAGS) {
+      // This branch kept for clarity; actual check below
+    }
+    if (FormattingService.VOID_TAGS && FormattingService.VOID_TAGS.has(tag)) {
+      const newEl = document.createElement(tag.toLowerCase());
+      if (tag === 'IMG' && el instanceof HTMLImageElement) {
+        // Preserve src/alt minimally
+        if (el.getAttribute('src')) {
+          newEl.setAttribute('src', el.getAttribute('src') || '');
+        }
+        if (el.getAttribute('alt')) {
+          newEl.setAttribute('alt', el.getAttribute('alt') || '');
+        }
+      }
+      // other void elements are recreated without attributes
+      return newEl;
+    }
+
+    // Inline elements: flatten children into a document fragment
+    const frag = document.createDocumentFragment();
+    Array.from(el.childNodes).forEach(child => {
+      frag.appendChild(this.stripFormattingNode(child));
+    });
+    return frag;
+  }
+
+  // Fallback: empty text node
+  return document.createTextNode('');
+}
 
 
   /** Recursively strips styles/attributes from nodes.
