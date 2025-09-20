@@ -236,16 +236,93 @@ export class FormattingService {
     }
   }
 
+  private static readonly BLOCK_TAGS = new Set([
+    'P','DIV','LI','OL','UL','SECTION','ARTICLE','BLOCKQUOTE','PRE',
+    'H1','H2','H3','H4','H5','H6'
+  ]);
+
+  // typescript
   public clearFormatting(): void {
     const selection = window.getSelection();
-    if (selection && selection.rangeCount > 0) {
-      const range = selection.getRangeAt(0);
-      const selectedText = range.extractContents();
-      const span = document.createElement('span');
-      span.style.cssText = '';
-      span.appendChild(selectedText);
-      range.insertNode(span);
+    if (!selection || selection.rangeCount === 0 || selection.isCollapsed) {
+      return;
     }
+
+    const range = selection.getRangeAt(0);
+    const fragment = range.cloneContents();
+
+    // Baue ein temporäres Container-Element, um HTML zu erzeugen
+    const cleanedContainer = document.createElement('div');
+    Array.from(fragment.childNodes).forEach(node => {
+      const stripped = this.stripFormattingNode(node);
+      cleanedContainer.appendChild(stripped);
+    });
+
+    const html = cleanedContainer.innerHTML || '';
+
+    // Versuche, die Änderung über execCommand einzufügen (Browser verwaltet Undo/Selection)
+    let success = false;
+    try {
+      success = document.execCommand('insertHTML', false, html);
+    } catch (e) {
+      success = false;
+    }
+
+    if (success) {
+      // Browser hat die Ersetzung und Undo/Selection üblicherweise korrekt gesetzt.
+      return;
+    }
+
+    // Fallback: klassische DOM-Einfügung (erst löschen, dann einfügen)
+    const wrapper = document.createElement('span');
+    wrapper.style.cssText = '';
+    // Verschiebe die vorbereiteten Kinder vom temporären Container in den Wrapper
+    while (cleanedContainer.firstChild) {
+      wrapper.appendChild(cleanedContainer.firstChild);
+    }
+
+    range.deleteContents();
+    range.insertNode(wrapper);
+
+    // Auswahl auf den eingefügten Inhalt setzen
+    selection.removeAllRanges();
+    const newRange = document.createRange();
+    newRange.selectNodeContents(wrapper);
+    selection.addRange(newRange);
+  }
+
+
+  /** Recursively strips styles/attributes from nodes.
+   *  - Block tags are preserved (no attributes/styles) and their children are processed.
+   *  - Inline tags are flattened to their text content (children processed and appended).
+   */
+  private stripFormattingNode(node: Node): Node {
+    if (node.nodeType === Node.TEXT_NODE) {
+      return document.createTextNode(node.textContent || '');
+    }
+
+    if (node.nodeType === Node.ELEMENT_NODE) {
+      const el = node as HTMLElement;
+      const tag = el.tagName.toUpperCase();
+
+      if (FormattingService.BLOCK_TAGS.has(tag)) {
+        const newEl = document.createElement(tag.toLowerCase());
+        Array.from(el.childNodes).forEach(child => {
+          newEl.appendChild(this.stripFormattingNode(child));
+        });
+        return newEl;
+      } else {
+        // Inline: flatten children into a fragment (no inline tags / styles)
+        const frag = document.createDocumentFragment();
+        Array.from(el.childNodes).forEach(child => {
+          frag.appendChild(this.stripFormattingNode(child));
+        });
+        return frag;
+      }
+    }
+
+    // Fallback: return empty text node
+    return document.createTextNode('');
   }
 
 
