@@ -1,0 +1,42 @@
+
+> magnetar-quill@0.0.0 build-lib
+> nx build lib-magnetar-quill
+
+
+> nx run lib-magnetar-quill:build:production
+
+[34mBuilding Angular Package[39m
+[37m[39m
+[37m------------------------------------------------------------------------------[39m
+[37mBuilding entry point 'magnetar-quill'[39m
+[37m------------------------------------------------------------------------------[39m
+- Compiling with Angular sources in Ivy partial compilation mode.
+Browserslist: browsers data (caniuse-lite) is 6 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+[32m✔[39m Compiling with Angular sources in Ivy partial compilation mode.
+[32m✔[39m Generating FESM bundles
+- Copying assets
+[32m✔[39m Copying assets
+- Writing package manifest
+[32m✔[39m Writing package manifest
+[32m✔[39m Built magnetar-quill
+[32m[39m
+[32m------------------------------------------------------------------------------[39m
+[32mBuilt Angular Package[39m
+[32m - from: /app/projects/lib-magnetar-quill[39m
+[32m - to:   /app/dist/lib-magnetar-quill[39m
+[32m------------------------------------------------------------------------------[39m
+[37m[37m[39m[37m[39m
+[37m[37mBuild at: [1m2025-10-08T13:05:09.963Z[22m - Time: [1m6833[22mms[39m[37m[39m
+[37m[37m[39m[37m[39m
+
+
+
+ NX   Successfully ran target build for project lib-magnetar-quill
+
+
+
+ NX   Nx Cloud encountered some problems
+
+This workspace is more than three days old and is not connected. Workspaces must be connected within 3 days of creation. Claim your workspace at https://cloud.nx.app. (code: 401)

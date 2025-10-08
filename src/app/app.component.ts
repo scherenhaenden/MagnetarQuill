@@ -32,12 +32,7 @@ export class AppComponent implements AfterViewInit {
     this.testText = TestText.testText;
   }
 
-  ngAfterViewInit(): void {
-    // Initiale Bildanpassung nach dem View geladen ist
-    setTimeout(() => {
-      this.adjustPreviewImages();
-    }, 100);
-  }
+  ngAfterViewInit(): void {}
 
   /**
    * Startet den Resize-Vorgang
@@ -72,10 +67,7 @@ export class AppComponent implements AfterViewInit {
     this.editorWidth = newEditorWidth;
     this.previewWidth = 100 - newEditorWidth;
 
-    // Bilder in der Vorschau anpassen nach Resize
-    setTimeout(() => {
-      this.adjustPreviewImages();
-    }, 10);
+    this.previewWidth = 100 - newEditorWidth;
   }
 
   /**
@@ -89,9 +81,6 @@ export class AppComponent implements AfterViewInit {
       // Cursor zurücksetzen
       document.body.style.cursor = '';
       document.body.style.userSelect = '';
-
-      // Final adjustment der Bilder
-      this.adjustPreviewImages();
     }
   }
 
@@ -109,37 +98,7 @@ export class AppComponent implements AfterViewInit {
    * Wird aufgerufen wenn sich der Content ändert
    */
   onContentChange(): void {
-    // Bilder anpassen wenn sich der Content ändert
-    setTimeout(() => {
-      this.adjustPreviewImages();
-    }, 50);
-  }
-
-  /**
-   * Passt alle Bilder in der Live-Vorschau programmatisch an
-   */
-  private adjustPreviewImages(): void {
-    const previewArea = document.querySelector('.rendered-html') as HTMLElement;
-    if (!previewArea) return;
-
-    const images = previewArea.querySelectorAll('img') as NodeListOf<HTMLImageElement>;
-
-    images.forEach(img => {
-      // Entferne alle width/height Attribute und Styles
-      img.removeAttribute('width');
-      img.removeAttribute('height');
-      img.style.removeProperty('width');
-      img.style.removeProperty('height');
-
-      // Setze responsive Eigenschaften direkt
-      img.style.maxWidth = '100%';
-      img.style.width = 'auto';
-      img.style.height = 'auto';
-      img.style.objectFit = 'contain';
-      img.style.display = 'block';
-      img.style.margin = '1rem auto';
-      img.style.borderRadius = '8px';
-      img.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
-    });
+    // This function is no longer needed, as image responsiveness
+    // is now handled entirely by CSS in the stylesheet.
   }
 }
