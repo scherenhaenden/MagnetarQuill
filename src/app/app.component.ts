@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, HostListener, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, ElementRef, ViewChild, HostListener, AfterViewInit } from '@angular/core';
 import { LibMagnetarQuillComponent } from "lib-magnetar-quill";
 import { TestText } from './test-text';
 import { NgIf } from "@angular/common";
@@ -12,48 +12,104 @@ import { FormsModule } from "@angular/forms";
   styleUrl: './app.component.less'
 })
 export class AppComponent implements AfterViewInit {
-  title = 'MagnetarQuill Demo';
+  /**
+   * The title of the demo application.
+   * @public
+   */
+  public title = 'MagnetarQuill Demo';
 
-  public showOutput = true;
-  public testText = '';
+  /**
+   * A flag to control the visibility of the live preview pane.
+   * @public
+   */
+  public showOutput: boolean = true;
 
-  // Resize-Eigenschaften
-  public editorWidth = 50; // Standardbreite 50%
-  public previewWidth = 50; // Standardbreite 50%
+  /**
+   * The initial HTML content for the editor, loaded from a test data file.
+   * @public
+   */
+  public testText: string = '';
 
-  private isResizing = false;
-  private startX = 0;
-  private startEditorWidth = 0;
+  /**
+   * The current width of the editor pane as a percentage.
+   * @public
+   */
+  public editorWidth: number = 50; // Default width: 50%
 
-  @ViewChild('mainContent', { static: false }) mainContent?: ElementRef;
+  /**
+   * The current width of the preview pane as a percentage.
+   * @public
+   */
+  public previewWidth: number = 50; // Default width: 50%
 
-  constructor() {
-    // Lade den Test-Text beim Start
+  /**
+   * A flag to indicate whether the user is currently resizing the panes.
+   * @private
+   */
+  private isResizing: boolean = false;
+
+  /**
+   * The starting X-coordinate of the mouse when a resize action begins.
+   * @private
+   */
+  private startX: number = 0;
+
+  /**
+   * The width of the editor pane when a resize action begins.
+   * @private
+   */
+  private startEditorWidth: number = 0;
+
+  /**
+   * A reference to the main content container element.
+   * @public
+   */
+  @ViewChild('mainContent', { static: false })
+  public mainContent?: ElementRef;
+
+  /**
+   * The constructor for the AppComponent.
+   * Initializes the component by loading the test text.
+   */
+  public constructor() {
+    // Load the test text on component initialization.
     this.testText = TestText.testText;
   }
 
-  ngAfterViewInit(): void {}
+  /**
+   * A lifecycle hook that is called after Angular has fully initialized the component's view.
+   * @public
+   */
+  public ngAfterViewInit(): void {
+    // This hook is currently not used but is kept for future lifecycle-related logic.
+  }
 
   /**
-   * Startet den Resize-Vorgang
+   * Starts the resizing process when the user clicks and holds the resize handle.
+   * @param {MouseEvent} event - The mouse event triggered by the mousedown action.
+   * @public
    */
-  onResizeStart(event: MouseEvent): void {
+  public onResizeStart(event: MouseEvent): void {
     event.preventDefault();
     this.isResizing = true;
     this.startX = event.clientX;
     this.startEditorWidth = this.editorWidth;
 
-    // Cursor für die gesamte Seite ändern während des Resizing
+    // Change the cursor for the entire page to indicate a resize is in progress.
     document.body.style.cursor = 'col-resize';
     document.body.style.userSelect = 'none';
   }
 
   /**
-   * Mouse Move Handler für das Resizing
+   * Handles the mouse move event to dynamically resize the editor and preview panes.
+   * @param {MouseEvent} event - The mouse event triggered by the mousemove action.
+   * @public
    */
   @HostListener('document:mousemove', ['$event'])
-  onMouseMove(event: MouseEvent): void {
-    if (!this.isResizing || !this.mainContent) return;
+  public onMouseMove(event: MouseEvent): void {
+    if (!this.isResizing || !this.mainContent) {
+      return;
+    }
 
     const containerWidth = this.mainContent.nativeElement.offsetWidth;
     const deltaX = event.clientX - this.startX;
@@ -61,44 +117,48 @@ export class AppComponent implements AfterViewInit {
 
     let newEditorWidth = this.startEditorWidth + deltaPercent;
 
-    // Begrenze die Breiten (mindestens 20%, maximal 80%)
+    // Constrain the width of the panes to be between 20% and 80%.
     newEditorWidth = Math.max(20, Math.min(80, newEditorWidth));
 
     this.editorWidth = newEditorWidth;
     this.previewWidth = 100 - newEditorWidth;
-
-    this.previewWidth = 100 - newEditorWidth;
   }
 
   /**
-   * Mouse Up Handler - beendet das Resizing
+   * Stops the resizing process when the user releases the mouse button.
+   * @param {MouseEvent} event - The mouse event triggered by the mouseup action.
+   * @public
    */
   @HostListener('document:mouseup', ['$event'])
-  onMouseUp(event: MouseEvent): void {
+  public onMouseUp(event: MouseEvent): void {
     if (this.isResizing) {
       this.isResizing = false;
 
-      // Cursor zurücksetzen
+      // Reset the cursor to its default state.
       document.body.style.cursor = '';
       document.body.style.userSelect = '';
     }
   }
 
   /**
-   * Verhindert Textselektierung während des Resizing
+   * Prevents text selection while the user is resizing the panes.
+   * @param {Event} event - The selectstart event.
+   * @public
    */
   @HostListener('document:selectstart', ['$event'])
-  onSelectStart(event: Event): void {
+  public onSelectStart(event: Event): void {
     if (this.isResizing) {
       event.preventDefault();
     }
   }
 
   /**
-   * Wird aufgerufen wenn sich der Content ändert
+   * A handler for the contentChange event from the editor.
+   * This function is no longer needed, as image responsiveness
+   * is now handled entirely by CSS in the stylesheet.
+   * @public
    */
-  onContentChange(): void {
-    // This function is no longer needed, as image responsiveness
-    // is now handled entirely by CSS in the stylesheet.
+  public onContentChange(): void {
+    // This function is kept for potential future use but is currently empty.
   }
 }
