@@ -41,7 +41,7 @@
     "@nx/angular": "20.8.0",
     "@nx/eslint-plugin": "^20.8.0",
     "@nx/linter": "^19.8.4",
-    "@nx/workspace": "20.8.0",
+    "@nx/workspace": "^21.6.3",
     "@schematics/angular": "^18.2.14",
     "@types/jasmine": "~5.1.0",
     "eslint": "^9.25.1",
@@ -52,7 +52,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^18.2.1",
-    "nx": "20.8.0",
+    "nx": "^21.6.3",
     "typescript": "~5.5.4"
   }
 }
