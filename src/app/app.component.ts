@@ -5,11 +5,10 @@ import { NgIf } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [LibMagnetarQuillComponent, NgIf, FormsModule],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.less'
+    selector: 'app-root',
+    imports: [LibMagnetarQuillComponent, NgIf, FormsModule],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.less'
 })
 export class AppComponent implements AfterViewInit {
   /**

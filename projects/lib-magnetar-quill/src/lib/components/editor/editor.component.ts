@@ -19,16 +19,15 @@ import {ImageService} from "../../services/image.service";
 import {ClickOutsideDirective} from "../../directives/click-outside.directive";
 
 @Component({
-  selector: 'lib-editor',
-  standalone: true,
-  imports: [
-    NgIf,
-    NgClass,
-    FormsModule,
-    ClickOutsideDirective
-  ],
-  templateUrl: './editor.component.html',
-  styleUrl: './editor.component.less'
+    selector: 'lib-editor',
+    imports: [
+        NgIf,
+        NgClass,
+        FormsModule,
+        ClickOutsideDirective
+    ],
+    templateUrl: './editor.component.html',
+    styleUrl: './editor.component.less'
 })
 export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoCheck {
 

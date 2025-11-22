@@ -128,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "MagnetarQuill"
+  "defaultProject": "MagnetarQuill",
+  "cli": {
+    "analytics": false
+  }
 }

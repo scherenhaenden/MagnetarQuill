@@ -6,16 +6,15 @@ import {ImageService} from "../../services/image.service";
 import {ClickOutsideDirective} from "../../directives/click-outside.directive";
 
 @Component({
-  selector: 'lib-image-modal',
-  standalone: true,
+    selector: 'lib-image-modal',
     imports: [
         NgIf,
         ReactiveFormsModule,
         FormsModule,
         ClickOutsideDirective
     ],
-  templateUrl: './image-modal.component.html',
-  styleUrl: './image-modal.component.css'
+    templateUrl: './image-modal.component.html',
+    styleUrl: './image-modal.component.css'
 })
 export class ImageModalComponent {
 
