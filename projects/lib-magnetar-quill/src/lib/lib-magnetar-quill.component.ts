@@ -88,7 +88,6 @@ export class LibMagnetarQuillComponent {
   @Input()
   public set content(value: string) {
     this.contentService.setEditorContent(value);
-    this.contentChange.emit(value);
   }
 
   /**
