@@ -83,6 +83,9 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
 
     this.contentService.editorContent$.subscribe(content => {
       this.editorHtmlContent = content;
+      if (!this.isHtmlView && !this.editorWysiwyg.nativeElement.contains(document.activeElement)) {
+        this.editorWysiwyg.nativeElement.innerHTML = content;
+      }
     });
 
   }
