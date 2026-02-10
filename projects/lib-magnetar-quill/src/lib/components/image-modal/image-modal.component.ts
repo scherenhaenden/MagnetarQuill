@@ -13,6 +13,7 @@ import {ClickOutsideDirective} from "../../directives/click-outside.directive";
         FormsModule,
         ClickOutsideDirective
     ],
+    standalone: true,
     templateUrl: './image-modal.component.html',
     styleUrl: './image-modal.component.css'
 })

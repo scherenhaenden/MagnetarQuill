@@ -21,6 +21,7 @@ import { ClickOutsideDirective } from "./directives/click-outside.directive";
     selector: 'magnetar-quill',
     imports: [ToolbarComponent, EditorComponent, ImageModalComponent, NgIf, ClickOutsideDirective],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    standalone: true,
     templateUrl: './lib-magnetar-quill.component.html',
     styleUrl: './lib-magnetar-quill.component.less'
 })

@@ -7,6 +7,7 @@ import { FormsModule } from "@angular/forms";
 @Component({
     selector: 'app-root',
     imports: [LibMagnetarQuillComponent, NgIf, FormsModule],
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.less'
 })

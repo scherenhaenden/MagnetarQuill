@@ -20,6 +20,7 @@ import {ContentService} from "../../services/content.service";
         FormsModule,
         ImageModalComponent
     ],
+    standalone: true,
     templateUrl: './toolbar.component.html',
     styleUrl: './toolbar.component.less'
 })

@@ -26,6 +26,7 @@ import {ClickOutsideDirective} from "../../directives/click-outside.directive";
         FormsModule,
         ClickOutsideDirective
     ],
+    standalone: true,
     templateUrl: './editor.component.html',
     styleUrl: './editor.component.less'
 })
