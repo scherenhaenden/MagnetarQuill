@@ -32,6 +32,10 @@ tasks:
     title: align-requirements-with-architecture
     owner: core-team
     state: in_progress
+  - id: task-203
+    title: upgrade-workspace-to-angular-20-3-16
+    owner: core-team
+    state: in_review
 
 risks:
   - id: risk-001

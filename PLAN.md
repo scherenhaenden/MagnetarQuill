@@ -16,12 +16,14 @@ This plan captures milestones, tasks, effort estimates, and task status; its str
 | `task-102` | `ms-01` | Define machine-readable project template | Platform Team | 2 | 10 | `in_review` | Awaiting final schema validation. |
 | `task-201` | `ms-02` | Align requirements with architecture modules | Core Team | 5 | 25 | `in_progress` | Cross-checking module boundaries. |
 | `task-202` | `ms-02` | Define baseline quality gates | QA Team | 4 | 20 | `ready` | Depends on testing strategy sign-off. |
+| `task-203` | `ms-02` | Upgrade workspace to Angular 20.3.16 | Core Team | 3 | 15 | `in_review` | Dependency matrix aligned to Angular `^20.3.16`; npm registry policy currently blocks full reinstall (`403`) and is tracked for follow-up validation. |
 | `task-301` | `ms-03` | Formalize release checklist | Delivery Team | 6 | 30 | `planned` | Planned after ms-02 acceptance. |
 
 ## Effort Summary
-- **Total effort:** 20 pts
+- **Total effort:** 23 pts
 - **Completed:** 3 pts
 - **In progress:** 5 pts
+- **In review:** 3 pts
 - **Remaining:** 12 pts
 
 ## State Definitions
@@ -34,3 +36,9 @@ This plan captures milestones, tasks, effort estimates, and task status; its str
 
 ## Change Management
 This document must be updated whenever tasks change state, scope, ownership, or estimates. Corresponding updates must also be reflected in the project YAML file and `BITACORA.md`.
+
+
+## Upgrade Reflection (task-203)
+- Angular 20 adoption is configuration-complete in source control (framework packages, builder toolchain, and library peer dependencies).
+- Execution risk remains external: package retrieval is restricted by registry policy (`403 Forbidden`), so lockfile regeneration and full runtime verification must be finalized once access is restored.
+- Mitigation: keep task in `in_review`, track the blocker explicitly, and rerun full CI (install + tests) immediately after policy unblock.

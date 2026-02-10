@@ -1,6 +1,6 @@
 # LibMagnetarQuill
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.0.
+This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 20.3.16.
 
 ## Code scaffolding
 
