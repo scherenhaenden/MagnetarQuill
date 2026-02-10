@@ -117,19 +117,8 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
   }
 
   /**
-   * Handles the change in content by updating the service with the new HTML content.
-   * This method normalizes line breaks, splits the content into paragraphs,
-   * and ensures that the placeholder is maintained.
-   *
-   * @param {string} htmlContent - The HTML content that has been updated.
-   * @returns {void} This method does not return a value.
-   *
-   * @example
-   * // Example usage of onContentChange
-   * const newContent = "<p>New paragraph.</p>";
-   * instance.onContentChange(newContent);
-   *
-   * @throws {Error} Throws an error if the content cannot be processed.
+   * Updates the service with the new HTML content upon change.
+   * @param {string} htmlContent - The updated HTML content.
    */
   public onContentChange(htmlContent: string): void {
     // Update the content in the service whenever it changes
@@ -498,6 +487,9 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
 
 
   // Method to ensure editor always has a placeholder or content
+  /**
+   * Ensures a placeholder is set in the editor if it is empty.
+   */
   private ensurePlaceholder(): void {
     const editor = this.editorWysiwyg.nativeElement;
     if (editor.innerText.trim() === '') {
