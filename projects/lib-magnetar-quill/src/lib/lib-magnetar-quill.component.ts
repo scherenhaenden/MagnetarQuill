@@ -18,12 +18,12 @@ import { FormattingService } from "./services/formatting.service";
 import { ClickOutsideDirective } from "./directives/click-outside.directive";
 
 @Component({
-  selector: 'magnetar-quill',
-  standalone: true,
-  imports: [ToolbarComponent, EditorComponent, ImageModalComponent, NgIf, ClickOutsideDirective],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  templateUrl: './lib-magnetar-quill.component.html',
-  styleUrl: './lib-magnetar-quill.component.less'
+    selector: 'magnetar-quill',
+    imports: [ToolbarComponent, EditorComponent, ImageModalComponent, NgIf, ClickOutsideDirective],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    standalone: true,
+    templateUrl: './lib-magnetar-quill.component.html',
+    styleUrl: './lib-magnetar-quill.component.less'
 })
 export class LibMagnetarQuillComponent {
 
@@ -89,7 +89,6 @@ export class LibMagnetarQuillComponent {
   @Input()
   public set content(value: string) {
     this.contentService.setEditorContent(value);
-    this.contentChange.emit(value);
   }
 
   /**
