@@ -19,6 +19,16 @@ Typical categories include:
 
 ## Entries
 ---
+**Timestamp:** 2026-02-10 12:45 UTC  
+**Author:** Codex  
+**Entry:** State Change: Added `task-203` (Angular 20.3.16 upgrade) in `in_review`; updated PLAN/STATUS with reflection on external dependency constraints and mitigation path.
+
+---
+**Timestamp:** 2026-02-10 12:40 UTC  
+**Author:** Codex  
+**Entry:** Blocker: Created `blocker-registry-angular20` after npm install failed with `403 Forbidden` while resolving Angular 20 toolchain packages; follow-up required to complete lockfile regeneration and full CI verification.
+
+---
 **Timestamp:** 2026-02-10 12:10 UTC  
 **Author:** Codex  
 **Entry:** `task-102`: state changed from `ready` to `in_review`. Canonical YAML template drafted and pending governance review.

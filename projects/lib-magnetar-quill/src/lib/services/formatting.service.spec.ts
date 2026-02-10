@@ -118,6 +118,7 @@ describe('FormattingService', () => {
       expect(mockSelection.removeAllRanges).toHaveBeenCalled();
       expect(mockSelection.addRange).toHaveBeenCalled();
     });
+  });
 
   describe('setTextAlign', () => {
     it('should set the text alignment for the selected paragraphs', () => {
