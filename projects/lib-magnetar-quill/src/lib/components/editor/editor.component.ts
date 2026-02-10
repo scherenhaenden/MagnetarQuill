@@ -4,7 +4,8 @@ import {
   DoCheck,
   ElementRef, EventEmitter,
   HostListener, Input,
-  OnChanges, OnInit, Output,
+  OnChanges, OnDestroy, OnInit, Output,
+  SecurityContext,
   SimpleChanges,
   ViewChild
 } from '@angular/core';
@@ -17,6 +18,8 @@ import {ImageModalComponentModel} from "../../models/image-modal-component-model
 import {ImageHtmlElementImageModalComponentMapper} from "../../mappers/image-html-element-image-modal-component-mapper";
 import {ImageService} from "../../services/image.service";
 import {ClickOutsideDirective} from "../../directives/click-outside.directive";
+import {DomSanitizer} from '@angular/platform-browser';
+import {Subject, takeUntil} from 'rxjs';
 
 @Component({
     selector: 'lib-editor',
@@ -30,7 +33,7 @@ import {ClickOutsideDirective} from "../../directives/click-outside.directive";
     templateUrl: './editor.component.html',
     styleUrl: './editor.component.less'
 })
-export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoCheck {
+export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoCheck, OnDestroy {
 
   @ViewChild('editorWysiwyg', { static: true }) public editorWysiwyg!: ElementRef<HTMLDivElement>;
   @ViewChild('editorHtml', { static: true }) public editorHtml!: ElementRef<HTMLTextAreaElement>;
@@ -41,6 +44,7 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
   private editorHtmlBackup!: HTMLTextAreaElement;
   private editorBackup!: HTMLDivElement;
   private parentElement!: HTMLElement;
+  private readonly destroy$: Subject<void> = new Subject<void>();
    // Track if HTML view is active
   @Input() isHtmlView: boolean = false;
   @Output() requestImageEdit = new EventEmitter<ImageModalComponentModel>();
@@ -67,7 +71,8 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
 
   constructor(private formattingService: FormattingService,
               private contentService: ContentService,
-              private imageService: ImageService
+              private imageService: ImageService,
+              private readonly domSanitizer: DomSanitizer
 
   ) {
     this.isHtmlView = false;
@@ -75,20 +80,33 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
 
   }
 
-  ngOnInit() {
+  public ngOnInit(): void {
     //this.editorWysiwyg.nativeElement.addEventListener('paste', this.onPaste.bind(this));
     // Subscribe to the content observable to keep the editor synced
 
     this.editorHtmlContent = this.contentService.getEditorContent();
-    this.editorWysiwyg.nativeElement.innerHTML = this.editorHtmlContent;
+    this.syncEditorDomFromContent(this.editorHtmlContent);
 
-    this.contentService.editorContent$.subscribe(content => {
+    this.contentService.editorContent$.pipe(takeUntil(this.destroy$)).subscribe(content => {
       this.editorHtmlContent = content;
       if (!this.isHtmlView && !this.editorWysiwyg.nativeElement.contains(document.activeElement)) {
-        this.editorWysiwyg.nativeElement.innerHTML = content;
+        this.syncEditorDomFromContent(content);
       }
     });
 
+  }
+
+  public ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
+  private sanitizeHtmlForEditor(htmlContent: string): string {
+    return this.domSanitizer.sanitize(SecurityContext.HTML, htmlContent) ?? '';
+  }
+
+  private syncEditorDomFromContent(content: string): void {
+    this.editorWysiwyg.nativeElement.innerHTML = this.sanitizeHtmlForEditor(content);
   }
 
   /**
@@ -399,7 +417,7 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
 
 
 
-  ngAfterViewInit(): void {
+  public ngAfterViewInit(): void {
 
     if(this.isHtmlView) {
       //editorHtmlBackup
@@ -440,10 +458,10 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
     }
   }
 
-  ngOnChanges(changes: SimpleChanges) {
+  public ngOnChanges(changes: SimpleChanges): void {
     this.ensurePlaceholder();
   }
-  ngDoCheck() {
+  public ngDoCheck(): void {
     //this.ensurePlaceholder();
 
   }
