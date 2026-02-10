@@ -46,13 +46,10 @@ export class KeyboardShortcutService implements OnDestroy {
 
     // Ignore shortcuts if typing inside an input, textarea etc., unless specifically allowed
     const targetElement = ev.target as HTMLElement;
-    if (targetElement?.isContentEditable === false && ['INPUT', 'TEXTAREA', 'SELECT'].includes(targetElement?.tagName)) {
-      // Allow specific shortcuts like Undo/Redo even in inputs? Maybe check match.action here.
-      // For now, ignore all shortcuts if focus is not in the editor or similar editable context.
-      // This check needs refinement based on where the editor content resides.
-      // If the editor itself isn't focused, maybe don't process shortcuts?
-      // console.log('Ignoring keydown in input/textarea:', targetElement?.tagName);
-      // return; // Temporarily disabled - needs better focus/context check
+    // Check explicitly if we are in a native input element and NOT in a contentEditable container (like the editor)
+    // Note: inputs usually have isContentEditable=false. The editor div has isContentEditable=true.
+    if (targetElement && !targetElement.isContentEditable && ['INPUT', 'TEXTAREA', 'SELECT'].includes(targetElement.tagName)) {
+      return;
     }
 
     const match = SHORTCUTS.find(d =>
@@ -85,7 +82,7 @@ export class KeyboardShortcutService implements OnDestroy {
       case ShortcutAction.Strikethrough:   this.fmt.toggleStrikethrough();   break; // Assumes fmt service has this
       case ShortcutAction.Superscript:     this.fmt.toggleSuperscript();     break; // Assumes fmt service has this (e.g., wrapSelectionWithTag('sup'))
       case ShortcutAction.Subscript:       this.fmt.toggleSubscript();       break; // Assumes fmt service has this (e.g., wrapSelectionWithTag('sub'))
-      //case ShortcutAction.ClearFormatting: this.fmt.clearFormatting();       break; // Assumes fmt service has this
+      case ShortcutAction.ClearFormatting: this.fmt.clearFormatting();       break; // Assumes fmt service has this
 
       // List Formatting
       case ShortcutAction.OrderedList:     this.fmt.toggleList('ordered');   break; // Assumes fmt service has this

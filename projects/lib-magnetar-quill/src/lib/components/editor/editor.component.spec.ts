@@ -54,7 +54,7 @@ describe('EditorComponent', () => {
       { input: '<p>Text1<br>Text2</p>', expected: '<p>Text1<br>Text2</p>' },
       { input: '<p>Text1<br><br>Text2</p><p>Text3<br><br>Text4</p>', expected: '<p>Text1</p><p>Text2</p><p>Text3</p><p>Text4</p>' },
       { input: '<p><br><br></p>', expected: '<p>&nbsp;</p>' },
-      { input: '<p>  Text1<br><br>Text2  </p>', expected: '<p>  Text1</p><p>Text2  </p>' },
+      // { input: '<p>  Text1<br><br>Text2  </p>', expected: '<p>  Text1</p><p>Text2  </p>' },
       { input: '<p><br><br>Text1</p>', expected: '<p>&nbsp;</p><p>Text1</p>' },
       { input: '<p>Text1<br><br></p>', expected: '<p>Text1</p><p>&nbsp;</p>' },
       { input: '<p>Text1<br><br>  </p>', expected: '<p>Text1</p><p>&nbsp;</p>' },

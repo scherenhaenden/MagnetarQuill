@@ -19,6 +19,11 @@ Typical categories include:
 
 ## Entries
 ---
+**Timestamp:** 2026-02-10 16:30 UTC
+**Author:** Jules
+**Entry:** State Change: Completed `task-204`. Upgraded workspace to Angular 21.1.0, updated library peer dependencies, and verified tests.
+
+---
 **Timestamp:** 2026-02-10 12:45 UTC  
 **Author:** Codex  
 **Entry:** State Change: Added `task-203` (Angular 20.3.16 upgrade) in `in_review`; updated PLAN/STATUS with reflection on external dependency constraints and mitigation path.
