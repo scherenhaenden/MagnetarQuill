@@ -2,11 +2,6 @@
 const glob = require('glob');
 
 module.exports = function (config) {
-  // 1) Busca dinámicamente todos los test.ts en proyectos
-  const projectTestEntrypoints = glob
-    .sync('projects/**/src/test.ts')
-    .map((f) => ({ pattern: f, watched: false }));
-
   config.set({
     basePath: '',
     frameworks: ['jasmine', '@angular-devkit/build-angular'],
@@ -18,20 +13,8 @@ module.exports = function (config) {
       require('@angular-devkit/build-angular/plugins/karma')
     ],
 
-    // 2) Entrypoints: el test.ts de la app y el de cada proyecto
-    files: [
-      { pattern: 'src/test.ts', watched: false },
-      ...projectTestEntrypoints
-    ],
-
-    // 3) El preprocesador de Angular para **cada** test.ts
-    preprocessors: {
-      'src/test.ts': ['@angular-devkit/build-angular'],
-      ...projectTestEntrypoints.reduce((acc, entry) => {
-        acc[entry.pattern] = ['@angular-devkit/build-angular'];
-        return acc;
-      }, {})
-    },
+    files: [],
+    preprocessors: {},
 
     client: {
       jasmine: {

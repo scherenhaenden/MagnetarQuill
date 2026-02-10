@@ -17,11 +17,12 @@ This plan captures milestones, tasks, effort estimates, and task status; its str
 | `task-201` | `ms-02` | Align requirements with architecture modules | Core Team | 5 | 25 | `in_progress` | Cross-checking module boundaries. |
 | `task-202` | `ms-02` | Define baseline quality gates | QA Team | 4 | 20 | `ready` | Depends on testing strategy sign-off. |
 | `task-203` | `ms-02` | Upgrade workspace to Angular 20.3.16 | Core Team | 3 | 15 | `in_review` | Dependency matrix aligned to Angular `^20.3.16`; npm registry policy currently blocks full reinstall (`403`) and is tracked for follow-up validation. |
+| `task-204` | `ms-02` | Upgrade workspace to Angular 21 | Core Team | 3 | 15 | `done` | Upgraded to Angular 21.1.0; Tests verified. |
 | `task-301` | `ms-03` | Formalize release checklist | Delivery Team | 6 | 30 | `planned` | Planned after ms-02 acceptance. |
 
 ## Effort Summary
-- **Total effort:** 23 pts
-- **Completed:** 3 pts
+- **Total effort:** 26 pts
+- **Completed:** 6 pts
 - **In progress:** 5 pts
 - **In review:** 3 pts
 - **Remaining:** 12 pts
