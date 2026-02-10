@@ -96,11 +96,17 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
 
   }
 
+  /**
+   * Cleans up resources when the component is destroyed.
+   */
   public ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
   }
 
+  /**
+   * Sanitizes HTML content for the editor.
+   */
   private sanitizeHtmlForEditor(htmlContent: string): string {
     return this.domSanitizer.sanitize(SecurityContext.HTML, htmlContent) ?? '';
   }
@@ -454,9 +460,15 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
     }
   }
 
+  /**
+   * Handles changes to input properties.
+   */
   public ngOnChanges(changes: SimpleChanges): void {
     this.ensurePlaceholder();
   }
+  /**
+   * Custom change detection logic.
+   */
   public ngDoCheck(): void {
     //this.ensurePlaceholder();
 
