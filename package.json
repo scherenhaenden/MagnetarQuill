@@ -39,7 +39,7 @@
     "@angular/compiler-cli": "^20.3.16",
     "@nx/angular": "20.8.0",
     "@nx/eslint-plugin": "^20.8.0",
-    "@nx/linter": "^19.8.4",
+    "@nx/linter": "20.8.0",
     "@nx/workspace": "20.8.0",
     "@schematics/angular": "^20.3.16",
     "@types/jasmine": "~5.1.0",
