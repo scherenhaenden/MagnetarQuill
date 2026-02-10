@@ -120,7 +120,9 @@ describe('KeyboardShortcutService', () => {
       (service as any).fmt = mockFormattingService;
   });
 
-
+  // TODO:
+  // CRITICAL!:
+  /*The tests in the Target Element Filtering suite check for behavior that seems to be disabled in KeyboardShortcutService. Specifically, the service has a commented-out return statement that is supposed to prevent shortcuts from firing on INPUT, TEXTAREA, and SELECT elements. Because this logic is disabled, these tests will likely fail. Please either enable the logic in the service or adjust the tests to reflect the intended behavior.*/
   // --- Target Element Filtering ---
   describe('Target Element Filtering', () => {
     it('should ignore shortcuts when target is an INPUT element', () => {

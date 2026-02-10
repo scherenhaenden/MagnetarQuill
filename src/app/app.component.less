@@ -68,6 +68,8 @@ body {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: width 0.1s ease-out;
+  display: flex;
+  flex-direction: column;
 }
 
 .editor-section {
@@ -98,37 +100,16 @@ body {
 
 /* ===== EDITOR CONTAINER ===== */
 .lib-magnetar-quill-container {
-  min-height: 400px;
+  flex-grow: 1;
   border: 2px solid #e2e8f0;
   border-radius: 12px;
   background: #fafafa;
   transition: all 0.3s ease;
+  overflow: hidden; /* Contain the editor */
 
   &:focus-within {
     border-color: #667eea;
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-  }
-
-  /* Make images responsive within the editor */
-  :deep(img) {
-    max-width: 100% !important;
-    height: auto !important;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-  }
-
-  /* Editor content area responsive images */
-  :deep(.ql-editor) {
-    img {
-      max-width: 100% !important;
-      width: auto !important;
-      height: auto !important;
-      object-fit: contain;
-      display: block;
-      margin: 0.5rem auto;
-    }
   }
 }
 
@@ -137,7 +118,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
 }
 
 .toggle-btn {
@@ -162,82 +142,44 @@ body {
 }
 
 .output-area {
-  min-height: 400px;
+  flex-grow: 1;
   border: 2px solid #e2e8f0;
   border-radius: 12px;
   background: #fafafa;
   position: relative;
+  margin-top: 1.5rem;
+  overflow-y: auto;
 }
 
+/*
+  ========================================
+  Refactored Preview Pane Styling
+  - All content rendered via [innerHTML] is styled here.
+  - Using :deep to pierce component style encapsulation is not needed
+    because this is the component's own template.
+  ========================================
+*/
 .rendered-html {
   padding: 1.5rem;
   line-height: 1.7;
 
-  /* Force all content to be responsive */
-  * {
+  /*
+    Use a more robust, CSS-only approach for responsive content.
+    This avoids direct DOM manipulation and is more reliable.
+  */
+  :deep(img),
+  :deep(video),
+  :deep(embed),
+  :deep(object) {
     max-width: 100% !important;
-    box-sizing: border-box;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    margin: 1rem 0 0.5rem 0;
-    color: #2d3748;
-  }
-
-  p {
-    margin-bottom: 1rem;
-  }
-
-  ul, ol {
-    margin: 1rem 0;
-    padding-left: 2rem;
-  }
-
-  blockquote {
-    border-left: 4px solid #667eea;
-    padding-left: 1rem;
-    margin: 1rem 0;
-    color: #4a5568;
-    font-style: italic;
-  }
-
-  hr {
-    border: none;
-    height: 2px;
-    background: linear-gradient(to right, transparent, #e2e8f0, transparent);
-    margin: 2rem 0;
-  }
-
-  /* CRITICAL: Responsive images in preview - using more specific selectors */
-  img {
-    max-width: 100% !important;
-    width: auto !important;
     height: auto !important;
-    object-fit: contain !important;
+    display: block;
+    margin: 1rem auto;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    display: block !important;
-    margin: 1rem auto !important;
-    transition: all 0.3s ease;
-
-    &:hover {
-      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-      transform: scale(1.02);
-    }
   }
 
-  /* Additional fallback for any image inside any element */
-  * img {
-    max-width: 100% !important;
-    width: auto !important;
-    height: auto !important;
-    object-fit: contain !important;
-    display: block !important;
-    margin: 1rem auto !important;
-  }
-
-  /* Tables should also be responsive */
-  table {
+  :deep(table) {
     width: 100% !important;
     max-width: 100% !important;
     table-layout: fixed;
@@ -248,13 +190,8 @@ body {
       overflow-wrap: break-word;
     }
   }
-
-  /* Any embedded content should be responsive */
-  iframe, video, embed, object {
-    max-width: 100% !important;
-    height: auto !important;
-  }
 }
+
 
 .empty-state {
   position: absolute;
@@ -278,18 +215,14 @@ body {
   z-index: 10;
   padding: 0 2px;
 
-  &:hover {
-    .resize-line {
-      background: #667eea;
-      width: 3px;
-      box-shadow: 0 0 8px rgba(102, 126, 234, 0.3);
-    }
+  &:hover .resize-line {
+    background: #667eea;
+    width: 3px;
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.3);
   }
 
-  &:active {
-    .resize-line {
-      background: #5a67d8;
-    }
+  &:active .resize-line {
+    background: #5a67d8;
   }
 }
 
@@ -300,23 +233,6 @@ body {
   border-radius: 1px;
   transition: all 0.2s ease;
   position: relative;
-
-  &::before {
-    content: '⋮';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #a0aec0;
-    font-size: 12px;
-    line-height: 1;
-  }
-}
-
-/* Body styles during resize */
-body.resizing {
-  cursor: col-resize !important;
-  user-select: none !important;
 }
 
 /* ===== RESPONSIVE DESIGN ===== */

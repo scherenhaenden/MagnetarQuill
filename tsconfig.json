@@ -8,11 +8,6 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
-    "paths": {
-      "lib-magnetar-quill": [
-        "./dist/lib-magnetar-quill"
-      ]
-    },
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -27,7 +22,13 @@
     "lib": [
       "ES2022",
       "dom"
-    ]
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "lib-magnetar-quill": [
+        "dist/lib-magnetar-quill"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
