@@ -98,6 +98,9 @@ export class LibMagnetarQuillComponent {
     this.showImageModal = false;
   }
 
+  /**
+   * Emits the new content when the editor content changes.
+   */
   public onEditorContentChanged(newContent: string): void {
     this.contentChange.emit(newContent); // Send to outside world
 
