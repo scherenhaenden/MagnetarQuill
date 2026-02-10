@@ -19,16 +19,16 @@ import {ImageService} from "../../services/image.service";
 import {ClickOutsideDirective} from "../../directives/click-outside.directive";
 
 @Component({
-  selector: 'lib-editor',
-  standalone: true,
-  imports: [
-    NgIf,
-    NgClass,
-    FormsModule,
-    ClickOutsideDirective
-  ],
-  templateUrl: './editor.component.html',
-  styleUrl: './editor.component.less'
+    selector: 'lib-editor',
+    imports: [
+        NgIf,
+        NgClass,
+        FormsModule,
+        ClickOutsideDirective
+    ],
+    standalone: true,
+    templateUrl: './editor.component.html',
+    styleUrl: './editor.component.less'
 })
 export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoCheck {
 
@@ -45,6 +45,7 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
   @Input() isHtmlView: boolean = false;
   @Output() requestImageEdit = new EventEmitter<ImageModalComponentModel>();
   @Output() editPicture = new EventEmitter<void>();
+  @Output() contentChanged = new EventEmitter<string>();
 
   private _requestImageInsert: ImageModalComponentModel | null = null;
 
@@ -83,6 +84,9 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
 
     this.contentService.editorContent$.subscribe(content => {
       this.editorHtmlContent = content;
+      if (!this.isHtmlView && !this.editorWysiwyg.nativeElement.contains(document.activeElement)) {
+        this.editorWysiwyg.nativeElement.innerHTML = content;
+      }
     });
 
   }
@@ -109,6 +113,8 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
     htmlContent = this.splitIntoParagraphs(htmlContent);
     this.contentService.setEditorContent(htmlContent);
     this.ensurePlaceholder();
+    this.contentChanged.emit(htmlContent);
+
   }
 
   public sanitizePaste: boolean = true; // Default to true, enabling sanitization
@@ -469,7 +475,6 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
   // Method to ensure editor always has a placeholder or content
   private ensurePlaceholder(): void {
     const editor = this.editorWysiwyg.nativeElement;
-    console.log(editor.innerText);
     if (editor.innerText.trim() === '') {
       editor.innerHTML = '<p><br></p>'; // Add an empty paragraph as a placeholder
     }

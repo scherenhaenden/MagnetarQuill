@@ -82,9 +82,6 @@ export class FormattingService {
    * @throws {Error} Throws an error if the activeSignal is not a WritableSignal.
    */
   private toggler(activeSignal: WritableSignal<boolean>, styleName: string, value: string): void {
-    console.log('activeSignal', activeSignal())
-    console.log('styleName', styleName)
-    console.log('value', value)
     if (activeSignal()) {
       this.removeFormatting(styleName, value);
       activeSignal.set(false)
@@ -92,7 +89,6 @@ export class FormattingService {
       this.applyStyle(styleName, value);
       activeSignal.set(true)
     }
-    //activeSignal.update(active => !active);
   }
 
 
@@ -239,6 +235,132 @@ export class FormattingService {
       range.insertNode(span);
     }
   }
+
+  private static readonly BLOCK_TAGS = new Set([
+    'P','DIV','LI','OL','UL','SECTION','ARTICLE','BLOCKQUOTE','PRE',
+    'H1','H2','H3','H4','H5','H6'
+  ]);
+
+  // typescript
+// projects/lib-magnetar-quill/src/lib/services/formatting.service.ts
+// TypeScript
+
+private static readonly VOID_TAGS = new Set([
+  'BR','IMG','HR','INPUT','SOURCE','VIDEO','AREA','BASE','COL','EMBED','LINK','META','PARAM','TRACK','WBR'
+]);
+
+public clearFormatting(): void {
+  const selection = window.getSelection();
+  if (!selection || selection.rangeCount === 0 || selection.isCollapsed) {
+    return;
+  }
+
+  const range = selection.getRangeAt(0);
+  const fragment = range.cloneContents();
+
+  // Build a temporary container element to generate HTML
+  const cleanedContainer = document.createElement('div');
+  Array.from(fragment.childNodes).forEach(node => {
+    const stripped = this.stripFormattingNode(node);
+    // stripFormattingNode may return a DocumentFragment or Node
+    cleanedContainer.appendChild(stripped);
+  });
+
+  // If nothing to insert, bail out
+  if (!cleanedContainer.hasChildNodes()) {
+    return;
+  }
+
+  const html = cleanedContainer.innerHTML || '';
+
+  // Try to insert the change via execCommand (Browser manages Undo/Selection)
+  let success = false;
+  try {
+    success = document.execCommand('insertHTML', false, html);
+  } catch (e) {
+    success = false;
+  }
+
+  if (success) {
+    // Browser handled replacement; nothing more to do.
+    return;
+  }
+
+  // Fallback: insert nodes via DOM (preserve structure, restore selection)
+  // Move prepared children into a fragment to insert
+  const insertFragment = document.createDocumentFragment();
+  while (cleanedContainer.firstChild) {
+    insertFragment.appendChild(cleanedContainer.firstChild);
+  }
+
+  const nodesToInsert = Array.from(insertFragment.childNodes) as Node[];
+  if (nodesToInsert.length === 0) {
+    return;
+  }
+
+  // Replace selection with the prepared fragment
+  range.deleteContents();
+  range.insertNode(insertFragment);
+
+  // Restore selection to cover the newly inserted nodes
+  selection.removeAllRanges();
+  const newRange = document.createRange();
+  newRange.setStartBefore(nodesToInsert[0]);
+  newRange.setEndAfter(nodesToInsert[nodesToInsert.length - 1]);
+  selection.addRange(newRange);
+}
+
+
+private stripFormattingNode(node: Node): Node {
+  if (node.nodeType === Node.TEXT_NODE) {
+    // Preserve text content as-is
+    return document.createTextNode(node.textContent || '');
+  }
+
+  if (node.nodeType === Node.ELEMENT_NODE) {
+    const el = node as HTMLElement;
+    const tag = el.tagName.toUpperCase();
+
+    // Preserve block tags (no attributes/styles) and recursively strip children
+    if (FormattingService.BLOCK_TAGS.has(tag)) {
+      const newEl = document.createElement(tag.toLowerCase());
+      Array.from(el.childNodes).forEach(child => {
+        newEl.appendChild(this.stripFormattingNode(child));
+      });
+      return newEl;
+    }
+
+    // Preserve void elements (keep essential attributes for images)
+    if (FormattingService.VOID_TAGS && FormattingService.VOID_TAGS.has(tag) || FormattingService.VOID_TAGS === undefined && FormattingService.VOID_TAGS) {
+      // This branch kept for clarity; actual check below
+    }
+    if (FormattingService.VOID_TAGS && FormattingService.VOID_TAGS.has(tag)) {
+      const newEl = document.createElement(tag.toLowerCase());
+      if (tag === 'IMG' && el instanceof HTMLImageElement) {
+        // Preserve src/alt minimally
+        if (el.getAttribute('src')) {
+          newEl.setAttribute('src', el.getAttribute('src') || '');
+        }
+        if (el.getAttribute('alt')) {
+          newEl.setAttribute('alt', el.getAttribute('alt') || '');
+        }
+      }
+      // other void elements are recreated without attributes
+      return newEl;
+    }
+
+    // Inline elements: flatten children into a document fragment
+    const frag = document.createDocumentFragment();
+    Array.from(el.childNodes).forEach(child => {
+      frag.appendChild(this.stripFormattingNode(child));
+    });
+    return frag;
+  }
+
+  // Fallback: empty text node
+  return document.createTextNode('');
+  }
+
 
 
   public applyStyleV2(styleName: string, value: string): void {
@@ -430,6 +552,24 @@ export class FormattingService {
     return element?.tagName === 'P' ? element : null;
   }
 
+  /** Retrieves paragraphs or list-items in selection or at caret */
+  private getTargetBlocks(): HTMLElement[] {
+    let elements = this.contentService.getSelectedElements();
+    if (elements.length === 0) {
+      const sel = window.getSelection();
+      if (!sel || sel.rangeCount === 0) { return []; }
+      let node = sel.getRangeAt(0).commonAncestorContainer as Node;
+      while (node && !(node instanceof HTMLElement) ||
+      node && !['P','LI','DIV','SECTION','ARTICLE'].includes((node as HTMLElement).tagName)) {
+        node = node.parentNode as Node;
+      }
+      if (node instanceof HTMLElement) {
+        elements = [node];
+      }
+    }
+    return elements;
+  }
+
 
 
   public onBackgroundColorChange(event: Event): void {
@@ -438,5 +578,66 @@ export class FormattingService {
     elements.forEach((element: HTMLElement) => element.style.backgroundColor = target.value);
   }
 
+  /** Pixels added on every indent action (≈ 2 em) */
+  private static readonly INDENT_STEP_PX = 20;
 
+
+  /** Increase indent on selected blocks */
+  public indent(): void {
+    const blocks = this.getTargetBlocks();
+    blocks.forEach(el => this.adjustIndent(el, +FormattingService.INDENT_STEP_PX));
+  }
+
+  /** Adjusts margin-left by step (positive or negative) */
+  private adjustIndent(el: HTMLElement, delta: number): void {
+    const current = parseInt(getComputedStyle(el).marginLeft, 10) || 0;
+    const next = Math.max(current + delta, 0);
+    el.style.marginLeft = `${next}px`;
+  }
+
+  /** Wraps or unwraps the selection in a block tag */
+  private wrapOrUnwrapBlock(tag: 'blockquote' | 'pre'): void {
+    const sel = window.getSelection();
+    if (!sel || sel.rangeCount === 0) { return; }
+    const range = sel.getRangeAt(0);
+
+    // Determine ancestor block
+    let ancestor = range.commonAncestorContainer as Node;
+    while (ancestor && ancestor.nodeType !== Node.ELEMENT_NODE) {
+      ancestor = ancestor.parentNode as Node;
+    }
+    const el = ancestor as HTMLElement;
+
+    // If inside same block, unwrap
+    if (el.tagName.toLowerCase() === tag) {
+      this.unwrap(el);
+      return;
+    }
+
+    // Else wrap
+    const wrapper = document.createElement(tag);
+    wrapper.appendChild(range.extractContents());
+    range.insertNode(wrapper);
+
+    sel.removeAllRanges();
+    const newRange = document.createRange();
+    newRange.selectNodeContents(wrapper);
+    sel.addRange(newRange);
+  }
+
+
+  /** Decrease indent on selected blocks */
+  public outdent(): void {
+    const blocks = this.getTargetBlocks();
+    blocks.forEach(el => this.adjustIndent(el, -FormattingService.INDENT_STEP_PX));
+  }
+  /** Toggles the selected text (or current paragraph) as a block-quote. */
+  public blockquote(): void {
+    this.wrapOrUnwrapBlock('blockquote');
+  }
+
+  /** Toggles the selected text (or current paragraph) as a code block (`<pre>`). */
+  public codeBlock(): void {
+    this.wrapOrUnwrapBlock('pre');
+  }
 }
