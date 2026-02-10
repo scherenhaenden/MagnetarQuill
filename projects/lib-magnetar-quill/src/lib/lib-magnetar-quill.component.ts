@@ -114,8 +114,7 @@ export class LibMagnetarQuillComponent {
   ) {}
 
   /**
-   * Closes the image editing modal if it is currently open.
-   * @public
+   * Closes the image editing modal if it is open.
    */
   public closeModal(): void {
     if (this.showImageModal) {
@@ -125,7 +124,6 @@ export class LibMagnetarQuillComponent {
 
   /**
    * Toggles the visibility of the HTML source view.
-   * @public
    */
   public toggleHtmlView(): void {
     this.isHtmlView = !this.isHtmlView;
@@ -133,26 +131,21 @@ export class LibMagnetarQuillComponent {
 
   /**
    * Opens the image editing modal.
-   * This is typically called from the editor's context menu.
-   * @public
    */
   public openImageEditModal(): void {
     this.showImageModal = true;
   }
 
   /**
-   * Resets the image data after editing is complete and closes the modal.
-   * @public
+   * Hides the image modal after editing is complete.
    */
   public clearImageToEdit(): void {
     this.showImageModal = false;
   }
 
   /**
-   * Handles the content changed event from the editor component.
-   * Emits the new content to the parent component.
+   * Emits the new content to the parent component when the editor content changes.
    * @param {string} newContent - The updated HTML content from the editor.
-   * @public
    */
   public onEditorContentChanged(newContent: string): void {
     this.contentChange.emit(newContent);
