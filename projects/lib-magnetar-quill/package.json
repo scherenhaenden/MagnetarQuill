@@ -2,8 +2,8 @@
   "name": "magnetar-quill",
   "version": "0.8.11",
   "peerDependencies": {
-    "@angular/common": "19.2.14",
-    "@angular/core": "19.2.14"
+    "@angular/common": "^20.3.16",
+    "@angular/core": "^20.3.16"
   },
   "dependencies": {
     "tslib": "^2.3.0"
