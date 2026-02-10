@@ -1,0 +1,48 @@
+metadata:
+  project_name: magnetarquill
+  description: Canonical project template for MagnetarQuill-aligned initiatives
+  start_date: 2026-02-10
+
+stakeholders:
+  - name: Product Owner
+    role: product_owner
+  - name: Platform Lead
+    role: technical_lead
+  - name: QA Lead
+    role: quality_assurance
+
+milestones:
+  - id: ms-01
+    name: project-initiation
+    target_date: 2026-02-20
+  - id: ms-02
+    name: core-editor-baseline
+    target_date: 2026-03-10
+
+tasks:
+  - id: task-101
+    title: create-canonical-governance-docs
+    owner: platform-team
+    state: done
+  - id: task-102
+    title: define-project-template-schema
+    owner: platform-team
+    state: in_review
+  - id: task-201
+    title: align-requirements-with-architecture
+    owner: core-team
+    state: in_progress
+
+risks:
+  - id: risk-001
+    description: scope-creep-on-non-core-features
+    probability: medium
+    impact: high
+    mitigation: enforce-moscow-prioritization-and-milestone-gates
+
+reporting:
+  daily_status_enabled: true
+  weekly_summary_enabled: true
+  notify_channels:
+    - bitacora
+    - status
