@@ -8,7 +8,7 @@
    ```
 3. Run the project locally:
    ```bash
-   npx nx serve
+   npm serve-with-lib
    ```
 
 ## Contribution Workflow
