@@ -99,7 +99,6 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
   public ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
-    this.observer?.disconnect();
   }
 
   private sanitizeHtmlForEditor(htmlContent: string): string {
