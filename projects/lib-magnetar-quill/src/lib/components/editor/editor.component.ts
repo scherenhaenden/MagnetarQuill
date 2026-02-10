@@ -105,6 +105,13 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
     return this.domSanitizer.sanitize(SecurityContext.HTML, htmlContent) ?? '';
   }
 
+  /**
+ * SECURITY NOTE:
+ * This method intentionally writes to innerHTML as part of a controlled rich-text editor.
+ * All externally supplied HTML (e.g., pasted or loaded content) must be sanitized before
+ * reaching this point. The editor DOM is treated as an internal, trusted editing surface,
+ * not as a direct renderer of untrusted content.
+ */
   private syncEditorDomFromContent(content: string): void {
     this.editorWysiwyg.nativeElement.innerHTML = this.sanitizeHtmlForEditor(content);
   }
