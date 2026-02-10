@@ -1,28 +1,393 @@
-app-root {
-  background: black;
+/* ===== GLOBAL STYLES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
 
-/* Root app component styles */
+/* ===== APP CONTAINER ===== */
 .app-container {
+  min-height: 100vh;
+  padding: 2rem;
   display: flex;
-  justify-content: center;   /* Horizontally center */
-  align-items: flex-start;   /* Align to the top for natural scrolling */
-  min-height: 200vh;         /* Allow the container to grow beyond viewport if needed */
-  padding: 20px;             /* Extra padding for breathing room */
-  background-color: #f0f0f0; /* Light background to contrast the editor */
-  background: black;
-  overflow: auto;            /* Auto-scroll if content overflows */
+  flex-direction: column;
+  gap: 2rem;
 }
 
-/* Style the editor container */
+/* ===== HEADER STYLES ===== */
+.app-header {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  .app-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 0.5rem;
+
+    background: linear-gradient(45deg, #fff, #f0f0f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .app-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+  }
+}
+
+/* ===== MAIN CONTENT ===== */
+.main-content {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+}
+
+/* ===== SECTION STYLES ===== */
+.editor-section,
+.preview-section {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: width 0.1s ease-out;
+}
+
+.editor-section {
+  margin-right: 0.5rem;
+}
+
+.preview-section {
+  margin-left: 0.5rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &::before {
+    content: '';
+    width: 4px;
+    height: 24px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 2px;
+  }
+}
+
+/* ===== EDITOR CONTAINER ===== */
 .lib-magnetar-quill-container {
-  width: 100%;               /* Full width, adapt based on app-container */
-  max-width: 800px;          /* Max width of the editor */
-  padding: 20px;             /* Padding for spacing */
-  border-radius: 8px;        /* Rounded corners */
-  background-color: white;   /* Editor background */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
-  overflow-y: auto;          /* Scroll vertically inside the editor if content overflows */
-  max-height: 2000vh;          /* Keep within the viewport but allow for more content */
+  min-height: 400px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fafafa;
+  transition: all 0.3s ease;
+
+  &:focus-within {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  }
+
+  /* Make images responsive within the editor */
+  :deep(img) {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+
+  /* Editor content area responsive images */
+  :deep(.ql-editor) {
+    img {
+      max-width: 100% !important;
+      width: auto !important;
+      height: auto !important;
+      object-fit: contain;
+      display: block;
+      margin: 0.5rem auto;
+    }
+  }
+}
+
+/* ===== PREVIEW SECTION ===== */
+.preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.toggle-btn {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.output-area {
+  min-height: 400px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fafafa;
+  position: relative;
+}
+
+.rendered-html {
+  padding: 1.5rem;
+  line-height: 1.7;
+
+  /* Force all content to be responsive */
+  * {
+    max-width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 1rem 0 0.5rem 0;
+    color: #2d3748;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  ul, ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+  }
+
+  blockquote {
+    border-left: 4px solid #667eea;
+    padding-left: 1rem;
+    margin: 1rem 0;
+    color: #4a5568;
+    font-style: italic;
+  }
+
+  hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #e2e8f0, transparent);
+    margin: 2rem 0;
+  }
+
+  /* CRITICAL: Responsive images in preview - using more specific selectors */
+  img {
+    max-width: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: block !important;
+    margin: 1rem auto !important;
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      transform: scale(1.02);
+    }
+  }
+
+  /* Additional fallback for any image inside any element */
+  * img {
+    max-width: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 1rem auto !important;
+  }
+
+  /* Tables should also be responsive */
+  table {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: fixed;
+    border-collapse: collapse;
+
+    td, th {
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+  }
+
+  /* Any embedded content should be responsive */
+  iframe, video, embed, object {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+.empty-state {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #a0aec0;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+/* ===== RESIZE HANDLE ===== */
+.resize-handle {
+  width: 8px;
+  cursor: col-resize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  padding: 0 2px;
+
+  &:hover {
+    .resize-line {
+      background: #667eea;
+      width: 3px;
+      box-shadow: 0 0 8px rgba(102, 126, 234, 0.3);
+    }
+  }
+
+  &:active {
+    .resize-line {
+      background: #5a67d8;
+    }
+  }
+}
+
+.resize-line {
+  width: 2px;
+  height: 40px;
+  background: #cbd5e0;
+  border-radius: 1px;
+  transition: all 0.2s ease;
+  position: relative;
+
+  &::before {
+    content: '⋮';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #a0aec0;
+    font-size: 12px;
+    line-height: 1;
+  }
+}
+
+/* Body styles during resize */
+body.resizing {
+  cursor: col-resize !important;
+  user-select: none !important;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+  .main-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .resize-handle {
+    display: none;
+  }
+
+  .editor-section,
+  .preview-section {
+    width: 100% !important;
+    margin: 0;
+  }
+
+  .app-container {
+    padding: 1rem;
+  }
+
+  .app-header .app-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .editor-section,
+  .preview-section {
+    padding: 1.5rem;
+  }
+
+  .lib-magnetar-quill-container,
+  .output-area {
+    min-height: 300px;
+  }
+
+  .preview-header {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.editor-section,
+.preview-section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.editor-section {
+  animation-delay: 0.1s;
+}
+
+.preview-section {
+  animation-delay: 0.2s;
 }

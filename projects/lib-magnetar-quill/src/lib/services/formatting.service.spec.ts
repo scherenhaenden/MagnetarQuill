@@ -118,6 +118,7 @@ describe('FormattingService', () => {
       expect(mockSelection.removeAllRanges).toHaveBeenCalled();
       expect(mockSelection.addRange).toHaveBeenCalled();
     });
+  });
 
   describe('setTextAlign', () => {
     it('should set the text alignment for the selected paragraphs', () => {
@@ -147,4 +148,55 @@ describe('FormattingService', () => {
       expect(element2.style.backgroundColor).toBe('#ff0000');
     });
   });
+
+  // New tests for clearFormatting edge-cases
+  describe('clearFormatting', () => {
+    it('should remove inline formatting but preserve images and block tags', () => {
+      const container = document.createElement('div');
+      container.contentEditable = 'true';
+      container.innerHTML = '<p><span style="color:red">Hello <em>World</em></span><img src="data:," alt="x"></p>';
+      document.body.appendChild(container);
+
+      const range = document.createRange();
+      range.selectNodeContents(container);
+      const sel = window.getSelection()!;
+      sel.removeAllRanges();
+      sel.addRange(range);
+
+      service.clearFormatting();
+
+      // span/em should be removed (no inline tags), paragraph and image remain
+      expect(container.querySelector('span')).toBeNull();
+      expect(container.querySelector('em')).toBeNull();
+      expect(container.querySelector('p')).not.toBeNull();
+      expect(container.querySelector('img')).not.toBeNull();
+
+      document.body.removeChild(container);
+    });
+
+    it('should preserve multiple block paragraphs and their text', () => {
+      const container = document.createElement('div');
+      container.contentEditable = 'true';
+      container.innerHTML = '<p><strong>One</strong></p><p><i>Two</i></p>';
+      document.body.appendChild(container);
+
+      const range = document.createRange();
+      // select both paragraphs
+      range.setStartBefore(container.firstChild!);
+      range.setEndAfter(container.lastChild!);
+      const sel = window.getSelection()!;
+      sel.removeAllRanges();
+      sel.addRange(range);
+
+      service.clearFormatting();
+
+      const paragraphs = Array.from(container.querySelectorAll('p'));
+      expect(paragraphs.length).toBe(2);
+      expect(paragraphs[0].textContent?.trim()).toBe('One');
+      expect(paragraphs[1].textContent?.trim()).toBe('Two');
+
+      document.body.removeChild(container);
+    });
+  });
+
 });

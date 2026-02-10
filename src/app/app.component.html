@@ -1,5 +1,42 @@
 <div class="app-container">
-  <div class="lib-magnetar-quill-container">
-    <magnetar-quill [(content)]="testText" ></magnetar-quill>
+  <header class="app-header">
+    <h1 class="app-title">MagnetarQuill Demo</h1>
+    <p class="app-subtitle">Test the WYSIWYG Editor in Real Time</p>
+  </header>
+
+  <div class="main-content" #mainContent>
+    <div class="editor-section"
+         [style.width.%]="editorWidth"
+         #editorSection>
+      <h2 class="section-title">Editor</h2>
+      <div class="lib-magnetar-quill-container">
+        <magnetar-quill [(content)]="testText"
+                        (contentChange)="onContentChange()"></magnetar-quill>
+      </div>
+    </div>
+
+    <!-- Resize Handle -->
+    <div class="resize-handle"
+         (mousedown)="onResizeStart($event)"
+         title="Drag to adjust size">
+      <div class="resize-line"></div>
+    </div>
+
+    <div class="preview-section"
+         [style.width.%]="previewWidth">
+      <div class="preview-header">
+        <h2 class="section-title">Live Preview</h2>
+        <button (click)="showOutput = !showOutput" class="toggle-btn">
+          {{ showOutput ? 'Hide' : 'Show' }}
+        </button>
+      </div>
+
+      <div *ngIf="showOutput" class="output-area">
+        <div [innerHTML]="testText" class="rendered-html"></div>
+        <div *ngIf="!testText || testText.trim().length === 0" class="empty-state">
+          Start writing in the editor...
+        </div>
+      </div>
+    </div>
   </div>
 </div>
