@@ -1,8 +1,8 @@
 # Status of MagnetarQuill
 
 ## Progress Summary
-**Overall completion:** 22%  
-`[####----------------] 22%`
+**Overall completion:** 27%  
+`[#####---------------] 27%`
 
 ## Current Milestones
 - `ms-01` Project Initiation — **In Progress**
@@ -18,4 +18,4 @@
    **Mitigation:** Defer advanced extension scenarios until core API stabilizes.
 
 4. **Risk:** Dependency supply-chain constraints can delay framework upgrades.  
-   **Mitigation:** Track `blocker-registry-angular20` and rerun lockfile + full CI once registry access is restored.
+   **Mitigation:** Track `blocker-registry-angular21` and rerun lockfile + full CI once registry access is restored.

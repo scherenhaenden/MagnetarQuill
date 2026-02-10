@@ -19,6 +19,11 @@ Typical categories include:
 
 ## Entries
 ---
+**Timestamp:** 2026-02-10 16:50 UTC  
+**Author:** Codex  
+**Entry:** State Change: Upgraded workspace manifests from Angular 20.3.16 to Angular 21 dependency ranges (`^21.0.0`) and bumped library package version from `0.8.15` to `0.9.0`; updated PLAN/STATUS/BLOCKERS/project template/library docs and recorded pending validation due ongoing npm `403` policy blocker (`blocker-registry-angular21`).
+
+---
 **Timestamp:** 2026-02-10 12:45 UTC  
 **Author:** Codex  
 **Entry:** State Change: Added `task-203` (Angular 20.3.16 upgrade) in `in_review`; updated PLAN/STATUS with reflection on external dependency constraints and mitigation path.
