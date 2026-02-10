@@ -74,6 +74,6 @@ AI agents must:
 ## Validating Canon Compliance
 - [ ] All required files exist and are non-empty.
 - [ ] Project YAML matches the canonical schema.
-- [ ] `BITACORA.md` is updated chronologically (most recent first).
+- [ ] `BITACORA.md` is updated reverse-chronologically (most recent first).
 - [ ] Active branches follow `BRANCHING_MODEL.md`.
 - [ ] Testing and blocker processes align with `TESTING.md` and `BLOCKERS.md`.

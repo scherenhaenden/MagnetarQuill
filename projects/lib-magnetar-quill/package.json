@@ -1,6 +1,6 @@
 {
   "name": "magnetar-quill",
-  "version": "0.8.4",
+  "version": "0.8.11",
   "peerDependencies": {
     "@angular/common": "^20.3.16",
     "@angular/core": "^20.3.16"
