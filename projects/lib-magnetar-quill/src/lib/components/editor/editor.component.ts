@@ -115,26 +115,31 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
  * SECURITY NOTE:
  * This method intentionally writes to innerHTML as part of a controlled rich-text editor.
  * All externally supplied HTML (e.g., pasted or loaded content) must be sanitized before
- * reaching this point. The editor DOM is treated as an internal, trusted editing surface,
- * not as a direct renderer of untrusted content.
+ * reaching this point via the onPaste handler or initial content processing.
+ * Direct innerHTML assignment is used here to avoid Angular's sanitizer stripping
+ * necessary RTF styles while editing.
  */
   private syncEditorDomFromContent(content: string): void {
-    this.editorWysiwyg.nativeElement.innerHTML = this.sanitizeHtmlForEditor(content);
+    // We trust the internal content state.
+    this.editorWysiwyg.nativeElement.innerHTML = content;
   }
 
   /**
    * Updates the service with the new HTML content upon change.
    * @param {string} htmlContent - The updated HTML content.
+   * @param {boolean} forceClean - Whether to apply aggressive cleaning (e.g., on paste or major change).
    */
-  public onContentChange(htmlContent: string): void {
+  public onContentChange(htmlContent: string, forceClean: boolean = false): void {
     // Update the content in the service whenever it changes
-
-    htmlContent = this.fixParagraphWithBrAndSpace(htmlContent); // Normalize line breaks
-    htmlContent = this.splitIntoParagraphs(htmlContent);
+    
+    if (forceClean) {
+      htmlContent = this.fixParagraphWithBrAndSpace(htmlContent); // Normalize line breaks
+      htmlContent = this.splitIntoParagraphs(htmlContent);
+    }
+    
     this.contentService.setEditorContent(htmlContent);
     this.ensurePlaceholder();
     this.contentChanged.emit(htmlContent);
-
   }
 
   public sanitizePaste: boolean = true; // Default to true, enabling sanitization
