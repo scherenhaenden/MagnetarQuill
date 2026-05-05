@@ -15,15 +15,16 @@ import { NgIf } from "@angular/common";
 import { ImageModalComponentModel } from "./models/image-modal-component-model";
 import { ImageService } from "./services/image.service";
 import { FormattingService } from "./services/formatting.service";
-import { ClickOutsideDirective } from "./directives/click-outside.directive";
+import { KeyboardShortcutService } from "./services/keyboard-shortcut.service";
 
 @Component({
     selector: 'magnetar-quill',
-    imports: [ToolbarComponent, EditorComponent, ImageModalComponent, NgIf, ClickOutsideDirective],
+    imports: [ToolbarComponent, EditorComponent, ImageModalComponent, NgIf],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     standalone: true,
     templateUrl: './lib-magnetar-quill.component.html',
-    styleUrl: './lib-magnetar-quill.component.less'
+    styleUrl: './lib-magnetar-quill.component.less',
+    providers: [ContentService, FormattingService, KeyboardShortcutService, ImageService]
 })
 export class LibMagnetarQuillComponent {
 

@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import {ImageInternalData} from "../models/image-internal-data";
 import {BehaviorSubject} from "rxjs";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ContentService {
 
 

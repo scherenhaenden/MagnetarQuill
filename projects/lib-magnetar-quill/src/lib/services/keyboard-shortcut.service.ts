@@ -1,5 +1,5 @@
 // File: keyboard-shortcut.service.ts
-import { Injectable, OnDestroy, inject } from '@angular/core';
+import { Injectable, OnDestroy, inject, ElementRef } from '@angular/core';
 import { Subject } from 'rxjs';
 import {FormattingService} from "./formatting.service";
 import {SHORTCUTS} from "../models/shortcut-map";
@@ -12,11 +12,12 @@ import {ShortcutAction} from "../models/key-shortcuts";
 // Import other services if needed (e.g., HistoryService for Undo/Redo)
 // import { HistoryService } from './services/history.service';
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class KeyboardShortcutService implements OnDestroy {
 
   private readonly destroy$ = new Subject<void>();
   private readonly fmt = inject(FormattingService);
+  private readonly el = inject(ElementRef);
   // Example: Inject HistoryService if it handles Undo/Redo
   // private readonly history = inject(HistoryService);
 
@@ -29,8 +30,11 @@ export class KeyboardShortcutService implements OnDestroy {
   /** remove listener when the service is destroyed */
   public ngOnDestroy(): void {
     window.removeEventListener('keydown', this.handleKeydown, true);
-    this.destroy$.next();
-    this.destroy$.complete();
+    if (!this.destroy$.closed) {
+      this.destroy$.next();
+      this.destroy$.complete();
+      this.destroy$.unsubscribe();
+    }
     console.log('KeyboardShortcutService destroyed and listener removed.'); // Debug log
   }
 
@@ -44,11 +48,17 @@ export class KeyboardShortcutService implements OnDestroy {
       return;
     }
 
+    const targetElement = ev.target as HTMLElement | null;
+
+    // IMPORTANT: Only process shortcuts if the event target is inside this specific editor instance.
+    // This prevents multiple editor instances from all reacting to the same global keydown event.
+    if (!targetElement || !this.el.nativeElement.contains(targetElement)) {
+      return;
+    }
+
     // Ignore shortcuts if typing inside an input, textarea etc., unless specifically allowed
-    const targetElement = ev.target as HTMLElement;
-    // Check explicitly if we are in a native input element and NOT in a contentEditable container (like the editor)
     // Note: inputs usually have isContentEditable=false. The editor div has isContentEditable=true.
-    if (targetElement && !targetElement.isContentEditable && ['INPUT', 'TEXTAREA', 'SELECT'].includes(targetElement.tagName)) {
+    if (!targetElement.isContentEditable && ['INPUT', 'TEXTAREA', 'SELECT'].includes(targetElement.tagName)) {
       return;
     }
 
@@ -63,6 +73,7 @@ export class KeyboardShortcutService implements OnDestroy {
 
     if (!match) {
       // No matching shortcut found in our map
+      console.warn('ShortcutService: No matching shortcut found for key:', ev.key, 'Modifiers:', {ctrl:ev.ctrlKey, meta:ev.metaKey, shift:ev.shiftKey, alt:ev.altKey});
       return;
     }
 
