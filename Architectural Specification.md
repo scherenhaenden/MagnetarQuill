@@ -99,7 +99,7 @@ The core MagnetarQuill library is backend-agnostic. However, for features beyond
 ### **6. Performance Considerations** ⚡
 
 #### **6.1. Frontend Performance**
--   **Efficient DOM Handling**: Minimize direct DOM manipulations and batch updates where possible to avoid layout thrashing, especially during complex formatting or object insertions. Virtual DOM concepts are generally not applicable within `contenteditable`.
+-   **Efficient DOM Handling**: Minimize direct DOM manipulations and batch updates where possible to avoid layout thrashing and reduce reflows and repaints, especially during complex formatting or object insertions. Virtual DOM concepts are generally not applicable within `contenteditable`.
 -   **Lazy Loading**: Consider lazy loading for heavy components, plugins, or features not immediately needed.
 -   **Client-Side Caching**: Use `localStorage` or `sessionStorage` for caching non-sensitive user settings or temporary states to improve load times or resilience.
 -   **Bundle Size**: Optimize the library's bundle size through code splitting, tree shaking (`sideEffects: false` helps), and mindful dependency management.

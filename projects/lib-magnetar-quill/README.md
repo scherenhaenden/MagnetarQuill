@@ -51,17 +51,17 @@ Based on the current completed progress, MagnetarQuill offers:
 
 ## **Installation** 🛠
 
-To use the MagnetarQuill component in your Angular project, install the library from npm (once published):
+To install the MagnetarQuill library from npm, run the following command in your project's terminal:
 
 ```bash
 npm i --save magnetar-quill
-````
+```
 
 *(Note: Ensure the package is published to npm for this command to work.)*
 
 ### **Prerequisites for Using the Library**
 
-  - An existing **Angular** project (v20.3.16 or higher recommended).
+  - An existing **Angular** project (v20.3.16 required based on peer dependencies).
 
 -----
 
@@ -92,7 +92,7 @@ npm i --save magnetar-quill
     }
     ```
 
-    *(Note: You might need a pipe like `safeHtml` to securely render the HTML output from the editor)*
+    *(Note: You must use a pipe like `safeHtml` to securely render the HTML output from the editor to prevent XSS attacks.)*
 
 2.  Add the component tag to your template and use `[(ngModel)]` for two-way binding of the editor's HTML content:
 
@@ -228,4 +228,6 @@ Follow development progress or ask questions:
 
   - **GitHub Issues**: [MagnetarQuill Issues](https://github.com/scherenhaenden/MagnetarQuill/issues)
   - **GitHub Discussions**: [MagnetarQuill Discussions](https://github.com/scherenhaenden/MagnetarQuill/discussions)
+
+n/MagnetarQuill/discussions)
 
