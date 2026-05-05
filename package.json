@@ -10,8 +10,11 @@
     "build-lib-watch": "ng build lib-magnetar-quill --watch --configuration development",
     "serve-with-lib": "npm run build-lib && ng serve --port 4200",
     "serve-with-lib-linux": "ng build lib-magnetar-quill --watch --configuration development & ng serve --port 4200",
-    "test": "ng test --watch=false",
-    "test-lib-magnetar-quill": "ng test lib-magnetar-quill --watch=false"
+    "test": "ng test --watch=false --code-coverage",
+    "test-ci": "ng test --watch=false --no-progress --browsers=ChromeHeadlessCI --code-coverage",
+    "test-lib-magnetar-quill": "ng test lib-magnetar-quill --watch=false --code-coverage"
+,
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -31,15 +34,13 @@
     "@angular-devkit/build-angular": "^21.1.0",
     "@angular-devkit/core": "^21.1.0",
     "@angular-devkit/schematics": "^21.1.0",
-    "@angular-eslint/builder": "^21.1.0",
-    "@angular-eslint/eslint-plugin": "^21.1.0",
-    "@angular-eslint/eslint-plugin-template": "^21.1.0",
-    "@angular-eslint/template-parser": "^21.1.0",
     "@angular/cli": "^21.1.0",
     "@angular/compiler-cli": "^21.1.0",
+    "@eslint/js": "^10.0.1",
     "@schematics/angular": "^21.1.0",
     "@types/jasmine": "~5.1.0",
-    "eslint": "^9.25.1",
+    "angular-eslint": "21.3.1",
+    "eslint": "^10.0.3",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
@@ -47,6 +48,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^21.1.0",
-    "typescript": "~5.9.3"
+    "typescript": "~5.9.3",
+    "typescript-eslint": "8.56.1"
   }
 }

@@ -26,7 +26,7 @@
     "baseUrl": ".",
     "paths": {
       "lib-magnetar-quill": [
-        "dist/lib-magnetar-quill"
+        "projects/lib-magnetar-quill/src/public-api.ts"
       ]
     }
   },
