@@ -61,7 +61,7 @@ npm i --save magnetar-quill
 
 ### **Prerequisites for Using the Library**
 
-  - An existing **Angular** project (v20.3.16 or higher recommended).
+  - An existing **Angular** project (v21.0.0 or higher recommended).
 
 -----
 
@@ -111,7 +111,7 @@ If you want to contribute to MagnetarQuill or run the demo application locally:
 ### Prerequisites for Development
 
   - **Node.js** (v16.x or higher)
-  - **Angular CLI** (v20.3.16 or higher)
+  - **Angular CLI** (v21.0.0 or higher)
 
 ### Step 1: Clone the Repository
 
