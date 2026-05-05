@@ -491,8 +491,9 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
 
   // Always insert <br> on Enter, without creating new block elements
   @HostListener('keydown.enter', ['$event'])
-  public handleEnterKey(event: KeyboardEvent): void {
-    event.preventDefault(); // Prevent default Enter behavior
+  public handleEnterKey(event: Event): void {
+    const keyboardEvent = event as KeyboardEvent;
+    keyboardEvent.preventDefault(); // Prevent default Enter behavior
 
     const selection = window.getSelection();
 
