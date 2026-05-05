@@ -17,7 +17,7 @@ export class KeyboardShortcutService implements OnDestroy {
 
   private readonly destroy$ = new Subject<void>();
   private readonly fmt = inject(FormattingService);
-  private readonly el = inject(ElementRef);
+  private editorElement: HTMLElement | null = null;
   // Example: Inject HistoryService if it handles Undo/Redo
   // private readonly history = inject(HistoryService);
 
@@ -27,11 +27,19 @@ export class KeyboardShortcutService implements OnDestroy {
     console.log('KeyboardShortcutService initialized and listener added.'); // Debug log
   }
 
+  /**
+   * Initializes the service with the host element of the editor.
+   * This is used to scope keyboard shortcuts to a specific editor instance.
+   * @param {HTMLElement} element - The editor's native element.
+   */
+  public initialize(element: HTMLElement): void {
+    this.editorElement = element;
+  }
+
   /** remove listener when the service is destroyed */
   public ngOnDestroy(): void {
     window.removeEventListener('keydown', this.handleKeydown, true);
     if (!this.destroy$.closed) {
-      this.destroy$.next();
       this.destroy$.complete();
       this.destroy$.unsubscribe();
     }
@@ -52,7 +60,7 @@ export class KeyboardShortcutService implements OnDestroy {
 
     // IMPORTANT: Only process shortcuts if the event target is inside this specific editor instance.
     // This prevents multiple editor instances from all reacting to the same global keydown event.
-    if (!targetElement || !this.el.nativeElement.contains(targetElement)) {
+    if (!targetElement || !this.editorElement || !this.editorElement.contains(targetElement)) {
       return;
     }
 
@@ -73,7 +81,6 @@ export class KeyboardShortcutService implements OnDestroy {
 
     if (!match) {
       // No matching shortcut found in our map
-      console.warn('ShortcutService: No matching shortcut found for key:', ev.key, 'Modifiers:', {ctrl:ev.ctrlKey, meta:ev.metaKey, shift:ev.shiftKey, alt:ev.altKey});
       return;
     }
 

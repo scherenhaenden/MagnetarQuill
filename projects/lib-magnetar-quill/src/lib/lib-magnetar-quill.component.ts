@@ -2,6 +2,7 @@ import {
   ChangeDetectorRef,
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
+  ElementRef,
   EventEmitter,
   Input,
   Output,
@@ -104,15 +105,21 @@ export class LibMagnetarQuillComponent {
    * @param {ContentService} contentService - The service for managing editor content.
    * @param {FormattingService} formattingService - The service for applying text formatting.
    * @param {ImageService} imageService - The service for handling image-related actions.
+   * @param {KeyboardShortcutService} keyboardShortcutService - The service for handling keyboard shortcuts.
    * @param {ChangeDetectorRef} cdRef - The service for manual change detection.
+   * @param {ElementRef} el - The reference to the component's host element.
    * @public
    */
   public constructor(
     private contentService: ContentService,
     private formattingService: FormattingService,
     public imageService: ImageService,
-    private cdRef: ChangeDetectorRef
-  ) {}
+    private keyboardShortcutService: KeyboardShortcutService,
+    private cdRef: ChangeDetectorRef,
+    private el: ElementRef
+  ) {
+    this.keyboardShortcutService.initialize(this.el.nativeElement);
+  }
 
   /**
    * Closes the image editing modal if it is open.

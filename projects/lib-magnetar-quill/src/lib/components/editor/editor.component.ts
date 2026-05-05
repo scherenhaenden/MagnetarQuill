@@ -114,10 +114,12 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
   /**
  * SECURITY NOTE:
  * This method intentionally writes to innerHTML as part of a controlled rich-text editor.
- * All externally supplied HTML (e.g., pasted or loaded content) must be sanitized before
- * reaching this point via the onPaste handler or initial content processing.
- * Direct innerHTML assignment is used here to avoid Angular's sanitizer stripping
- * necessary RTF styles while editing.
+ * RISK: Assigning user-controlled data to innerHTML can lead to XSS vulnerabilities.
+ * JUSTIFICATION: To support full RTF editing (including complex styles and attributes),
+ * direct innerHTML assignment is used to avoid Angular's sanitizer from stripping necessary content.
+ * MITIGATION: All externally supplied HTML (e.g., pasted or loaded content) MUST be sanitized
+ * before reaching this point via the onPaste handler or other ingestion paths.
+ * The editor DOM is treated as an internal, trusted editing surface.
  */
   private syncEditorDomFromContent(content: string): void {
     // We trust the internal content state.
@@ -126,6 +128,9 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
 
   /**
    * Updates the service with the new HTML content upon change.
+   * NOTE: This method emits transient (raw) HTML during 'input' events for performance,
+   * and performs a 'forceClean' (normalization) on 'blur' or major changes.
+   * Consumers should be aware that the emitted HTML may vary slightly in structure until 'blur'.
    * @param {string} htmlContent - The updated HTML content.
    * @param {boolean} forceClean - Whether to apply aggressive cleaning (e.g., on paste or major change).
    */

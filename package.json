@@ -12,8 +12,7 @@
     "serve-with-lib-linux": "ng build lib-magnetar-quill --watch --configuration development & ng serve --port 4200",
     "test": "ng test --watch=false --code-coverage",
     "test-ci": "ng test --watch=false --no-progress --browsers=ChromeHeadlessCI --code-coverage",
-    "test-lib-magnetar-quill": "ng test lib-magnetar-quill --watch=false --code-coverage"
-,
+    "test-lib-magnetar-quill": "ng test lib-magnetar-quill --watch=false --code-coverage",
     "lint": "ng lint"
   },
   "private": true,

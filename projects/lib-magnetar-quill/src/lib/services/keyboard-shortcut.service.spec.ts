@@ -61,12 +61,12 @@ describe('KeyboardShortcutService', () => {
     TestBed.configureTestingModule({
       providers: [
         KeyboardShortcutService,
-        { provide: FormattingService, useValue: mockFormattingService },
-        { provide: ElementRef, useValue: mockElementRef }
+        { provide: FormattingService, useValue: mockFormattingService }
       ],
     });
 
     service = TestBed.inject(KeyboardShortcutService);
+    service.initialize(mockElement);
     consoleWarnSpy = spyOn(console, 'warn');
     consoleErrorSpy = spyOn(console, 'error');
   });

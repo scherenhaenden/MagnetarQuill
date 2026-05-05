@@ -100,7 +100,7 @@ npm i --save magnetar-quill
     <lib-magnetar-quill [(ngModel)]="documentContent"></lib-magnetar-quill>
     ```
 
-3.  You can now use the editor in your application\!
+3.  You can now use the editor in your application!
 
 -----
 
@@ -202,7 +202,7 @@ Here’s the updated table with the latest progress:
 
 ## **Contributing** 🤝
 
-We welcome contributions\! Here's how you can help:
+We welcome contributions! Here's how you can help:
 
 1.  **Fork the repository** (`https://github.com/scherenhaenden/MagnetarQuill.git`).
 2.  **Create a new branch** for your feature or bug fix:
@@ -210,7 +210,7 @@ We welcome contributions\! Here's how you can help:
     git checkout -b feature/my-awesome-feature
     ```
 3.  **Commit your changes** and open a pull request against the main repository.
-4.  We’ll review your PR and merge it\!
+4.  We’ll review your PR and merge it!
 
 Please read our [Contributing Guidelines](https://www.google.com/search?q=CONTRIBUTING.md) (if available) for more details.
 
@@ -228,6 +228,4 @@ Follow development progress or ask questions:
 
   - **GitHub Issues**: [MagnetarQuill Issues](https://github.com/scherenhaenden/MagnetarQuill/issues)
   - **GitHub Discussions**: [MagnetarQuill Discussions](https://github.com/scherenhaenden/MagnetarQuill/discussions)
-
-n/MagnetarQuill/discussions)
 
