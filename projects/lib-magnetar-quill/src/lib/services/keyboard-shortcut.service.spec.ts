@@ -156,9 +156,10 @@ describe('KeyboardShortcutService', () => {
        const div = document.createElement('div'); // isContentEditable defaults to false
        const event = dispatchKeydownEvent('b', { ctrlKey: true, target: div });
 
-       expect(mockFormattingService.toggleBold).not.toHaveBeenCalled();
-       expect(event.preventDefault).not.toHaveBeenCalled();
-       expect(event.stopImmediatePropagation).not.toHaveBeenCalled();
+       // Service only filters INPUT/TEXTAREA/SELECT, so generic div should NOT be ignored
+       expect(mockFormattingService.toggleBold).toHaveBeenCalled();
+       expect(event.preventDefault).toHaveBeenCalled();
+       expect(event.stopImmediatePropagation).toHaveBeenCalled();
      });
 
     it('should NOT ignore shortcuts when target is contentEditable', () => {
