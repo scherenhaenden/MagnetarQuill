@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ImageModalComponent } from './image-modal.component';
+import { ImageService } from '../../services/image.service';
+
 
 describe('ImageModalComponent', () => {
   let component: ImageModalComponent;
@@ -8,7 +9,8 @@ describe('ImageModalComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ImageModalComponent]
+      imports: [ImageModalComponent],
+      providers: [ImageService]
     })
     .compileComponents();
     

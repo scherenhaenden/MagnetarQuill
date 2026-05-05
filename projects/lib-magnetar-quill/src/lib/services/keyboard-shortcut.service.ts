@@ -1,5 +1,5 @@
 // File: keyboard-shortcut.service.ts
-import { Injectable, OnDestroy, inject } from '@angular/core';
+import { Injectable, OnDestroy, inject, ElementRef } from '@angular/core';
 import { Subject } from 'rxjs';
 import {FormattingService} from "./formatting.service";
 import {SHORTCUTS} from "../models/shortcut-map";
@@ -12,11 +12,12 @@ import {ShortcutAction} from "../models/key-shortcuts";
 // Import other services if needed (e.g., HistoryService for Undo/Redo)
 // import { HistoryService } from './services/history.service';
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class KeyboardShortcutService implements OnDestroy {
 
   private readonly destroy$ = new Subject<void>();
   private readonly fmt = inject(FormattingService);
+  private editorElement: HTMLElement | null = null;
   // Example: Inject HistoryService if it handles Undo/Redo
   // private readonly history = inject(HistoryService);
 
@@ -26,11 +27,22 @@ export class KeyboardShortcutService implements OnDestroy {
     console.log('KeyboardShortcutService initialized and listener added.'); // Debug log
   }
 
+  /**
+   * Initializes the service with the host element of the editor.
+   * This is used to scope keyboard shortcuts to a specific editor instance.
+   * @param {HTMLElement} element - The editor's native element.
+   */
+  public initialize(element: HTMLElement): void {
+    this.editorElement = element;
+  }
+
   /** remove listener when the service is destroyed */
   public ngOnDestroy(): void {
     window.removeEventListener('keydown', this.handleKeydown, true);
-    this.destroy$.next();
-    this.destroy$.complete();
+    if (!this.destroy$.closed) {
+      this.destroy$.complete();
+      this.destroy$.unsubscribe();
+    }
     console.log('KeyboardShortcutService destroyed and listener removed.'); // Debug log
   }
 
@@ -44,15 +56,18 @@ export class KeyboardShortcutService implements OnDestroy {
       return;
     }
 
+    const targetElement = ev.target as HTMLElement | null;
+
+    // IMPORTANT: Only process shortcuts if the event target is inside this specific editor instance.
+    // This prevents multiple editor instances from all reacting to the same global keydown event.
+    if (!targetElement || !this.editorElement || !this.editorElement.contains(targetElement)) {
+      return;
+    }
+
     // Ignore shortcuts if typing inside an input, textarea etc., unless specifically allowed
-    const targetElement = ev.target as HTMLElement;
-    if (targetElement?.isContentEditable === false && ['INPUT', 'TEXTAREA', 'SELECT'].includes(targetElement?.tagName)) {
-      // Allow specific shortcuts like Undo/Redo even in inputs? Maybe check match.action here.
-      // For now, ignore all shortcuts if focus is not in the editor or similar editable context.
-      // This check needs refinement based on where the editor content resides.
-      // If the editor itself isn't focused, maybe don't process shortcuts?
-      // console.log('Ignoring keydown in input/textarea:', targetElement?.tagName);
-      // return; // Temporarily disabled - needs better focus/context check
+    // Note: inputs usually have isContentEditable=false. The editor div has isContentEditable=true.
+    if (!targetElement.isContentEditable && ['INPUT', 'TEXTAREA', 'SELECT'].includes(targetElement.tagName)) {
+      return;
     }
 
     const match = SHORTCUTS.find(d =>
@@ -85,7 +100,7 @@ export class KeyboardShortcutService implements OnDestroy {
       case ShortcutAction.Strikethrough:   this.fmt.toggleStrikethrough();   break; // Assumes fmt service has this
       case ShortcutAction.Superscript:     this.fmt.toggleSuperscript();     break; // Assumes fmt service has this (e.g., wrapSelectionWithTag('sup'))
       case ShortcutAction.Subscript:       this.fmt.toggleSubscript();       break; // Assumes fmt service has this (e.g., wrapSelectionWithTag('sub'))
-      //case ShortcutAction.ClearFormatting: this.fmt.clearFormatting();       break; // Assumes fmt service has this
+      case ShortcutAction.ClearFormatting: this.fmt.clearFormatting();       break; // Assumes fmt service has this
 
       // List Formatting
       case ShortcutAction.OrderedList:     this.fmt.toggleList('ordered');   break; // Assumes fmt service has this

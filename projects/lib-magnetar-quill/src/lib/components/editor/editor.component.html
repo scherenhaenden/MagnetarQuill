@@ -17,10 +17,9 @@
   [hidden]="isHtmlView"
   [ngClass]="{ 'fixed-height': isFixedHeight, 'auto-expand': !isFixedHeight }"
   (focus)="scrollToTopOnFocus()"
+  (blur)="onContentChange(editorWysiwyg.innerHTML, true)"
   (paste)="onPaste($event)"
-  (input)="onContentChange(editorWysiwyg.innerHTML)"
-  (keydown)="onContentChange(editorWysiwyg.innerHTML)"
-
+  (input)="onContentChange(editorWysiwyg.innerHTML, false)"
 >
   <!-- User content goes here -->
 </div>

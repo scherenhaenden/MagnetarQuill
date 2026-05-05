@@ -2,6 +2,7 @@ import {
   ChangeDetectorRef,
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
+  ElementRef,
   EventEmitter,
   Input,
   Output,
@@ -15,15 +16,16 @@ import { NgIf } from "@angular/common";
 import { ImageModalComponentModel } from "./models/image-modal-component-model";
 import { ImageService } from "./services/image.service";
 import { FormattingService } from "./services/formatting.service";
-import { ClickOutsideDirective } from "./directives/click-outside.directive";
+import { KeyboardShortcutService } from "./services/keyboard-shortcut.service";
 
 @Component({
     selector: 'magnetar-quill',
-    imports: [ToolbarComponent, EditorComponent, ImageModalComponent, NgIf, ClickOutsideDirective],
+    imports: [ToolbarComponent, EditorComponent, ImageModalComponent, NgIf],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
     standalone: true,
     templateUrl: './lib-magnetar-quill.component.html',
-    styleUrl: './lib-magnetar-quill.component.less'
+    styleUrl: './lib-magnetar-quill.component.less',
+    providers: [ContentService, FormattingService, KeyboardShortcutService, ImageService]
 })
 export class LibMagnetarQuillComponent {
 
@@ -103,19 +105,24 @@ export class LibMagnetarQuillComponent {
    * @param {ContentService} contentService - The service for managing editor content.
    * @param {FormattingService} formattingService - The service for applying text formatting.
    * @param {ImageService} imageService - The service for handling image-related actions.
+   * @param {KeyboardShortcutService} keyboardShortcutService - The service for handling keyboard shortcuts.
    * @param {ChangeDetectorRef} cdRef - The service for manual change detection.
+   * @param {ElementRef} el - The reference to the component's host element.
    * @public
    */
   public constructor(
     private contentService: ContentService,
     private formattingService: FormattingService,
     public imageService: ImageService,
-    private cdRef: ChangeDetectorRef
-  ) {}
+    private keyboardShortcutService: KeyboardShortcutService,
+    private cdRef: ChangeDetectorRef,
+    private el: ElementRef
+  ) {
+    this.keyboardShortcutService.initialize(this.el.nativeElement);
+  }
 
   /**
-   * Closes the image editing modal if it is currently open.
-   * @public
+   * Closes the image editing modal if it is open.
    */
   public closeModal(): void {
     if (this.showImageModal) {
@@ -125,7 +132,6 @@ export class LibMagnetarQuillComponent {
 
   /**
    * Toggles the visibility of the HTML source view.
-   * @public
    */
   public toggleHtmlView(): void {
     this.isHtmlView = !this.isHtmlView;
@@ -133,26 +139,21 @@ export class LibMagnetarQuillComponent {
 
   /**
    * Opens the image editing modal.
-   * This is typically called from the editor's context menu.
-   * @public
    */
   public openImageEditModal(): void {
     this.showImageModal = true;
   }
 
   /**
-   * Resets the image data after editing is complete and closes the modal.
-   * @public
+   * Hides the image modal after editing is complete.
    */
   public clearImageToEdit(): void {
     this.showImageModal = false;
   }
 
   /**
-   * Handles the content changed event from the editor component.
-   * Emits the new content to the parent component.
+   * Emits the new content to the parent component when the editor content changes.
    * @param {string} newContent - The updated HTML content from the editor.
-   * @public
    */
   public onEditorContentChanged(newContent: string): void {
     this.contentChange.emit(newContent);

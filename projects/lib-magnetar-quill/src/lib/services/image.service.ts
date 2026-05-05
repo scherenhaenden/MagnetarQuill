@@ -1,9 +1,7 @@
 import {Injectable, signal, WritableSignal} from '@angular/core';
 import {ImageModalComponentModel} from "../models/image-modal-component-model";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ImageService {
 
   // Signal to manage the selected image

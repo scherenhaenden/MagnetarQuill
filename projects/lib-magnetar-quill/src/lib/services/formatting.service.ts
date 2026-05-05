@@ -1,9 +1,7 @@
 import {Injectable, signal, WritableSignal} from '@angular/core';
 import {ContentService} from "./content.service";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class FormattingService {
 
   // Signals to track formatting states
@@ -21,45 +19,49 @@ export class FormattingService {
    * Updates the formatting states (bold, italic, underline, strikethrough, strong)
    * based on the current text selection in the document.
    *
-   * This method retrieves the current selection from the window and checks the
-   * common ancestor container of the selected range. It determines the formatting
-   * styles applied to the selected text by examining the style properties of the
-   * container element. The method updates the corresponding state variables to
-   * reflect whether each formatting style is active.
-   *
-   * It specifically checks for:
-   * - Bold: If the font weight is set to 'bold'.
-   * - Italic: If the font style is set to 'italic'.
-   * - Underline: If the text decoration includes 'underline'.
-   * - Strikethrough: If the text decoration includes 'line-through'.
-   * - Strong: If the container element is a <strong> tag.
-   *
-   * @throws {Error} Throws an error if there is an issue accessing the selection or
-   *                 if the container cannot be determined.
-   *
-   * @returns {void} This method does not return a value.
-   *
-   * @example
-   * // Example usage:
-   * // Assuming this method is called when a user selects text in a contenteditable element,
-   * // it will update the formatting states based on the selected text's styles.
+   * It uses computed styles for accuracy across CSS classes and inherited styles.
    */
   public updateFormatStates(): void {
     const selection = window.getSelection();
-    if (selection && selection.rangeCount > 0) {
-      let container: Node | null = selection.getRangeAt(0).commonAncestorContainer;
-      while (container && container.nodeType !== Node.ELEMENT_NODE) {
-        container = container.parentNode;
-      }
-      if (container instanceof HTMLElement) {
-        this.boldActive.set(container.style.fontWeight === 'bold');
-        this.italicActive.set(container.style.fontStyle === 'italic');
-        this.underlineActive.set(container.style.textDecoration.includes('underline'));
-        this.strikethroughActive.set(container.style.textDecoration.includes('line-through'));
-        // Check if the container is a <strong> element
-        this.strongActive.set(container.tagName.toLowerCase() === 'strong');
-      }
+    if (!selection || selection.rangeCount === 0) return;
+
+    let node: Node | null = selection.focusNode;
+
+    // Handle case where selection might end just outside an element
+    if (node?.nodeType === Node.TEXT_NODE && selection.focusOffset === 0) {
+      node = node.previousSibling || node.parentNode;
     }
+
+    // Traverse upwards to find the formatting state
+    let isBold = false;
+    let isItalic = false;
+    let isUnderline = false;
+    let isStrikethrough = false;
+    let isStrong = false;
+
+    let currentNode = node;
+    while (currentNode) {
+      if (currentNode.nodeType === Node.ELEMENT_NODE) {
+        const style = window.getComputedStyle(currentNode as Element);
+        
+        if (!isBold && (style.fontWeight === 'bold' || parseInt(style.fontWeight, 10) >= 700)) isBold = true;
+        if (!isItalic && style.fontStyle === 'italic') isItalic = true;
+        if (!isUnderline && style.textDecorationLine.includes('underline')) isUnderline = true;
+        if (!isStrikethrough && style.textDecorationLine.includes('line-through')) isStrikethrough = true;
+        
+        if (!isStrong && (currentNode as HTMLElement).tagName.toLowerCase() === 'strong') isStrong = true;
+        
+        // Stop if we hit the editor root
+        if ((currentNode as HTMLElement).contentEditable === 'true') break;
+      }
+      currentNode = currentNode.parentNode;
+    }
+
+    this.boldActive.set(isBold);
+    this.italicActive.set(isItalic);
+    this.underlineActive.set(isUnderline);
+    this.strikethroughActive.set(isStrikethrough);
+    this.strongActive.set(isStrong);
   }
 
 

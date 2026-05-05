@@ -1,12 +1,12 @@
 import { Component, ElementRef, ViewChild, HostListener, AfterViewInit } from '@angular/core';
-import { LibMagnetarQuillComponent } from "lib-magnetar-quill";
+import { LibMagnetarQuillComponent, SafeHtmlPipe } from "lib-magnetar-quill";
 import { TestText } from './test-text';
 import { NgIf } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 
 @Component({
     selector: 'app-root',
-    imports: [LibMagnetarQuillComponent, NgIf, FormsModule],
+    imports: [LibMagnetarQuillComponent, NgIf, FormsModule, SafeHtmlPipe],
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.less'

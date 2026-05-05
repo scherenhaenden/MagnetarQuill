@@ -51,17 +51,17 @@ Based on the current completed progress, MagnetarQuill offers:
 
 ## **Installation** 🛠
 
-To use the MagnetarQuill component in your Angular project, install the library from npm (once published):
+To install the MagnetarQuill library from npm, run the following command in your project's terminal:
 
 ```bash
 npm i --save magnetar-quill
-````
+```
 
 *(Note: Ensure the package is published to npm for this command to work.)*
 
 ### **Prerequisites for Using the Library**
 
-  - An existing **Angular** project (v20.3.16 or higher recommended).
+  - An existing **Angular** project (v20.3.16 required based on peer dependencies).
 
 -----
 
@@ -92,7 +92,7 @@ npm i --save magnetar-quill
     }
     ```
 
-    *(Note: You might need a pipe like `safeHtml` to securely render the HTML output from the editor)*
+    *(Note: You must use a pipe like `safeHtml` to securely render the HTML output from the editor to prevent XSS attacks.)*
 
 2.  Add the component tag to your template and use `[(ngModel)]` for two-way binding of the editor's HTML content:
 
@@ -100,7 +100,7 @@ npm i --save magnetar-quill
     <lib-magnetar-quill [(ngModel)]="documentContent"></lib-magnetar-quill>
     ```
 
-3.  You can now use the editor in your application\!
+3.  You can now use the editor in your application!
 
 -----
 
@@ -202,7 +202,7 @@ Here’s the updated table with the latest progress:
 
 ## **Contributing** 🤝
 
-We welcome contributions\! Here's how you can help:
+We welcome contributions! Here's how you can help:
 
 1.  **Fork the repository** (`https://github.com/scherenhaenden/MagnetarQuill.git`).
 2.  **Create a new branch** for your feature or bug fix:
@@ -210,7 +210,7 @@ We welcome contributions\! Here's how you can help:
     git checkout -b feature/my-awesome-feature
     ```
 3.  **Commit your changes** and open a pull request against the main repository.
-4.  We’ll review your PR and merge it\!
+4.  We’ll review your PR and merge it!
 
 Please read our [Contributing Guidelines](https://www.google.com/search?q=CONTRIBUTING.md) (if available) for more details.
 
