@@ -16,7 +16,6 @@ describe('LibMagnetarQuillComponent', () => {
     fixture = TestBed.createComponent(LibMagnetarQuillComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-    console.log('HTML Content:', fixture.nativeElement.innerHTML);
     const editorDebug = fixture.debugElement.query(By.css('lib-editor'));
     editor = editorDebug ? editorDebug.nativeElement : null;
   });
