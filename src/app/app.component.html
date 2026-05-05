@@ -34,7 +34,7 @@
       </div>
 
       <div *ngIf="showOutput" class="output-area">
-        <div [innerHTML]="testText" class="rendered-html"></div>
+        <div [innerHTML]="testText | safeHtml" class="rendered-html"></div>
         <div *ngIf="!testText || testText.trim().length === 0" class="empty-state">
           Start writing in the editor...
         </div>
