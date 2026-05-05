@@ -94,6 +94,7 @@ describe('FormattingService', () => {
       const mockRange = {
         extractContents: jasmine.createSpy().and.returnValue(document.createTextNode('Sample Text')),
         insertNode: jasmine.createSpy(),
+        cloneRange: jasmine.createSpy().and.callFake(function () { return this; }),
         selectNodeContents: jasmine.createSpy(), // Mock the missing method
       };
 
@@ -131,6 +132,7 @@ describe('FormattingService', () => {
 
       const mockRange = {
         commonAncestorContainer: document.createElement('div'), // Needs to be HTMLElement
+        cloneRange: jasmine.createSpy().and.callFake(function () { return this; }),
       } as unknown as Range;
 
       const mockSelection = {
@@ -147,15 +149,14 @@ describe('FormattingService', () => {
     });
   });
 
-  describe('onBackgroundColorChange', () => {
+  describe('setBackgroundColor', () => {
     it('should change the background color of selected elements', () => {
-      const mockEvent = { target: { value: '#ff0000' } } as unknown as Event;
       const element1 = document.createElement('div');
       const element2 = document.createElement('div');
 
       mockContentService.getSelectedElements.and.returnValue([element1, element2]);
 
-      service.onBackgroundColorChange(mockEvent);
+      service.setBackgroundColor('#ff0000');
       // Browsers normalize colors to RGB in style properties
       // NOTE: This assertion handles both simple RGB normalization and potential exact hex match
       const color = element1.style.backgroundColor;

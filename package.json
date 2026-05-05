@@ -13,7 +13,9 @@
     "test": "ng test --watch=false --code-coverage",
     "test-ci": "ng test --watch=false --no-progress --browsers=ChromeHeadlessCI --code-coverage",
     "test-lib-magnetar-quill": "ng test lib-magnetar-quill --watch=false --code-coverage",
-    "lint": "ng lint"
+    "lint": "npm run lint:info-docs && ng lint",
+    "lint:info-docs": "node scripts/info-docs.mjs --check",
+    "docs:generate:info-docs": "node scripts/info-docs.mjs --write"
   },
   "private": true,
   "dependencies": {

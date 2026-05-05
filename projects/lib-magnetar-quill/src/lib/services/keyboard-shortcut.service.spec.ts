@@ -130,7 +130,8 @@ describe('KeyboardShortcutService', () => {
         const event = dispatchKeydownEvent(shortcut.key, options);
 
         if (shortcut.action === ShortcutAction.Undo || shortcut.action === ShortcutAction.Redo) {
-          expect(consoleWarnSpy).toHaveBeenCalled();
+          expect(event.preventDefault).not.toHaveBeenCalled();
+          expect(event.stopImmediatePropagation).not.toHaveBeenCalled();
         } else {
           expect(event.preventDefault).toHaveBeenCalled();
         }
