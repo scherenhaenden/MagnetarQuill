@@ -1,5 +1,6 @@
 import {
   AfterViewInit,
+  ChangeDetectionStrategy,
   Component,
   DoCheck,
   ElementRef, EventEmitter,
@@ -260,7 +261,8 @@ import {Subject, takeUntil} from 'rxjs';
     ],
     standalone: true,
     templateUrl: './editor.component.html',
-    styleUrl: './editor.component.less'
+    styleUrl: './editor.component.less',
+    changeDetection: ChangeDetectionStrategy.Eager
 })
 export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoCheck, OnDestroy {
 

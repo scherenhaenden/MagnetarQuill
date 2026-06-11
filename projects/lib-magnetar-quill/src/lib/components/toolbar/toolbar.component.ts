@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   Component,
   EventEmitter,
   Input,
@@ -123,7 +124,8 @@ import {ContentService} from "../../services/content.service";
     ],
     standalone: true,
     templateUrl: './toolbar.component.html',
-    styleUrl: './toolbar.component.less'
+    styleUrl: './toolbar.component.less',
+    changeDetection: ChangeDetectionStrategy.Eager
 })
 export class ToolbarComponent {
 

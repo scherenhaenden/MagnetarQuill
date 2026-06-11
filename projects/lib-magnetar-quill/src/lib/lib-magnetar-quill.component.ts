@@ -1,4 +1,5 @@
 import {
+  ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
@@ -69,6 +70,7 @@ import { KeyboardShortcutService } from "./services/keyboard-shortcut.service";
     standalone: true,
     templateUrl: './lib-magnetar-quill.component.html',
     styleUrl: './lib-magnetar-quill.component.less',
+    changeDetection: ChangeDetectionStrategy.Eager,
     providers: [ContentService, FormattingService, KeyboardShortcutService, ImageService]
 })
 export class LibMagnetarQuillComponent {
