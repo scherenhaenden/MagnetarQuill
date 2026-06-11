@@ -19,6 +19,11 @@ Typical categories include:
 
 ## Entries
 ---
+**Timestamp:** 2026-06-11 10:35 UTC
+**Author:** Codex
+**Entry:** State Change: Initiated `task-207` (HTML/Markdown Import-Export and RTF Load) in `in_progress` on branch `feature/markdown-support`; planning to implement file import/export capabilities.
+
+---
 **Timestamp:** 2026-06-11 10:30 UTC
 **Author:** Codex
 **Entry:** State Change: Completed implementation of `task-206` (Theme support); transitioned state to `in_review` and submitted Pull Request #90 against integration branch `version/0.1`.

@@ -115,6 +115,13 @@
     <option value="custom">🎨 Custom</option>
   </select>
 
+  <!-- File Operations -->
+  <input type="file" #fileInput (change)="onFileSelected($event)" accept=".html,.htm,.rtf,.md,.markdown" style="display: none">
+  <button (mousedown)="$event.preventDefault()" (click)="triggerFileInput(fileInput)" title="Load File">Load File</button>
+  <button (mousedown)="$event.preventDefault()" (click)="exportHtml()" title="Export HTML">Export HTML</button>
+  <button (mousedown)="$event.preventDefault()" (click)="exportMarkdown()" title="Export Markdown">Export Markdown</button>
+  <button (mousedown)="$event.preventDefault()" (click)="exportRtf()" title="Export RTF">Export RTF</button>
+
 </div>
 
 
