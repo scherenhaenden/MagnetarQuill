@@ -51,7 +51,7 @@ tasks:
   - id: task-207
     title: implement-markdown-rtf-import-export
     owner: core-team
-    state: in_progress
+    state: in_review
 
 risks:
   - id: risk-001
