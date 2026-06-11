@@ -3,6 +3,8 @@
   (insertImageFromUrl)="editor.insertImageFromUrl($event)"
   [imageToEdit]="updateModel"
   (clearImageToEdit)="clearImageToEdit()"
+  [theme]="theme"
+  (themeChange)="onThemeChange($event)"
   class="toolbar">
 </lib-toolbar>
 

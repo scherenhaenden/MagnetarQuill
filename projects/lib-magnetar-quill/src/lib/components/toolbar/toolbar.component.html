@@ -108,6 +108,13 @@
 
   <button (mousedown)="$event.preventDefault()" (click)="openImageModal()">Insert Image</button>
 
+  <!-- Theme Selector -->
+  <select [value]="theme" (change)="onThemeChange($event)" title="Theme Select">
+    <option value="light">☀️ Light</option>
+    <option value="dark">🌙 Dark</option>
+    <option value="custom">🎨 Custom</option>
+  </select>
+
 </div>
 
 

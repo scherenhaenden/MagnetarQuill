@@ -108,4 +108,18 @@ describe('ToolbarComponent', () => {
       expect(formattingService.applyStyle).toHaveBeenCalledWith('font-family', 'Courier New');
     });
   });
+
+  describe('Theme Interaction', () => {
+    it('should call onThemeChange and emit themeChange event when theme dropdown changes', () => {
+      spyOn(component.themeChange, 'emit');
+      const selects = fixture.debugElement.queryAll(By.css('select'));
+      const themeSelect = selects[selects.length - 1]; // Theme select is at the end
+
+      themeSelect.nativeElement.value = 'dark';
+      themeSelect.nativeElement.dispatchEvent(new Event('change'));
+
+      expect(component.theme).toBe('dark');
+      expect(component.themeChange.emit).toHaveBeenCalledWith('dark');
+    });
+  });
 });

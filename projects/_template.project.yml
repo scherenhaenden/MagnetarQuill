@@ -44,6 +44,10 @@ tasks:
     title: upgrade-workspace-to-angular-22
     owner: core-team
     state: done
+  - id: task-206
+    title: implement-theme-customization
+    owner: core-team
+    state: in_progress
 
 risks:
   - id: risk-001
