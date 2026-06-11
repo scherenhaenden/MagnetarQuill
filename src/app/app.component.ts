@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, HostListener, AfterViewInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, ViewChild, HostListener, AfterViewInit } from '@angular/core';
 import { LibMagnetarQuillComponent } from "lib-magnetar-quill";
 import { TestText } from './test-text';
 import { NgIf } from "@angular/common";
@@ -57,7 +57,8 @@ import { FormsModule } from "@angular/forms";
     imports: [LibMagnetarQuillComponent, NgIf, FormsModule],
     standalone: true,
     templateUrl: './app.component.html',
-    styleUrl: './app.component.less'
+    styleUrl: './app.component.less',
+    changeDetection: ChangeDetectionStrategy.Eager
 })
 export class AppComponent implements AfterViewInit {
   /**

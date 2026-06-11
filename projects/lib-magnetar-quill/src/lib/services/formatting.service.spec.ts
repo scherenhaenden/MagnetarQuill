@@ -94,7 +94,7 @@ describe('FormattingService', () => {
       const mockRange = {
         extractContents: jasmine.createSpy().and.returnValue(document.createTextNode('Sample Text')),
         insertNode: jasmine.createSpy(),
-        cloneRange: jasmine.createSpy().and.callFake(function () { return this; }),
+        cloneRange: jasmine.createSpy().and.callFake(() => mockRange),
         selectNodeContents: jasmine.createSpy(), // Mock the missing method
       };
 
@@ -132,7 +132,7 @@ describe('FormattingService', () => {
 
       const mockRange = {
         commonAncestorContainer: document.createElement('div'), // Needs to be HTMLElement
-        cloneRange: jasmine.createSpy().and.callFake(function () { return this; }),
+        cloneRange: jasmine.createSpy().and.callFake(() => mockRange),
       } as unknown as Range;
 
       const mockSelection = {

@@ -16,7 +16,10 @@ describe('ToolbarComponent', () => {
       boldActive: () => false,
       italicActive: () => false,
       underlineActive: () => false,
-      strikethroughActive: () => false
+      strikethroughActive: () => false,
+      currentFontFamily: () => '',
+      currentFontSize: () => '',
+      currentTextColor: () => '#000000'
     });
 
     await TestBed.configureTestingModule({

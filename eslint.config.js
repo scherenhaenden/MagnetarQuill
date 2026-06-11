@@ -1,0 +1,45 @@
+const eslint = require('@eslint/js');
+const angular = require('angular-eslint');
+const tseslint = require('typescript-eslint');
+
+module.exports = tseslint.config(
+  {
+    ignores: [
+      'dist/**',
+      'coverage/**',
+      'node_modules/**'
+    ]
+  },
+  {
+    files: ['**/*.ts'],
+    extends: [
+      eslint.configs.recommended,
+      ...tseslint.configs.recommended,
+      ...angular.configs.tsRecommended
+    ],
+    processor: angular.processInlineTemplates,
+    rules: {
+      '@angular-eslint/no-empty-lifecycle-method': 'off',
+      '@angular-eslint/no-output-native': 'off',
+      '@angular-eslint/prefer-inject': 'off',
+      '@angular-eslint/prefer-on-push-component-change-detection': 'off',
+      '@angular-eslint/prefer-standalone': 'off',
+      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-unused-vars': 'warn',
+      'no-useless-assignment': 'warn',
+      'prefer-const': 'warn'
+    }
+  },
+  {
+    files: ['**/*.html'],
+    extends: [
+      ...angular.configs.templateRecommended,
+      ...angular.configs.templateAccessibility
+    ],
+    rules: {
+      '@angular-eslint/template/alt-text': 'warn',
+      '@angular-eslint/template/label-has-associated-control': 'warn',
+      '@angular-eslint/template/prefer-control-flow': 'off'
+    }
+  }
+);
