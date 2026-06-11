@@ -19,6 +19,21 @@ Typical categories include:
 
 ## Entries
 ---
+**Timestamp:** 2026-06-11 09:52 UTC
+**Author:** Codex
+**Entry:** Merge: Integrated `origin/feature/update-index-main-project` into `version/0.1` while preserving the current Angular 22 package manifests and adapting project documentation to avoid Angular 21 metadata regressions.
+
+---
+**Timestamp:** 2026-02-10 16:55 UTC
+**Author:** Codex
+**Entry:** Exception: Clarified wording in the 2026-02-10 16:50 UTC entry; "recorded pending validation due ongoing npm `403` policy blocker" should read "recorded pending validation due to ongoing npm `403` policy blocker" (`blocker-registry-angular21`).
+
+---
+**Timestamp:** 2026-02-10 16:50 UTC
+**Author:** Codex
+**Entry:** State Change: Upgraded workspace manifests from Angular 20.3.16 to Angular 21 dependency ranges (`^21.0.0`) and bumped library package version from `0.8.15` to `0.9.0`; updated PLAN/STATUS/BLOCKERS/project template/library docs and recorded pending validation due to ongoing npm `403` policy blocker (`blocker-registry-angular21`).
+
+---
 **Timestamp:** 2026-02-10 16:30 UTC
 **Author:** Jules
 **Entry:** State Change: Completed `task-204`. Upgraded workspace to Angular 21.1.0, updated library peer dependencies, and verified tests.

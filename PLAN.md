@@ -18,11 +18,12 @@ This plan captures milestones, tasks, effort estimates, and task status; its str
 | `task-202` | `ms-02` | Define baseline quality gates | QA Team | 4 | 20 | `ready` | Depends on testing strategy sign-off. |
 | `task-203` | `ms-02` | Upgrade workspace to Angular 20.3.16 | Core Team | 3 | 15 | `in_review` | Dependency matrix aligned to Angular `^20.3.16`; npm registry policy currently blocks full reinstall (`403`) and is tracked for follow-up validation. |
 | `task-204` | `ms-02` | Upgrade workspace to Angular 21 | Core Team | 3 | 15 | `done` | Upgraded to Angular 21.1.0; Tests verified. |
+| `task-205` | `ms-02` | Upgrade workspace to Angular 22 | Core Team | 3 | 15 | `done` | Upgraded workspace and publishable library peer dependencies to Angular `^22.0.0`; restored Angular ESLint linting and verified lint/build gates. |
 | `task-301` | `ms-03` | Formalize release checklist | Delivery Team | 6 | 30 | `planned` | Planned after ms-02 acceptance. |
 
 ## Effort Summary
-- **Total effort:** 26 pts
-- **Completed:** 6 pts
+- **Total effort:** 29 pts
+- **Completed:** 9 pts
 - **In progress:** 5 pts
 - **In review:** 3 pts
 - **Remaining:** 12 pts
@@ -39,7 +40,12 @@ This plan captures milestones, tasks, effort estimates, and task status; its str
 This document must be updated whenever tasks change state, scope, ownership, or estimates. Corresponding updates must also be reflected in the project YAML file and `BITACORA.md`.
 
 
-## Upgrade Reflection (task-203)
-- Angular 20 adoption is configuration-complete in source control (framework packages, builder toolchain, and library peer dependencies).
+## Upgrade Reflection (task-204)
+- Angular 21 adoption is configuration-complete in source control (framework packages, builder toolchain, linting stack, and library peer dependencies).
 - Execution risk remains external: package retrieval is restricted by registry policy (`403 Forbidden`), so lockfile regeneration and full runtime verification must be finalized once access is restored.
 - Mitigation: keep task in `in_review`, track the blocker explicitly, and rerun full CI (install + tests) immediately after policy unblock.
+
+## Upgrade Reflection (task-205)
+- Angular 22 adoption is configuration-complete in source control (framework packages, Angular build toolchain, TypeScript 6, linting stack, and library peer dependencies).
+- Local verification has covered `npm run lint`, `npm run build`, and `npm run build-lib`.
+- Mitigation: preserve the Angular 22 manifests during branch merges so older Angular 21 metadata does not regress the package surface.

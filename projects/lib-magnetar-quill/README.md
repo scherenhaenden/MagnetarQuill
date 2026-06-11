@@ -63,7 +63,7 @@ npm i --save magnetar-quill
 ### **Prerequisites for Using the Library**
 
   - An existing **Angular** project compatible with the current peer dependency range.
-  - Angular peer dependencies currently target `@angular/common` and `@angular/core` `^21.0.0`.
+  - Angular peer dependencies currently target `@angular/common` and `@angular/core` `^22.0.0`.
 
 -----
 
@@ -129,15 +129,15 @@ That output directory is the canonical packaged artifact. If the version, README
 
 To build the library reliably, use:
 
-- **Node.js**: modern LTS recommended
+- **Node.js**: `v22.22.3` or `v24.15.0` and later for Angular 22 compatibility
 - **npm**: version bundled with the selected Node.js LTS
 - **Angular CLI**: repository-local CLI via `npm scripts`
 - **TypeScript**: version pinned by the workspace lockfile
 
 The library currently declares:
 
-- Angular peer dependencies: `^21.0.0`
-- Library package version: `0.9.0`
+- Angular peer dependencies: `^22.0.0`
+- Library package version: `0.10.0`
 
 ### **Repository Structure Relevant to the Build**
 
@@ -300,7 +300,7 @@ If you want to contribute to MagnetarQuill or run the demo application locally:
 
 ### Prerequisites for Development
 
-  - **Node.js** current LTS recommended
+  - **Node.js** `v22.22.3` or `v24.15.0` and later for Angular 22 compatibility
   - **npm** available on your path
   - No global Angular CLI is required if you use the repository scripts
 
