@@ -15,7 +15,8 @@
     "test-lib-magnetar-quill": "ng test lib-magnetar-quill --watch=false --code-coverage",
     "lint": "npm run lint:info-docs && ng lint",
     "lint:info-docs": "node scripts/info-docs.mjs --check",
-    "docs:generate:info-docs": "node scripts/info-docs.mjs --write"
+    "docs:generate:info-docs": "node scripts/info-docs.mjs --write",
+    "validate": "bash scripts/validate.sh"
   },
   "private": true,
   "dependencies": {
