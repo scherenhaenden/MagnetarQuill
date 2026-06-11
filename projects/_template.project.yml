@@ -47,7 +47,7 @@ tasks:
   - id: task-206
     title: implement-theme-customization
     owner: core-team
-    state: in_progress
+    state: in_review
 
 risks:
   - id: risk-001
