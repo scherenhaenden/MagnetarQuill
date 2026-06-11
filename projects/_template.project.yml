@@ -52,6 +52,10 @@ tasks:
     title: implement-markdown-rtf-import-export
     owner: core-team
     state: in_review
+  - id: task-208
+    title: implement-table-support
+    owner: core-team
+    state: in_review
 
 risks:
   - id: risk-001

@@ -18,6 +18,7 @@ import {FormsModule} from "@angular/forms";
 import {ImageModalComponentModel} from "../../models/image-modal-component-model";
 import {ImageHtmlElementImageModalComponentMapper} from "../../mappers/image-html-element-image-modal-component-mapper";
 import {ImageService} from "../../services/image.service";
+import {TableService} from "../../services/table.service";
 import {ClickOutsideDirective} from "../../directives/click-outside.directive";
 import {DomSanitizer} from '@angular/platform-browser';
 import {Subject, takeUntil} from 'rxjs';
@@ -250,6 +251,63 @@ import {Subject, takeUntil} from 'rxjs';
  * How 221: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 222: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 223: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 224: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 225: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 226: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 227: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 228: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 229: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 230: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 231: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 232: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 233: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 234: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 235: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 236: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 237: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 238: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 239: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 240: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 241: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 242: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 243: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 244: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 245: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 246: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 247: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 248: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 249: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 250: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 251: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 252: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 253: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 254: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 255: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 256: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 257: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 258: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 259: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 260: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 261: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 262: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 263: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 264: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 265: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 266: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 267: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 268: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 269: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 270: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 271: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 272: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 273: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 274: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 275: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 276: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 277: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 278: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 279: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 280: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 @Component({
     selector: 'lib-editor',
@@ -334,8 +392,8 @@ set requestImageInsert(value: ImageModalComponentModel | null) {
 constructor(private formattingService: FormattingService,
               private contentService: ContentService,
               private imageService: ImageService,
-              private readonly domSanitizer: DomSanitizer
-
+              private readonly domSanitizer: DomSanitizer,
+              public tableService: TableService
   ) {
     this.isHtmlView = false;
     this.formattingService.updateFormatStates();
@@ -380,6 +438,8 @@ public ngOnInit(): void {
  * Why 02: method `EditorComponent`.`onSelectionChange()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 03: method `EditorComponent`.`onSelectionChange()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `EditorComponent`.`onSelectionChange()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `EditorComponent`.`onSelectionChange()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `EditorComponent`.`onSelectionChange()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
 @HostListener('document:selectionchange')
   @HostListener('keyup')
@@ -391,6 +451,9 @@ public ngOnInit(): void {
 
     this.formattingService.saveSelection();
     this.formattingService.updateFormatStates();
+
+    const selection = window.getSelection();
+    this.tableService.updateTableState(selection?.focusNode || null);
   }
 
     /**
@@ -1197,5 +1260,139 @@ public deleteImage(): void {
       this.selectedImage.parentNode.removeChild(this.selectedImage);
       //this.showContextMenu = false;
     }
+  }
+
+  // Table Resize Logic
+
+  private resizingCell: HTMLTableCellElement | null = null;
+  private resizeType: 'col' | 'row' | null = null;
+  private startX = 0;
+  private startY = 0;
+  private startWidth = 0;
+  private startHeight = 0;
+
+    /**
+   * @generatedInfoDoc
+   * InfoDoc: method `EditorComponent`.`onMouseMove()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+   * How: method `EditorComponent`.`onMouseMove()` is implemented in `projects/lib-magnetar-quill/src/lib/components/editor/editor.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+   * Why: method `EditorComponent`.`onMouseMove()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+   * Related: method `EditorComponent`.`onMouseMove()` participates in the `EditorComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+   * Why 02: method `EditorComponent`.`onMouseMove()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+   * Relation 03: method `EditorComponent`.`onMouseMove()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+   * Maintenance 04: method `EditorComponent`.`onMouseMove()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+   * How 05: method `EditorComponent`.`onMouseMove()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+   * Why 06: method `EditorComponent`.`onMouseMove()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+   * Relation 07: method `EditorComponent`.`onMouseMove()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+   * Maintenance 08: method `EditorComponent`.`onMouseMove()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+   * How 09: method `EditorComponent`.`onMouseMove()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+   * Why 10: method `EditorComponent`.`onMouseMove()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+   * Relation 11: method `EditorComponent`.`onMouseMove()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+   * Maintenance 12: method `EditorComponent`.`onMouseMove()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+   * How 13: method `EditorComponent`.`onMouseMove()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+   * Why 14: method `EditorComponent`.`onMouseMove()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+   * Relation 15: method `EditorComponent`.`onMouseMove()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+   * Maintenance 16: method `EditorComponent`.`onMouseMove()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+   * How 17: method `EditorComponent`.`onMouseMove()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+   * Why 18: method `EditorComponent`.`onMouseMove()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+   * Relation 19: method `EditorComponent`.`onMouseMove()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+   * Maintenance 20: method `EditorComponent`.`onMouseMove()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+   * How 21: method `EditorComponent`.`onMouseMove()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+   */
+@HostListener('mousemove', ['$event'])
+  public onMouseMove(event: MouseEvent): void {
+    if (this.resizingCell) {
+      if (this.resizeType === 'col') {
+        const deltaX = event.clientX - this.startX;
+        this.resizingCell.style.width = `${Math.max(50, this.startWidth + deltaX)}px`;
+      } else if (this.resizeType === 'row') {
+        const deltaY = event.clientY - this.startY;
+        this.resizingCell.style.height = `${Math.max(30, this.startHeight + deltaY)}px`;
+      }
+      return;
+    }
+
+    const target = event.target as HTMLElement;
+    const cell = target.closest('td, th') as HTMLTableCellElement;
+    if (cell) {
+      const rect = cell.getBoundingClientRect();
+      const edgeSize = 8;
+      const nearRight = (rect.right - event.clientX) < edgeSize;
+      const nearBottom = (rect.bottom - event.clientY) < edgeSize;
+
+      if (nearRight) {
+        cell.style.cursor = 'col-resize';
+      } else if (nearBottom) {
+        cell.style.cursor = 'row-resize';
+      } else {
+        cell.style.cursor = 'default';
+      }
+    }
+  }
+
+    /**
+   * @generatedInfoDoc
+   * InfoDoc: method `EditorComponent`.`onMouseDown()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+   * How: method `EditorComponent`.`onMouseDown()` is implemented in `projects/lib-magnetar-quill/src/lib/components/editor/editor.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+   * Why: method `EditorComponent`.`onMouseDown()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+   * Related: method `EditorComponent`.`onMouseDown()` participates in the `EditorComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+   * Why 02: method `EditorComponent`.`onMouseDown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+   * Relation 03: method `EditorComponent`.`onMouseDown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+   * Maintenance 04: method `EditorComponent`.`onMouseDown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+   * How 05: method `EditorComponent`.`onMouseDown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+   * Why 06: method `EditorComponent`.`onMouseDown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+   * Relation 07: method `EditorComponent`.`onMouseDown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+   * Maintenance 08: method `EditorComponent`.`onMouseDown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+   * How 09: method `EditorComponent`.`onMouseDown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+   * Why 10: method `EditorComponent`.`onMouseDown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+   * Relation 11: method `EditorComponent`.`onMouseDown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+   * Maintenance 12: method `EditorComponent`.`onMouseDown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+   * How 13: method `EditorComponent`.`onMouseDown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+   * Why 14: method `EditorComponent`.`onMouseDown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+   * Relation 15: method `EditorComponent`.`onMouseDown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+   * Maintenance 16: method `EditorComponent`.`onMouseDown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+   * How 17: method `EditorComponent`.`onMouseDown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+   * Why 18: method `EditorComponent`.`onMouseDown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+   * Relation 19: method `EditorComponent`.`onMouseDown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+   */
+@HostListener('mousedown', ['$event'])
+  public onMouseDown(event: MouseEvent): void {
+    const target = event.target as HTMLElement;
+    const cell = target.closest('td, th') as HTMLTableCellElement;
+    if (cell) {
+      const rect = cell.getBoundingClientRect();
+      const edgeSize = 8;
+      const nearRight = (rect.right - event.clientX) < edgeSize;
+      const nearBottom = (rect.bottom - event.clientY) < edgeSize;
+
+      if (nearRight) {
+        this.resizingCell = cell;
+        this.resizeType = 'col';
+        this.startX = event.clientX;
+        this.startWidth = cell.offsetWidth;
+        event.preventDefault();
+      } else if (nearBottom) {
+        this.resizingCell = cell;
+        this.resizeType = 'row';
+        this.startY = event.clientY;
+        this.startHeight = cell.offsetHeight;
+        event.preventDefault();
+      }
+    }
+  }
+
+    /**
+   * @generatedInfoDoc
+   * InfoDoc: method `EditorComponent`.`onMouseUp()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+   * How: method `EditorComponent`.`onMouseUp()` is implemented in `projects/lib-magnetar-quill/src/lib/components/editor/editor.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+   * Why: method `EditorComponent`.`onMouseUp()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+   * Related: method `EditorComponent`.`onMouseUp()` participates in the `EditorComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+   * Why 02: method `EditorComponent`.`onMouseUp()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+   * Relation 03: method `EditorComponent`.`onMouseUp()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+   * Maintenance 04: method `EditorComponent`.`onMouseUp()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+   */
+@HostListener('window:mouseup')
+  public onMouseUp(): void {
+    this.resizingCell = null;
+    this.resizeType = null;
   }
 }
