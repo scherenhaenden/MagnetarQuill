@@ -1,20 +1,27 @@
 .editor {
-  border: 1px solid #ccc;
+  border: 1px solid var(--mq-border-color);
   padding: 15px;
   min-height: 250px;
   width: 100%;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: inherit;
   font-size: 16px;
   line-height: 1.6;
-  background-color: #fff;
+  background-color: var(--mq-editor-bg);
+  color: var(--mq-text-color);
   border-radius: 8px;
-  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.03);
+
+  &::selection, & *::selection {
+    background-color: var(--mq-btn-active-bg);
+    color: var(--mq-btn-active-color);
+  }
 }
 
 .editor[contenteditable="true"] {
   outline: none; /* Removes focus outline for contenteditable */
 }
+
 /* Fixed height with scrollbar */
 .editor.fixed-height {
   max-height: 400px; /* Set your preferred max height */
@@ -27,7 +34,6 @@
   overflow-y: visible; /* Allows it to grow without scrollbar */
 }
 
-
 textarea.editor {
   resize: none; /* Prevents the textarea from being resizable */
   overflow: auto; /* Shows scrollbars only if needed */
@@ -38,17 +44,16 @@ textarea.editor {
   border-radius: 8px;
 }
 
-
-
 .context-menu {
   position: absolute;
-  background: white;
-  border: 1px solid #ddd;
+  background: var(--mq-modal-bg);
+  border: 1px solid var(--mq-modal-border);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   z-index: 1000;
   border-radius: 8px;
   overflow: hidden;
   animation: fadeIn 0.2s ease;
+  color: var(--mq-text-color);
 }
 
 .context-menu button {
@@ -60,22 +65,22 @@ textarea.editor {
   text-align: left;
   cursor: pointer;
   font-size: 14px;
-  color: #333;
+  color: var(--mq-text-color);
   transition: background 0.2s ease;
 }
 
 .context-menu button:hover {
-  background: #f1f1f1;
-  color: #007bff;
+  background: var(--mq-btn-hover-bg);
+  color: var(--mq-primary-color);
 }
-
 
 /* Modal Overlay (inherits from the context-menu container but distinct) */
 .context-menu .modal {
   position: relative; /* Ensures proper placement within the context menu */
   width: 100%; /* Matches the width of the context menu */
   max-width: 400px; /* Restricts modal width */
-  background-color: #fff;
+  background-color: var(--mq-modal-bg);
+  color: var(--mq-text-color);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for clarity */
@@ -88,7 +93,7 @@ textarea.editor {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
-  color: #333;
+  color: var(--mq-text-color);
 }
 
 /* Form Label Styling */
@@ -96,14 +101,16 @@ textarea.editor {
   display: block;
   margin-bottom: 10px;
   font-size: 14px;
-  color: #555;
+  color: var(--mq-text-color);
 }
 
 /* Input and Select Styling */
 .context-menu .modal input, .context-menu .modal select {
+  background: var(--mq-editor-bg);
+  color: var(--mq-text-color);
   width: 100%;
   padding: 8px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--mq-border-color);
   border-radius: 4px;
   font-size: 14px;
   margin-top: 5px;
@@ -119,7 +126,7 @@ textarea.editor {
 
 /* Apply Button */
 .context-menu .modal .modal-actions button[type="submit"] {
-  background-color: #007bff;
+  background-color: var(--mq-primary-color);
   color: white;
   padding: 8px 16px;
   border: none;
@@ -127,26 +134,24 @@ textarea.editor {
   font-size: 14px;
   cursor: pointer;
   transition: background 0.2s ease;
-}
 
-/* Apply Button Hover */
-.context-menu .modal .modal-actions button[type="submit"]:hover {
-  background-color: #0056b3;
+  &:hover {
+    background-color: var(--mq-primary-hover-color);
+  }
 }
 
 /* Cancel Button */
 .context-menu .modal .modal-actions button[type="button"] {
-  background-color: #f1f1f1;
-  color: #333;
+  background-color: var(--mq-btn-hover-bg);
+  color: var(--mq-text-color);
   padding: 8px 16px;
-  border: none;
+  border: 1px solid var(--mq-border-color);
   border-radius: 4px;
   font-size: 14px;
   cursor: pointer;
   transition: background 0.2s ease;
-}
 
-/* Cancel Button Hover */
-.context-menu .modal .modal-actions button[type="button"]:hover {
-  background-color: #ddd;
+  &:hover {
+    background-color: var(--mq-btn-hover-border);
+  }
 }

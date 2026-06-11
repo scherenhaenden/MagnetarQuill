@@ -108,6 +108,50 @@
 
   <button (mousedown)="$event.preventDefault()" (click)="openImageModal()">Insert Image</button>
 
+  <!-- Theme Selector -->
+  <select [value]="theme" (change)="onThemeChange($event)" title="Theme Select">
+    <option value="light">☀️ Light</option>
+    <option value="dark">🌙 Dark</option>
+    <option value="custom">🎨 Custom</option>
+  </select>
+
+  <!-- File Operations -->
+  <input type="file" #fileInput (change)="onFileSelected($event)" accept=".html,.htm,.rtf,.md,.markdown" style="display: none">
+  <button (mousedown)="$event.preventDefault()" (click)="triggerFileInput(fileInput)" title="Load File">Load File</button>
+  <button (mousedown)="$event.preventDefault()" (click)="exportHtml()" title="Export HTML">Export HTML</button>
+  <button (mousedown)="$event.preventDefault()" (click)="exportMarkdown()" title="Export Markdown">Export Markdown</button>
+  <button (mousedown)="$event.preventDefault()" (click)="exportRtf()" title="Export RTF">Export RTF</button>
+  <button (mousedown)="$event.preventDefault()" (click)="showTableModal = true" title="Insert Table">Insert Table</button>
+
+  <ng-container *ngIf="tableService.activeCell()">
+    <button (mousedown)="$event.preventDefault()" (click)="tableService.addRowAbove()" title="Add Row Above">Add Row Above</button>
+    <button (mousedown)="$event.preventDefault()" (click)="tableService.addRowBelow()" title="Add Row Below">Add Row Below</button>
+    <button (mousedown)="$event.preventDefault()" (click)="tableService.deleteRow()" title="Delete Row">Delete Row</button>
+    <button (mousedown)="$event.preventDefault()" (click)="tableService.addColumnBefore()" title="Add Column Before">Add Col Before</button>
+    <button (mousedown)="$event.preventDefault()" (click)="tableService.addColumnAfter()" title="Add Column After">Add Col After</button>
+    <button (mousedown)="$event.preventDefault()" (click)="tableService.deleteColumn()" title="Delete Column">Delete Col</button>
+    
+    <button (mousedown)="$event.preventDefault()" (click)="tableService.setCellAlignment('left')" title="Align Cell Left">Cell Left</button>
+    <button (mousedown)="$event.preventDefault()" (click)="tableService.setCellAlignment('center')" title="Align Cell Center">Cell Center</button>
+    <button (mousedown)="$event.preventDefault()" (click)="tableService.setCellAlignment('right')" title="Align Cell Right">Cell Right</button>
+    
+    <button (mousedown)="$event.preventDefault()" (click)="tableService.setCellVerticalAlignment('top')" title="Align Cell Top">Cell Top</button>
+    <button (mousedown)="$event.preventDefault()" (click)="tableService.setCellVerticalAlignment('middle')" title="Align Cell Middle">Cell Middle</button>
+    <button (mousedown)="$event.preventDefault()" (click)="tableService.setCellVerticalAlignment('bottom')" title="Align Cell Bottom">Cell Bottom</button>
+
+    <select (change)="onCellBorderChange($event)" title="Cell Border Style">
+      <option value="solid">Solid Border</option>
+      <option value="dashed">Dashed Border</option>
+      <option value="none">No Border</option>
+    </select>
+
+    <input type="color" (change)="onCellBgColorChange($event)" title="Cell Background Color" />
+
+    <button (mousedown)="$event.preventDefault()" (click)="tableService.mergeRight()" title="Merge Right">Merge Right</button>
+    <button (mousedown)="$event.preventDefault()" (click)="tableService.mergeDown()" title="Merge Down">Merge Down</button>
+    <button (mousedown)="$event.preventDefault()" (click)="tableService.splitCell()" title="Split Cell">Split Cell</button>
+  </ng-container>
+
 </div>
 
 
@@ -119,3 +163,9 @@
   (cancel)="showImageModal = false"
 
 ></lib-image-modal>
+
+<lib-table-modal
+  *ngIf="showTableModal"
+  (cancel)="showTableModal = false"
+  (submit)="onTableSubmit($event)"
+></lib-table-modal>

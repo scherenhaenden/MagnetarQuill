@@ -19,6 +19,36 @@ Typical categories include:
 
 ## Entries
 ---
+**Timestamp:** 2026-06-11 12:30 UTC
+**Author:** Antigravity
+**Entry:** State Change: Completed implementation of `task-208` (Table Insertion and Editing) under milestone `ms-02` on branch `feature/table-support`; transitioned state to `in_review`.
+
+---
+**Timestamp:** 2026-06-11 11:30 UTC
+**Author:** Codex
+**Entry:** State Change: Initiated `task-208` (Table support) in `in_progress` on branch `feature/table-support`; planning to implement table insertion dialog and cell styling capabilities.
+
+---
+**Timestamp:** 2026-06-11 11:27 UTC
+**Author:** Codex
+**Entry:** State Change: Completed implementation of `task-207` (HTML/Markdown Import-Export and RTF Load); transitioned state to `in_review` and submitted Pull Request #91 against integration branch `version/0.1`.
+
+---
+**Timestamp:** 2026-06-11 10:35 UTC
+**Author:** Codex
+**Entry:** State Change: Initiated `task-207` (HTML/Markdown Import-Export and RTF Load) in `in_progress` on branch `feature/markdown-support`; planning to implement file import/export capabilities.
+
+---
+**Timestamp:** 2026-06-11 10:30 UTC
+**Author:** Codex
+**Entry:** State Change: Completed implementation of `task-206` (Theme support); transitioned state to `in_review` and submitted Pull Request #90 against integration branch `version/0.1`.
+
+---
+**Timestamp:** 2026-06-11 10:00 UTC
+**Author:** Codex
+**Entry:** State Change: Initiated `task-206` (Theme support) in `in_progress` on branch `feature/theme-support`; planning to implement light, dark, and custom theme modes via CSS variables and toolbar controls.
+
+---
 **Timestamp:** 2026-06-11 09:52 UTC
 **Author:** Codex
 **Entry:** Merge: Integrated `origin/feature/update-index-main-project` into `version/0.1` while preserving the current Angular 22 package manifests and adapting project documentation to avoid Angular 21 metadata regressions.

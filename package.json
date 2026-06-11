@@ -8,14 +8,15 @@
     "watch": "ng build --watch --configuration development",
     "build-lib": "ng build lib-magnetar-quill",
     "build-lib-watch": "ng build lib-magnetar-quill --watch --configuration development",
-    "serve-with-lib": "npm run build-lib && ng serve --port 4200",
-    "serve-with-lib-linux": "ng build lib-magnetar-quill --watch --configuration development & ng serve --port 4200",
+    "serve-with-lib": ". ~/.nvm/nvm.sh && nvm use && npm run build-lib && ng serve --port 4200",
+    "serve-with-lib-linux": ". ~/.nvm/nvm.sh && nvm use && ng build lib-magnetar-quill --watch --configuration development & . ~/.nvm/nvm.sh && nvm use && ng serve --port 4200",
     "test": "ng test --watch=false --code-coverage",
     "test-ci": "ng test --watch=false --no-progress --browsers=ChromeHeadlessCI --code-coverage",
     "test-lib-magnetar-quill": "ng test lib-magnetar-quill --watch=false --code-coverage",
     "lint": "npm run lint:info-docs && ng lint",
     "lint:info-docs": "node scripts/info-docs.mjs --check",
-    "docs:generate:info-docs": "node scripts/info-docs.mjs --write"
+    "docs:generate:info-docs": "node scripts/info-docs.mjs --write",
+    "validate": "bash scripts/validate.sh"
   },
   "private": true,
   "dependencies": {
