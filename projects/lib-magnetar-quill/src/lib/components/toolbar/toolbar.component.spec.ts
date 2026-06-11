@@ -197,5 +197,17 @@ describe('ToolbarComponent', () => {
       (component as any).handleFileContent('test.pdf', 'pdf-data');
       expect(window.alert).toHaveBeenCalledWith(jasmine.stringContaining('Unsupported file type'));
     });
+
+    it('should parse markdown content from editor and update it', () => {
+      spyOn(contentService, 'getEditorContent').and.returnValue('<div># Header</div>');
+      spyOn(importExportService, 'convertMarkdownToHtml').and.returnValue('<h1>Header</h1>');
+      spyOn(contentService, 'setEditorContent');
+
+      component.parseMarkdown();
+
+      expect(contentService.getEditorContent).toHaveBeenCalled();
+      expect(importExportService.convertMarkdownToHtml).toHaveBeenCalledWith('# Header');
+      expect(contentService.setEditorContent).toHaveBeenCalledWith('<h1>Header</h1>');
+    });
   });
 });

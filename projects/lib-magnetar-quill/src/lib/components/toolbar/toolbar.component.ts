@@ -813,4 +813,13 @@ private downloadFile(content: string, filename: string, contentType: string): vo
     link.click();
     URL.revokeObjectURL(url);
   }
+
+  public parseMarkdown(): void {
+    const rawContent = this.contentService.getEditorContent();
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = rawContent;
+    const markdownText = tempDiv.innerText || tempDiv.textContent || '';
+    const html = this.importExportService.convertMarkdownToHtml(markdownText);
+    this.contentService.setEditorContent(html);
+  }
 }
