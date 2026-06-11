@@ -19,6 +19,16 @@ Typical categories include:
 
 ## Entries
 ---
+**Timestamp:** 2026-06-11 10:30 UTC
+**Author:** Codex
+**Entry:** State Change: Completed implementation of `task-206` (Theme support); transitioned state to `in_review` and submitted Pull Request #90 against integration branch `version/0.1`.
+
+---
+**Timestamp:** 2026-06-11 10:00 UTC
+**Author:** Codex
+**Entry:** State Change: Initiated `task-206` (Theme support) in `in_progress` on branch `feature/theme-support`; planning to implement light, dark, and custom theme modes via CSS variables and toolbar controls.
+
+---
 **Timestamp:** 2026-06-11 09:52 UTC
 **Author:** Codex
 **Entry:** Merge: Integrated `origin/feature/update-index-main-project` into `version/0.1` while preserving the current Angular 22 package manifests and adapting project documentation to avoid Angular 21 metadata regressions.

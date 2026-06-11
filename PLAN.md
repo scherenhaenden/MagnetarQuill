@@ -19,13 +19,14 @@ This plan captures milestones, tasks, effort estimates, and task status; its str
 | `task-203` | `ms-02` | Upgrade workspace to Angular 20.3.16 | Core Team | 3 | 15 | `in_review` | Dependency matrix aligned to Angular `^20.3.16`; npm registry policy currently blocks full reinstall (`403`) and is tracked for follow-up validation. |
 | `task-204` | `ms-02` | Upgrade workspace to Angular 21 | Core Team | 3 | 15 | `done` | Upgraded to Angular 21.1.0; Tests verified. |
 | `task-205` | `ms-02` | Upgrade workspace to Angular 22 | Core Team | 3 | 15 | `done` | Upgraded workspace and publishable library peer dependencies to Angular `^22.0.0`; restored Angular ESLint linting and verified lint/build gates. |
+| `task-206` | `ms-02` | Implement Light/Dark/Custom Theme Support | Core Team | 3 | 15 | `in_review` | Theme customization API, CSS variables, and toolbar controls. |
 | `task-301` | `ms-03` | Formalize release checklist | Delivery Team | 6 | 30 | `planned` | Planned after ms-02 acceptance. |
 
 ## Effort Summary
-- **Total effort:** 29 pts
+- **Total effort:** 32 pts
 - **Completed:** 9 pts
 - **In progress:** 5 pts
-- **In review:** 3 pts
+- **In review:** 6 pts
 - **Remaining:** 12 pts
 
 ## State Definitions
