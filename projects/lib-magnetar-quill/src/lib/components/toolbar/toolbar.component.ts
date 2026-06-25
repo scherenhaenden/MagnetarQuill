@@ -14,15 +14,15 @@ import {ImageModalComponentModel} from "../../models/image-modal-component-model
 import {ContentService} from "../../services/content.service";
 
 @Component({
-  selector: 'lib-toolbar',
-  standalone: true,
-  imports: [
-    NgIf,
-    FormsModule,
-    ImageModalComponent
-  ],
-  templateUrl: './toolbar.component.html',
-  styleUrl: './toolbar.component.less'
+    selector: 'lib-toolbar',
+    imports: [
+        NgIf,
+        FormsModule,
+        ImageModalComponent
+    ],
+    standalone: true,
+    templateUrl: './toolbar.component.html',
+    styleUrl: './toolbar.component.less'
 })
 export class ToolbarComponent {
 

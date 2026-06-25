@@ -19,9 +19,9 @@ import { ClickOutsideDirective } from "./directives/click-outside.directive";
 
 @Component({
   selector: 'magnetar-quill',
-  standalone: true,
   imports: [ToolbarComponent, EditorComponent, ImageModalComponent, NgIf, ClickOutsideDirective],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  standalone: true,
   templateUrl: './lib-magnetar-quill.component.html',
   styleUrl: './lib-magnetar-quill.component.less'
 })
@@ -89,7 +89,6 @@ export class LibMagnetarQuillComponent {
   @Input()
   public set content(value: string) {
     this.contentService.setEditorContent(value);
-    this.contentChange.emit(value);
   }
 
   /**
@@ -115,8 +114,7 @@ export class LibMagnetarQuillComponent {
   ) { }
 
   /**
-   * Closes the image editing modal if it is currently open.
-   * @public
+   * Closes the image editing modal if it is open.
    */
   public closeModal(): void {
     if (this.showImageModal) {
@@ -126,7 +124,6 @@ export class LibMagnetarQuillComponent {
 
   /**
    * Toggles the visibility of the HTML source view.
-   * @public
    */
   public toggleHtmlView(): void {
     this.isHtmlView = !this.isHtmlView;
@@ -134,16 +131,13 @@ export class LibMagnetarQuillComponent {
 
   /**
    * Opens the image editing modal.
-   * This is typically called from the editor's context menu.
-   * @public
    */
   public openImageEditModal(): void {
     this.showImageModal = true;
   }
 
   /**
-   * Resets the image data after editing is complete and closes the modal.
-   * @public
+   * Hides the image modal after editing is complete.
    */
   public clearImageToEdit(): void {
     this.showImageModal = false;

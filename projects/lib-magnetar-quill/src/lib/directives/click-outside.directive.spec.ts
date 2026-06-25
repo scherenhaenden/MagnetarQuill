@@ -4,12 +4,13 @@ import { By } from '@angular/platform-browser';
 import { ClickOutsideDirective } from './click-outside.directive';
 
 @Component({
-  template: `
+    template: `
     <div libClickOutside (clickOutside)="onOutsideClick()">
       <p class="inside">Click inside me</p>
     </div>
     <div class="outside">Click outside here</div>
-  `
+  `,
+    standalone: false
 })
 class TestHostComponent {
   public outsideClicked = false;
