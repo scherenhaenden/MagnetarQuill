@@ -1,6 +1,5 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
-import { LibMagnetarQuillService } from './lib-magnetar-quill.service';
-import {LibMagnetarQuillComponent} from "./lib-magnetar-quill.component";
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { LibMagnetarQuillComponent } from './lib-magnetar-quill.component';
 import { By } from '@angular/platform-browser';
 
 describe('LibMagnetarQuillComponent', () => {
@@ -10,65 +9,79 @@ describe('LibMagnetarQuillComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [LibMagnetarQuillComponent],
+      imports: [LibMagnetarQuillComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(LibMagnetarQuillComponent);
     component = fixture.componentInstance;
-    editor = fixture.nativeElement.querySelector('#editor');
     fixture.detectChanges();
+    editor = fixture.nativeElement.querySelector('div.editor');
   });
+
+  function selectEditorContents(): void {
+    const range = document.createRange();
+    range.selectNodeContents(editor);
+    const selection = window.getSelection()!;
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }
 
   // Basic Formatting Tests
   it('should toggle bold formatting', () => {
-    const boldButton = fixture.debugElement.query(By.css('button[title="Bold"]'));
+    editor.innerHTML = 'Test text';
+    selectEditorContents();
+
+    const boldButton = fixture.debugElement.queryAll(By.css('button[title="Bold"]'))[1];
     boldButton.triggerEventHandler('click', null);
     fixture.detectChanges();
 
-    const isBoldApplied = editor.classList.contains('bold') ||
-      editor.querySelector('.bold') !== null;
-
-    expect(isBoldApplied).toBe(true);
+    const span = editor.querySelector('span');
+    expect(span?.style.fontWeight).toBe('bold');
   });
 
   it('should toggle italic formatting', () => {
+    editor.innerHTML = 'Test text';
+    selectEditorContents();
+
     const italicButton = fixture.debugElement.query(By.css('button[title="Italic"]'));
     italicButton.triggerEventHandler('click', null);
     fixture.detectChanges();
 
-    const isItalicApplied = editor.classList.contains('italic') ||
-      editor.querySelector('.italic') !== null;
-
-    expect(isItalicApplied).toBe(true);
+    const span = editor.querySelector('span');
+    expect(span?.style.fontStyle).toBe('italic');
   });
 
   it('should toggle underline formatting', () => {
+    editor.innerHTML = 'Test text';
+    selectEditorContents();
+
     const underlineButton = fixture.debugElement.query(By.css('button[title="Underline"]'));
     underlineButton.triggerEventHandler('click', null);
     fixture.detectChanges();
 
-    const isUnderlineApplied = editor.classList.contains('underline') ||
-      editor.querySelector('.underline') !== null;
-
-    expect(isUnderlineApplied).toBe(true);
+    const span = editor.querySelector('span');
+    expect(span?.style.textDecoration).toBe('underline');
   });
 
   it('should toggle strikethrough formatting', () => {
+    editor.innerHTML = 'Test text';
+    selectEditorContents();
+
     const strikethroughButton = fixture.debugElement.query(By.css('button[title="Strikethrough"]'));
     strikethroughButton.triggerEventHandler('click', null);
     fixture.detectChanges();
 
-    const isStrikethroughApplied = editor.classList.contains('strikethrough') ||
-      editor.querySelector('.strikethrough') !== null;
-
-    expect(isStrikethroughApplied).toBe(true);
+    const span = editor.querySelector('span');
+    expect(span?.style.textDecoration).toBe('line-through');
   });
 
-  // Additional Formatting Tests (Adapt as needed)
   it('should apply heading styles', () => {
-    // Assuming you have buttons for H1, H2, etc.
-    const h1Button = fixture.debugElement.query(By.css('button[title="Heading 1"]')); // Adjust selector as needed
-    h1Button.triggerEventHandler('click', null);
+    editor.innerHTML = 'Test text';
+    selectEditorContents();
+
+    const selectEl = fixture.debugElement.query(By.css('select[title="Header Level"]'));
+    selectEl.nativeElement.value = 'h1';
+    selectEl.nativeElement.dispatchEvent(new Event('change'));
     fixture.detectChanges();
 
     const h1Element = editor.querySelector('h1');
@@ -76,11 +89,18 @@ describe('LibMagnetarQuillComponent', () => {
   });
 
   it('should create lists', () => {
-    const unorderedListButton = fixture.debugElement.query(By.css('button[title="Unordered List"]')); // Adjust selector
+    editor.innerHTML = '<div>Test text</div>';
+    const range = document.createRange();
+    range.selectNodeContents(editor.firstChild!);
+    const selection = window.getSelection()!;
+    selection.removeAllRanges();
+    selection.addRange(range);
+
+    const unorderedListButton = fixture.debugElement.query(By.css('button[title="Unordered List"]'));
     unorderedListButton.triggerEventHandler('click', null);
     fixture.detectChanges();
 
     const ulElement = editor.querySelector('ul');
     expect(ulElement).toBeTruthy();
-  }); 
+  });
 });
