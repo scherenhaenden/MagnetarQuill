@@ -45,6 +45,41 @@ body {
     color: rgba(255, 255, 255, 0.9);
     font-weight: 300;
   }
+
+  .demo-theme-selector {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+
+    .theme-select {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      outline: none;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.3);
+        border-color: rgba(255, 255, 255, 0.5);
+      }
+
+      option {
+        background: #2d3748;
+        color: white;
+      }
+    }
+  }
 }
 
 /* ===== MAIN CONTENT ===== */

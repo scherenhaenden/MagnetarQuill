@@ -101,6 +101,12 @@
 
   <button (click)="openImageModal()">Insert Image</button>
 
+  <select [value]="theme" (change)="onThemeChange($event)" title="Theme Select">
+    <option value="light">Light</option>
+    <option value="dark">Dark</option>
+    <option value="custom">Custom</option>
+  </select>
+
 </div>
 
 
@@ -112,6 +118,5 @@
   (cancel)="showImageModal = false"
 
 ></lib-image-modal>
-
 
 
