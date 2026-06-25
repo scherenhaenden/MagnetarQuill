@@ -1425,7 +1425,7 @@ private unwrap(element: HTMLElement): Node[] {
     while (element.firstChild) {
       const child = element.firstChild;
       unwrappedNodes.push(child);
-      parent.insertBefore(child, element);
+      element.before(child);
     }
     parent.removeChild(element);
     return unwrappedNodes;
