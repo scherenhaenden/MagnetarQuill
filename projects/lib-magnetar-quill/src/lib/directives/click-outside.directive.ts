@@ -1,4 +1,4 @@
-import {Directive, ElementRef, EventEmitter, HostListener, OnDestroy, Output} from '@angular/core';
+import {Directive, ElementRef, EventEmitter, HostListener, Output} from '@angular/core';
 
 /**
  * @generatedInfoDoc
@@ -37,8 +37,6 @@ import {Directive, ElementRef, EventEmitter, HostListener, OnDestroy, Output} fr
 })
 export class ClickOutsideDirective {
   @Output() clickOutside = new EventEmitter<void>();
-  private debounceTimer: any = null; // Tracks the debounce timer
-
   private runnerNonAcceptingDuringthisTime = true;
 
     /**

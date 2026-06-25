@@ -123,8 +123,8 @@ public ngOnDestroy(): void {
       // For now, ignore all shortcuts if focus is not in the editor or similar editable context.
       // This check needs refinement based on where the editor content resides.
       // If the editor itself isn't focused, maybe don't process shortcuts?
-      // console.log('Ignoring keydown in input/textarea:', targetElement?.tagName);
-      // return; // Temporarily disabled - needs better focus/context check
+      console.log('Ignoring keydown in input/textarea:', targetElement?.tagName);
+      return; // Temporarily disabled - needs better focus/context check
     }
 
     const match = SHORTCUTS.find(d =>

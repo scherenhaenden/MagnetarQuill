@@ -4,7 +4,7 @@ import { KeyboardShortcutService } from './keyboard-shortcut.service';
 import { FormattingService } from './formatting.service';
 import { ShortcutAction } from '../models/key-shortcuts'; // Adjust path if necessary
 import { SHORTCUTS } from '../models/shortcut-map';       // Adjust path if necessary
-import { Type } from '@angular/core';
+
 
 // Helper function to dispatch keydown events
 function dispatchKeydownEvent(
@@ -108,7 +108,7 @@ describe('KeyboardShortcutService', () => {
 
   it('should log an error and return if FormattingService is not available (simulated)', () => {
       // Simulate fmt being null *after* service creation
-      (service as any).fmt = null;
+      (service as unknown as { fmt: FormattingService | null }).fmt = null;
 
       const event = dispatchKeydownEvent('b', { ctrlKey: true });
 
@@ -117,7 +117,7 @@ describe('KeyboardShortcutService', () => {
       expect(event.preventDefault).not.toHaveBeenCalled();
       expect(event.stopImmediatePropagation).not.toHaveBeenCalled();
       // Restore for other tests if necessary (though afterEach handles this instance)
-      (service as any).fmt = mockFormattingService;
+      (service as unknown as { fmt: FormattingService | null }).fmt = mockFormattingService;
   });
 
   // TODO:
@@ -203,7 +203,7 @@ describe('KeyboardShortcutService', () => {
 
         // Find the expected method name from the mock service spy object
         let expectedMethod: keyof FormattingService | null = null;
-        let expectedArgs: any[] = [];
+        let expectedArgs: unknown[] = [];
 
         switch (shortcut.action) {
           case ShortcutAction.Bold:            expectedMethod = 'toggleBold'; break;

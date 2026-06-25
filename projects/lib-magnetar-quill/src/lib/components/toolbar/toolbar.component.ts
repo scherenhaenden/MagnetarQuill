@@ -468,7 +468,7 @@ public closeImageModal(): void {
  * Relation 11: method `ToolbarComponent`.`insertImage()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 12: method `ToolbarComponent`.`insertImage()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
-public insertImage( imageModalComponentModel: ImageModalComponentModel): void {
+public insertImage(): void {
     if (this.imageUrl.trim()) {
       this.insertImageFromUrl.emit({
         url: this.imageUrl,

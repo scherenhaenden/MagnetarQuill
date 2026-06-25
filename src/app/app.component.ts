@@ -246,8 +246,8 @@ public onResizeStart(event: MouseEvent): void {
  * Relation 03: method `AppComponent`.`onMouseUp()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `AppComponent`.`onMouseUp()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
-@HostListener('document:mouseup', ['$event'])
-  public onMouseUp(event: MouseEvent): void {
+@HostListener('document:mouseup')
+  public onMouseUp(): void {
     if (this.isResizing) {
       this.isResizing = false;
 

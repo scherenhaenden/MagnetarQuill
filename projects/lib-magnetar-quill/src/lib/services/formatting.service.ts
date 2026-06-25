@@ -1208,10 +1208,10 @@ public clearFormatting(): void {
   const html = cleanedContainer.innerHTML || '';
 
   // Try to insert the change via execCommand (Browser manages Undo/Selection)
-  let success = false;
+  let success: boolean;
   try {
     success = document.execCommand('insertHTML', false, html);
-  } catch (e) {
+  } catch {
     success = false;
   }
 
@@ -1363,11 +1363,11 @@ public applyStyleV2(styleName: string, value: string): void {
     nodes.forEach(node => {
       if (node.nodeType === Node.ELEMENT_NODE) {
         const element = node as HTMLElement;
-        element.style[styleName as any] = value;
+        (element.style as unknown as Record<string, string>)[styleName] = value;
       } else {
         // Wrap text nodes in a <span> to apply the style
         const span = document.createElement('span');
-        span.style[styleName as any] = value;
+        (span.style as unknown as Record<string, string>)[styleName] = value;
         span.textContent = node.textContent;
         range.insertNode(span);
       }

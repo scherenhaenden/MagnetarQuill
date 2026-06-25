@@ -3,7 +3,6 @@ import { LibMagnetarQuillComponent } from './lib-magnetar-quill.component';
 import { By } from '@angular/platform-browser';
 
 describe('LibMagnetarQuillComponent', () => {
-  let component: LibMagnetarQuillComponent;
   let fixture: ComponentFixture<LibMagnetarQuillComponent>;
   let editor: HTMLElement;
 
@@ -13,7 +12,6 @@ describe('LibMagnetarQuillComponent', () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(LibMagnetarQuillComponent);
-    component = fixture.componentInstance;
     fixture.detectChanges();
     editor = fixture.nativeElement.querySelector('div.editor');
   });

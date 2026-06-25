@@ -6,7 +6,6 @@ import {
   HostListener, Input,
   OnChanges, OnDestroy, OnInit, Output,
   SecurityContext,
-  SimpleChanges,
   ViewChild
 } from '@angular/core';
 import {NgClass, NgIf} from "@angular/common";
@@ -937,32 +936,7 @@ public fixParagraphWithMultipleBrs(input: string): string {
  * Maintenance 12: method `EditorComponent`.`splitIntoParagraphs()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 public splitIntoParagraphs(htmlContent: string): string {
-
-
-    // Step 1: Remove any improperly nested <p> tags
-    let cleanedContent = htmlContent.replace(/<p>\s*<p[^>]*>/gi, '<p>'); // Replace nested opening <p> tags
-    cleanedContent = cleanedContent.replace(/<\/p>\s*<\/p>/gi, '</p>'); // Replace nested closing </p> tags
-    cleanedContent = cleanedContent.replace(/<\/p>\s*<p>/gi, '</p><p>'); // Ensure proper separation of paragraphs
-
-    // Step 2: Replace consecutive <br> tags with a marker for splitting
-    const marker = '###SPLIT###';
-    cleanedContent = cleanedContent.replace(/(<br\s*\/?>\s*){2,}/gi, marker);
-
-    // Step 3: Split the content by the marker
-    const parts = cleanedContent.split(marker).map(part => part.trim());
-
-    // Step 4: Wrap each part in a <p> tag, ensuring no nested <p> tags
-    const structuredContent = parts
-      .filter(part => part !== '') // Ignore empty parts
-      .map(part => `<p>${part}</p>`)
-      .join('');
-
-    // Step 5: Final cleanup to ensure no invalid nesting remains
-    //return structuredContent.replace(/<p>\s*<\/p>/g, ''); // Remove empty <p> tags
-    //console.log('htmlContent:1', htmlContent);
-    htmlContent = this.fixParagraphWithBrAndSpace(htmlContent);
-    //console.log('htmlContent:2', htmlContent);
-    return htmlContent;
+    return this.fixParagraphWithBrAndSpace(htmlContent);
   }
 
 
@@ -1047,7 +1021,7 @@ private checkAndRestoreEditor(): void {
  * Relation 03: method `EditorComponent`.`ngOnChanges()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `EditorComponent`.`ngOnChanges()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
-public ngOnChanges(changes: SimpleChanges): void {
+public ngOnChanges(): void {
     this.ensurePlaceholder();
   }
   /**

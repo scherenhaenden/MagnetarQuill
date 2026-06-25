@@ -47,7 +47,7 @@ export class ImageHtmlElementImageModalComponentMapper {
 public mapImageModalComponentToImageHtmlElement(imageModalComponentModel: ImageModalComponentModel): HTMLImageElement {
 
     // Create the image element
-    let imageElement: HTMLImageElement = document.createElement('img');
+    const imageElement: HTMLImageElement = document.createElement('img');
 
     imageElement.src = imageModalComponentModel.url;
     imageElement.alt = imageModalComponentModel.alt || '';
@@ -78,7 +78,7 @@ public mapImageModalComponentToImageHtmlElement(imageModalComponentModel: ImageM
  */
 public mapImageHtmlElementToImageModalComponent(imageElement: HTMLImageElement): ImageModalComponentModel {
     // Create a new ImageModalComponentModel object
-    let imageModalComponentModel = new ImageModalComponentModel();
+    const imageModalComponentModel = new ImageModalComponentModel();
 
     // Map properties from the image element to the model
     imageModalComponentModel.url = imageElement.src;
