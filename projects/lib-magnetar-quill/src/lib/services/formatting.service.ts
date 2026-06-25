@@ -438,6 +438,12 @@ import {ContentService} from "./content.service";
  * Why 430: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 431: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 432: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 433: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 434: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 435: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 436: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 437: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 438: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
 @Injectable({
   providedIn: 'root'
@@ -701,6 +707,12 @@ public toggleBold(): void {
  * Maintenance 52: method `FormattingService`.`toggleStrong()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 53: method `FormattingService`.`toggleStrong()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 54: method `FormattingService`.`toggleStrong()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 55: method `FormattingService`.`toggleStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 56: method `FormattingService`.`toggleStrong()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 57: method `FormattingService`.`toggleStrong()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 58: method `FormattingService`.`toggleStrong()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 59: method `FormattingService`.`toggleStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 60: method `FormattingService`.`toggleStrong()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 public toggleStrong(): void {
     const selection = window.getSelection();
@@ -745,12 +757,20 @@ public toggleStrong(): void {
       }
 
       const referenceNode = strongElement.nextSibling;
-      parent.insertBefore(selectedFragment, referenceNode);
+      if (referenceNode) {
+        referenceNode.before(selectedFragment);
+      } else {
+        parent.appendChild(selectedFragment);
+      }
 
       if (afterFragment.childNodes.length > 0) {
         const afterStrongElement = strongElement.cloneNode(false) as HTMLElement;
         afterStrongElement.appendChild(afterFragment);
-        parent.insertBefore(afterStrongElement, referenceNode);
+        if (referenceNode) {
+          referenceNode.before(afterStrongElement);
+        } else {
+          parent.appendChild(afterStrongElement);
+        }
       }
 
       if (strongElement.childNodes.length === 0) {
