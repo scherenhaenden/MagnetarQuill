@@ -112,7 +112,7 @@ export class LibMagnetarQuillComponent {
     private formattingService: FormattingService,
     public imageService: ImageService,
     private cdRef: ChangeDetectorRef
-  ) {}
+  ) { }
 
   /**
    * Closes the image editing modal if it is currently open.
