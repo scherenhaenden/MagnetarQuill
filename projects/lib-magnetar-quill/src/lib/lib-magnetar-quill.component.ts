@@ -15,6 +15,8 @@ import { NgIf } from "@angular/common";
 import { ImageModalComponentModel } from "./models/image-modal-component-model";
 import { ImageService } from "./services/image.service";
 import { FormattingService } from "./services/formatting.service";
+import { KeyboardShortcutService } from "./services/keyboard-shortcut.service";
+import { LogService } from "./services/log.service";
 
 /**
  * @generatedInfoDoc
@@ -71,7 +73,8 @@ import { FormattingService } from "./services/formatting.service";
     styleUrl: './lib-magnetar-quill.component.less',
     host: {
       '[class]': '"magnetar-quill-container theme-" + theme'
-    }
+    },
+    providers: [FormattingService, ContentService, KeyboardShortcutService, ImageService, LogService]
 })
 export class LibMagnetarQuillComponent {
 

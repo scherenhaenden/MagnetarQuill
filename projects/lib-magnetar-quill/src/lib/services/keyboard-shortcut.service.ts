@@ -1,5 +1,5 @@
 // File: keyboard-shortcut.service.ts
-import { Injectable, OnDestroy, inject } from '@angular/core';
+import { Injectable, OnDestroy, inject, ElementRef } from '@angular/core';
 import { Subject } from 'rxjs';
 import {FormattingService} from "./formatting.service";
 import {SHORTCUTS} from "../models/shortcut-map";
@@ -65,12 +65,16 @@ import {ShortcutAction} from "../models/key-shortcuts";
  * Why 46: class `KeyboardShortcutService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 47: class `KeyboardShortcutService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 48: class `KeyboardShortcutService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 49: class `KeyboardShortcutService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 50: class `KeyboardShortcutService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 51: class `KeyboardShortcutService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
 @Injectable({ providedIn: 'root' })
 export class KeyboardShortcutService implements OnDestroy {
 
   private readonly destroy$ = new Subject<void>();
   private readonly fmt = inject(FormattingService);
+  private readonly hostElementRef = inject(ElementRef, { optional: true });
   // Example: Inject HistoryService if it handles Undo/Redo
   // private readonly history = inject(HistoryService);
 
@@ -120,6 +124,12 @@ public ngOnDestroy(): void {
 
     // Ignore shortcuts if typing inside an input, textarea etc., unless specifically allowed
     const targetElement = ev.target as HTMLElement;
+    
+    // Ensure the keydown event occurred inside this specific editor instance's DOM hierarchy
+    if (this.hostElementRef?.nativeElement && !this.hostElementRef.nativeElement.contains(targetElement)) {
+      return;
+    }
+
     if (targetElement?.isContentEditable === false && ['INPUT', 'TEXTAREA', 'SELECT'].includes(targetElement?.tagName)) {
       // Allow specific shortcuts like Undo/Redo even in inputs? Maybe check match.action here.
       // For now, ignore all shortcuts if focus is not in the editor or similar editable context.
