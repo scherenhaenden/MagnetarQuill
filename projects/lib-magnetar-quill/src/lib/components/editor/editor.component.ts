@@ -1504,8 +1504,8 @@ private ensurePlaceholder(): void {
  * Maintenance 04: method `EditorComponent`.`deleteImage()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 public deleteImage(): void {
-    if (this.selectedImage && this.selectedImage.parentNode) {
-      this.selectedImage.parentNode.removeChild(this.selectedImage);
+    if (this.selectedImage) {
+      this.selectedImage.remove();
       //this.showContextMenu = false;
     }
   }

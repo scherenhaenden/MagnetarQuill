@@ -41,6 +41,13 @@ function isInsertBeforeCall(node) {
     node.callee.property.name === 'insertBefore';
 }
 
+function isRemoveChildCall(node) {
+  return node.callee?.type === 'MemberExpression' &&
+    !node.callee.computed &&
+    node.callee.property?.type === 'Identifier' &&
+    node.callee.property.name === 'removeChild';
+}
+
 function getPreferredNumberStaticMethodName(name) {
   return {
     parseInt: 'Number.parseInt',
@@ -210,6 +217,32 @@ module.exports = {
             context.report({
               node,
               messageId: 'preferBefore'
+            });
+          }
+        };
+      }
+    },
+    'prefer-modern-dom-remove': {
+      meta: {
+        type: 'suggestion',
+        docs: {
+          description: 'Prefer modern ChildNode.remove() over parentNode.removeChild(childNode).'
+        },
+        schema: [],
+        messages: {
+          preferRemove: 'Prefer modern DOM manipulation: use childNode.remove() instead of parentNode.removeChild(childNode).'
+        }
+      },
+      create(context) {
+        return {
+          CallExpression(node) {
+            if (!isRemoveChildCall(node)) {
+              return;
+            }
+
+            context.report({
+              node,
+              messageId: 'preferRemove'
             });
           }
         };

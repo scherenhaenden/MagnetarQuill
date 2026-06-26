@@ -36,6 +36,7 @@ module.exports = tseslint.config(
       'sonar-local/cognitive-complexity': ['error', {max: 15}],
       'sonar-local/no-risky-regex': 'error',
       'sonar-local/prefer-modern-dom-before': 'error',
+      'sonar-local/prefer-modern-dom-remove': 'error',
       'sonar-local/prefer-number-static-methods': 'error'
     }
   },

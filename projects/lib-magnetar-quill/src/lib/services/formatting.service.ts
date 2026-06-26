@@ -842,7 +842,7 @@ private unwrapStrongSelection(range: Range, selection: Selection, strongElement:
     this.insertStrongSide(beforeFragment, strongElement);
     strongElement.before(selectedFragment);
     this.insertStrongSide(afterFragment, strongElement);
-    parent.removeChild(strongElement);
+    strongElement.remove();
     this.restoreSelection(selection, unwrappedNodes);
   }
 
@@ -1603,7 +1603,7 @@ private unwrap(element: HTMLElement): Node[] {
       unwrappedNodes.push(child);
       element.before(child);
     }
-    parent.removeChild(element);
+    element.remove();
     return unwrappedNodes;
   }
 

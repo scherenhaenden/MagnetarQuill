@@ -75,7 +75,7 @@ describe('FormattingService', () => {
       expectNoStyledSpan(container, 'font-weight', 'bold');
       expect(container.textContent).toBe('Bold text');
 
-      document.body.removeChild(container);
+      container.remove();
     });
   });
 
@@ -96,7 +96,7 @@ describe('FormattingService', () => {
       expect(container.innerHTML).toBe('One<strong> Two</strong>');
       expect(window.getSelection()?.toString()).toBe('One');
 
-      document.body.removeChild(container);
+      container.remove();
     });
 
     it('should not mark bold active for text that is only strong', () => {
@@ -113,7 +113,7 @@ describe('FormattingService', () => {
       expect(service.strongActive()).toBeTrue();
       expect(service.boldActive()).toBeFalse();
 
-      document.body.removeChild(container);
+      container.remove();
     });
 
     it('should keep strong when removing bold from text that has both formats', () => {
@@ -132,7 +132,7 @@ describe('FormattingService', () => {
       expect(container.querySelector('strong')).not.toBeNull();
       expectNoStyledSpan(container, 'font-weight', 'bold');
 
-      document.body.removeChild(container);
+      container.remove();
     });
 
     it('should keep inline bold when removing strong from text that has both formats', () => {
@@ -151,7 +151,7 @@ describe('FormattingService', () => {
       expect(container.querySelector('strong')).toBeNull();
       expect(container.querySelector('span')?.style.fontWeight).toBe('bold');
 
-      document.body.removeChild(container);
+      container.remove();
     });
   });
 
@@ -187,7 +187,7 @@ describe('FormattingService', () => {
       expectNoStyledSpan(container, 'font-style', 'italic');
       expect(container.textContent).toBe('Italic text');
 
-      document.body.removeChild(container);
+      container.remove();
     });
   });
 
@@ -241,7 +241,7 @@ describe('FormattingService', () => {
       expectNoStyledSpan(container, 'text-decoration', 'line-through');
       expect(container.textContent).toBe('Strike text');
 
-      document.body.removeChild(container);
+      container.remove();
     });
   });
 
@@ -327,7 +327,7 @@ describe('FormattingService', () => {
       expect(container.querySelector('p')).not.toBeNull();
       expect(container.querySelector('img')).not.toBeNull();
 
-      document.body.removeChild(container);
+      container.remove();
     });
 
     it('should preserve multiple block paragraphs and their text', () => {
@@ -351,7 +351,7 @@ describe('FormattingService', () => {
       expect(paragraphs[0].textContent?.trim()).toBe('One');
       expect(paragraphs[1].textContent?.trim()).toBe('Two');
 
-      document.body.removeChild(container);
+      container.remove();
     });
   });
 
