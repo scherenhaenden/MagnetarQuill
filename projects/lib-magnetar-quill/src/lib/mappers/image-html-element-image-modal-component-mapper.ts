@@ -85,9 +85,9 @@ public mapImageHtmlElementToImageModalComponent(imageElement: HTMLImageElement):
     imageModalComponentModel.alt = imageElement.alt || '';
     imageModalComponentModel.width = imageElement.width || null;
     imageModalComponentModel.height = imageElement.height || null;
-    imageModalComponentModel.border = parseInt(imageElement.style.borderWidth || '0', 10);
-    imageModalComponentModel.hPadding = parseInt(imageElement.style.paddingLeft || '0', 10);
-    imageModalComponentModel.vPadding = parseInt(imageElement.style.paddingTop || '0', 10);
+    imageModalComponentModel.border = Number.parseInt(imageElement.style.borderWidth || '0', 10);
+    imageModalComponentModel.hPadding = Number.parseInt(imageElement.style.paddingLeft || '0', 10);
+    imageModalComponentModel.vPadding = Number.parseInt(imageElement.style.paddingTop || '0', 10);
 
     // Ensure alignment is valid before assigning
     imageElement.style.textAlign = imageModalComponentModel.alignment || 'left';

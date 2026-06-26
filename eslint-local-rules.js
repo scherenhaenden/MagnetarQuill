@@ -34,6 +34,46 @@ function isSortCallWithoutComparator(node) {
     node.callee.property.name === 'sort';
 }
 
+function isInsertBeforeCall(node) {
+  return node.callee?.type === 'MemberExpression' &&
+    !node.callee.computed &&
+    node.callee.property?.type === 'Identifier' &&
+    node.callee.property.name === 'insertBefore';
+}
+
+function getPreferredNumberStaticMethodName(name) {
+  return {
+    parseInt: 'Number.parseInt',
+    parseFloat: 'Number.parseFloat',
+    isNaN: 'Number.isNaN',
+    isFinite: 'Number.isFinite'
+  }[name] ?? null;
+}
+
+function isRiskyRegexLiteral(node) {
+  const raw = node.raw ?? '';
+  return raw.includes('[\\s\\S]') ||
+    raw.includes('.*?') ||
+    (raw.includes('.*$') && node.regex?.flags?.includes('m'));
+}
+
+function getAttributeValue(attributes, attributeName) {
+  const match = attributes.match(new RegExp(`\\s${attributeName}\\s*=\\s*["']([^"']+)["']`, 'i'));
+  return match?.[1] ?? null;
+}
+
+function hasAttribute(attributes, attributeName) {
+  return new RegExp(`\\s${attributeName}(\\s|=|$)`, 'i').test(attributes);
+}
+
+function getLineAndColumnFromIndex(text, index) {
+  const lines = text.slice(0, index).split('\n');
+  return {
+    line: lines.length,
+    column: lines[lines.length - 1].length
+  };
+}
+
 module.exports = {
   rules: {
     'cognitive-complexity': {
@@ -149,6 +189,32 @@ module.exports = {
         };
       }
     },
+    'prefer-modern-dom-before': {
+      meta: {
+        type: 'suggestion',
+        docs: {
+          description: 'Prefer modern ChildNode.before() over parent.insertBefore().'
+        },
+        schema: [],
+        messages: {
+          preferBefore: 'Prefer modern DOM manipulation: use referenceNode.before(node) instead of parent.insertBefore(node, referenceNode).'
+        }
+      },
+      create(context) {
+        return {
+          CallExpression(node) {
+            if (!isInsertBeforeCall(node)) {
+              return;
+            }
+
+            context.report({
+              node,
+              messageId: 'preferBefore'
+            });
+          }
+        };
+      }
+    },
     'array-sort-compare': {
       meta: {
         type: 'problem',
@@ -171,6 +237,114 @@ module.exports = {
               node,
               messageId: 'missingComparator'
             });
+          }
+        };
+      }
+    },
+    'prefer-number-static-methods': {
+      meta: {
+        type: 'suggestion',
+        docs: {
+          description: 'Prefer Number static methods over global numeric helpers.'
+        },
+        schema: [],
+        messages: {
+          preferNumberStatic: 'Prefer {{preferredName}} over {{name}}.'
+        }
+      },
+      create(context) {
+        return {
+          CallExpression(node) {
+            if (node.callee?.type !== 'Identifier') {
+              return;
+            }
+
+            const preferredName = getPreferredNumberStaticMethodName(node.callee.name);
+            if (!preferredName) {
+              return;
+            }
+
+            context.report({
+              node: node.callee,
+              messageId: 'preferNumberStatic',
+              data: {
+                name: node.callee.name,
+                preferredName
+              }
+            });
+          }
+        };
+      }
+    },
+    'no-risky-regex': {
+      meta: {
+        type: 'problem',
+        docs: {
+          description: 'Disallow regex patterns known to trigger Sonar backtracking findings.'
+        },
+        schema: [],
+        messages: {
+          riskyRegex: 'Simplify this regular expression to avoid super-linear runtime from backtracking.'
+        }
+      },
+      create(context) {
+        return {
+          Literal(node) {
+            if (!node.regex || !isRiskyRegexLiteral(node)) {
+              return;
+            }
+
+            context.report({
+              node,
+              messageId: 'riskyRegex'
+            });
+          }
+        };
+      }
+    },
+    'control-has-associated-label': {
+      meta: {
+        type: 'problem',
+        docs: {
+          description: 'Require input, select, and textarea controls to have an id associated with a label.'
+        },
+        schema: [],
+        messages: {
+          missingLabel: 'Add an "id" attribute to this {{tagName}} field and associate it with a label.'
+        }
+      },
+      create(context) {
+        return {
+          Program() {
+            const sourceCode = context.sourceCode;
+            const text = sourceCode.getText();
+            const controlRegex = /<(input|select|textarea)\b([^>]*)>/gi;
+            let match;
+
+            while ((match = controlRegex.exec(text)) !== null) {
+              const tagName = match[1].toLowerCase();
+              const attributes = match[2];
+
+              if (tagName === 'input' && getAttributeValue(attributes, 'type')?.toLowerCase() === 'hidden') {
+                continue;
+              }
+
+              const id = getAttributeValue(attributes, 'id');
+              const labelForIdRegex = id ? new RegExp(`<label\\b[^>]*\\sfor\\s*=\\s*["']${id}["']`, 'i') : null;
+
+              if (id && labelForIdRegex?.test(text)) {
+                continue;
+              }
+
+              const loc = getLineAndColumnFromIndex(text, match.index);
+              context.report({
+                loc,
+                messageId: 'missingLabel',
+                data: {
+                  tagName
+                }
+              });
+            }
           }
         };
       }

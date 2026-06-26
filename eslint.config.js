@@ -33,7 +33,20 @@ module.exports = tseslint.config(
       'no-useless-assignment': 'warn',
       'prefer-const': 'warn',
       'sonar-local/array-sort-compare': 'error',
-      'sonar-local/cognitive-complexity': ['error', {max: 15}]
+      'sonar-local/cognitive-complexity': ['error', {max: 15}],
+      'sonar-local/no-risky-regex': 'error',
+      'sonar-local/prefer-modern-dom-before': 'error',
+      'sonar-local/prefer-number-static-methods': 'error'
+    }
+  },
+  {
+    files: ['scripts/**/*.mjs'],
+    plugins: {
+      'sonar-local': sonarLocal
+    },
+    rules: {
+      'sonar-local/no-risky-regex': 'error',
+      'sonar-local/prefer-number-static-methods': 'error'
     }
   },
   {
@@ -42,10 +55,14 @@ module.exports = tseslint.config(
       ...angular.configs.templateRecommended,
       ...angular.configs.templateAccessibility
     ],
+    plugins: {
+      'sonar-local': sonarLocal
+    },
     rules: {
       '@angular-eslint/template/alt-text': 'warn',
       '@angular-eslint/template/label-has-associated-control': 'warn',
-      '@angular-eslint/template/prefer-control-flow': 'off'
+      '@angular-eslint/template/prefer-control-flow': 'off',
+      'sonar-local/control-has-associated-label': 'error'
     }
   }
 );

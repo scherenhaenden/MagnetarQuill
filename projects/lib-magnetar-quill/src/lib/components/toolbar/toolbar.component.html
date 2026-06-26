@@ -25,8 +25,10 @@
 
     <button (click)="formattingService.clearFormatting()" title="Clear Formatting">Clear</button>
 
-    <input type="color" (change)="onTextColorChange($event)" title="Text Color" aria-label="Text Color">
-    <input type="color" (change)="onBackgroundColorChange($event)" title="Background Color" aria-label="Background Color">
+    <label for="textColorInput" class="sr-only">Text Color</label>
+    <input id="textColorInput" type="color" (change)="onTextColorChange($event)" title="Text Color" aria-label="Text Color">
+    <label for="backgroundColorInput" class="sr-only">Background Color</label>
+    <input id="backgroundColorInput" type="color" (change)="onBackgroundColorChange($event)" title="Background Color" aria-label="Background Color">
 
   <button
     (click)="formattingService.toggleStrong()"
@@ -70,7 +72,8 @@
     <button (click)="formattingService.setTextAlign('justify')" title="Justify">Justify</button>
 
     <!-- ./components/toolbar/toolbar.component.html -->
-  <select (change)="setLineSpacing($event)">
+  <label for="lineSpacingSelect" class="sr-only">Line Spacing</label>
+  <select id="lineSpacingSelect" (change)="setLineSpacing($event)">
     <option value="1.0">1.0</option>
     <option value="1.15">1.15</option>
     <option value="1.5">1.5</option>
@@ -91,7 +94,8 @@
   <button (click)="toggleSubscript()" title="Subscript">Sub</button>
 
   <!-- Header Level Dropdown -->
-  <select (change)="applyHeader($event)" title="Header Level">
+  <label for="headerLevelSelect" class="sr-only">Header Level</label>
+  <select id="headerLevelSelect" (change)="applyHeader($event)" title="Header Level">
     <option value="" selected>Normal</option>
     <option value="h1">H1</option>
     <option value="h2">H2</option>
@@ -103,7 +107,8 @@
 
   <button (click)="openImageModal()">Insert Image</button>
 
-  <select [value]="theme" (change)="onThemeChange($event)" title="Theme Select">
+  <label for="themeSelect" class="sr-only">Theme Select</label>
+  <select id="themeSelect" [value]="theme" (change)="onThemeChange($event)" title="Theme Select">
     <option value="light">Light</option>
     <option value="dark">Dark</option>
     <option value="custom">Custom</option>
@@ -120,5 +125,4 @@
   (cancel)="showImageModal = false"
 
 ></lib-image-modal>
-
 

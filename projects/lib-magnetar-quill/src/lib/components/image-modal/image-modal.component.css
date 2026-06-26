@@ -53,50 +53,6 @@
   z-index: 1000;
 }
 
-.modal-content {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 350px;
-  max-width: 90%;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  animation: fadeIn 0.3s ease;
-}
-
-.modal-actions {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.modal-content label {
-  font-weight: bold;
-  display: block;
-  margin-top: 15px;
-  color: #333;
-}
-
-.modal-content input, .modal-content select {
-  width: 100%;
-  padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-.preview {
-  margin-top: 15px;
-  text-align: center;
-}
-
-.preview img {
-  max-width: 100%;
-  border-radius: 5px;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
-}
-
 /* Modal Fade-In Animation */
 @keyframes fadeIn {
   from {
@@ -130,6 +86,7 @@
 
 .preview {
   flex: 1;
+  margin-top: 15px;
   max-width: 40%; /* Limit the preview to 40% of the modal width */
   text-align: center;
 }
@@ -193,5 +150,4 @@
 .modal-actions button[type="button"]:hover {
   background-color: #ddd;
 }
-
 

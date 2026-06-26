@@ -642,7 +642,7 @@ private mergeElementFormatStates(
     const style = window.getComputedStyle(element);
     const inlineFontWeight = element.style.getPropertyValue('font-weight');
 
-    formatStates.isBold ||= inlineFontWeight === 'bold' || parseInt(inlineFontWeight, 10) >= 700;
+    formatStates.isBold ||= inlineFontWeight === 'bold' || Number.parseInt(inlineFontWeight, 10) >= 700;
     formatStates.isItalic ||= style.fontStyle === 'italic';
     formatStates.isUnderline ||= style.textDecorationLine.includes('underline');
     formatStates.isStrikethrough ||= style.textDecorationLine.includes('line-through');
@@ -839,9 +839,9 @@ private unwrapStrongSelection(range: Range, selection: Selection, strongElement:
       return;
     }
 
-    this.insertStrongSide(beforeFragment, strongElement, parent);
-    parent.insertBefore(selectedFragment, strongElement);
-    this.insertStrongSide(afterFragment, strongElement, parent);
+    this.insertStrongSide(beforeFragment, strongElement);
+    strongElement.before(selectedFragment);
+    this.insertStrongSide(afterFragment, strongElement);
     parent.removeChild(strongElement);
     this.restoreSelection(selection, unwrappedNodes);
   }
@@ -884,14 +884,14 @@ private cloneStrongSide(range: Range, strongElement: HTMLElement, side: 'before'
  * Maintenance 04: method `FormattingService`.`insertStrongSide()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `FormattingService`.`insertStrongSide()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
-private insertStrongSide(fragment: DocumentFragment, strongElement: HTMLElement, parent: Node): void {
+private insertStrongSide(fragment: DocumentFragment, strongElement: HTMLElement): void {
     if (!fragment.textContent) {
       return;
     }
 
     const sideStrongElement = strongElement.cloneNode(false) as HTMLElement;
     sideStrongElement.appendChild(fragment);
-    parent.insertBefore(sideStrongElement, strongElement);
+    strongElement.before(sideStrongElement);
   }
 
 /**
@@ -1983,7 +1983,7 @@ public indent(): void {
  * Maintenance 04: method `FormattingService`.`adjustIndent()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 private adjustIndent(el: HTMLElement, delta: number): void {
-    const current = parseInt(getComputedStyle(el).marginLeft, 10) || 0;
+    const current = Number.parseInt(getComputedStyle(el).marginLeft, 10) || 0;
     const next = Math.max(current + delta, 0);
     el.style.marginLeft = `${next}px`;
   }

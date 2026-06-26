@@ -158,15 +158,62 @@ function getImplementationLineCount(node, sourceFile) {
 }
 
 function countNonEmptyLines(text) {
-  const textWithoutComments = text
-    .replace(/\/\*[\s\S]*?\*\//g, '')
-    .replace(/\/\/.*$/gm, '');
-
-  return textWithoutComments
+  return stripComments(text)
     .split('\n')
     .map(line => line.trim())
     .filter(line => line.length > 0 && line !== '{' && line !== '}')
     .length;
+}
+
+function stripComments(text) {
+  let output = '';
+  let index = 0;
+  let inBlockComment = false;
+  let inLineComment = false;
+
+  while (index < text.length) {
+    const current = text[index];
+    const next = text[index + 1];
+
+    if (inBlockComment) {
+      if (current === '*' && next === '/') {
+        inBlockComment = false;
+        index += 2;
+        continue;
+      }
+      output += current === '\n' ? '\n' : ' ';
+      index += 1;
+      continue;
+    }
+
+    if (inLineComment) {
+      if (current === '\n') {
+        inLineComment = false;
+        output += current;
+      }
+      index += 1;
+      continue;
+    }
+
+    if (current === '/' && next === '*') {
+      inBlockComment = true;
+      output += '  ';
+      index += 2;
+      continue;
+    }
+
+    if (current === '/' && next === '/') {
+      inLineComment = true;
+      output += '  ';
+      index += 2;
+      continue;
+    }
+
+    output += current;
+    index += 1;
+  }
+
+  return output;
 }
 
 function applyGeneratedDocs(text, sourceFile, entities, filePath) {

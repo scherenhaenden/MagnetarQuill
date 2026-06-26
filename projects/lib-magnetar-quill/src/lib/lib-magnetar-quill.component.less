@@ -63,6 +63,20 @@
   --mq-editor-bg: #18181b;
   --mq-scrollbar-thumb: #4b5563;
   --mq-scrollbar-track: #1f2937;
+
+  .editor [style*="color: rgb(0, 0, 0)"],
+  .editor [style*="color: rgb(33, 37, 41)"],
+  .editor [style*="color: rgb(34, 34, 34)"],
+  .editor [style*="color: #000000"],
+  .editor [style*="color: #000"],
+  .editor [style*="color: #212529"],
+  .editor [style*="color: #222"],
+  .editor [style*="color: black"],
+  .editor font[color="black"],
+  .editor font[color="#000000"],
+  .editor font[color="#000"] {
+    color: var(--mq-text-color) !important;
+  }
 }
 
 /* ===== CUSTOM THEME ===== */
@@ -87,26 +101,7 @@
   --mq-editor-bg: #fffbeb;
   --mq-scrollbar-thumb: #d97706;
   --mq-scrollbar-track: #fef3c7;
-}
 
-/* ===== HIGH READABILITY DARK TEXT OVERRIDES ===== */
-:host(.theme-dark) {
-  .editor [style*="color: rgb(0, 0, 0)"],
-  .editor [style*="color: rgb(33, 37, 41)"],
-  .editor [style*="color: rgb(34, 34, 34)"],
-  .editor [style*="color: #000000"],
-  .editor [style*="color: #000"],
-  .editor [style*="color: #212529"],
-  .editor [style*="color: #222"],
-  .editor [style*="color: black"],
-  .editor font[color="black"],
-  .editor font[color="#000000"],
-  .editor font[color="#000"] {
-    color: var(--mq-text-color) !important;
-  }
-}
-
-:host(.theme-custom) {
   .editor [style*="color: rgb(0, 0, 0)"],
   .editor [style*="color: rgb(33, 37, 41)"],
   .editor [style*="color: #000000"],

@@ -28,10 +28,8 @@
         <label for="imageWidthInput">Width</label>
         <input id="imageWidthInput" type="number" [(ngModel)]="imageModalComponentModel.width" placeholder="Width" (input)="updateHeight()" />
 
-        <label>
-          <input type="checkbox" [(ngModel)]="maintainAspectRatio" (change)="toggleAspectRatio()" />
-          Maintain Aspect Ratio
-        </label>
+        <input id="maintainAspectRatioInput" type="checkbox" [(ngModel)]="maintainAspectRatio" (change)="toggleAspectRatio()" />
+        <label for="maintainAspectRatioInput">Maintain Aspect Ratio</label>
 
         <label for="imageHeightInput">Height</label>
         <input id="imageHeightInput" type="number" [(ngModel)]="imageModalComponentModel.height" placeholder="Height" [readonly]="maintainAspectRatio" />

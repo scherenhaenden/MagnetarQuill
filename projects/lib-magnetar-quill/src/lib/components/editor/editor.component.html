@@ -28,8 +28,10 @@
 
 
 <!-- HTML View -->
+<label for="editorHtmlView" class="sr-only">HTML View</label>
 <textarea
-          #editorHtml
+  id="editorHtmlView"
+  #editorHtml
   class="editor"
   [value]="getEditorContent()"
   (input)="setEditorContent($event)"
@@ -50,6 +52,5 @@
      [style.left.px]="contextMenuPosition.x">
   <button (click)="openImageEdit()">Edit Properties</button>
 </div>
-
 
 
