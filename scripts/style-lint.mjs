@@ -42,99 +42,116 @@ async function collectStyleFiles(dirPath) {
   return files.sort((left, right) => left.localeCompare(right));
 }
 
-function findDuplicateSelectors(text, filePath) {
-  const failures = [];
-  const seenSelectors = new Map();
-  const selectorStack = [];
-  let pendingSelector = '';
-  let line = 1;
-  let selectorStartLine = 1;
-  let inBlockComment = false;
-  let inLineComment = false;
-  let inString = null;
+function handleBlockComment(current, next, index, state) {
+  if (current === '*' && next === '/') {
+    state.inBlockComment = false;
+    return index + 2;
+  }
+  return index + 1;
+}
 
-  for (let index = 0; index < text.length; index += 1) {
+function handleString(current, index, state) {
+  if (current === '\\') {
+    return index + 2;
+  }
+  if (current === state.inString) {
+    state.inString = null;
+  }
+  state.pendingSelector += current;
+  return index + 1;
+}
+
+function processOpenBrace(state, filePath) {
+  const selector = normalizeSelector(state.pendingSelector);
+  if (selector) {
+    const fullSelector = [...state.selectorStack, selector].join(' ');
+    const previousLine = state.seenSelectors.get(fullSelector);
+    if (previousLine) {
+      state.failures.push(`${relative(filePath)}:${state.selectorStartLine} Duplicate selector "${selector}", first used at line ${previousLine}.`);
+    } else {
+      state.seenSelectors.set(fullSelector, state.selectorStartLine);
+    }
+    state.selectorStack.push(selector);
+  }
+  state.pendingSelector = '';
+  state.selectorStartLine = state.line;
+}
+
+function handleSelectorsAndBraces(current, index, state, filePath) {
+  if (current === '{') {
+    processOpenBrace(state, filePath);
+    return index + 1;
+  }
+
+  if (current === '}') {
+    state.selectorStack.pop();
+    state.pendingSelector = '';
+    state.selectorStartLine = state.line;
+    return index + 1;
+  }
+
+  if (state.pendingSelector.length === 0 && current.trim().length > 0) {
+    state.selectorStartLine = state.line;
+  }
+  state.pendingSelector += current;
+  return index + 1;
+}
+
+function handleNormal(current, next, index, state, filePath) {
+  if (current === '/' && next === '*') {
+    state.inBlockComment = true;
+    return index + 2;
+  }
+
+  if (current === '/' && next === '/') {
+    state.inLineComment = true;
+    return index + 2;
+  }
+
+  if (current === '"' || current === "'") {
+    state.inString = current;
+    state.pendingSelector += current;
+    return index + 1;
+  }
+
+  return handleSelectorsAndBraces(current, index, state, filePath);
+}
+
+function findDuplicateSelectors(text, filePath) {
+  const state = {
+    failures: [],
+    seenSelectors: new Map(),
+    selectorStack: [],
+    pendingSelector: '',
+    line: 1,
+    selectorStartLine: 1,
+    inBlockComment: false,
+    inLineComment: false,
+    inString: null,
+  };
+
+  let index = 0;
+  while (index < text.length) {
     const current = text[index];
     const next = text[index + 1];
 
     if (current === '\n') {
-      line += 1;
-      inLineComment = false;
+      state.line += 1;
+      state.inLineComment = false;
     }
 
-    if (inBlockComment) {
-      if (current === '*' && next === '/') {
-        inBlockComment = false;
-        index += 1;
-      }
-      continue;
-    }
-
-    if (inLineComment) {
-      continue;
-    }
-
-    if (!inString && current === '/' && next === '*') {
-      inBlockComment = true;
+    if (state.inBlockComment) {
+      index = handleBlockComment(current, next, index, state);
+    } else if (state.inLineComment) {
       index += 1;
-      continue;
+    } else if (state.inString) {
+      index = handleString(current, index, state);
+    } else {
+      index = handleNormal(current, next, index, state, filePath);
     }
-
-    if (!inString && current === '/' && next === '/') {
-      inLineComment = true;
-      index += 1;
-      continue;
-    }
-
-    if (inString) {
-      if (current === '\\') {
-        index += 1;
-        continue;
-      }
-      if (current === inString) {
-        inString = null;
-      }
-      pendingSelector += current;
-      continue;
-    }
-
-    if (current === '"' || current === "'") {
-      inString = current;
-      pendingSelector += current;
-      continue;
-    }
-
-    if (current === '{') {
-      const selector = normalizeSelector(pendingSelector);
-      if (selector) {
-        const fullSelector = [...selectorStack, selector].join(' ');
-        const previousLine = seenSelectors.get(fullSelector);
-        if (previousLine) {
-          failures.push(`${relative(filePath)}:${selectorStartLine} Duplicate selector "${selector}", first used at line ${previousLine}.`);
-        } else {
-          seenSelectors.set(fullSelector, selectorStartLine);
-        }
-        selectorStack.push(selector);
-      }
-      pendingSelector = '';
-      selectorStartLine = line;
-      continue;
-    }
-
-    if (current === '}') {
-      selectorStack.pop();
-      pendingSelector = '';
-      selectorStartLine = line;
-      continue;
-    }
-
-    if (pendingSelector.length === 0 && current.trim().length > 0) {
-      selectorStartLine = line;
-    }
-    pendingSelector += current;
   }
 
-  return failures;
+  return state.failures;
 }
 
 function normalizeSelector(selector) {

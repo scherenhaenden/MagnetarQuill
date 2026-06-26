@@ -165,52 +165,57 @@ function countNonEmptyLines(text) {
     .length;
 }
 
+function handleBlockComment(current, next, index, state, append) {
+  if (current === '*' && next === '/') {
+    state.inBlockComment = false;
+    return index + 2;
+  }
+  append(current === '\n' ? '\n' : ' ');
+  return index + 1;
+}
+
+function handleLineComment(current, index, state, append) {
+  if (current === '\n') {
+    state.inLineComment = false;
+    append(current);
+  }
+  return index + 1;
+}
+
+function handleNormalText(current, next, index, state, append) {
+  if (current === '/' && next === '*') {
+    state.inBlockComment = true;
+    append('  ');
+    return index + 2;
+  }
+  if (current === '/' && next === '/') {
+    state.inLineComment = true;
+    append('  ');
+    return index + 2;
+  }
+  append(current);
+  return index + 1;
+}
+
 function stripComments(text) {
   let output = '';
   let index = 0;
-  let inBlockComment = false;
-  let inLineComment = false;
+  const state = { inBlockComment: false, inLineComment: false };
+  const append = (char) => {
+    output += char;
+  };
 
   while (index < text.length) {
     const current = text[index];
     const next = text[index + 1];
 
-    if (inBlockComment) {
-      if (current === '*' && next === '/') {
-        inBlockComment = false;
-        index += 2;
-        continue;
-      }
-      output += current === '\n' ? '\n' : ' ';
-      index += 1;
-      continue;
+    if (state.inBlockComment) {
+      index = handleBlockComment(current, next, index, state, append);
+    } else if (state.inLineComment) {
+      index = handleLineComment(current, index, state, append);
+    } else {
+      index = handleNormalText(current, next, index, state, append);
     }
-
-    if (inLineComment) {
-      if (current === '\n') {
-        inLineComment = false;
-        output += current;
-      }
-      index += 1;
-      continue;
-    }
-
-    if (current === '/' && next === '*') {
-      inBlockComment = true;
-      output += '  ';
-      index += 2;
-      continue;
-    }
-
-    if (current === '/' && next === '/') {
-      inLineComment = true;
-      output += '  ';
-      index += 2;
-      continue;
-    }
-
-    output += current;
-    index += 1;
   }
 
   return output;
