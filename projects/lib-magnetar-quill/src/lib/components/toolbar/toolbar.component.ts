@@ -170,7 +170,6 @@ import {ImportExportService} from "../../services/import-export.service";
  * Maintenance 148: class `ToolbarComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 149: class `ToolbarComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
- */
 @Component({
     selector: 'lib-toolbar',
     imports: [

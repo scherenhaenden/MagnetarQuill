@@ -1059,7 +1059,6 @@ private normalizeColorValue(value: string): string {
     });
 
     return `#${r}${g}${b}`;
->>>>>>> origin/feature/markdown-support
   }
 
 
@@ -1258,7 +1257,7 @@ private unwrapStrongSelection(range: Range, selection: Selection, strongElement:
     strongElement.before(selectedFragment);
     this.insertStrongSide(afterFragment, strongElement);
     strongElement.remove();
-    this.restoreSelection(selection, unwrappedNodes);
+    this.restoreSelectionRange(selection, unwrappedNodes);
   }
 
 /**
@@ -1323,7 +1322,7 @@ private insertStrongSide(fragment: DocumentFragment, strongElement: HTMLElement)
  * Relation 07: method `FormattingService`.`restoreSelection()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 08: method `FormattingService`.`restoreSelection()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
-private restoreSelection(selection: Selection, nodes: Node[]): void {
+private restoreSelectionRange(selection: Selection, nodes: Node[]): void {
     const connectedNodes = nodes.filter(node => node.isConnected);
     if (connectedNodes.length === 0) {
       return;

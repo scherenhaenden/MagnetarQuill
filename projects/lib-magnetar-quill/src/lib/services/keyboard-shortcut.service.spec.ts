@@ -112,7 +112,6 @@ describe('KeyboardShortcutService', () => {
     expect(event.stopImmediatePropagation).not.toHaveBeenCalled();
     (service as unknown as { fmt: FormattingService | null }).fmt = mockFormattingService;
   });
-  });
 
   describe('Target Element Filtering', () => {
     it('should ignore shortcuts when target is an INPUT element', () => {
