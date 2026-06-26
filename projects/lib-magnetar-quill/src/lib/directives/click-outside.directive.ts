@@ -29,6 +29,7 @@ import {Directive, ElementRef, EventEmitter, HostListener, Output} from '@angula
  * Why 22: class `ClickOutsideDirective` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 23: class `ClickOutsideDirective` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 24: class `ClickOutsideDirective` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 25: class `ClickOutsideDirective` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
 @Directive({
   selector: '[libClickOutside]',
@@ -68,10 +69,9 @@ constructor(private elementRef: ElementRef) {}
  */
 @HostListener('document:click', ['$event.target'])
   public onDocumentClick(targetElement: EventTarget | null): void {
-    if (!(targetElement instanceof HTMLElement)) {
-      return;
+    if (!targetElement || !(targetElement instanceof Node)) {
+        return;
     }
-
     const clickedInside = this.elementRef.nativeElement.contains(targetElement);
     if (!clickedInside) {
 

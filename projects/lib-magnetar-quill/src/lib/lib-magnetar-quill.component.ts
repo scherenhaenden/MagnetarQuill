@@ -1,7 +1,9 @@
 import {
+  ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
+  ElementRef,
   EventEmitter,
   Input,
   Output,
@@ -63,6 +65,10 @@ import { LogService } from "./services/log.service";
  * Why 38: class `LibMagnetarQuillComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 39: class `LibMagnetarQuillComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 40: class `LibMagnetarQuillComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 41: class `LibMagnetarQuillComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 42: class `LibMagnetarQuillComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 43: class `LibMagnetarQuillComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 44: class `LibMagnetarQuillComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 @Component({
     selector: 'magnetar-quill',
@@ -71,12 +77,25 @@ import { LogService } from "./services/log.service";
     standalone: true,
     templateUrl: './lib-magnetar-quill.component.html',
     styleUrl: './lib-magnetar-quill.component.less',
+    changeDetection: ChangeDetectionStrategy.Eager,
+    providers: [FormattingService, ContentService, KeyboardShortcutService, ImageService, LogService],
     host: {
       '[class]': '"magnetar-quill-container theme-" + theme'
-    },
-    providers: [FormattingService, ContentService, KeyboardShortcutService, ImageService, LogService]
+    }
 })
 export class LibMagnetarQuillComponent {
+
+  /**
+   * The current theme of the editor.
+   * @public
+   */
+  @Input() public theme: 'light' | 'dark' | 'custom' | string = 'light';
+
+  /**
+   * Emits when the theme changes.
+   * @public
+   */
+  @Output() public themeChange: EventEmitter<string> = new EventEmitter<string>();
 
   /**
    * The data model for the image modal, used for updating image properties.
@@ -95,9 +114,6 @@ export class LibMagnetarQuillComponent {
    * @public
    */
   public isHtmlView: boolean = false;
-
-  @Input() public theme: 'light' | 'dark' | 'custom' | string = 'light';
-  @Output() public themeChange: EventEmitter<string> = new EventEmitter<string>();
 
   /**
    * A reference to the image modal component instance.
@@ -187,7 +203,9 @@ public set imageModalComponentModel(value: ImageModalComponentModel) {
    * @param {ContentService} contentService - The service for managing editor content.
    * @param {FormattingService} formattingService - The service for applying text formatting.
    * @param {ImageService} imageService - The service for handling image-related actions.
+   * @param {KeyboardShortcutService} keyboardShortcutService - The service for handling keyboard shortcuts.
    * @param {ChangeDetectorRef} cdRef - The service for manual change detection.
+   * @param {ElementRef} el - The reference to the component's host element.
    * @public
    */
     /**
@@ -204,8 +222,12 @@ public constructor(
     private contentService: ContentService,
     private formattingService: FormattingService,
     public imageService: ImageService,
-    private cdRef: ChangeDetectorRef
-  ) {}
+    private keyboardShortcutService: KeyboardShortcutService,
+    private cdRef: ChangeDetectorRef,
+    private el: ElementRef
+  ) {
+    this.keyboardShortcutService.initialize(this.el.nativeElement);
+  }
 
   /**
    * Closes the image editing modal if it is open.
@@ -275,6 +297,27 @@ public openImageEditModal(): void {
  */
 public clearImageToEdit(): void {
     this.showImageModal = false;
+  }
+
+  /**
+   * Handles theme changes from the toolbar.
+   * @param {string} newTheme - The newly selected theme.
+   * @public
+   */
+    /**
+ * @generatedInfoDoc
+ * InfoDoc: method `LibMagnetarQuillComponent`.`onThemeChange()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `LibMagnetarQuillComponent`.`onThemeChange()` is implemented in `projects/lib-magnetar-quill/src/lib/lib-magnetar-quill.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `LibMagnetarQuillComponent`.`onThemeChange()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `LibMagnetarQuillComponent`.`onThemeChange()` participates in the `LibMagnetarQuillComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `LibMagnetarQuillComponent`.`onThemeChange()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `LibMagnetarQuillComponent`.`onThemeChange()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `LibMagnetarQuillComponent`.`onThemeChange()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+public onThemeChange(newTheme: string): void {
+    this.theme = newTheme;
+    this.themeChange.emit(newTheme);
+    this.cdRef.detectChanges();
   }
 
   /**

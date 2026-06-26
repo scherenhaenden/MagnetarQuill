@@ -4,41 +4,44 @@
   gap: 10px;
   margin-bottom: 10px;
   padding: 8px;
-  background-color: #f8f9fa;
-  border: 1px solid #ddd;
+  background-color: var(--mq-toolbar-bg);
+  border: 1px solid var(--mq-toolbar-border);
   border-radius: 8px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  color: var(--mq-text-color);
 }
 
 .toolbar button {
-  background: #fff;
-  border: 1px solid #ccc;
+  background: var(--mq-editor-bg);
+  border: 1px solid var(--mq-border-color);
+  color: var(--mq-text-color);
   padding: 6px 10px;
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.2s ease;
   font-size: 14px;
-}
 
-.toolbar button:hover {
-  background-color: #e7e9ec;
-}
+  &:hover {
+    background-color: var(--mq-btn-hover-bg);
+    border-color: var(--mq-btn-hover-border);
+  }
 
-.toolbar button.active {
-  background-color: #007bff;
-  color: white;
-  font-weight: bold;
-  border-color: #007bff;
+  &.active {
+    background-color: var(--mq-btn-active-bg);
+    color: var(--mq-btn-active-color);
+    font-weight: bold;
+    border-color: var(--mq-btn-active-color);
+  }
 }
 
 .toolbar select, .toolbar input[type="color"] {
-  border: 1px solid #ccc;
+  background: var(--mq-editor-bg);
+  border: 1px solid var(--mq-border-color);
+  color: var(--mq-text-color);
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 14px;
 }
-
-
 
 .modal-overlay {
   position: fixed;
@@ -46,7 +49,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--mq-modal-overlay-bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,7 +57,9 @@
 }
 
 .modal-content {
-  background: white;
+  background: var(--mq-modal-bg);
+  color: var(--mq-text-color);
+  border: 1px solid var(--mq-modal-border);
   padding: 20px;
   border-radius: 10px;
   width: 350px;
@@ -74,14 +79,16 @@
   font-weight: bold;
   display: block;
   margin-top: 15px;
-  color: #333;
+  color: var(--mq-text-color);
 }
 
 .modal-content input, .modal-content select {
+  background: var(--mq-editor-bg);
+  color: var(--mq-text-color);
   width: 100%;
   padding: 8px;
   margin-top: 5px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--mq-border-color);
   border-radius: 4px;
   font-size: 14px;
 }
@@ -108,7 +115,6 @@
     transform: scale(1);
   }
 }
-
 .sr-only {
   position: absolute;
   width: 1px;
@@ -120,4 +126,3 @@
   white-space: nowrap;
   border: 0;
 }
-

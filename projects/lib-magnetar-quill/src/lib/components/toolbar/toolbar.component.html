@@ -1,77 +1,84 @@
 <div class="toolbar">
 
   <!-- Toggle HTML View Button -->
-  <button (click)="onToggleHtmlView()" title="Toggle HTML View">
+  <button (mousedown)="$event.preventDefault()" (click)="onToggleHtmlView()" title="Toggle HTML View">
     Toggle HTML View
   </button>
 
-    <label for="fontFamilySelect" class="sr-only">Font Family</label>
-    <select id="fontFamilySelect" (change)="onFontFamilyChange($event)">
-      <option value="Arial">Arial</option>
-      <option value="Times New Roman">Times New Roman</option>
-      <option value="Courier New">Courier New</option>
-      <!-- Add more fonts as needed -->
-    </select>
+  <label for="fontFamilySelect" class="sr-only">Font Family</label>
+  <select id="fontFamilySelect" [value]="formattingService.currentFontFamily()" (change)="onFontFamilyChange($event)">
+    <option value=""></option>
+    <option value="Arial">Arial</option>
+    <option value="Times New Roman">Times New Roman</option>
+    <option value="Courier New">Courier New</option>
+    <!-- Add more fonts as needed -->
+  </select>
 
-    <label for="fontSizeSelect" class="sr-only">Font Size</label>
-    <select id="fontSizeSelect" (change)="onFontSizeChange($event)">
-      <option value="12px">12px</option>
-      <option value="14px">14px</option>
-      <option value="16px">16px</option>
-      <option value="18px">18px</option>
-      <option value="20px">20px</option>
-      <!-- Add more sizes as needed -->
-    </select>
+  <label for="fontSizeSelect" class="sr-only">Font Size</label>
+  <select id="fontSizeSelect" [value]="formattingService.currentFontSize()" (change)="onFontSizeChange($event)">
+    <option value=""></option>
+    <option value="12px">12px</option>
+    <option value="14px">14px</option>
+    <option value="16px">16px</option>
+    <option value="18px">18px</option>
+    <option value="20px">20px</option>
+    <!-- Add more sizes as needed -->
+  </select>
 
-    <button (click)="formattingService.clearFormatting()" title="Clear Formatting">Clear</button>
+  <button (mousedown)="$event.preventDefault()" (click)="clearFormatting()" title="Clear Formatting">Clear</button>
 
-    <label for="textColorInput" class="sr-only">Text Color</label>
-    <input id="textColorInput" type="color" (change)="onTextColorChange($event)" title="Text Color" aria-label="Text Color">
-    <label for="backgroundColorInput" class="sr-only">Background Color</label>
-    <input id="backgroundColorInput" type="color" (change)="onBackgroundColorChange($event)" title="Background Color" aria-label="Background Color">
+  <label for="textColorInput" class="sr-only">Text Color</label>
+  <input id="textColorInput" [value]="formattingService.currentTextColor()" type="color" (change)="onTextColorChange($event)" title="Text Color" aria-label="Text Color">
+  <label for="backgroundColorInput" class="sr-only">Background Color</label>
+  <input id="backgroundColorInput" type="color" (change)="onBackgroundColorChange($event)" title="Background Color" aria-label="Background Color">
 
   <button
-    (click)="formattingService.toggleStrong()"
+    (mousedown)="$event.preventDefault()"
+    (click)="toggleStrong()"
     [class.active]="formattingService.strongActive()"
     title="Bold">
     <b>Strong</b>
   </button>
 
   <button
-    (click)="formattingService.toggleBold()"
+    (mousedown)="$event.preventDefault()"
+    (click)="toggleBold()"
     [class.active]="formattingService.boldActive()"
     title="Bold">
     <b>B</b>
   </button>
 
   <button
-    (click)="formattingService.toggleItalic()"
+    (mousedown)="$event.preventDefault()"
+    (click)="toggleItalic()"
     [class.active]="formattingService.italicActive()"
     title="Italic">
     <i>I</i>
   </button>
 
   <button
-    (click)="formattingService.toggleUnderline()"
+    (mousedown)="$event.preventDefault()"
+    (click)="toggleUnderline()"
     [class.active]="formattingService.underlineActive()"
     title="Underline">
     <u>U</u>
   </button>
 
   <button
-    (click)="formattingService.toggleStrikethrough()"
+    (mousedown)="$event.preventDefault()"
+    (click)="toggleStrikethrough()"
     [class.active]="formattingService.strikethroughActive()"
     title="Strikethrough">
     <s>S</s>
   </button>
 
 
-  <button (click)="formattingService.setTextAlign('left')" title="Align Left">Left</button>
-    <button (click)="formattingService.setTextAlign('center')" title="Align Center">Center</button>
-    <button (click)="formattingService.setTextAlign('right')" title="Align Right">Right</button>
-    <button (click)="formattingService.setTextAlign('justify')" title="Justify">Justify</button>
+  <button (mousedown)="$event.preventDefault()" (click)="setTextAlign('left')" title="Align Left">Left</button>
+  <button (mousedown)="$event.preventDefault()" (click)="setTextAlign('center')" title="Align Center">Center</button>
+  <button (mousedown)="$event.preventDefault()" (click)="setTextAlign('right')" title="Align Right">Right</button>
+  <button (mousedown)="$event.preventDefault()" (click)="setTextAlign('justify')" title="Justify">Justify</button>
 
-    <!-- ./components/toolbar/toolbar.component.html -->
+  <!-- ./components/toolbar/toolbar.component.html -->
   <label for="lineSpacingSelect" class="sr-only">Line Spacing</label>
   <select id="lineSpacingSelect" (change)="setLineSpacing($event)">
     <option value="1.0">1.0</option>
@@ -80,18 +87,18 @@
     <option value="2.0">2.0</option>
   </select>
 
-    <!-- Ordered and Unordered List Buttons -->
-    <button (click)="toggleOrderedList()" title="Ordered List">
-      <span>1.</span>
-    </button>
-    <button (click)="toggleUnorderedList()" title="Unordered List">
-      <span>&bull;</span>
-    </button>
+  <!-- Ordered and Unordered List Buttons -->
+  <button (mousedown)="$event.preventDefault()" (click)="toggleOrderedList()" title="Ordered List">
+    <span>1.</span>
+  </button>
+  <button (mousedown)="$event.preventDefault()" (click)="toggleUnorderedList()" title="Unordered List">
+    <span>&bull;</span>
+  </button>
 
 
   <!-- ./components/toolbar/toolbar.component.html -->
-  <button (click)="toggleSuperscript()" title="Superscript">Sup</button>
-  <button (click)="toggleSubscript()" title="Subscript">Sub</button>
+  <button (mousedown)="$event.preventDefault()" (click)="toggleSuperscript()" title="Superscript">Sup</button>
+  <button (mousedown)="$event.preventDefault()" (click)="toggleSubscript()" title="Subscript">Sub</button>
 
   <!-- Header Level Dropdown -->
   <label for="headerLevelSelect" class="sr-only">Header Level</label>
@@ -105,14 +112,23 @@
     <option value="h6">H6</option>
   </select>
 
-  <button (click)="openImageModal()">Insert Image</button>
+  <button (mousedown)="$event.preventDefault()" (click)="openImageModal()">Insert Image</button>
 
+  <!-- Theme Selector -->
   <label for="themeSelect" class="sr-only">Theme Select</label>
   <select id="themeSelect" [value]="theme" (change)="onThemeChange($event)" title="Theme Select">
-    <option value="light">Light</option>
-    <option value="dark">Dark</option>
-    <option value="custom">Custom</option>
+    <option value="light">☀️ Light</option>
+    <option value="dark">🌙 Dark</option>
+    <option value="custom">🎨 Custom</option>
   </select>
+
+  <!-- File Operations -->
+  <input type="file" #fileInput (change)="onFileSelected($event)" accept=".html,.htm,.rtf,.md,.markdown" style="display: none" aria-label="Upload File">
+  <button (mousedown)="$event.preventDefault()" (click)="triggerFileInput(fileInput)" title="Load File">Load File</button>
+  <button (mousedown)="$event.preventDefault()" (click)="exportHtml()" title="Export HTML">Export HTML</button>
+  <button (mousedown)="$event.preventDefault()" (click)="exportMarkdown()" title="Export Markdown">Export Markdown</button>
+  <button (mousedown)="$event.preventDefault()" (click)="exportRtf()" title="Export RTF">Export RTF</button>
+  <button (mousedown)="$event.preventDefault()" (click)="parseMarkdown()" title="Parse Markdown">Parse Markdown</button>
 
 </div>
 
@@ -125,4 +141,3 @@
   (cancel)="showImageModal = false"
 
 ></lib-image-modal>
-

@@ -72,9 +72,7 @@ import {BehaviorSubject} from "rxjs";
  * Relation 63: class `ContentService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 64: class `ContentService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ContentService {
 
 

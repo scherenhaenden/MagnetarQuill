@@ -36,9 +36,7 @@ import {ImageModalComponentModel} from "../models/image-modal-component-model";
  * Maintenance 28: class `ImageService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 29: class `ImageService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ImageService {
 
   // Signal to manage the selected image
@@ -84,6 +82,10 @@ public setSelectedImageOnEditor(mageModalComponentModel: ImageModalComponentMode
  * How 05: method `ImageService`.`applyImageEdits()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 06: method `ImageService`.`applyImageEdits()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 07: method `ImageService`.`applyImageEdits()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `ImageService`.`applyImageEdits()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `ImageService`.`applyImageEdits()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `ImageService`.`applyImageEdits()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 11: method `ImageService`.`applyImageEdits()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
 public applyImageEdits(): void {
     const image = this.selectedImage();

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
 import {NgIf} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ImageModalComponentModel} from "../../models/image-modal-component-model";
@@ -56,7 +56,8 @@ import {ClickOutsideDirective} from "../../directives/click-outside.directive";
     ],
     standalone: true,
     templateUrl: './image-modal.component.html',
-    styleUrl: './image-modal.component.css'
+    styleUrl: './image-modal.component.css',
+    changeDetection: ChangeDetectionStrategy.Eager
 })
 export class ImageModalComponent {
 
