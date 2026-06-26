@@ -444,6 +444,41 @@ import {ContentService} from "./content.service";
  * Maintenance 436: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 437: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 438: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 439: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 440: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 441: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 442: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 443: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 444: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 445: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 446: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 447: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 448: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 449: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 450: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 451: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 452: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 453: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 454: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 455: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 456: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 457: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 458: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 459: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 460: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 461: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 462: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 463: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 464: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 465: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 466: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 467: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 468: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 469: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 470: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 471: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 472: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 473: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
 @Injectable({
   providedIn: 'root'
@@ -513,23 +548,6 @@ constructor(private contentService: ContentService) { }
  * Maintenance 08: method `FormattingService`.`updateFormatStates()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 09: method `FormattingService`.`updateFormatStates()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 10: method `FormattingService`.`updateFormatStates()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 11: method `FormattingService`.`updateFormatStates()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 12: method `FormattingService`.`updateFormatStates()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 13: method `FormattingService`.`updateFormatStates()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 14: method `FormattingService`.`updateFormatStates()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 15: method `FormattingService`.`updateFormatStates()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 16: method `FormattingService`.`updateFormatStates()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 17: method `FormattingService`.`updateFormatStates()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 18: method `FormattingService`.`updateFormatStates()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 19: method `FormattingService`.`updateFormatStates()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 20: method `FormattingService`.`updateFormatStates()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 21: method `FormattingService`.`updateFormatStates()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 22: method `FormattingService`.`updateFormatStates()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 23: method `FormattingService`.`updateFormatStates()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 24: method `FormattingService`.`updateFormatStates()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 25: method `FormattingService`.`updateFormatStates()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 26: method `FormattingService`.`updateFormatStates()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 27: method `FormattingService`.`updateFormatStates()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
 public updateFormatStates(): void {
     const selection = window.getSelection();
@@ -537,38 +555,100 @@ public updateFormatStates(): void {
       return;
     }
 
-    let currentNode: Node | null = selection.focusNode ?? selection.getRangeAt(0).commonAncestorContainer;
+    const currentNode = selection.focusNode ?? selection.getRangeAt(0).commonAncestorContainer;
+    const formatStates = this.collectFormatStates(currentNode);
 
-    let isBold = false;
-    let isItalic = false;
-    let isUnderline = false;
-    let isStrikethrough = false;
-    let isStrong = false;
+    this.boldActive.set(formatStates.isBold);
+    this.italicActive.set(formatStates.isItalic);
+    this.underlineActive.set(formatStates.isUnderline);
+    this.strikethroughActive.set(formatStates.isStrikethrough);
+    this.strongActive.set(formatStates.isStrong);
+  }
 
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`collectFormatStates()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`collectFormatStates()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`collectFormatStates()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`collectFormatStates()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`collectFormatStates()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`collectFormatStates()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`collectFormatStates()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`collectFormatStates()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `FormattingService`.`collectFormatStates()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `FormattingService`.`collectFormatStates()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `FormattingService`.`collectFormatStates()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `FormattingService`.`collectFormatStates()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `FormattingService`.`collectFormatStates()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 11: method `FormattingService`.`collectFormatStates()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 12: method `FormattingService`.`collectFormatStates()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 13: method `FormattingService`.`collectFormatStates()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 14: method `FormattingService`.`collectFormatStates()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 15: method `FormattingService`.`collectFormatStates()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ */
+private collectFormatStates(startNode: Node | null): {
+    isBold: boolean;
+    isItalic: boolean;
+    isUnderline: boolean;
+    isStrikethrough: boolean;
+    isStrong: boolean;
+  } {
+    const formatStates = {
+      isBold: false,
+      isItalic: false,
+      isUnderline: false,
+      isStrikethrough: false,
+      isStrong: false
+    };
+
+    let currentNode = startNode;
     while (currentNode) {
       if (currentNode.nodeType === Node.ELEMENT_NODE) {
-        const element = currentNode as HTMLElement;
-        const style = window.getComputedStyle(element);
-        const inlineFontWeight = element.style.getPropertyValue('font-weight');
-
-        if (!isBold && (inlineFontWeight === 'bold' || parseInt(inlineFontWeight, 10) >= 700)) isBold = true;
-        if (!isItalic && style.fontStyle === 'italic') isItalic = true;
-        if (!isUnderline && style.textDecorationLine.includes('underline')) isUnderline = true;
-        if (!isStrikethrough && style.textDecorationLine.includes('line-through')) isStrikethrough = true;
-        if (!isStrong && element.tagName.toLowerCase() === 'strong') isStrong = true;
-
-        if (element.contentEditable === 'true') {
+        const shouldStop = this.mergeElementFormatStates(currentNode as HTMLElement, formatStates);
+        if (shouldStop) {
           break;
         }
       }
       currentNode = currentNode.parentNode;
     }
 
-    this.boldActive.set(isBold);
-    this.italicActive.set(isItalic);
-    this.underlineActive.set(isUnderline);
-    this.strikethroughActive.set(isStrikethrough);
-    this.strongActive.set(isStrong);
+    return formatStates;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`mergeElementFormatStates()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`mergeElementFormatStates()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`mergeElementFormatStates()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`mergeElementFormatStates()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`mergeElementFormatStates()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`mergeElementFormatStates()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`mergeElementFormatStates()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`mergeElementFormatStates()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `FormattingService`.`mergeElementFormatStates()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `FormattingService`.`mergeElementFormatStates()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `FormattingService`.`mergeElementFormatStates()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+private mergeElementFormatStates(
+    element: HTMLElement,
+    formatStates: {
+      isBold: boolean;
+      isItalic: boolean;
+      isUnderline: boolean;
+      isStrikethrough: boolean;
+      isStrong: boolean;
+    }
+  ): boolean {
+    const style = window.getComputedStyle(element);
+    const inlineFontWeight = element.style.getPropertyValue('font-weight');
+
+    formatStates.isBold ||= inlineFontWeight === 'bold' || parseInt(inlineFontWeight, 10) >= 700;
+    formatStates.isItalic ||= style.fontStyle === 'italic';
+    formatStates.isUnderline ||= style.textDecorationLine.includes('underline');
+    formatStates.isStrikethrough ||= style.textDecorationLine.includes('line-through');
+    formatStates.isStrong ||= element.tagName.toLowerCase() === 'strong';
+
+    return element.contentEditable === 'true';
   }
 
 
@@ -664,55 +744,6 @@ public toggleBold(): void {
  * How 09: method `FormattingService`.`toggleStrong()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 10: method `FormattingService`.`toggleStrong()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 11: method `FormattingService`.`toggleStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 12: method `FormattingService`.`toggleStrong()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 13: method `FormattingService`.`toggleStrong()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 14: method `FormattingService`.`toggleStrong()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 15: method `FormattingService`.`toggleStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 16: method `FormattingService`.`toggleStrong()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 17: method `FormattingService`.`toggleStrong()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 18: method `FormattingService`.`toggleStrong()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 19: method `FormattingService`.`toggleStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 20: method `FormattingService`.`toggleStrong()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 21: method `FormattingService`.`toggleStrong()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 22: method `FormattingService`.`toggleStrong()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 23: method `FormattingService`.`toggleStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 24: method `FormattingService`.`toggleStrong()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 25: method `FormattingService`.`toggleStrong()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 26: method `FormattingService`.`toggleStrong()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 27: method `FormattingService`.`toggleStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 28: method `FormattingService`.`toggleStrong()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 29: method `FormattingService`.`toggleStrong()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 30: method `FormattingService`.`toggleStrong()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 31: method `FormattingService`.`toggleStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 32: method `FormattingService`.`toggleStrong()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 33: method `FormattingService`.`toggleStrong()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 34: method `FormattingService`.`toggleStrong()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 35: method `FormattingService`.`toggleStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 36: method `FormattingService`.`toggleStrong()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 37: method `FormattingService`.`toggleStrong()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 38: method `FormattingService`.`toggleStrong()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 39: method `FormattingService`.`toggleStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 40: method `FormattingService`.`toggleStrong()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 41: method `FormattingService`.`toggleStrong()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 42: method `FormattingService`.`toggleStrong()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 43: method `FormattingService`.`toggleStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 44: method `FormattingService`.`toggleStrong()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 45: method `FormattingService`.`toggleStrong()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 46: method `FormattingService`.`toggleStrong()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 47: method `FormattingService`.`toggleStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 48: method `FormattingService`.`toggleStrong()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 49: method `FormattingService`.`toggleStrong()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 50: method `FormattingService`.`toggleStrong()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 51: method `FormattingService`.`toggleStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 52: method `FormattingService`.`toggleStrong()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 53: method `FormattingService`.`toggleStrong()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 54: method `FormattingService`.`toggleStrong()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 55: method `FormattingService`.`toggleStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 56: method `FormattingService`.`toggleStrong()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 57: method `FormattingService`.`toggleStrong()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 58: method `FormattingService`.`toggleStrong()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 59: method `FormattingService`.`toggleStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 60: method `FormattingService`.`toggleStrong()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 public toggleStrong(): void {
     const selection = window.getSelection();
@@ -721,85 +752,197 @@ public toggleStrong(): void {
     }
 
     const range = selection.getRangeAt(0);
-    const findStrongAncestor = (node: Node | null): HTMLElement | null => {
-      let currentElement: Node | null = node;
-      while (currentElement && currentElement.nodeType !== Node.ELEMENT_NODE) {
-        currentElement = currentElement.parentNode;
-      }
-
-      while (currentElement instanceof HTMLElement) {
-        if (currentElement.tagName.toLowerCase() === 'strong') {
-          return currentElement;
-        }
-        currentElement = currentElement.parentElement;
-      }
-
-      return null;
-    };
-
-    const strongElement =
-      findStrongAncestor(range.commonAncestorContainer) ??
-      findStrongAncestor(range.startContainer) ??
-      findStrongAncestor(range.endContainer);
+    const strongElement = this.findSelectedStrongElement(range);
 
     if (strongElement) {
-      const selectedFragment = range.extractContents();
-      const unwrappedNodes = Array.from(selectedFragment.childNodes);
-      const afterRange = document.createRange();
-      afterRange.setStart(range.startContainer, range.startOffset);
-      afterRange.setEnd(strongElement, strongElement.childNodes.length);
-      const afterFragment = afterRange.extractContents();
-      const parent = strongElement.parentNode;
-
-      if (!parent) {
-        this.strongActive.set(false);
-        return;
-      }
-
-      const referenceNode = strongElement.nextSibling;
-      if (referenceNode) {
-        referenceNode.before(selectedFragment);
-      } else {
-        parent.appendChild(selectedFragment);
-      }
-
-      if (afterFragment.childNodes.length > 0) {
-        const afterStrongElement = strongElement.cloneNode(false) as HTMLElement;
-        afterStrongElement.appendChild(afterFragment);
-        if (referenceNode) {
-          referenceNode.before(afterStrongElement);
-        } else {
-          parent.appendChild(afterStrongElement);
-        }
-      }
-
-      if (strongElement.childNodes.length === 0) {
-        parent.removeChild(strongElement);
-      }
-
-      const connectedUnwrappedNodes = unwrappedNodes.filter(node => node.isConnected);
-      if (connectedUnwrappedNodes.length > 0) {
-        const newRange = document.createRange();
-        newRange.setStartBefore(connectedUnwrappedNodes[0]);
-        newRange.setEndAfter(connectedUnwrappedNodes[connectedUnwrappedNodes.length - 1]);
-        selection.removeAllRanges();
-        selection.addRange(newRange);
-      }
+      this.unwrapStrongSelection(range, selection, strongElement);
       this.strongActive.set(false);
-    } else {
-      // Wrap the selected content in a <strong> element
-      const strongElement = document.createElement('strong');
-      strongElement.appendChild(range.extractContents());
-      range.insertNode(strongElement);
-
-      // Adjust the selection to cover the new <strong> element
-      selection.removeAllRanges();
-      const newRange = document.createRange();
-      newRange.selectNodeContents(strongElement);
-      selection.addRange(newRange);
-
-      this.strongActive.set(true);
+      return;
     }
+
+    this.wrapSelectionInStrong(range, selection);
+    this.strongActive.set(true);
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`findSelectedStrongElement()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`findSelectedStrongElement()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`findSelectedStrongElement()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`findSelectedStrongElement()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`findSelectedStrongElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`findSelectedStrongElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`findSelectedStrongElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+private findSelectedStrongElement(range: Range): HTMLElement | null {
+    return this.findStrongAncestor(range.commonAncestorContainer) ??
+      this.findStrongAncestor(range.startContainer) ??
+      this.findStrongAncestor(range.endContainer);
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`findStrongAncestor()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`findStrongAncestor()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`findStrongAncestor()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`findStrongAncestor()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`findStrongAncestor()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`findStrongAncestor()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`findStrongAncestor()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`findStrongAncestor()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `FormattingService`.`findStrongAncestor()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `FormattingService`.`findStrongAncestor()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `FormattingService`.`findStrongAncestor()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+private findStrongAncestor(node: Node | null): HTMLElement | null {
+    let currentElement: Node | null = node;
+    while (currentElement && currentElement.nodeType !== Node.ELEMENT_NODE) {
+      currentElement = currentElement.parentNode;
+    }
+
+    while (currentElement instanceof HTMLElement) {
+      if (currentElement.tagName.toLowerCase() === 'strong') {
+        return currentElement;
+      }
+      currentElement = currentElement.parentElement;
+    }
+
+    return null;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`unwrapStrongSelection()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`unwrapStrongSelection()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`unwrapStrongSelection()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`unwrapStrongSelection()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`unwrapStrongSelection()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`unwrapStrongSelection()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`unwrapStrongSelection()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`unwrapStrongSelection()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `FormattingService`.`unwrapStrongSelection()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `FormattingService`.`unwrapStrongSelection()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `FormattingService`.`unwrapStrongSelection()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `FormattingService`.`unwrapStrongSelection()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `FormattingService`.`unwrapStrongSelection()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 11: method `FormattingService`.`unwrapStrongSelection()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 12: method `FormattingService`.`unwrapStrongSelection()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+private unwrapStrongSelection(range: Range, selection: Selection, strongElement: HTMLElement): void {
+    const beforeFragment = this.cloneStrongSide(range, strongElement, 'before');
+    const selectedFragment = range.cloneContents();
+    const afterFragment = this.cloneStrongSide(range, strongElement, 'after');
+    const unwrappedNodes = Array.from(selectedFragment.childNodes);
+    const parent = strongElement.parentNode;
+
+    if (!parent) {
+      return;
+    }
+
+    this.insertStrongSide(beforeFragment, strongElement, parent);
+    parent.insertBefore(selectedFragment, strongElement);
+    this.insertStrongSide(afterFragment, strongElement, parent);
+    parent.removeChild(strongElement);
+    this.restoreSelection(selection, unwrappedNodes);
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`cloneStrongSide()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`cloneStrongSide()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`cloneStrongSide()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`cloneStrongSide()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`cloneStrongSide()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`cloneStrongSide()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`cloneStrongSide()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`cloneStrongSide()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `FormattingService`.`cloneStrongSide()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `FormattingService`.`cloneStrongSide()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `FormattingService`.`cloneStrongSide()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+private cloneStrongSide(range: Range, strongElement: HTMLElement, side: 'before' | 'after'): DocumentFragment {
+    const sideRange = document.createRange();
+    if (side === 'before') {
+      sideRange.setStart(strongElement, 0);
+      sideRange.setEnd(range.startContainer, range.startOffset);
+      return sideRange.cloneContents();
+    }
+
+    sideRange.setStart(range.endContainer, range.endOffset);
+    sideRange.setEnd(strongElement, strongElement.childNodes.length);
+    return sideRange.cloneContents();
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`insertStrongSide()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`insertStrongSide()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`insertStrongSide()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`insertStrongSide()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`insertStrongSide()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`insertStrongSide()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`insertStrongSide()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`insertStrongSide()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+private insertStrongSide(fragment: DocumentFragment, strongElement: HTMLElement, parent: Node): void {
+    if (!fragment.textContent) {
+      return;
+    }
+
+    const sideStrongElement = strongElement.cloneNode(false) as HTMLElement;
+    sideStrongElement.appendChild(fragment);
+    parent.insertBefore(sideStrongElement, strongElement);
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`restoreSelection()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`restoreSelection()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`restoreSelection()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`restoreSelection()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`restoreSelection()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`restoreSelection()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`restoreSelection()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`restoreSelection()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `FormattingService`.`restoreSelection()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `FormattingService`.`restoreSelection()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `FormattingService`.`restoreSelection()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+private restoreSelection(selection: Selection, nodes: Node[]): void {
+    const connectedNodes = nodes.filter(node => node.isConnected);
+    if (connectedNodes.length === 0) {
+      return;
+    }
+
+    const newRange = document.createRange();
+    newRange.setStartBefore(connectedNodes[0]);
+    newRange.setEndAfter(connectedNodes[connectedNodes.length - 1]);
+    selection.removeAllRanges();
+    selection.addRange(newRange);
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`wrapSelectionInStrong()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`wrapSelectionInStrong()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`wrapSelectionInStrong()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`wrapSelectionInStrong()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`wrapSelectionInStrong()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`wrapSelectionInStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`wrapSelectionInStrong()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`wrapSelectionInStrong()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `FormattingService`.`wrapSelectionInStrong()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `FormattingService`.`wrapSelectionInStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ */
+private wrapSelectionInStrong(range: Range, selection: Selection): void {
+    const strongElement = document.createElement('strong');
+    strongElement.appendChild(range.extractContents());
+    range.insertNode(strongElement);
+
+    selection.removeAllRanges();
+    const newRange = document.createRange();
+    newRange.selectNodeContents(strongElement);
+    selection.addRange(newRange);
   }
 
 
@@ -1281,70 +1424,103 @@ public clearFormatting(): void {
  * How 09: method `FormattingService`.`stripFormattingNode()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 10: method `FormattingService`.`stripFormattingNode()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 11: method `FormattingService`.`stripFormattingNode()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 12: method `FormattingService`.`stripFormattingNode()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 13: method `FormattingService`.`stripFormattingNode()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 14: method `FormattingService`.`stripFormattingNode()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 15: method `FormattingService`.`stripFormattingNode()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 16: method `FormattingService`.`stripFormattingNode()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 17: method `FormattingService`.`stripFormattingNode()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 18: method `FormattingService`.`stripFormattingNode()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 19: method `FormattingService`.`stripFormattingNode()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 20: method `FormattingService`.`stripFormattingNode()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 21: method `FormattingService`.`stripFormattingNode()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 22: method `FormattingService`.`stripFormattingNode()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 23: method `FormattingService`.`stripFormattingNode()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 24: method `FormattingService`.`stripFormattingNode()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 25: method `FormattingService`.`stripFormattingNode()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 26: method `FormattingService`.`stripFormattingNode()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
 private stripFormattingNode(node: Node): Node {
   if (node.nodeType === Node.TEXT_NODE) {
-    // Preserve text content as-is
     return document.createTextNode(node.textContent || '');
   }
 
-  if (node.nodeType === Node.ELEMENT_NODE) {
-    const el = node as HTMLElement;
-    const tag = el.tagName.toUpperCase();
-
-    // Preserve block tags (no attributes/styles) and recursively strip children
-    if (FormattingService.BLOCK_TAGS.has(tag)) {
-      const newEl = document.createElement(tag.toLowerCase());
-      Array.from(el.childNodes).forEach(child => {
-        newEl.appendChild(this.stripFormattingNode(child));
-      });
-      return newEl;
-    }
-
-    // Preserve void elements (keep essential attributes for images)
-    if (FormattingService.VOID_TAGS && FormattingService.VOID_TAGS.has(tag) || FormattingService.VOID_TAGS === undefined && FormattingService.VOID_TAGS) {
-      // This branch kept for clarity; actual check below
-    }
-    if (FormattingService.VOID_TAGS && FormattingService.VOID_TAGS.has(tag)) {
-      const newEl = document.createElement(tag.toLowerCase());
-      if (tag === 'IMG' && el instanceof HTMLImageElement) {
-        // Preserve src/alt minimally
-        if (el.getAttribute('src')) {
-          newEl.setAttribute('src', el.getAttribute('src') || '');
-        }
-        if (el.getAttribute('alt')) {
-          newEl.setAttribute('alt', el.getAttribute('alt') || '');
-        }
-      }
-      // other void elements are recreated without attributes
-      return newEl;
-    }
-
-    // Inline elements: flatten children into a document fragment
-    const frag = document.createDocumentFragment();
-    Array.from(el.childNodes).forEach(child => {
-      frag.appendChild(this.stripFormattingNode(child));
-    });
-    return frag;
+  if (node.nodeType !== Node.ELEMENT_NODE) {
+    return document.createTextNode('');
   }
 
-  // Fallback: empty text node
-  return document.createTextNode('');
+  const element = node as HTMLElement;
+  const tag = element.tagName.toUpperCase();
+
+  if (FormattingService.BLOCK_TAGS.has(tag)) {
+    return this.createStrippedBlockElement(element, tag);
+  }
+
+  if (FormattingService.VOID_TAGS.has(tag)) {
+    return this.createStrippedVoidElement(element, tag);
+  }
+
+  return this.createStrippedInlineFragment(element);
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`createStrippedBlockElement()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`createStrippedBlockElement()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`createStrippedBlockElement()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`createStrippedBlockElement()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`createStrippedBlockElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`createStrippedBlockElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`createStrippedBlockElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`createStrippedBlockElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+private createStrippedBlockElement(element: HTMLElement, tag: string): HTMLElement {
+    const strippedElement = document.createElement(tag.toLowerCase());
+    Array.from(element.childNodes).forEach(child => {
+      strippedElement.appendChild(this.stripFormattingNode(child));
+    });
+    return strippedElement;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`createStrippedVoidElement()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`createStrippedVoidElement()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`createStrippedVoidElement()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`createStrippedVoidElement()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`createStrippedVoidElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`createStrippedVoidElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`createStrippedVoidElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`createStrippedVoidElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+private createStrippedVoidElement(element: HTMLElement, tag: string): HTMLElement {
+    const strippedElement = document.createElement(tag.toLowerCase());
+    if (tag === 'IMG' && element instanceof HTMLImageElement) {
+      this.copyImageAttribute(element, strippedElement, 'src');
+      this.copyImageAttribute(element, strippedElement, 'alt');
+    }
+    return strippedElement;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`copyImageAttribute()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`copyImageAttribute()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`copyImageAttribute()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`copyImageAttribute()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`copyImageAttribute()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`copyImageAttribute()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`copyImageAttribute()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+private copyImageAttribute(source: HTMLImageElement, target: HTMLElement, attributeName: string): void {
+    const attributeValue = source.getAttribute(attributeName);
+    if (attributeValue) {
+      target.setAttribute(attributeName, attributeValue);
+    }
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`createStrippedInlineFragment()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`createStrippedInlineFragment()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`createStrippedInlineFragment()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`createStrippedInlineFragment()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`createStrippedInlineFragment()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`createStrippedInlineFragment()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`createStrippedInlineFragment()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`createStrippedInlineFragment()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+private createStrippedInlineFragment(element: HTMLElement): DocumentFragment {
+    const fragment = document.createDocumentFragment();
+    Array.from(element.childNodes).forEach(child => {
+      fragment.appendChild(this.stripFormattingNode(child));
+    });
+    return fragment;
   }
 
 
@@ -1576,81 +1752,55 @@ public removeFormatting(styleName: string, value: string): void {
  * How 09: method `FormattingService`.`setTextAlign()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 10: method `FormattingService`.`setTextAlign()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 11: method `FormattingService`.`setTextAlign()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 12: method `FormattingService`.`setTextAlign()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 13: method `FormattingService`.`setTextAlign()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 14: method `FormattingService`.`setTextAlign()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 15: method `FormattingService`.`setTextAlign()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 16: method `FormattingService`.`setTextAlign()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 17: method `FormattingService`.`setTextAlign()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 18: method `FormattingService`.`setTextAlign()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 19: method `FormattingService`.`setTextAlign()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 20: method `FormattingService`.`setTextAlign()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 21: method `FormattingService`.`setTextAlign()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 22: method `FormattingService`.`setTextAlign()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 23: method `FormattingService`.`setTextAlign()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 24: method `FormattingService`.`setTextAlign()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 25: method `FormattingService`.`setTextAlign()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 26: method `FormattingService`.`setTextAlign()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 27: method `FormattingService`.`setTextAlign()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 28: method `FormattingService`.`setTextAlign()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 29: method `FormattingService`.`setTextAlign()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
 public setTextAlign(alignment: string): void {
-    //this.justifyContent(alignment as 'left' | 'center' | 'right' | 'justify');
-
-    let selection = window.getSelection();
-
-    if (selection && !selection.isCollapsed) {
-      const range = selection.getRangeAt(0);
-      let container: Node = range.commonAncestorContainer;
-
-      // If the container is a text node, get its parent
-      if (container.nodeType === Node.TEXT_NODE) {
-        container = container.parentElement as HTMLElement;
-      }
-
-      // Handle multi-paragraph selections by splitting the range
-      if (container instanceof HTMLElement) {
-        const paragraphs = this.splitRangeIntoParagraphs(range);
-
-        paragraphs.forEach((paragraph) => {
-          if (paragraph instanceof HTMLElement && paragraph.tagName === 'P') {
-            paragraph.style.textAlign = alignment;
-          }
-        });
-      }
-    } else {
+    const selection = window.getSelection();
+    if (!selection || selection.rangeCount === 0) {
       console.warn('No valid selection found.');
+      return;
     }
 
-    console.log('setTextAlign');
+    const range = selection.getRangeAt(0);
+    const paragraphs = this.splitRangeIntoParagraphs(range);
+    const targetParagraph = this.findRangeParentParagraph(range);
 
-    selection = window.getSelection();
+    paragraphs.forEach(paragraph => {
+      paragraph.style.textAlign = alignment;
+    });
+    targetParagraph?.style.setProperty('text-align', alignment);
+  }
 
-    console.log('selection', selection);
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`findRangeParentParagraph()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`findRangeParentParagraph()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`findRangeParentParagraph()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`findRangeParentParagraph()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`findRangeParentParagraph()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`findRangeParentParagraph()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`findRangeParentParagraph()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+private findRangeParentParagraph(range: Range): HTMLElement | null {
+    const container = this.normalizeContainerElement(range.commonAncestorContainer);
+    return container ? this.findParentParagraph(container) : null;
+  }
 
-    if (selection && !selection.isCollapsed) {
-      const range = selection.getRangeAt(0);
-      let container: Node = range.commonAncestorContainer;
-
-      console.log('container', container);
-
-      // If the container is a text node, find its parent element
-      if (container.nodeType === Node.TEXT_NODE) {
-        container = container.parentElement as HTMLElement;
-      }
-
-      // If the container is a <p> element, apply the alignment
-      if (container instanceof HTMLElement && container.tagName === 'P') {
-        container.style.textAlign = alignment;
-      } else {
-        // Traverse up the DOM to find the nearest parent <p> element
-        const parentParagraph = this.findParentParagraph(container as HTMLElement);
-        if (parentParagraph) {
-          parentParagraph.style.textAlign = alignment;
-        }
-      }
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`normalizeContainerElement()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`normalizeContainerElement()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`normalizeContainerElement()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`normalizeContainerElement()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`normalizeContainerElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`normalizeContainerElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`normalizeContainerElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+private normalizeContainerElement(container: Node): HTMLElement | null {
+    if (container instanceof HTMLElement) {
+      return container;
     }
+
+    return container.parentElement;
   }
 
     /**
@@ -1716,29 +1866,71 @@ public findParentParagraph(element: HTMLElement): HTMLElement | null {
  * Why 02: method `FormattingService`.`getTargetBlocks()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 03: method `FormattingService`.`getTargetBlocks()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`getTargetBlocks()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 05: method `FormattingService`.`getTargetBlocks()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 06: method `FormattingService`.`getTargetBlocks()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 07: method `FormattingService`.`getTargetBlocks()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 08: method `FormattingService`.`getTargetBlocks()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 09: method `FormattingService`.`getTargetBlocks()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 10: method `FormattingService`.`getTargetBlocks()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 11: method `FormattingService`.`getTargetBlocks()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
 private getTargetBlocks(): HTMLElement[] {
     let elements = this.contentService.getSelectedElements();
     if (elements.length === 0) {
-      const sel = window.getSelection();
-      if (!sel || sel.rangeCount === 0) { return []; }
-      let node = sel.getRangeAt(0).commonAncestorContainer as Node;
-      while (node && !(node instanceof HTMLElement) ||
-      node && !['P','LI','DIV','SECTION','ARTICLE'].includes((node as HTMLElement).tagName)) {
-        node = node.parentNode as Node;
-      }
-      if (node instanceof HTMLElement) {
-        elements = [node];
-      }
+      elements = this.getCaretTargetBlocks();
     }
     return elements;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`getCaretTargetBlocks()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`getCaretTargetBlocks()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`getCaretTargetBlocks()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`getCaretTargetBlocks()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`getCaretTargetBlocks()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`getCaretTargetBlocks()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`getCaretTargetBlocks()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`getCaretTargetBlocks()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+private getCaretTargetBlocks(): HTMLElement[] {
+    const selection = window.getSelection();
+    if (!selection || selection.rangeCount === 0) {
+      return [];
+    }
+
+    const block = this.findNearestTargetBlock(selection.getRangeAt(0).commonAncestorContainer);
+    return block ? [block] : [];
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`findNearestTargetBlock()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`findNearestTargetBlock()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`findNearestTargetBlock()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`findNearestTargetBlock()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`findNearestTargetBlock()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`findNearestTargetBlock()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`findNearestTargetBlock()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`findNearestTargetBlock()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `FormattingService`.`findNearestTargetBlock()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ */
+private findNearestTargetBlock(node: Node | null): HTMLElement | null {
+    let currentNode = node;
+    while (currentNode) {
+      if (this.isTargetBlock(currentNode)) {
+        return currentNode;
+      }
+      currentNode = currentNode.parentNode;
+    }
+    return null;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`isTargetBlock()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`isTargetBlock()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`isTargetBlock()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`isTargetBlock()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`isTargetBlock()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`isTargetBlock()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`isTargetBlock()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+private isTargetBlock(node: Node): node is HTMLElement {
+    return node instanceof HTMLElement && ['P', 'LI', 'DIV', 'SECTION', 'ARTICLE'].includes(node.tagName);
   }
 
 

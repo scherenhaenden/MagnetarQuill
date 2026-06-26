@@ -66,7 +66,7 @@ async function collectTsFiles(dirPath) {
     files.push(entryPath);
   }
 
-  return files.sort();
+  return files.sort((left, right) => left.localeCompare(right));
 }
 
 function collectEntities(sourceFile) {

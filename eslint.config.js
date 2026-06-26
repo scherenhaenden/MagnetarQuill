@@ -1,6 +1,7 @@
 const eslint = require('@eslint/js');
 const angular = require('angular-eslint');
 const tseslint = require('typescript-eslint');
+const sonarLocal = require('./eslint-local-rules');
 
 module.exports = tseslint.config(
   {
@@ -18,6 +19,9 @@ module.exports = tseslint.config(
       ...angular.configs.tsRecommended
     ],
     processor: angular.processInlineTemplates,
+    plugins: {
+      'sonar-local': sonarLocal
+    },
     rules: {
       '@angular-eslint/no-empty-lifecycle-method': 'off',
       '@angular-eslint/no-output-native': 'off',
@@ -27,7 +31,9 @@ module.exports = tseslint.config(
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-unused-vars': 'warn',
       'no-useless-assignment': 'warn',
-      'prefer-const': 'warn'
+      'prefer-const': 'warn',
+      'sonar-local/array-sort-compare': 'error',
+      'sonar-local/cognitive-complexity': ['error', {max: 15}]
     }
   },
   {
