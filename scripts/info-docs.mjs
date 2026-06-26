@@ -230,7 +230,7 @@ function applyGeneratedDocs(text, sourceFile, entities, filePath) {
 
     replacements.push({
       start: existingRange ? existingRange.pos : entity.start,
-      end: existingRange ? entity.start : entity.start,
+      end: existingRange ? existingRange.end : entity.start,
       text: generatedDoc
     });
   }
