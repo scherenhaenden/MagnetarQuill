@@ -78,6 +78,11 @@ function processOpenBrace(state, filePath) {
 }
 
 function handleSelectorsAndBraces(current, index, state, filePath) {
+  if (current === ';') {
+    state.pendingSelector = '';
+    return index + 1;
+  }
+
   if (current === '{') {
     processOpenBrace(state, filePath);
     return index + 1;

@@ -29,8 +29,8 @@ import {Directive, ElementRef, EventEmitter, HostListener, Output} from '@angula
  * Why 22: class `ClickOutsideDirective` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 23: class `ClickOutsideDirective` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 24: class `ClickOutsideDirective` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 25: class `ClickOutsideDirective` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
 @Directive({
   selector: '[libClickOutside]',
   standalone: true
@@ -49,6 +49,7 @@ export class ClickOutsideDirective {
  * Relation 03: constructor for class `ClickOutsideDirective` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: constructor for class `ClickOutsideDirective` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 constructor(private elementRef: ElementRef) {}
 
     /**
@@ -67,6 +68,7 @@ constructor(private elementRef: ElementRef) {}
  * How 09: method `ClickOutsideDirective`.`onDocumentClick()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 10: method `ClickOutsideDirective`.`onDocumentClick()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
 @HostListener('document:click', ['$event.target'])
   public onDocumentClick(targetElement: EventTarget | null): void {
     if (!targetElement || !(targetElement instanceof Node)) {
@@ -100,6 +102,7 @@ constructor(private elementRef: ElementRef) {}
  * Relation 03: method `ClickOutsideDirective`.`setRunnerAesTrueAfterTaskRan()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ClickOutsideDirective`.`setRunnerAesTrueAfterTaskRan()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 private async setRunnerAesTrueAfterTaskRan(): Promise<void> {
     await this.runnerTask();
     this.runnerNonAcceptingDuringthisTime = false;
@@ -117,6 +120,7 @@ private async setRunnerAesTrueAfterTaskRan(): Promise<void> {
  * Maintenance 04: method `ClickOutsideDirective`.`runnerTask()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `ClickOutsideDirective`.`runnerTask()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
 private runnerTask(): Promise<void> {
     return new Promise((resolve) => {
       setTimeout(() => {

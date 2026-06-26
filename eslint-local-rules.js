@@ -362,6 +362,10 @@ module.exports = {
                 continue;
               }
 
+              if (hasAttribute(attributes, 'aria-label') || hasAttribute(attributes, 'aria-labelledby')) {
+                continue;
+              }
+
               const id = getAttributeValue(attributes, 'id');
               const labelForIdRegex = id ? new RegExp(`<label\\b[^>]*\\sfor\\s*=\\s*["']${id}["']`, 'i') : null;
 

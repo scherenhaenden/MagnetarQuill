@@ -200,7 +200,7 @@ function handleNormalText(current, next, index, state, append) {
 function stripComments(text) {
   let output = '';
   let index = 0;
-  const state = { inBlockComment: false, inLineComment: false };
+  const state = { inBlockComment: false, inLineComment: false, inString: null };
   const append = (char) => {
     output += char;
   };
@@ -213,8 +213,28 @@ function stripComments(text) {
       index = handleBlockComment(current, next, index, state, append);
     } else if (state.inLineComment) {
       index = handleLineComment(current, index, state, append);
+    } else if (state.inString) {
+      if (current === '\\') {
+        append(current);
+        if (next) {
+          append(next);
+        }
+        index += 2;
+      } else {
+        if (current === state.inString) {
+          state.inString = null;
+        }
+        append(current);
+        index += 1;
+      }
     } else {
-      index = handleNormalText(current, next, index, state, append);
+      if (current === '"' || current === "'" || current === '`') {
+        state.inString = current;
+        append(current);
+        index += 1;
+      } else {
+        index = handleNormalText(current, next, index, state, append);
+      }
     }
   }
 

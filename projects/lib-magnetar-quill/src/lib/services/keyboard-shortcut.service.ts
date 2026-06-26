@@ -72,6 +72,7 @@ import {ShortcutAction} from "../models/key-shortcuts";
  * How 53: class `KeyboardShortcutService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 54: class `KeyboardShortcutService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
 @Injectable()
 export class KeyboardShortcutService implements OnDestroy {
 
@@ -91,6 +92,7 @@ export class KeyboardShortcutService implements OnDestroy {
  * Relation 03: constructor for class `KeyboardShortcutService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: constructor for class `KeyboardShortcutService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 constructor() {
     // Use capture phase (true) to catch event early, potentially overriding default browser behavior
     window.addEventListener('keydown', this.handleKeydown, true);
@@ -112,6 +114,7 @@ constructor() {
  * Relation 03: method `KeyboardShortcutService`.`initialize()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `KeyboardShortcutService`.`initialize()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 public initialize(element: HTMLElement): void {
     this.editorElement = element;
   }
@@ -128,6 +131,7 @@ public initialize(element: HTMLElement): void {
  * Maintenance 04: method `KeyboardShortcutService`.`ngOnDestroy()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `KeyboardShortcutService`.`ngOnDestroy()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
 public ngOnDestroy(): void {
     window.removeEventListener('keydown', this.handleKeydown, true);
     if (!this.destroy$.closed) {

@@ -12,6 +12,7 @@
  * Relation 07: class `ImageModalComponentModel` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 08: class `ImageModalComponentModel` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 export class ImageModalComponentModel {
   public url: string = '';
   public alt: string = '';
