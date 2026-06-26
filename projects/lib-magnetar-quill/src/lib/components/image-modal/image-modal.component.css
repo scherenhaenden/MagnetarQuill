@@ -34,6 +34,7 @@
 
 .preview {
   flex: 1;
+  margin-top: 15px;
   max-width: 40%; /* Limit the preview to 40% of the modal width */
   text-align: center;
 }

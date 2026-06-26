@@ -63,7 +63,16 @@ import {BehaviorSubject} from "rxjs";
  * Why 54: class `ContentService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 55: class `ContentService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 56: class `ContentService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 57: class `ContentService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 58: class `ContentService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 59: class `ContentService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 60: class `ContentService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 61: class `ContentService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 62: class `ContentService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 63: class `ContentService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 64: class `ContentService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 @Injectable()
 export class ContentService {
 
@@ -83,6 +92,7 @@ export class ContentService {
  * Relation 03: method `ContentService`.`setEditorContent()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ContentService`.`setEditorContent()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 public setEditorContent(htmlContent: string): void {
     this.editorContent.next(htmlContent);
   }
@@ -98,6 +108,7 @@ public setEditorContent(htmlContent: string): void {
  * Relation 03: method `ContentService`.`getEditorContent()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ContentService`.`getEditorContent()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 public getEditorContent(): string {
     return this.editorContent.getValue();
   }
@@ -115,6 +126,7 @@ public getEditorContent(): string {
  * Maintenance 04: method `ContentService`.`insertImage()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `ContentService`.`insertImage()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
 public insertImage(imageData: { url: string, alt?: string, width?: number, height?: number }): void {
     const imageHtml = `<img src="${imageData.url}" alt="${imageData.alt || ''}"
                         width="${imageData.width || ''}" height="${imageData.height || ''}" />`;
@@ -137,14 +149,29 @@ public insertImage(imageData: { url: string, alt?: string, width?: number, heigh
  * Maintenance 04: method `ContentService`.`insertHtmlAtCursor()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `ContentService`.`insertHtmlAtCursor()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 06: method `ContentService`.`insertHtmlAtCursor()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `ContentService`.`insertHtmlAtCursor()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `ContentService`.`insertHtmlAtCursor()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `ContentService`.`insertHtmlAtCursor()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `ContentService`.`insertHtmlAtCursor()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 11: method `ContentService`.`insertHtmlAtCursor()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 12: method `ContentService`.`insertHtmlAtCursor()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 public insertHtmlAtCursor(html: string): void {
     const selection = window.getSelection();
     if (selection && selection.rangeCount > 0) {
       const range = selection.getRangeAt(0);
       const fragment = document.createRange().createContextualFragment(html);
+      const lastInsertedNode = fragment.lastChild;
       range.deleteContents(); // Remove the current selection
       range.insertNode(fragment); // Insert the HTML fragment
+
+      if (lastInsertedNode) {
+        range.setStartAfter(lastInsertedNode);
+        range.collapse(true);
+        selection.removeAllRanges();
+        selection.addRange(range);
+      }
     }
   }
 
@@ -161,17 +188,22 @@ public insertHtmlAtCursor(html: string): void {
  * Why 06: method `ContentService`.`insertTextAtCursor()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 07: method `ContentService`.`insertTextAtCursor()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 08: method `ContentService`.`insertTextAtCursor()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `ContentService`.`insertTextAtCursor()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `ContentService`.`insertTextAtCursor()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
 public insertTextAtCursor(text: string): void {
     const selection = window.getSelection();
     if (!selection || selection.rangeCount === 0) return;
 
     const range = selection.getRangeAt(0);
     range.deleteContents();
-    range.insertNode(document.createTextNode(text));
+    const textNode = document.createTextNode(text);
+    range.insertNode(textNode);
 
     // Move the cursor after the inserted text
-    range.setStartAfter(range.endContainer);
+    range.setStartAfter(textNode);
+    range.collapse(true);
     selection.removeAllRanges();
     selection.addRange(range);
   }
@@ -195,6 +227,7 @@ public insertTextAtCursor(text: string): void {
  * Maintenance 12: method `ContentService`.`insertImageFromUrl()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 13: method `ContentService`.`insertImageFromUrl()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
 public insertImageFromUrl(imageData: ImageInternalData): void {
     const img = document.createElement('img');
     img.src = imageData.url;
@@ -233,6 +266,7 @@ public insertImageFromUrl(imageData: ImageInternalData): void {
  * Maintenance 12: method `ContentService`.`getSelectedElements()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 13: method `ContentService`.`getSelectedElements()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
 public getSelectedElements(): HTMLElement[] {
     const selection = window.getSelection();
     const elements: HTMLElement[] = [];

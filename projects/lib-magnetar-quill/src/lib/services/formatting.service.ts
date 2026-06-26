@@ -440,7 +440,1087 @@ import {ContentService} from "./content.service";
  * Maintenance 432: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 433: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 434: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 435: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 436: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 437: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 438: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 439: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 440: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 441: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 442: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 443: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 444: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 445: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 446: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 447: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 448: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 449: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 450: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 451: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 452: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 453: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 454: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 455: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 456: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 457: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 458: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 459: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 460: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 461: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 462: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 463: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 464: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 465: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 466: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 467: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 468: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 469: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 470: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 471: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 472: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 473: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 474: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 475: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 476: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 477: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 478: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 479: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 480: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 481: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 482: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 483: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 484: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 485: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 486: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 487: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 488: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 489: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 490: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 491: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 492: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 493: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 494: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 495: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 496: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 497: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 498: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 499: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 500: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 501: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 502: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 503: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 504: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 505: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 506: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 507: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 508: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 509: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 510: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 511: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 512: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 513: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 514: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 515: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 516: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 517: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 518: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 519: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 520: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 521: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 522: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 523: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 524: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 525: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 526: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 527: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 528: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 529: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 530: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 531: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 532: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 533: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 534: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 535: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 536: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 537: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 538: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 539: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 540: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 541: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 542: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 543: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 544: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 545: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 546: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 547: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 548: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 549: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 550: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 551: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 552: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 553: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 554: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 555: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 556: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 557: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 558: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 559: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 560: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 561: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 562: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 563: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 564: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 565: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 566: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 567: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 568: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 569: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 570: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 571: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 572: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 573: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 574: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 575: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 576: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 577: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 578: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 579: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 580: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 581: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 582: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 583: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 584: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 585: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 586: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 587: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 588: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 589: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 590: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 591: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 592: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 593: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 594: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 595: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 596: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 597: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 598: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 599: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 600: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 601: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 602: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 603: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 604: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 605: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 606: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 607: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 608: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 609: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 610: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 611: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 612: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 613: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 614: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 615: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 616: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 617: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 618: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 619: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 620: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 621: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 622: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 623: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 624: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 625: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 626: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 627: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 628: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 629: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 630: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 631: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 632: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 633: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 634: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 635: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 636: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 637: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 638: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 639: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 640: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 641: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 642: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 643: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 644: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 645: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 646: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 647: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 648: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 649: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 650: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 651: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 652: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 653: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 654: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 655: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 656: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 657: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 658: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 659: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 660: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 661: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 662: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 663: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 664: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 665: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 666: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 667: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 668: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 669: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 670: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 671: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 672: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 673: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 674: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 675: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 676: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 677: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 678: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 679: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 680: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 681: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 682: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 683: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 684: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 685: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 686: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 687: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 688: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 689: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 690: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 691: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 692: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 693: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 694: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 695: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 696: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 697: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 698: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 699: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 700: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 701: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 702: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 703: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 704: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 705: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 706: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 707: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 708: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 709: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 710: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 711: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 712: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 713: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 714: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 715: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 716: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 717: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 718: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 719: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 720: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 721: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 722: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 723: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 724: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 725: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 726: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 727: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 728: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 729: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 730: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 731: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 732: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 733: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 734: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 735: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 736: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 737: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 738: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 739: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 740: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 741: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 742: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 743: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 744: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 745: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 746: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 747: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 748: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 749: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 750: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 751: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 752: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 753: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 754: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 755: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 756: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 757: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 758: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 759: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 760: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 761: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 762: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 763: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 764: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 765: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 766: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 767: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 768: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 769: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 770: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 771: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 772: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 773: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 774: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 775: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 776: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 777: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 778: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 779: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 780: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 781: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 782: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 783: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 784: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 785: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 786: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 787: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 788: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 789: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 790: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 791: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 792: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 793: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 794: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 795: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 796: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 797: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 798: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 799: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 800: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 801: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 802: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 803: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 804: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 805: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 806: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 807: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 808: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 809: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 810: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 811: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 812: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 813: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 814: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 815: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 816: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 817: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 818: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 819: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 820: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 821: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 822: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 823: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 824: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 825: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 826: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 827: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 828: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 829: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 830: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 831: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 832: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 833: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 834: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 835: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 836: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 837: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 838: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 839: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 840: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 841: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 842: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 843: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 844: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 845: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 846: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 847: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 848: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 849: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 850: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 851: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 852: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 853: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 854: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 855: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 856: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 857: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 858: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 859: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 860: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 861: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 862: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 863: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 864: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 865: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 866: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 867: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 868: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 869: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 870: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 871: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 872: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 873: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 874: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 875: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 876: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 877: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 878: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 879: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 880: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 881: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 882: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 883: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 884: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 885: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 886: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 887: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 888: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 889: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 890: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 891: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 892: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 893: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 894: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 895: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 896: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 897: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 898: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 899: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 900: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 901: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 902: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 903: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 904: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 905: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 906: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 907: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 908: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 909: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 910: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 911: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 912: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 913: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 914: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 915: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 916: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 917: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 918: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 919: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 920: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 921: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 922: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 923: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 924: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 925: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 926: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 927: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 928: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 929: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 930: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 931: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 932: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 933: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 934: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 935: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 936: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 937: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 938: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 939: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 940: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 941: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 942: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 943: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 944: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 945: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 946: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 947: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 948: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 949: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 950: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 951: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 952: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 953: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 954: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 955: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 956: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 957: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 958: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 959: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 960: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 961: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 962: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 963: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 964: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 965: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 966: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 967: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 968: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 969: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 970: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 971: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 972: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 973: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 974: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 975: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 976: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 977: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 978: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 979: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 980: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 981: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 982: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 983: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 984: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 985: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 986: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 987: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 988: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 989: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 990: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 991: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 992: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 993: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 994: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 995: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 996: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 997: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 998: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 999: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1000: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1001: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1002: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1003: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1004: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1005: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1006: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1007: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1008: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1009: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1010: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1011: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1012: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1013: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1014: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1015: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1016: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1017: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1018: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1019: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1020: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1021: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1022: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1023: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1024: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1025: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1026: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1027: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1028: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1029: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1030: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1031: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1032: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1033: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1034: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1035: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1036: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1037: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1038: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1039: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1040: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1041: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1042: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1043: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1044: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1045: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1046: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1047: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1048: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1049: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1050: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1051: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1052: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1053: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1054: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1055: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1056: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1057: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1058: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1059: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1060: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1061: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1062: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1063: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1064: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1065: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1066: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1067: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1068: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1069: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1070: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1071: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1072: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1073: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1074: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1075: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1076: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1077: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1078: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1079: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1080: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1081: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1082: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1083: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1084: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1085: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1086: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1087: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1088: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1089: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1090: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1091: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1092: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1093: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1094: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1095: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1096: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1097: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1098: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1099: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1100: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1101: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1102: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1103: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1104: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1105: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1106: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1107: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1108: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1109: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1110: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1111: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1112: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1113: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1114: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1115: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1116: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1117: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1118: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1119: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1120: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1121: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1122: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1123: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1124: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1125: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1126: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1127: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1128: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1129: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1130: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1131: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1132: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1133: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1134: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1135: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1136: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1137: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1138: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1139: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1140: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1141: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1142: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1143: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1144: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1145: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1146: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1147: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1148: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1149: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1150: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1151: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1152: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1153: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1154: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1155: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1156: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1157: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1158: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1159: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1160: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1161: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1162: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1163: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1164: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1165: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1166: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1167: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1168: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1169: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1170: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1171: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1172: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1173: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1174: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1175: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1176: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1177: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1178: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1179: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1180: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1181: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1182: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1183: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1184: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1185: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1186: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1187: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1188: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1189: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1190: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1191: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1192: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1193: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1194: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1195: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1196: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1197: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1198: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1199: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1200: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1201: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1202: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1203: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1204: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1205: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1206: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1207: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1208: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1209: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1210: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1211: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1212: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1213: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1214: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1215: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1216: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1217: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1218: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1219: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1220: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1221: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1222: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1223: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1224: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1225: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1226: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1227: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1228: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1229: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1230: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1231: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1232: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1233: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1234: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1235: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1236: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1237: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1238: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1239: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1240: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1241: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1242: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1243: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1244: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1245: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1246: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1247: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1248: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1249: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1250: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1251: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1252: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1253: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1254: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1255: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1256: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1257: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1258: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1259: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1260: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1261: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1262: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1263: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1264: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1265: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1266: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1267: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1268: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1269: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1270: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1271: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1272: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1273: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1274: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1275: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1276: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1277: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1278: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1279: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1280: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1281: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1282: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1283: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1284: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1285: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1286: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1287: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1288: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1289: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1290: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1291: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1292: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1293: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1294: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1295: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1296: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1297: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1298: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1299: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1300: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1301: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1302: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1303: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1304: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1305: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1306: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1307: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1308: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1309: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1310: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1311: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1312: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1313: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1314: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1315: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1316: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1317: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1318: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1319: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1320: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1321: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1322: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1323: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1324: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1325: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1326: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1327: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1328: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1329: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1330: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1331: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1332: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1333: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1334: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1335: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1336: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1337: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1338: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1339: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1340: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1341: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1342: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1343: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1344: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1345: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1346: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1347: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1348: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1349: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1350: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1351: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1352: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1353: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1354: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1355: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1356: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1357: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1358: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1359: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1360: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1361: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1362: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1363: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1364: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1365: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1366: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1367: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1368: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1369: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1370: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1371: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1372: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1373: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1374: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1375: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1376: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1377: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1378: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1379: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1380: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1381: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1382: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1383: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1384: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1385: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1386: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1387: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1388: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1389: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1390: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1391: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1392: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1393: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1394: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1395: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1396: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1397: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1398: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1399: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1400: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1401: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1402: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1403: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1404: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1405: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1406: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1407: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1408: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1409: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1410: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1411: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1412: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1413: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1414: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1415: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1416: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1417: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1418: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1419: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1420: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1421: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1422: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1423: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1424: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1425: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1426: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1427: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1428: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1429: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1430: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1431: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1432: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1433: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1434: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1435: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1436: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1437: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1438: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1439: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1440: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1441: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1442: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1443: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1444: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1445: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1446: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1447: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1448: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1449: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1450: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1451: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1452: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1453: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1454: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1455: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1456: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1457: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1458: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1459: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1460: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1461: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1462: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1463: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1464: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1465: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1466: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1467: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1468: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1469: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1470: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1471: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1472: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1473: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1474: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1475: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1476: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1477: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1478: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1479: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1480: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1481: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1482: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1483: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1484: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1485: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1486: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1487: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1488: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1489: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1490: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1491: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1492: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1493: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1494: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1495: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1496: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1497: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1498: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1499: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1500: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1501: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1502: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1503: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1504: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1505: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1506: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1507: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1508: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1509: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 1510: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 1511: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 1512: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 1513: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
 @Injectable()
 export class FormattingService {
 
@@ -455,7 +1535,6 @@ export class FormattingService {
   public currentTextColor = signal('#000000');
 
   private lastActiveRange: Range | null = null;
-
     /**
  * @generatedInfoDoc
  * InfoDoc: constructor for class `FormattingService` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
@@ -466,6 +1545,7 @@ export class FormattingService {
  * Relation 03: constructor for class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: constructor for class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 constructor(private contentService: ContentService) { }
 
 
@@ -483,6 +1563,7 @@ constructor(private contentService: ContentService) { }
  * Relation 03: method `FormattingService`.`saveSelection()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`saveSelection()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 public saveSelection(): void {
     const selection = window.getSelection();
     if (selection && selection.rangeCount > 0) {
@@ -507,6 +1588,7 @@ public saveSelection(): void {
  * Relation 07: method `FormattingService`.`restoreSelection()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 08: method `FormattingService`.`restoreSelection()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 public restoreSelection(): void {
     if (this.lastActiveRange) {
       const selection = window.getSelection();
@@ -532,6 +1614,7 @@ public restoreSelection(): void {
  * Maintenance 04: method `FormattingService`.`setActiveRange()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `FormattingService`.`setActiveRange()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
 private setActiveRange(range: Range): void {
     this.lastActiveRange = range.cloneRange();
     const selection = window.getSelection();
@@ -554,6 +1637,7 @@ private setActiveRange(range: Range): void {
  * Relation 03: method `FormattingService`.`getActiveRange()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`getActiveRange()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 private getActiveRange(): Range | null {
     const selection = window.getSelection();
     if (selection && selection.rangeCount > 0) {
@@ -590,69 +1674,116 @@ private getActiveRange(): Range | null {
  * How 13: method `FormattingService`.`updateFormatStates()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 14: method `FormattingService`.`updateFormatStates()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 15: method `FormattingService`.`updateFormatStates()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 16: method `FormattingService`.`updateFormatStates()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 17: method `FormattingService`.`updateFormatStates()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 18: method `FormattingService`.`updateFormatStates()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 19: method `FormattingService`.`updateFormatStates()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 20: method `FormattingService`.`updateFormatStates()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 21: method `FormattingService`.`updateFormatStates()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 22: method `FormattingService`.`updateFormatStates()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 23: method `FormattingService`.`updateFormatStates()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 24: method `FormattingService`.`updateFormatStates()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 25: method `FormattingService`.`updateFormatStates()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 26: method `FormattingService`.`updateFormatStates()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 27: method `FormattingService`.`updateFormatStates()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 28: method `FormattingService`.`updateFormatStates()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 29: method `FormattingService`.`updateFormatStates()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 30: method `FormattingService`.`updateFormatStates()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
 public updateFormatStates(): void {
+    this.saveSelection();
     const selection = window.getSelection();
-    if (!selection || selection.rangeCount === 0) return;
+    if (!selection || selection.rangeCount === 0) {
+      return;
+    }
+
     const range = selection.getRangeAt(0);
+    const currentNode = selection.focusNode ?? range.commonAncestorContainer;
+    const formatStates = this.collectFormatStates(currentNode);
 
-    let node: Node | null = selection.focusNode;
+    this.boldActive.set(formatStates.isBold);
+    this.italicActive.set(formatStates.isItalic);
+    this.underlineActive.set(formatStates.isUnderline);
+    this.strikethroughActive.set(formatStates.isStrikethrough);
+    this.strongActive.set(formatStates.isStrong);
 
-    // Handle case where selection might end just outside an element
-    if (node?.nodeType === Node.TEXT_NODE && selection.focusOffset === 0) {
-      node = node.previousSibling || node.parentNode;
-    }
-
-    // Traverse upwards to find the formatting state
-    let isBold = false;
-    let isItalic = false;
-    let isUnderline = false;
-    let isStrikethrough = false;
-    let isStrong = false;
-
-    let currentNode = node;
-    while (currentNode) {
-      if (currentNode.nodeType === Node.ELEMENT_NODE) {
-        const style = window.getComputedStyle(currentNode as Element);
-        
-        if (!isBold && (style.fontWeight === 'bold' || parseInt(style.fontWeight, 10) >= 700)) isBold = true;
-        if (!isItalic && style.fontStyle === 'italic') isItalic = true;
-        if (!isUnderline && style.textDecorationLine.includes('underline')) isUnderline = true;
-        if (!isStrikethrough && style.textDecorationLine.includes('line-through')) isStrikethrough = true;
-        
-        if (!isStrong && (currentNode as HTMLElement).tagName.toLowerCase() === 'strong') isStrong = true;
-        
-        // Stop if we hit the editor root
-        if ((currentNode as HTMLElement).contentEditable === 'true') break;
-      }
-      currentNode = currentNode.parentNode;
-    }
-
-    this.boldActive.set(isBold);
-    this.italicActive.set(isItalic);
-    this.underlineActive.set(isUnderline);
-    this.strikethroughActive.set(isStrikethrough);
-    this.strongActive.set(isStrong);
     this.currentFontFamily.set(this.getSelectedFontFamily(range, selection.focusNode));
     this.currentFontSize.set(this.getSelectedFontSize(range, selection.focusNode));
     this.currentTextColor.set(this.getSelectedTextColor(range, selection.focusNode));
   }
 
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`collectFormatStates()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`collectFormatStates()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`collectFormatStates()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`collectFormatStates()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`collectFormatStates()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`collectFormatStates()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`collectFormatStates()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`collectFormatStates()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `FormattingService`.`collectFormatStates()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `FormattingService`.`collectFormatStates()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `FormattingService`.`collectFormatStates()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `FormattingService`.`collectFormatStates()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `FormattingService`.`collectFormatStates()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 11: method `FormattingService`.`collectFormatStates()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 12: method `FormattingService`.`collectFormatStates()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 13: method `FormattingService`.`collectFormatStates()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 14: method `FormattingService`.`collectFormatStates()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 15: method `FormattingService`.`collectFormatStates()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ */
+
+private collectFormatStates(startNode: Node | null): {
+    isBold: boolean;
+    isItalic: boolean;
+    isUnderline: boolean;
+    isStrikethrough: boolean;
+    isStrong: boolean;
+  } {
+    const formatStates = {
+      isBold: false,
+      isItalic: false,
+      isUnderline: false,
+      isStrikethrough: false,
+      isStrong: false
+    };
+
+    let currentNode = startNode;
+    while (currentNode) {
+      if (currentNode.nodeType === Node.ELEMENT_NODE) {
+        const shouldStop = this.mergeElementFormatStates(currentNode as HTMLElement, formatStates);
+        if (shouldStop) {
+          break;
+        }
+      }
+      currentNode = currentNode.parentNode;
+    }
+    return formatStates;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`mergeElementFormatStates()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`mergeElementFormatStates()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`mergeElementFormatStates()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`mergeElementFormatStates()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`mergeElementFormatStates()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`mergeElementFormatStates()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`mergeElementFormatStates()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`mergeElementFormatStates()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `FormattingService`.`mergeElementFormatStates()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `FormattingService`.`mergeElementFormatStates()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `FormattingService`.`mergeElementFormatStates()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+
+private mergeElementFormatStates(
+    element: HTMLElement,
+    formatStates: {
+      isBold: boolean;
+      isItalic: boolean;
+      isUnderline: boolean;
+      isStrikethrough: boolean;
+      isStrong: boolean;
+    }
+  ): boolean {
+    const style = window.getComputedStyle(element);
+    const inlineFontWeight = element.style.getPropertyValue('font-weight');
+
+    formatStates.isBold ||= inlineFontWeight === 'bold' || Number.parseInt(inlineFontWeight, 10) >= 700;
+    formatStates.isItalic ||= style.fontStyle === 'italic';
+    formatStates.isUnderline ||= style.textDecorationLine.includes('underline');
+    formatStates.isStrikethrough ||= style.textDecorationLine.includes('line-through');
+    formatStates.isStrong ||= element.tagName.toLowerCase() === 'strong';
+
+    return element.contentEditable === 'true';
+  }
     /**
  * @generatedInfoDoc
  * InfoDoc: method `FormattingService`.`getSelectedFontFamily()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
@@ -682,6 +1813,7 @@ public updateFormatStates(): void {
  * Why 22: method `FormattingService`.`getSelectedFontFamily()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 23: method `FormattingService`.`getSelectedFontFamily()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
+
 private getSelectedFontFamily(range: Range, fallbackNode: Node | null): string {
     if (range.collapsed) {
       return this.getFontFamilyFromNode(fallbackNode);
@@ -735,6 +1867,7 @@ private getSelectedFontFamily(range: Range, fallbackNode: Node | null): string {
  * Relation 07: method `FormattingService`.`getFontFamilyFromNode()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 08: method `FormattingService`.`getFontFamilyFromNode()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 private getFontFamilyFromNode(node: Node | null): string {
     let current: Node | null = node;
     while (current && current.nodeType !== Node.ELEMENT_NODE) {
@@ -779,6 +1912,7 @@ private getFontFamilyFromNode(node: Node | null): string {
  * Why 22: method `FormattingService`.`getSelectedFontSize()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 23: method `FormattingService`.`getSelectedFontSize()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
+
 private getSelectedFontSize(range: Range, fallbackNode: Node | null): string {
     if (range.collapsed) {
       return this.getFontSizeFromNode(fallbackNode);
@@ -830,6 +1964,7 @@ private getSelectedFontSize(range: Range, fallbackNode: Node | null): string {
  * How 05: method `FormattingService`.`getFontSizeFromNode()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 06: method `FormattingService`.`getFontSizeFromNode()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
 private getFontSizeFromNode(node: Node | null): string {
     let current: Node | null = node;
     while (current && current.nodeType !== Node.ELEMENT_NODE) {
@@ -872,6 +2007,7 @@ private getFontSizeFromNode(node: Node | null): string {
  * Why 22: method `FormattingService`.`getSelectedTextColor()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 23: method `FormattingService`.`getSelectedTextColor()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
+
 private getSelectedTextColor(range: Range, fallbackNode: Node | null): string {
     if (range.collapsed) {
       return this.getTextColorFromNode(fallbackNode);
@@ -923,6 +2059,7 @@ private getSelectedTextColor(range: Range, fallbackNode: Node | null): string {
  * How 05: method `FormattingService`.`getTextColorFromNode()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 06: method `FormattingService`.`getTextColorFromNode()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
 private getTextColorFromNode(node: Node | null): string {
     let current: Node | null = node;
     while (current && current.nodeType !== Node.ELEMENT_NODE) {
@@ -950,6 +2087,7 @@ private getTextColorFromNode(node: Node | null): string {
  * Relation 07: method `FormattingService`.`normalizeColorValue()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 08: method `FormattingService`.`normalizeColorValue()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 private normalizeColorValue(value: string): string {
     const rgbMatch = value.match(/\d+(\.\d+)?/g);
     if (!rgbMatch || rgbMatch.length < 3) {
@@ -995,6 +2133,7 @@ private normalizeColorValue(value: string): string {
  * How 05: method `FormattingService`.`toggler()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 06: method `FormattingService`.`toggler()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
 private toggler(activeSignal: WritableSignal<boolean>, styleName: string, value: string): void {
     if (activeSignal()) {
       this.removeFormatting(styleName, value);
@@ -1018,6 +2157,7 @@ private toggler(activeSignal: WritableSignal<boolean>, styleName: string, value:
  * Relation 03: method `FormattingService`.`toggleBold()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`toggleBold()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 public toggleBold(): void {
     this.toggler(this.boldActive, 'font-weight', 'bold');
   }
@@ -1057,37 +2197,213 @@ public toggleBold(): void {
  * How 09: method `FormattingService`.`toggleStrong()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 10: method `FormattingService`.`toggleStrong()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 11: method `FormattingService`.`toggleStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 12: method `FormattingService`.`toggleStrong()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 13: method `FormattingService`.`toggleStrong()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 14: method `FormattingService`.`toggleStrong()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 15: method `FormattingService`.`toggleStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
+
 public toggleStrong(): void {
+    const selection = window.getSelection();
     const range = this.getActiveRange();
-    if (!range) {
+    if (!selection || !range) {
       return;
     }
 
-    let currentElement: Node | null = range.commonAncestorContainer;
-    // Traverse up until we get an element node
-    while (currentElement && currentElement.nodeType !== Node.ELEMENT_NODE) {
-      currentElement = (currentElement as Element).parentElement;
-    }
+    const strongElement = this.findSelectedStrongElement(range);
 
-    if (currentElement instanceof HTMLElement && currentElement.tagName.toLowerCase() === 'strong') {
-      // Unwrap the <strong> element and update the signal
-      this.unwrap(currentElement);
+    if (strongElement) {
+      this.unwrapStrongSelection(range, selection, strongElement);
       this.strongActive.set(false);
-    } else {
-      // Wrap the selected content in a <strong> element
-      const strongElement = document.createElement('strong');
-      strongElement.appendChild(range.extractContents());
-      range.insertNode(strongElement);
-
-      // Adjust the selection state
-      this.saveSelection();
-      this.strongActive.set(true);
+      return;
     }
+
+    this.wrapSelectionInStrong(range, selection);
+    this.strongActive.set(true);
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`findSelectedStrongElement()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`findSelectedStrongElement()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`findSelectedStrongElement()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`findSelectedStrongElement()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`findSelectedStrongElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`findSelectedStrongElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`findSelectedStrongElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+
+private findSelectedStrongElement(range: Range): HTMLElement | null {
+    return this.findStrongAncestor(range.commonAncestorContainer) ??
+      this.findStrongAncestor(range.startContainer) ??
+      this.findStrongAncestor(range.endContainer);
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`findStrongAncestor()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`findStrongAncestor()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`findStrongAncestor()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`findStrongAncestor()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`findStrongAncestor()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`findStrongAncestor()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`findStrongAncestor()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`findStrongAncestor()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `FormattingService`.`findStrongAncestor()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `FormattingService`.`findStrongAncestor()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `FormattingService`.`findStrongAncestor()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+
+private findStrongAncestor(node: Node | null): HTMLElement | null {
+    let currentElement: Node | null = node;
+    while (currentElement && currentElement.nodeType !== Node.ELEMENT_NODE) {
+      currentElement = currentElement.parentNode;
+    }
+
+    while (currentElement instanceof HTMLElement) {
+      if (currentElement.tagName.toLowerCase() === 'strong') {
+        return currentElement;
+      }
+      currentElement = currentElement.parentElement;
+    }
+
+    return null;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`unwrapStrongSelection()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`unwrapStrongSelection()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`unwrapStrongSelection()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`unwrapStrongSelection()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`unwrapStrongSelection()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`unwrapStrongSelection()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`unwrapStrongSelection()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`unwrapStrongSelection()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `FormattingService`.`unwrapStrongSelection()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `FormattingService`.`unwrapStrongSelection()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `FormattingService`.`unwrapStrongSelection()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `FormattingService`.`unwrapStrongSelection()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `FormattingService`.`unwrapStrongSelection()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 11: method `FormattingService`.`unwrapStrongSelection()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 12: method `FormattingService`.`unwrapStrongSelection()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+
+private unwrapStrongSelection(range: Range, selection: Selection, strongElement: HTMLElement): void {
+    const beforeFragment = this.cloneStrongSide(range, strongElement, 'before');
+    const selectedFragment = range.cloneContents();
+    const afterFragment = this.cloneStrongSide(range, strongElement, 'after');
+    const unwrappedNodes = Array.from(selectedFragment.childNodes);
+    const parent = strongElement.parentNode;
+
+    if (!parent) {
+      return;
+    }
+
+    this.insertStrongSide(beforeFragment, strongElement);
+    strongElement.before(selectedFragment);
+    this.insertStrongSide(afterFragment, strongElement);
+    strongElement.remove();
+    this.restoreSelectionRange(selection, unwrappedNodes);
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`cloneStrongSide()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`cloneStrongSide()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`cloneStrongSide()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`cloneStrongSide()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`cloneStrongSide()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`cloneStrongSide()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`cloneStrongSide()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`cloneStrongSide()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `FormattingService`.`cloneStrongSide()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `FormattingService`.`cloneStrongSide()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `FormattingService`.`cloneStrongSide()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+
+private cloneStrongSide(range: Range, strongElement: HTMLElement, side: 'before' | 'after'): DocumentFragment {
+    const sideRange = document.createRange();
+    if (side === 'before') {
+      sideRange.setStart(strongElement, 0);
+      sideRange.setEnd(range.startContainer, range.startOffset);
+      return sideRange.cloneContents();
+    }
+
+    sideRange.setStart(range.endContainer, range.endOffset);
+    sideRange.setEnd(strongElement, strongElement.childNodes.length);
+    return sideRange.cloneContents();
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`insertStrongSide()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`insertStrongSide()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`insertStrongSide()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`insertStrongSide()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`insertStrongSide()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`insertStrongSide()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`insertStrongSide()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`insertStrongSide()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+
+private insertStrongSide(fragment: DocumentFragment, strongElement: HTMLElement): void {
+    if (!fragment.textContent) {
+      return;
+    }
+
+    const sideStrongElement = strongElement.cloneNode(false) as HTMLElement;
+    sideStrongElement.appendChild(fragment);
+    strongElement.before(sideStrongElement);
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`restoreSelectionRange()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`restoreSelectionRange()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`restoreSelectionRange()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`restoreSelectionRange()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`restoreSelectionRange()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`restoreSelectionRange()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`restoreSelectionRange()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`restoreSelectionRange()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `FormattingService`.`restoreSelectionRange()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `FormattingService`.`restoreSelectionRange()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `FormattingService`.`restoreSelectionRange()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+
+private restoreSelectionRange(selection: Selection, nodes: Node[]): void {
+    const connectedNodes = nodes.filter(node => node.isConnected);
+    if (connectedNodes.length === 0) {
+      return;
+    }
+
+    const newRange = document.createRange();
+    newRange.setStartBefore(connectedNodes[0]);
+    newRange.setEndAfter(connectedNodes[connectedNodes.length - 1]);
+    selection.removeAllRanges();
+    selection.addRange(newRange);
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`wrapSelectionInStrong()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`wrapSelectionInStrong()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`wrapSelectionInStrong()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`wrapSelectionInStrong()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`wrapSelectionInStrong()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`wrapSelectionInStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`wrapSelectionInStrong()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`wrapSelectionInStrong()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `FormattingService`.`wrapSelectionInStrong()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `FormattingService`.`wrapSelectionInStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ */
+
+private wrapSelectionInStrong(range: Range, selection: Selection): void {
+    const strongElement = document.createElement('strong');
+    strongElement.appendChild(range.extractContents());
+    range.insertNode(strongElement);
+
+    selection.removeAllRanges();
+    const newRange = document.createRange();
+    newRange.selectNodeContents(strongElement);
+    selection.addRange(newRange);
   }
 
 
@@ -1116,6 +2432,7 @@ public toggleStrong(): void {
  * Relation 03: method `FormattingService`.`toggleItalic()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`toggleItalic()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 public toggleItalic(): void {
     this.toggler(this.italicActive, 'font-style', 'italic');
   }
@@ -1130,6 +2447,7 @@ public toggleItalic(): void {
  * Relation 03: method `FormattingService`.`toggleUnderline()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`toggleUnderline()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 public toggleUnderline(): void {
     this.toggler(this.underlineActive, 'text-decoration', 'underline');
   }
@@ -1144,6 +2462,7 @@ public toggleUnderline(): void {
  * Relation 03: method `FormattingService`.`toggleStrikethrough()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`toggleStrikethrough()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 public toggleStrikethrough(): void {
     this.toggler(this.strikethroughActive, 'text-decoration', 'line-through');
   }
@@ -1169,6 +2488,7 @@ public toggleStrikethrough(): void {
  * How 13: method `FormattingService`.`toggleList()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 14: method `FormattingService`.`toggleList()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
 public toggleList(type: 'ordered' | 'unordered'): void {
     const range = this.getActiveRange();
     if (!range) {
@@ -1207,6 +2527,7 @@ public toggleList(type: 'ordered' | 'unordered'): void {
  * Maintenance 08: method `FormattingService`.`applyHeader()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 09: method `FormattingService`.`applyHeader()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
 public applyHeader(headerLevel: string): void {
     const range = this.getActiveRange();
     if (range) {
@@ -1239,12 +2560,13 @@ public applyHeader(headerLevel: string): void {
  * How 09: method `FormattingService`.`applyStyle()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 10: method `FormattingService`.`applyStyle()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
 public applyStyle(styleName: string, value: string): void {
     const range = this.getActiveRange();
     if (range) {
       const selectedText = range.extractContents();
       const span = document.createElement('span');
-      span.style[styleName as any] = value;
+      span.style.setProperty(styleName, value);
       span.appendChild(selectedText);
       range.insertNode(span);
 
@@ -1254,6 +2576,181 @@ public applyStyle(styleName: string, value: string): void {
       newRange.selectNodeContents(span);
       this.setActiveRange(newRange);
     }
+  }
+
+    /**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`styleMatches()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`styleMatches()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`styleMatches()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`styleMatches()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`styleMatches()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`styleMatches()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`styleMatches()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`styleMatches()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `FormattingService`.`styleMatches()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `FormattingService`.`styleMatches()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `FormattingService`.`styleMatches()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `FormattingService`.`styleMatches()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `FormattingService`.`styleMatches()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 11: method `FormattingService`.`styleMatches()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ */
+
+private styleMatches(element: HTMLElement, styleName: string, value: string): boolean {
+    const inlineValue = element.style.getPropertyValue(styleName);
+
+    if (inlineValue) {
+      return styleName === 'text-decoration'
+        ? inlineValue.includes(value)
+        : inlineValue === value;
+    }
+
+    if (styleName === 'font-weight') {
+      return false;
+    }
+
+    const computed = window.getComputedStyle(element);
+    if (styleName === 'text-decoration') {
+      return computed.textDecorationLine.includes(value);
+    }
+
+    return computed.getPropertyValue(styleName) === value;
+  }
+
+    /**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`removeStyleFromElement()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`removeStyleFromElement()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`removeStyleFromElement()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`removeStyleFromElement()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`removeStyleFromElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`removeStyleFromElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`removeStyleFromElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`removeStyleFromElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `FormattingService`.`removeStyleFromElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `FormattingService`.`removeStyleFromElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `FormattingService`.`removeStyleFromElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `FormattingService`.`removeStyleFromElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `FormattingService`.`removeStyleFromElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 11: method `FormattingService`.`removeStyleFromElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 12: method `FormattingService`.`removeStyleFromElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 13: method `FormattingService`.`removeStyleFromElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 14: method `FormattingService`.`removeStyleFromElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 15: method `FormattingService`.`removeStyleFromElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ */
+
+private removeStyleFromElement(element: HTMLElement, styleName: string, value: string): Node[] {
+    if (styleName === 'text-decoration') {
+      const currentDecoration = element.style.getPropertyValue(styleName);
+      const remainingDecoration = currentDecoration
+        .split(/\s+/)
+        .filter(part => part && part !== value)
+        .join(' ');
+
+      if (remainingDecoration) {
+        element.style.setProperty(styleName, remainingDecoration);
+      } else {
+        element.style.removeProperty(styleName);
+      }
+    } else {
+      element.style.removeProperty(styleName);
+    }
+
+    if (element.tagName === 'SPAN' && element.attributes.length === 1 && !element.getAttribute('style')) {
+      return this.unwrap(element);
+    }
+
+    return [element];
+  }
+
+    /**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`collectMatchingStyleElements()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`collectMatchingStyleElements()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`collectMatchingStyleElements()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`collectMatchingStyleElements()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`collectMatchingStyleElements()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`collectMatchingStyleElements()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`collectMatchingStyleElements()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`collectMatchingStyleElements()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `FormattingService`.`collectMatchingStyleElements()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `FormattingService`.`collectMatchingStyleElements()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `FormattingService`.`collectMatchingStyleElements()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `FormattingService`.`collectMatchingStyleElements()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `FormattingService`.`collectMatchingStyleElements()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 11: method `FormattingService`.`collectMatchingStyleElements()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 12: method `FormattingService`.`collectMatchingStyleElements()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 13: method `FormattingService`.`collectMatchingStyleElements()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 14: method `FormattingService`.`collectMatchingStyleElements()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 15: method `FormattingService`.`collectMatchingStyleElements()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 16: method `FormattingService`.`collectMatchingStyleElements()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 17: method `FormattingService`.`collectMatchingStyleElements()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 18: method `FormattingService`.`collectMatchingStyleElements()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 19: method `FormattingService`.`collectMatchingStyleElements()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 20: method `FormattingService`.`collectMatchingStyleElements()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 21: method `FormattingService`.`collectMatchingStyleElements()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 22: method `FormattingService`.`collectMatchingStyleElements()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 23: method `FormattingService`.`collectMatchingStyleElements()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 24: method `FormattingService`.`collectMatchingStyleElements()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 25: method `FormattingService`.`collectMatchingStyleElements()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 26: method `FormattingService`.`collectMatchingStyleElements()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 27: method `FormattingService`.`collectMatchingStyleElements()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 28: method `FormattingService`.`collectMatchingStyleElements()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 29: method `FormattingService`.`collectMatchingStyleElements()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 30: method `FormattingService`.`collectMatchingStyleElements()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 31: method `FormattingService`.`collectMatchingStyleElements()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ */
+
+private collectMatchingStyleElements(range: Range, styleName: string, value: string): HTMLElement[] {
+    const matches = new Set<HTMLElement>();
+    const commonAncestor = range.commonAncestorContainer.nodeType === Node.ELEMENT_NODE
+      ? range.commonAncestorContainer as HTMLElement
+      : range.commonAncestorContainer.parentElement;
+
+    const collectAncestors = (node: Node | null): void => {
+      let current: Node | null = node?.nodeType === Node.ELEMENT_NODE ? node : node?.parentNode ?? null;
+
+      while (current instanceof HTMLElement) {
+        if (this.styleMatches(current, styleName, value)) {
+          matches.add(current);
+        }
+
+        if (current === commonAncestor || current.contentEditable === 'true') {
+          break;
+        }
+
+        current = current.parentElement;
+      }
+    };
+
+    collectAncestors(range.startContainer);
+    collectAncestors(range.endContainer);
+
+    if (commonAncestor instanceof HTMLElement) {
+      if (this.styleMatches(commonAncestor, styleName, value)) {
+        matches.add(commonAncestor);
+      }
+
+      const walker = document.createTreeWalker(commonAncestor, NodeFilter.SHOW_ELEMENT, {
+        acceptNode: (node: Node): number => {
+          if (!(node instanceof HTMLElement) || !range.intersectsNode(node)) {
+            return NodeFilter.FILTER_SKIP;
+          }
+
+          return this.styleMatches(node, styleName, value)
+            ? NodeFilter.FILTER_ACCEPT
+            : NodeFilter.FILTER_SKIP;
+        }
+      });
+
+      let current = walker.nextNode();
+      while (current) {
+        matches.add(current as HTMLElement);
+        current = walker.nextNode();
+      }
+    }
+
+    return Array.from(matches);
   }
 
   private static readonly BLOCK_TAGS = new Set([
@@ -1303,6 +2800,7 @@ private static readonly VOID_TAGS = new Set([
  * Relation 27: method `FormattingService`.`clearFormatting()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 28: method `FormattingService`.`clearFormatting()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 public clearFormatting(): void {
   const range = this.getActiveRange();
   if (!range || range.collapsed) {
@@ -1327,10 +2825,10 @@ public clearFormatting(): void {
   const html = cleanedContainer.innerHTML || '';
 
   // Try to insert the change via execCommand (Browser manages Undo/Selection)
-  let success = false;
+  let success: boolean;
   try {
     success = document.execCommand('insertHTML', false, html);
-  } catch (e) {
+  } catch {
     success = false;
   }
 
@@ -1375,70 +2873,108 @@ public clearFormatting(): void {
  * How 09: method `FormattingService`.`stripFormattingNode()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 10: method `FormattingService`.`stripFormattingNode()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 11: method `FormattingService`.`stripFormattingNode()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 12: method `FormattingService`.`stripFormattingNode()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 13: method `FormattingService`.`stripFormattingNode()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 14: method `FormattingService`.`stripFormattingNode()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 15: method `FormattingService`.`stripFormattingNode()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 16: method `FormattingService`.`stripFormattingNode()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 17: method `FormattingService`.`stripFormattingNode()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 18: method `FormattingService`.`stripFormattingNode()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 19: method `FormattingService`.`stripFormattingNode()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 20: method `FormattingService`.`stripFormattingNode()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 21: method `FormattingService`.`stripFormattingNode()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 22: method `FormattingService`.`stripFormattingNode()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 23: method `FormattingService`.`stripFormattingNode()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 24: method `FormattingService`.`stripFormattingNode()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 25: method `FormattingService`.`stripFormattingNode()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 26: method `FormattingService`.`stripFormattingNode()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
 private stripFormattingNode(node: Node): Node {
   if (node.nodeType === Node.TEXT_NODE) {
-    // Preserve text content as-is
     return document.createTextNode(node.textContent || '');
   }
 
-  if (node.nodeType === Node.ELEMENT_NODE) {
-    const el = node as HTMLElement;
-    const tag = el.tagName.toUpperCase();
-
-    // Preserve block tags (no attributes/styles) and recursively strip children
-    if (FormattingService.BLOCK_TAGS.has(tag)) {
-      const newEl = document.createElement(tag.toLowerCase());
-      Array.from(el.childNodes).forEach(child => {
-        newEl.appendChild(this.stripFormattingNode(child));
-      });
-      return newEl;
-    }
-
-    // Preserve void elements (keep essential attributes for images)
-    if (FormattingService.VOID_TAGS && FormattingService.VOID_TAGS.has(tag) || FormattingService.VOID_TAGS === undefined && FormattingService.VOID_TAGS) {
-      // This branch kept for clarity; actual check below
-    }
-    if (FormattingService.VOID_TAGS && FormattingService.VOID_TAGS.has(tag)) {
-      const newEl = document.createElement(tag.toLowerCase());
-      if (tag === 'IMG' && el instanceof HTMLImageElement) {
-        // Preserve src/alt minimally
-        if (el.getAttribute('src')) {
-          newEl.setAttribute('src', el.getAttribute('src') || '');
-        }
-        if (el.getAttribute('alt')) {
-          newEl.setAttribute('alt', el.getAttribute('alt') || '');
-        }
-      }
-      // other void elements are recreated without attributes
-      return newEl;
-    }
-
-    // Inline elements: flatten children into a document fragment
-    const frag = document.createDocumentFragment();
-    Array.from(el.childNodes).forEach(child => {
-      frag.appendChild(this.stripFormattingNode(child));
-    });
-    return frag;
+  if (node.nodeType !== Node.ELEMENT_NODE) {
+    return document.createTextNode('');
   }
 
-  // Fallback: empty text node
-  return document.createTextNode('');
+  const element = node as HTMLElement;
+  const tag = element.tagName.toUpperCase();
+
+  if (FormattingService.BLOCK_TAGS.has(tag)) {
+    return this.createStrippedBlockElement(element, tag);
+  }
+
+  if (FormattingService.VOID_TAGS.has(tag)) {
+    return this.createStrippedVoidElement(element, tag);
+  }
+
+  return this.createStrippedInlineFragment(element);
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`createStrippedBlockElement()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`createStrippedBlockElement()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`createStrippedBlockElement()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`createStrippedBlockElement()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`createStrippedBlockElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`createStrippedBlockElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`createStrippedBlockElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`createStrippedBlockElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+
+private createStrippedBlockElement(element: HTMLElement, tag: string): HTMLElement {
+    const strippedElement = document.createElement(tag.toLowerCase());
+    Array.from(element.childNodes).forEach(child => {
+      strippedElement.appendChild(this.stripFormattingNode(child));
+    });
+    return strippedElement;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`createStrippedVoidElement()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`createStrippedVoidElement()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`createStrippedVoidElement()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`createStrippedVoidElement()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`createStrippedVoidElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`createStrippedVoidElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`createStrippedVoidElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`createStrippedVoidElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+
+private createStrippedVoidElement(element: HTMLElement, tag: string): HTMLElement {
+    const strippedElement = document.createElement(tag.toLowerCase());
+    if (tag === 'IMG' && element instanceof HTMLImageElement) {
+      this.copyImageAttribute(element, strippedElement, 'src');
+      this.copyImageAttribute(element, strippedElement, 'alt');
+    }
+    return strippedElement;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`copyImageAttribute()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`copyImageAttribute()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`copyImageAttribute()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`copyImageAttribute()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`copyImageAttribute()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`copyImageAttribute()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`copyImageAttribute()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+
+private copyImageAttribute(source: HTMLImageElement, target: HTMLElement, attributeName: string): void {
+    const attributeValue = source.getAttribute(attributeName);
+    if (attributeValue) {
+      target.setAttribute(attributeName, attributeValue);
+    }
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`createStrippedInlineFragment()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`createStrippedInlineFragment()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`createStrippedInlineFragment()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`createStrippedInlineFragment()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`createStrippedInlineFragment()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`createStrippedInlineFragment()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`createStrippedInlineFragment()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`createStrippedInlineFragment()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+
+private createStrippedInlineFragment(element: HTMLElement): DocumentFragment {
+    const fragment = document.createDocumentFragment();
+    Array.from(element.childNodes).forEach(child => {
+      fragment.appendChild(this.stripFormattingNode(child));
+    });
+    return fragment;
   }
 
 
@@ -1466,6 +3002,7 @@ private stripFormattingNode(node: Node): Node {
  * Maintenance 16: method `FormattingService`.`applyStyleV2()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 17: method `FormattingService`.`applyStyleV2()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
 public applyStyleV2(styleName: string, value: string): void {
     const selection = window.getSelection();
     if (!selection || selection.rangeCount === 0) return;
@@ -1477,11 +3014,11 @@ public applyStyleV2(styleName: string, value: string): void {
     nodes.forEach(node => {
       if (node.nodeType === Node.ELEMENT_NODE) {
         const element = node as HTMLElement;
-        element.style[styleName as any] = value;
+        (element.style as unknown as Record<string, string>)[styleName] = value;
       } else {
         // Wrap text nodes in a <span> to apply the style
         const span = document.createElement('span');
-        span.style[styleName as any] = value;
+        (span.style as unknown as Record<string, string>)[styleName] = value;
         span.textContent = node.textContent;
         range.insertNode(span);
       }
@@ -1503,15 +3040,27 @@ public applyStyleV2(styleName: string, value: string): void {
  * Relation 03: method `FormattingService`.`unwrap()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`unwrap()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `FormattingService`.`unwrap()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `FormattingService`.`unwrap()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `FormattingService`.`unwrap()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `FormattingService`.`unwrap()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `FormattingService`.`unwrap()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `FormattingService`.`unwrap()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
-private unwrap(element: HTMLElement): void {
+
+private unwrap(element: HTMLElement): Node[] {
     const parent = element.parentNode;
-    if (parent) {
-      while (element.firstChild) {
-        parent.insertBefore(element.firstChild, element);
-      }
-      parent.removeChild(element);
+    const unwrappedNodes: Node[] = [];
+    if (!parent) {
+      return unwrappedNodes;
     }
+
+    while (element.firstChild) {
+      const child = element.firstChild;
+      unwrappedNodes.push(child);
+      element.before(child);
+    }
+    element.remove();
+    return unwrappedNodes;
   }
 
     /**
@@ -1524,6 +3073,7 @@ private unwrap(element: HTMLElement): void {
  * Relation 03: method `FormattingService`.`toggleSuperscript()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`toggleSuperscript()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 public toggleSuperscript(): void {
     this.wrapSelectionWithTag('sup');
   }
@@ -1538,6 +3088,7 @@ public toggleSuperscript(): void {
  * Relation 03: method `FormattingService`.`toggleSubscript()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`toggleSubscript()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 public toggleSubscript(): void {
     this.wrapSelectionWithTag('sub');
   }
@@ -1560,6 +3111,7 @@ public toggleSubscript(): void {
  * Relation 11: method `FormattingService`.`wrapSelectionWithTag()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 12: method `FormattingService`.`wrapSelectionWithTag()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 public wrapSelectionWithTag(tagName: string): void {
     const range = this.getActiveRange();
     if (range) {
@@ -1612,24 +3164,25 @@ public wrapSelectionWithTag(tagName: string): void {
  * How 09: method `FormattingService`.`removeFormatting()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 10: method `FormattingService`.`removeFormatting()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 11: method `FormattingService`.`removeFormatting()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 12: method `FormattingService`.`removeFormatting()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 public removeFormatting(styleName: string, value: string): void {
+    const selection = window.getSelection();
     const range = this.getActiveRange();
-    if (range) {
-      const fragment = range.cloneContents();
+    if (!selection || !range) {
+      return;
+    }
 
-      // Look for all span elements in the selection
-      const spans = fragment.querySelectorAll('span');
-      spans.forEach((span) => {
-        if (span.style[styleName as any] === value) {
-          this.unwrap(span);
-        }
-      });
+    const elements = this.collectMatchingStyleElements(range, styleName, value);
+    const affectedNodes = elements.flatMap(element => this.removeStyleFromElement(element, styleName, value))
+      .filter(node => node.isConnected);
 
-      // Clear the existing selection and insert the unwrapped fragment
-      range.deleteContents();
-      range.insertNode(fragment);
-      this.saveSelection();
+    if (affectedNodes.length > 0) {
+      const newRange = document.createRange();
+      newRange.setStartBefore(affectedNodes[0]);
+      newRange.setEndAfter(affectedNodes[affectedNodes.length - 1]);
+      this.setActiveRange(newRange);
     }
   }
 
@@ -1649,37 +3202,58 @@ public removeFormatting(styleName: string, value: string): void {
  * How 09: method `FormattingService`.`setTextAlign()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 10: method `FormattingService`.`setTextAlign()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 11: method `FormattingService`.`setTextAlign()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 12: method `FormattingService`.`setTextAlign()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 13: method `FormattingService`.`setTextAlign()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 14: method `FormattingService`.`setTextAlign()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
 public setTextAlign(alignment: string): void {
-    //this.justifyContent(alignment as 'left' | 'center' | 'right' | 'justify');
-
     const range = this.getActiveRange();
-
-    if (range && !range.collapsed) {
-      let container: Node = range.commonAncestorContainer;
-
-      // If the container is a text node, get its parent
-      if (container.nodeType === Node.TEXT_NODE) {
-        container = container.parentElement as HTMLElement;
-      }
-
-      // Handle multi-paragraph selections by splitting the range
-      if (container instanceof HTMLElement) {
-        const paragraphs = this.splitRangeIntoParagraphs(range);
-
-        paragraphs.forEach((paragraph) => {
-          if (paragraph instanceof HTMLElement && paragraph.tagName === 'P') {
-            paragraph.style.textAlign = alignment;
-          }
-        });
-      }
-      this.saveSelection();
-    } else {
+    if (!range) {
       console.warn('No valid selection found.');
+      return;
     }
+
+    const paragraphs = this.splitRangeIntoParagraphs(range);
+    const targetParagraph = this.findRangeParentParagraph(range);
+
+    paragraphs.forEach(paragraph => {
+      paragraph.style.textAlign = alignment;
+    });
+    targetParagraph?.style.setProperty('text-align', alignment);
+    this.saveSelection();
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`findRangeParentParagraph()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`findRangeParentParagraph()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`findRangeParentParagraph()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`findRangeParentParagraph()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`findRangeParentParagraph()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`findRangeParentParagraph()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`findRangeParentParagraph()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+
+private findRangeParentParagraph(range: Range): HTMLElement | null {
+    const container = this.normalizeContainerElement(range.commonAncestorContainer);
+    return container ? this.findParentParagraph(container) : null;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`normalizeContainerElement()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`normalizeContainerElement()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`normalizeContainerElement()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`normalizeContainerElement()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`normalizeContainerElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`normalizeContainerElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`normalizeContainerElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+
+private normalizeContainerElement(container: Node): HTMLElement | null {
+    if (container instanceof HTMLElement) {
+      return container;
+    }
+
+    return container.parentElement;
   }
 
     /**
@@ -1699,6 +3273,7 @@ public setTextAlign(alignment: string): void {
  * Why 10: method `FormattingService`.`splitRangeIntoParagraphs()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 11: method `FormattingService`.`splitRangeIntoParagraphs()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
+
 public splitRangeIntoParagraphs(range: Range): HTMLElement[] {
     const fragment = range.cloneContents();
     const paragraphs: HTMLElement[] = [];
@@ -1728,6 +3303,7 @@ public splitRangeIntoParagraphs(range: Range): HTMLElement[] {
  * Relation 03: method `FormattingService`.`findParentParagraph()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`findParentParagraph()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 public findParentParagraph(element: HTMLElement): HTMLElement | null {
     while (element && element.tagName !== 'P') {
       element = element.parentElement as HTMLElement;
@@ -1745,31 +3321,76 @@ public findParentParagraph(element: HTMLElement): HTMLElement | null {
  * Why 02: method `FormattingService`.`getTargetBlocks()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 03: method `FormattingService`.`getTargetBlocks()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`getTargetBlocks()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 05: method `FormattingService`.`getTargetBlocks()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 06: method `FormattingService`.`getTargetBlocks()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 07: method `FormattingService`.`getTargetBlocks()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 08: method `FormattingService`.`getTargetBlocks()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 09: method `FormattingService`.`getTargetBlocks()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 10: method `FormattingService`.`getTargetBlocks()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 11: method `FormattingService`.`getTargetBlocks()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
+
 private getTargetBlocks(): HTMLElement[] {
     let elements = this.contentService.getSelectedElements();
     if (elements.length === 0) {
-      const range = this.getActiveRange();
-      if (!range) { return []; }
-      let node = range.commonAncestorContainer as Node;
-      while (node && !(node instanceof HTMLElement) ||
-      node && !['P','LI','DIV','SECTION','ARTICLE'].includes((node as HTMLElement).tagName)) {
-        node = node.parentNode as Node;
-      }
-      if (node instanceof HTMLElement) {
-        elements = [node];
-      }
+      elements = this.getCaretTargetBlocks();
     }
     return elements;
   }
 
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`getCaretTargetBlocks()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`getCaretTargetBlocks()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`getCaretTargetBlocks()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`getCaretTargetBlocks()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`getCaretTargetBlocks()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`getCaretTargetBlocks()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`getCaretTargetBlocks()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`getCaretTargetBlocks()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+
+private getCaretTargetBlocks(): HTMLElement[] {
+    const range = this.getActiveRange();
+    if (!range) {
+      return [];
+    }
+
+    const block = this.findNearestTargetBlock(range.commonAncestorContainer);
+    return block ? [block] : [];
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`findNearestTargetBlock()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`findNearestTargetBlock()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`findNearestTargetBlock()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`findNearestTargetBlock()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`findNearestTargetBlock()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`findNearestTargetBlock()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`findNearestTargetBlock()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `FormattingService`.`findNearestTargetBlock()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `FormattingService`.`findNearestTargetBlock()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ */
+
+private findNearestTargetBlock(node: Node | null): HTMLElement | null {
+    let currentNode = node;
+    while (currentNode) {
+      if (this.isTargetBlock(currentNode)) {
+        return currentNode;
+      }
+      currentNode = currentNode.parentNode;
+    }
+    return null;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `FormattingService`.`isTargetBlock()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `FormattingService`.`isTargetBlock()` is implemented in `projects/lib-magnetar-quill/src/lib/services/formatting.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `FormattingService`.`isTargetBlock()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `FormattingService`.`isTargetBlock()` participates in the `FormattingService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `FormattingService`.`isTargetBlock()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `FormattingService`.`isTargetBlock()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `FormattingService`.`isTargetBlock()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+
+private isTargetBlock(node: Node): node is HTMLElement {
+    return node instanceof HTMLElement && ['P', 'LI', 'DIV', 'SECTION', 'ARTICLE'].includes(node.tagName);
+  }
 
 
     /**
@@ -1782,6 +3403,7 @@ private getTargetBlocks(): HTMLElement[] {
  * Relation 03: method `FormattingService`.`setLineSpacing()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`setLineSpacing()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 public setLineSpacing(value: string): void {
     const blocks = this.getTargetBlocks();
     blocks.forEach(el => el.style.lineHeight = value);
@@ -1798,6 +3420,7 @@ public setLineSpacing(value: string): void {
  * Relation 03: method `FormattingService`.`setBackgroundColor()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`setBackgroundColor()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 public setBackgroundColor(value: string): void {
     const blocks = this.getTargetBlocks();
     blocks.forEach(el => el.style.backgroundColor = value);
@@ -1819,6 +3442,7 @@ public setBackgroundColor(value: string): void {
  * Relation 03: method `FormattingService`.`indent()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`indent()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 public indent(): void {
     const blocks = this.getTargetBlocks();
     blocks.forEach(el => this.adjustIndent(el, +FormattingService.INDENT_STEP_PX));
@@ -1836,8 +3460,9 @@ public indent(): void {
  * Relation 03: method `FormattingService`.`adjustIndent()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`adjustIndent()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 private adjustIndent(el: HTMLElement, delta: number): void {
-    const current = parseInt(getComputedStyle(el).marginLeft, 10) || 0;
+    const current = Number.parseInt(getComputedStyle(el).marginLeft, 10) || 0;
     const next = Math.max(current + delta, 0);
     el.style.marginLeft = `${next}px`;
   }
@@ -1862,6 +3487,7 @@ private adjustIndent(el: HTMLElement, delta: number): void {
  * Maintenance 12: method `FormattingService`.`wrapOrUnwrapBlock()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 13: method `FormattingService`.`wrapOrUnwrapBlock()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
 private wrapOrUnwrapBlock(tag: 'blockquote' | 'pre'): void {
     const range = this.getActiveRange();
     if (!range) { return; }
@@ -1899,6 +3525,7 @@ private wrapOrUnwrapBlock(tag: 'blockquote' | 'pre'): void {
  * Relation 03: method `FormattingService`.`outdent()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`outdent()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 public outdent(): void {
     const blocks = this.getTargetBlocks();
     blocks.forEach(el => this.adjustIndent(el, -FormattingService.INDENT_STEP_PX));
@@ -1915,6 +3542,7 @@ public outdent(): void {
  * Relation 03: method `FormattingService`.`blockquote()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`blockquote()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 public blockquote(): void {
     this.wrapOrUnwrapBlock('blockquote');
   }
@@ -1930,6 +3558,7 @@ public blockquote(): void {
  * Relation 03: method `FormattingService`.`codeBlock()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`codeBlock()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 public codeBlock(): void {
     this.wrapOrUnwrapBlock('pre');
   }

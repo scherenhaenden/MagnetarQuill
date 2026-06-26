@@ -11,6 +11,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
  * Relation 03: class `SafeHtmlPipe` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: class `SafeHtmlPipe` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 @Pipe({
   name: 'safeHtml',
   standalone: true
@@ -28,6 +29,7 @@ export class SafeHtmlPipe implements PipeTransform {
  * Relation 03: method `SafeHtmlPipe`.`transform()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `SafeHtmlPipe`.`transform()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 public transform(value: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(value);
   }

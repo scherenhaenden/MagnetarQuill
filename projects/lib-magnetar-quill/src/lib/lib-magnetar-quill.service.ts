@@ -10,6 +10,7 @@ import { Injectable } from '@angular/core';
  * Relation 03: class `LibMagnetarQuillService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: class `LibMagnetarQuillService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 @Injectable({
   providedIn: 'root'
 })
@@ -25,5 +26,6 @@ export class LibMagnetarQuillService {
  * Relation 03: constructor for class `LibMagnetarQuillService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: constructor for class `LibMagnetarQuillService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 constructor() { }
 }

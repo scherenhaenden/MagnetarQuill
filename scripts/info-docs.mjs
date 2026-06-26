@@ -66,7 +66,7 @@ async function collectTsFiles(dirPath) {
     files.push(entryPath);
   }
 
-  return files.sort();
+  return files.sort((left, right) => left.localeCompare(right));
 }
 
 function collectEntities(sourceFile) {
@@ -158,15 +158,87 @@ function getImplementationLineCount(node, sourceFile) {
 }
 
 function countNonEmptyLines(text) {
-  const textWithoutComments = text
-    .replace(/\/\*[\s\S]*?\*\//g, '')
-    .replace(/\/\/.*$/gm, '');
-
-  return textWithoutComments
+  return stripComments(text)
     .split('\n')
     .map(line => line.trim())
     .filter(line => line.length > 0 && line !== '{' && line !== '}')
     .length;
+}
+
+function handleBlockComment(current, next, index, state, append) {
+  if (current === '*' && next === '/') {
+    state.inBlockComment = false;
+    return index + 2;
+  }
+  append(current === '\n' ? '\n' : ' ');
+  return index + 1;
+}
+
+function handleLineComment(current, index, state, append) {
+  if (current === '\n') {
+    state.inLineComment = false;
+    append(current);
+  }
+  return index + 1;
+}
+
+function handleNormalText(current, next, index, state, append) {
+  if (current === '/' && next === '*') {
+    state.inBlockComment = true;
+    append('  ');
+    return index + 2;
+  }
+  if (current === '/' && next === '/') {
+    state.inLineComment = true;
+    append('  ');
+    return index + 2;
+  }
+  append(current);
+  return index + 1;
+}
+
+function stripComments(text) {
+  let output = '';
+  let index = 0;
+  const state = { inBlockComment: false, inLineComment: false, inString: null };
+  const append = (char) => {
+    output += char;
+  };
+
+  while (index < text.length) {
+    const current = text[index];
+    const next = text[index + 1];
+
+    if (state.inBlockComment) {
+      index = handleBlockComment(current, next, index, state, append);
+    } else if (state.inLineComment) {
+      index = handleLineComment(current, index, state, append);
+    } else if (state.inString) {
+      if (current === '\\') {
+        append(current);
+        if (next) {
+          append(next);
+        }
+        index += 2;
+      } else {
+        if (current === state.inString) {
+          state.inString = null;
+        }
+        append(current);
+        index += 1;
+      }
+    } else {
+      if (current === '"' || current === "'" || current === '`') {
+        state.inString = current;
+        append(current);
+        index += 1;
+      } else {
+        index = handleNormalText(current, next, index, state, append);
+      }
+    }
+  }
+
+  return output;
 }
 
 function applyGeneratedDocs(text, sourceFile, entities, filePath) {
@@ -178,7 +250,7 @@ function applyGeneratedDocs(text, sourceFile, entities, filePath) {
 
     replacements.push({
       start: existingRange ? existingRange.pos : entity.start,
-      end: existingRange ? entity.start : entity.start,
+      end: existingRange ? existingRange.end : entity.start,
       text: generatedDoc
     });
   }

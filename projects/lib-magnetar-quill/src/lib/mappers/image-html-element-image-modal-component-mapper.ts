@@ -27,6 +27,7 @@ import {ImageModalComponentModel} from "../models/image-modal-component-model";
  * Maintenance 20: class `ImageHtmlElementImageModalComponentMapper` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 21: class `ImageHtmlElementImageModalComponentMapper` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
 export class ImageHtmlElementImageModalComponentMapper {
 
     /**
@@ -44,10 +45,11 @@ export class ImageHtmlElementImageModalComponentMapper {
  * Maintenance 08: method `ImageHtmlElementImageModalComponentMapper`.`mapImageModalComponentToImageHtmlElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 09: method `ImageHtmlElementImageModalComponentMapper`.`mapImageModalComponentToImageHtmlElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
 public mapImageModalComponentToImageHtmlElement(imageModalComponentModel: ImageModalComponentModel): HTMLImageElement {
 
     // Create the image element
-    let imageElement: HTMLImageElement = document.createElement('img');
+    const imageElement: HTMLImageElement = document.createElement('img');
 
     imageElement.src = imageModalComponentModel.url;
     imageElement.alt = imageModalComponentModel.alt || '';
@@ -76,18 +78,19 @@ public mapImageModalComponentToImageHtmlElement(imageModalComponentModel: ImageM
  * How 09: method `ImageHtmlElementImageModalComponentMapper`.`mapImageHtmlElementToImageModalComponent()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 10: method `ImageHtmlElementImageModalComponentMapper`.`mapImageHtmlElementToImageModalComponent()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
 public mapImageHtmlElementToImageModalComponent(imageElement: HTMLImageElement): ImageModalComponentModel {
     // Create a new ImageModalComponentModel object
-    let imageModalComponentModel = new ImageModalComponentModel();
+    const imageModalComponentModel = new ImageModalComponentModel();
 
     // Map properties from the image element to the model
     imageModalComponentModel.url = imageElement.src;
     imageModalComponentModel.alt = imageElement.alt || '';
     imageModalComponentModel.width = imageElement.width || null;
     imageModalComponentModel.height = imageElement.height || null;
-    imageModalComponentModel.border = parseInt(imageElement.style.borderWidth || '0', 10);
-    imageModalComponentModel.hPadding = parseInt(imageElement.style.paddingLeft || '0', 10);
-    imageModalComponentModel.vPadding = parseInt(imageElement.style.paddingTop || '0', 10);
+    imageModalComponentModel.border = Number.parseInt(imageElement.style.borderWidth || '0', 10);
+    imageModalComponentModel.hPadding = Number.parseInt(imageElement.style.paddingLeft || '0', 10);
+    imageModalComponentModel.vPadding = Number.parseInt(imageElement.style.paddingTop || '0', 10);
 
     // Ensure alignment is valid before assigning
     imageElement.style.textAlign = imageModalComponentModel.alignment || 'left';
