@@ -19,6 +19,46 @@ Typical categories include:
 
 ## Entries
 ---
+**Timestamp:** 2026-06-11 11:27 UTC
+**Author:** Codex
+**Entry:** State Change: Completed implementation of `task-207` (HTML/Markdown Import-Export and RTF Load); transitioned state to `in_review` and submitted Pull Request #91 against integration branch `version/0.1`.
+
+---
+**Timestamp:** 2026-06-11 10:35 UTC
+**Author:** Codex
+**Entry:** State Change: Initiated `task-207` (HTML/Markdown Import-Export and RTF Load) in `in_progress` on branch `feature/markdown-support`; planning to implement file import/export capabilities.
+
+---
+**Timestamp:** 2026-06-11 10:30 UTC
+**Author:** Codex
+**Entry:** State Change: Completed implementation of `task-206` (Theme support); transitioned state to `in_review` and submitted Pull Request #90 against integration branch `version/0.1`.
+
+---
+**Timestamp:** 2026-06-11 10:00 UTC
+**Author:** Codex
+**Entry:** State Change: Initiated `task-206` (Theme support) in `in_progress` on branch `feature/theme-support`; planning to implement light, dark, and custom theme modes via CSS variables and toolbar controls.
+
+---
+**Timestamp:** 2026-06-11 09:52 UTC
+**Author:** Codex
+**Entry:** Merge: Integrated `origin/feature/update-index-main-project` into `version/0.1` while preserving the current Angular 22 package manifests and adapting project documentation to avoid Angular 21 metadata regressions.
+
+---
+**Timestamp:** 2026-02-10 16:55 UTC
+**Author:** Codex
+**Entry:** Exception: Clarified wording in the 2026-02-10 16:50 UTC entry; "recorded pending validation due ongoing npm `403` policy blocker" should read "recorded pending validation due to ongoing npm `403` policy blocker" (`blocker-registry-angular21`).
+
+---
+**Timestamp:** 2026-02-10 16:50 UTC
+**Author:** Codex
+**Entry:** State Change: Upgraded workspace manifests from Angular 20.3.16 to Angular 21 dependency ranges (`^21.0.0`) and bumped library package version from `0.8.15` to `0.9.0`; updated PLAN/STATUS/BLOCKERS/project template/library docs and recorded pending validation due to ongoing npm `403` policy blocker (`blocker-registry-angular21`).
+
+---
+**Timestamp:** 2026-02-10 16:30 UTC
+**Author:** Jules
+**Entry:** State Change: Completed `task-204`. Upgraded workspace to Angular 21.1.0, updated library peer dependencies, and verified tests.
+
+---
 **Timestamp:** 2026-02-10 12:45 UTC  
 **Author:** Codex  
 **Entry:** State Change: Added `task-203` (Angular 20.3.16 upgrade) in `in_review`; updated PLAN/STATUS with reflection on external dependency constraints and mitigation path.

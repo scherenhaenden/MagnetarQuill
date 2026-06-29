@@ -512,6 +512,24 @@ Why: While enhancing the concluding statement provides additional guidance, it i
   * 🟢 **Security**: all looks good
   * 🟢 **Testing**: all looks good
   * 🟡 **Complexity**: 1 issue found
-  * 🟢 **Documentation**: all looks good
 
 -----
+
+## 6. Initial Analysis Findings (2026-05-05)
+
+### 1. Architectural Conflicts
+- **Singleton Services vs. Multi-Instance Editors:** `ContentService`, `FormattingService`, and `KeyboardShortcutService` are currently provided at the root (`providedIn: 'root'`). This prevents multiple editors from having independent states, as seen in the demo app.
+- **Service Scoping:** Moving providers to the component level is necessary for true modularity.
+
+### 2. Performance Bottlenecks
+- **Excessive Regex Processing:** `EditorComponent.onContentChange` performs heavy regex operations (`splitIntoParagraphs`, `fixParagraphWithBrAndSpace`) on every `input` and `keydown` event. This causes UI lag and cursor instability.
+- **Native Event Interference:** Manual `handleEnterKey` logic disrupts standard browser behavior, leading to the need for "fixing" the HTML afterwards.
+
+### 3. DOM & State Management
+- **innerHTML vs. Sanitization:** The use of `domSanitizer.sanitize` before writing to `innerHTML` in `syncEditorDomFromContent` may be stripping necessary RTF styles/attributes.
+- **MutationObserver Hack:** The use of `MutationObserver` to "restore" deleted editor nodes indicates a struggle between Angular's DOM management and native `contenteditable`.
+
+### 4. Technical Debt & Safety
+- **Memory Leaks:** `KeyboardShortcutService` lacks proper unsubscription for `destroy$` and adds global `window` listeners without instance-specific scoping.
+- **Formatting Inconsistency:** Mix of semantic tags (`<strong>`) and inline styles (`font-weight: bold`) makes state detection unreliable.
+- **Direct DOM Manipulation:** Services often bypass Angular's change detection or state management, leading to potential sync issues.
