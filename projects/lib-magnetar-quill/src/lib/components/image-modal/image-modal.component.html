@@ -9,47 +9,52 @@
       <!-- Left Preview Section -->
       <div class="preview">
         <h4>Preview</h4>
-        <img [src]="imageModalComponentModel.url"
-             [style.width.px]="imageModalComponentModel.width"
-             [style.height.px]="imageModalComponentModel.height"
-             [style.borderWidth.px]="imageModalComponentModel.border"
-             [style.padding]="imageModalComponentModel.hPadding + 'px ' + imageModalComponentModel.vPadding + 'px'"
-             [style.textAlign]="imageModalComponentModel.alignment" />
+        <div [style.text-align]="imageModalComponentModel.alignment">
+          <img [src]="imageModalComponentModel.url"
+               [alt]="imageModalComponentModel.alt || 'Image preview'"
+               [style.width.px]="imageModalComponentModel.width"
+               [style.height.px]="imageModalComponentModel.height"
+               [style.borderWidth.px]="imageModalComponentModel.border"
+               [style.padding]="imageModalComponentModel.hPadding + 'px ' + imageModalComponentModel.vPadding + 'px'" />
+        </div>
       </div>
       <!-- Right Form Section -->
       <div class="form-section">
-        <label>URL*</label>
-        <input type="text" [(ngModel)]="imageModalComponentModel.url" placeholder="Enter Image URL" required />
+        <label for="imageUrlInput">URL*</label>
+        <input id="imageUrlInput" type="text" [(ngModel)]="imageModalComponentModel.url" placeholder="Enter Image URL" required />
 
-        <label>Alternative Text</label>
-        <input type="text" [(ngModel)]="imageModalComponentModel.alt" placeholder="Image description" />
+        <label for="imageAltInput">Alternative Text</label>
+        <input id="imageAltInput" type="text" [(ngModel)]="imageModalComponentModel.alt" placeholder="Image description" />
 
-        <label>Width</label>
-        <input type="number" [(ngModel)]="imageModalComponentModel.width" placeholder="Width" (input)="updateHeight()" />
+        <label for="imageWidthInput">Width</label>
+        <input id="imageWidthInput" type="number" [(ngModel)]="imageModalComponentModel.width" placeholder="Width" (input)="updateHeight()" />
 
-        <label>
-          <input type="checkbox" [(ngModel)]="maintainAspectRatio" (change)="toggleAspectRatio()" />
-          Maintain Aspect Ratio
-        </label>
+        <input id="maintainAspectRatioInput" type="checkbox" [(ngModel)]="maintainAspectRatio" (change)="toggleAspectRatio()" />
+        <label for="maintainAspectRatioInput">Maintain Aspect Ratio</label>
 
-        <label>Height</label>
-        <input type="number" [(ngModel)]="imageModalComponentModel.height" placeholder="Height" [readonly]="maintainAspectRatio" />
+        <label for="imageHeightInput">Height</label>
+        <input id="imageHeightInput" type="number" [(ngModel)]="imageModalComponentModel.height" placeholder="Height" [readonly]="maintainAspectRatio" />
 
 
-        <label>Border</label>
-        <input type="number" [(ngModel)]="imageModalComponentModel.border" placeholder="Border width" />
+        <label for="imageBorderInput">Border</label>
+        <input id="imageBorderInput" type="number" [(ngModel)]="imageModalComponentModel.border" placeholder="Border width" />
 
-        <label>Horizontal Padding</label>
-        <input type="number" [(ngModel)]="imageModalComponentModel.hPadding" placeholder="Horizontal padding" />
+        <label for="imageHPaddingInput">Horizontal Padding</label>
+        <input id="imageHPaddingInput" type="number" [(ngModel)]="imageModalComponentModel.hPadding" placeholder="Horizontal padding" />
 
-        <label>Vertical Padding</label>
-        <input type="number" [(ngModel)]="imageModalComponentModel.vPadding" placeholder="Vertical padding" />
+        <label for="imageVPaddingInput">Vertical Padding</label>
+        <input id="imageVPaddingInput" type="number" [(ngModel)]="imageModalComponentModel.vPadding" placeholder="Vertical padding" />
 
-        <label>Alignment</label>
-        <select [(ngModel)]="imageModalComponentModel.alignment">
+        <label for="imageAlignmentSelect">Alignment</label>
+        <select id="imageAlignmentSelect" [(ngModel)]="imageModalComponentModel.alignment">
           <option value="left">Left</option>
           <option value="center">Center</option>
           <option value="right">Right</option>
+          <option value="start">Start</option>
+          <option value="end">End</option>
+          <option value="justify">Justify</option>
+          <option value="stretch">Stretch</option>
+          <option value="justify-all">Justify All</option>
         </select>
       </div>
     </div>

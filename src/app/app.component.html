@@ -2,6 +2,14 @@
   <header class="app-header">
     <h1 class="app-title">MagnetarQuill Demo</h1>
     <p class="app-subtitle">Test the WYSIWYG Editor in Real Time</p>
+    <div class="demo-theme-selector">
+      <label for="demo-theme">Host Theme Controller: </label>
+      <select id="demo-theme" [value]="editorTheme" (change)="onHostThemeChange($event)" class="theme-select">
+        <option value="light">☀️ Light Theme</option>
+        <option value="dark">🌙 Dark Theme</option>
+        <option value="custom">🎨 Custom Theme</option>
+      </select>
+    </div>
   </header>
 
   <div class="main-content" #mainContent>
@@ -11,9 +19,13 @@
       <h2 class="section-title">Editor</h2>
       <div class="lib-magnetar-quill-container">
         <magnetar-quill [(content)]="testText"
-                        (contentChange)="onContentChange()"></magnetar-quill>
+                        (contentChange)="onContentChange()"
+                        [theme]="editorTheme"
+                        (themeChange)="editorTheme = $event"></magnetar-quill>
         <magnetar-quill [(content)]="testText"
-                        (contentChange)="onContentChange()"></magnetar-quill>
+                        (contentChange)="onContentChange()"
+                        [theme]="editorTheme"
+                        (themeChange)="editorTheme = $event"></magnetar-quill>
       </div>
     </div>
 

@@ -19,6 +19,7 @@
   (focus)="scrollToTopOnFocus()"
   (paste)="onPaste($event)"
   (input)="onContentChange(editorWysiwyg.innerHTML, false)"
+  (keyup.enter)="onContentChange(editorWysiwyg.innerHTML, false)"
 >
   <!-- User content goes here -->
 </div>
@@ -26,8 +27,10 @@
 
 
 <!-- HTML View -->
+<label for="editorHtmlView" class="sr-only">HTML View</label>
 <textarea
-          #editorHtml
+  id="editorHtmlView"
+  #editorHtml
   class="editor"
   [value]="getEditorContent()"
   (input)="setEditorContent($event)"
@@ -48,6 +51,4 @@
      [style.left.px]="contextMenuPosition.x">
   <button (click)="openImageEdit()">Edit Properties</button>
 </div>
-
-
 

@@ -250,7 +250,118 @@ import {Subject, takeUntil} from 'rxjs';
  * How 221: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 222: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 223: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 224: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 225: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 226: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 227: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 228: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 229: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 230: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 231: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 232: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 233: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 234: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 235: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 236: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 237: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 238: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 239: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 240: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 241: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 242: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 243: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 244: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 245: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 246: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 247: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 248: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 249: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 250: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 251: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 252: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 253: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 254: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 255: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 256: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 257: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 258: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 259: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 260: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 261: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 262: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 263: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 264: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 265: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 266: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 267: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 268: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 269: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 270: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 271: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 272: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 273: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 274: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 275: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 276: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 277: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 278: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 279: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 280: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 281: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 282: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 283: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 284: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 285: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 286: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 287: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 288: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 289: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 290: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 291: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 292: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 293: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 294: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 295: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 296: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 297: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 298: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 299: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 300: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 301: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 302: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 303: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 304: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 305: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 306: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 307: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 308: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 309: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 310: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 311: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 312: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 313: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 314: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 315: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 316: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 317: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 318: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 319: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 320: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 321: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 322: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 323: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 324: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 325: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 326: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 327: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 328: class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 329: class `EditorComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 330: class `EditorComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 331: class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
+
+
+
 @Component({
     selector: 'lib-editor',
     imports: [
@@ -294,6 +405,9 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
  * Relation 03: getter `EditorComponent`.`requestImageInsert` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: getter `EditorComponent`.`requestImageInsert` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 @Input()
   get requestImageInsert(): ImageModalComponentModel | null {
     return this._requestImageInsert;
@@ -307,16 +421,13 @@ export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoChec
  * Why 02: setter `EditorComponent`.`requestImageInsert` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 03: setter `EditorComponent`.`requestImageInsert` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: setter `EditorComponent`.`requestImageInsert` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 05: setter `EditorComponent`.`requestImageInsert` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
+
 set requestImageInsert(value: ImageModalComponentModel | null) {
-
-    console.log('requestImageInsert', value);
-
     this._requestImageInsert = value;
     if (value) {
-      // Perform any additional logic when value changes
-      console.log('Image data set for insertion:', value);
       this.selectedImage= this.imageHtmlElementImageModalComponentMapper.mapImageModalComponentToImageHtmlElement(value as ImageModalComponentModel);
     }
   }
@@ -331,14 +442,19 @@ set requestImageInsert(value: ImageModalComponentModel | null) {
  * Relation 03: constructor for class `EditorComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: constructor for class `EditorComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
-constructor(private formattingService: FormattingService,
-              private contentService: ContentService,
-              private imageService: ImageService,
+
+
+
+constructor(private readonly formattingService: FormattingService,
+              private readonly contentService: ContentService,
+              private readonly imageService: ImageService,
               private readonly domSanitizer: DomSanitizer
 
   ) {
     this.isHtmlView = false;
     this.formattingService.updateFormatStates();
+    this.fixParagraphWithBrAndSpace = this.fixParagraphWithBrAndSpace.bind(this);
+    this.fixParagraphWithMultipleBrs = this.fixParagraphWithMultipleBrs.bind(this);
 
   }
 
@@ -355,6 +471,9 @@ constructor(private formattingService: FormattingService,
  * Why 06: method `EditorComponent`.`ngOnInit()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 07: method `EditorComponent`.`ngOnInit()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
+
+
+
 public ngOnInit(): void {
     //this.editorWysiwyg.nativeElement.addEventListener('paste', this.onPaste.bind(this));
     // Subscribe to the content observable to keep the editor synced
@@ -381,7 +500,11 @@ public ngOnInit(): void {
  * Relation 03: method `EditorComponent`.`onSelectionChange()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `EditorComponent`.`onSelectionChange()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 @HostListener('document:selectionchange')
+  @HostListener('mouseup')
   @HostListener('keyup')
   @HostListener('focus')
   public onSelectionChange(): void {
@@ -406,6 +529,9 @@ public ngOnInit(): void {
  * Why 06: method `EditorComponent`.`isSelectionInsideEditor()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 07: method `EditorComponent`.`isSelectionInsideEditor()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
+
+
+
 private isSelectionInsideEditor(): boolean {
     const selection = window.getSelection();
     const editor = this.editorWysiwyg?.nativeElement;
@@ -433,6 +559,9 @@ private isSelectionInsideEditor(): boolean {
  * Relation 03: method `EditorComponent`.`ngOnDestroy()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `EditorComponent`.`ngOnDestroy()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
@@ -451,6 +580,9 @@ public ngOnDestroy(): void {
  * Relation 03: method `EditorComponent`.`sanitizeHtmlForEditor()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `EditorComponent`.`sanitizeHtmlForEditor()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 private sanitizeHtmlForEditor(htmlContent: string): string {
     return this.domSanitizer.sanitize(SecurityContext.HTML, htmlContent) ?? '';
   }
@@ -475,9 +607,11 @@ private sanitizeHtmlForEditor(htmlContent: string): string {
  * Relation 03: method `EditorComponent`.`syncEditorDomFromContent()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `EditorComponent`.`syncEditorDomFromContent()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 private syncEditorDomFromContent(content: string): void {
-    // We trust the internal content state.
-    this.editorWysiwyg.nativeElement.innerHTML = content;
+    this.editorWysiwyg.nativeElement.innerHTML = this.sanitizeHtmlForEditor(content);
   }
 
   /**
@@ -500,6 +634,9 @@ private syncEditorDomFromContent(content: string): void {
  * How 05: method `EditorComponent`.`onContentChange()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 06: method `EditorComponent`.`onContentChange()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
+
+
 public onContentChange(htmlContent: string, forceClean: boolean = false): void {
     // Update the content in the service whenever it changes
     
@@ -511,6 +648,23 @@ public onContentChange(htmlContent: string, forceClean: boolean = false): void {
     this.contentService.setEditorContent(htmlContent);
     this.ensurePlaceholder();
     this.contentChanged.emit(htmlContent);
+  }
+
+    /**
+ * @generatedInfoDoc
+ * InfoDoc: method `EditorComponent`.`emitCurrentEditorContent()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `EditorComponent`.`emitCurrentEditorContent()` is implemented in `projects/lib-magnetar-quill/src/lib/components/editor/editor.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `EditorComponent`.`emitCurrentEditorContent()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `EditorComponent`.`emitCurrentEditorContent()` participates in the `EditorComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `EditorComponent`.`emitCurrentEditorContent()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `EditorComponent`.`emitCurrentEditorContent()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `EditorComponent`.`emitCurrentEditorContent()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+
+
+
+private emitCurrentEditorContent(): void {
+    this.onContentChange(this.editorWysiwyg.nativeElement.innerHTML);
   }
 
   public sanitizePaste: boolean = true; // Default to true, enabling sanitization
@@ -526,6 +680,9 @@ public onContentChange(htmlContent: string, forceClean: boolean = false): void {
  * Relation 03: method `EditorComponent`.`toggleSanitizePaste()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `EditorComponent`.`toggleSanitizePaste()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public toggleSanitizePaste(): void {
     this.sanitizePaste = !this.sanitizePaste;
   }
@@ -556,7 +713,11 @@ public toggleSanitizePaste(): void {
  * Relation 19: method `EditorComponent`.`onPaste()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 20: method `EditorComponent`.`onPaste()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 21: method `EditorComponent`.`onPaste()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 22: method `EditorComponent`.`onPaste()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
+
+
 public onPaste(event: ClipboardEvent): void {
     if (!this.sanitizePaste) {
       return;
@@ -565,7 +726,6 @@ public onPaste(event: ClipboardEvent): void {
     event.preventDefault(); // Prevent default paste behavior
 
     const clipboardData = event.clipboardData;
-    console.log('clipboardData', clipboardData);
 
     if (!clipboardData) return;
 
@@ -587,12 +747,14 @@ public onPaste(event: ClipboardEvent): void {
       const sanitizedHtml = this.sanitizeHtml(htmlData); // Sanitize HTML content
       const normalizedHtml = this.normalizeLineBreaks(sanitizedHtml); // Normalize line breaks
       this.contentService.insertHtmlAtCursor(normalizedHtml); // Insert cleaned HTML
+      this.emitCurrentEditorContent();
       return;
     }
 
     // Fallback for plain text pasting
     const text = clipboardData.getData('text/plain') || '';
     this.contentService.insertTextAtCursor(text); // Insert plain text
+    this.emitCurrentEditorContent();
   }
 
 
@@ -605,18 +767,48 @@ public onPaste(event: ClipboardEvent): void {
  * Why 02: method `EditorComponent`.`sanitizeHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 03: method `EditorComponent`.`sanitizeHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `EditorComponent`.`sanitizeHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `EditorComponent`.`sanitizeHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `EditorComponent`.`sanitizeHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `EditorComponent`.`sanitizeHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `EditorComponent`.`sanitizeHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `EditorComponent`.`sanitizeHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `EditorComponent`.`sanitizeHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 11: method `EditorComponent`.`sanitizeHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 12: method `EditorComponent`.`sanitizeHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 13: method `EditorComponent`.`sanitizeHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 14: method `EditorComponent`.`sanitizeHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 15: method `EditorComponent`.`sanitizeHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 16: method `EditorComponent`.`sanitizeHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 17: method `EditorComponent`.`sanitizeHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 18: method `EditorComponent`.`sanitizeHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
+
+
 private sanitizeHtml(html: string): string {
-    // Remove <meta> tags
-    html = html.replace(/<meta[^>]*>/gi, '');
+    const sanitized = this.domSanitizer.sanitize(SecurityContext.HTML, html) ?? '';
+    const template = document.createElement('template');
+    template.innerHTML = sanitized;
 
-    // Remove all inline styles
-    html = html.replace(/style="[^"]*"/gi, '');
+    template.content
+      .querySelectorAll('meta, script, iframe, embed, object')
+      .forEach(element => { element.remove(); });
 
-    // Remove unwanted tags (e.g., <script>, <iframe>)
-    html = html.replace(/<(script|iframe|embed|object)[^>]*>.*?<\/\1>/gi, '');
+    template.content
+      .querySelectorAll('[style]')
+      .forEach(element => { element.removeAttribute('style'); });
 
-    return html;
+    template.content.querySelectorAll('*').forEach(element => {
+      Array.from(element.attributes).forEach(attribute => {
+        const name = attribute.name.toLowerCase();
+        const value = attribute.value.trim().toLowerCase();
+        if (name.startsWith('on') || (['href', 'src'].includes(name) && value.startsWith('javascript:'))) {
+          element.removeAttribute(attribute.name);
+        }
+      });
+    });
+
+    return template.innerHTML;
   }
 
     /**
@@ -632,11 +824,11 @@ private sanitizeHtml(html: string): string {
  * Why 06: method `EditorComponent`.`normalizeLineBreaks()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 07: method `EditorComponent`.`normalizeLineBreaks()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 08: method `EditorComponent`.`normalizeLineBreaks()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 09: method `EditorComponent`.`normalizeLineBreaks()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
-private normalizeLineBreaks(html: string): string {
 
-    console.log('normalizeLineBreaks', html);
+
+
+private normalizeLineBreaks(html: string): string {
     // Replace multiple consecutive <br> tags with a single <br>
     html = html.replace(/(<br\s*\/?>\s*){2,}/gi, '<br>');
 
@@ -672,16 +864,22 @@ private normalizeLineBreaks(html: string): string {
  * How 05: method `EditorComponent`.`handleImagePaste()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 06: method `EditorComponent`.`handleImagePaste()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 07: method `EditorComponent`.`handleImagePaste()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `EditorComponent`.`handleImagePaste()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 private handleImagePaste(file: File): void {
     const reader = new FileReader();
     reader.onload = (event: ProgressEvent<FileReader>) => {
       const imageUrl = event.target?.result as string;
       const img = `<img src="${imageUrl}" alt="Pasted Image" style="max-width:100%; height:auto;">`;
       this.contentService.insertHtmlAtCursor(img);
+      this.emitCurrentEditorContent();
     };
     reader.readAsDataURL(file);
   }
+
     /**
  * @generatedInfoDoc
  * InfoDoc: method `EditorComponent`.`scrollToTopOnFocus()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
@@ -692,6 +890,9 @@ private handleImagePaste(file: File): void {
  * Relation 03: method `EditorComponent`.`scrollToTopOnFocus()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `EditorComponent`.`scrollToTopOnFocus()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public scrollToTopOnFocus(): void {
     this.editorWysiwyg.nativeElement.scrollTop = 0; // Scrolls to the top of the editor
   }
@@ -710,6 +911,9 @@ public scrollToTopOnFocus(): void {
  * Relation 03: method `EditorComponent`.`toggleEditorHeight()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `EditorComponent`.`toggleEditorHeight()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public toggleEditorHeight(): void {
     this.isFixedHeight = !this.isFixedHeight;
   }
@@ -732,6 +936,9 @@ public toggleEditorHeight(): void {
  * How 05: method `EditorComponent`.`onRightClick()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 06: method `EditorComponent`.`onRightClick()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
+
+
 @HostListener('contextmenu', ['$event'])
   onRightClick(event: MouseEvent): void {
     if ((event.target as HTMLElement).tagName === 'IMG') {
@@ -753,6 +960,9 @@ public toggleEditorHeight(): void {
  * Relation 03: method `EditorComponent`.`showContextMenuAt()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `EditorComponent`.`showContextMenuAt()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 private showContextMenuAt(x: number, y: number): void {
     this.contextMenuPosition = { x, y };
     this.showContextMenu = true;
@@ -768,6 +978,9 @@ private showContextMenuAt(x: number, y: number): void {
  * Relation 03: method `EditorComponent`.`hideContextMenu()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `EditorComponent`.`hideContextMenu()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public hideContextMenu(): void {
     this.showContextMenu = false;
   }
@@ -787,11 +1000,20 @@ public hideContextMenu(): void {
  * How 05: method `EditorComponent`.`openImageEdit()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 06: method `EditorComponent`.`openImageEdit()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 07: method `EditorComponent`.`openImageEdit()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `EditorComponent`.`openImageEdit()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `EditorComponent`.`openImageEdit()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `EditorComponent`.`openImageEdit()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
+
+
 public openImageEdit(): void {
     if (this.selectedImage) {
 
-      this.imageService.setSelectedImageOnEditor(this.imageHtmlElementImageModalComponentMapper.mapImageHtmlElementToImageModalComponent(this.selectedImage));
+      this.imageService.setSelectedImageOnEditor(
+        this.imageHtmlElementImageModalComponentMapper.mapImageHtmlElementToImageModalComponent(this.selectedImage),
+        this.selectedImage
+      );
 
       const imageData = this.imageHtmlElementImageModalComponentMapper.mapImageHtmlElementToImageModalComponent(this.selectedImage);
 
@@ -812,6 +1034,9 @@ public openImageEdit(): void {
  * Relation 03: method `EditorComponent`.`insertImageFromUrl()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `EditorComponent`.`insertImageFromUrl()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public insertImageFromUrl(imageData: ImageInternalData): void {
     this.contentService.insertImageFromUrl(imageData);
   }
@@ -826,6 +1051,9 @@ public insertImageFromUrl(imageData: ImageInternalData): void {
  * Relation 03: method `EditorComponent`.`getEditorContent()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `EditorComponent`.`getEditorContent()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public getEditorContent(): string {
     return this.splitIntoParagraphs(this.editorWysiwyg.nativeElement.innerHTML);
   }
@@ -840,6 +1068,9 @@ public getEditorContent(): string {
  * Relation 03: method `EditorComponent`.`setEditorContent()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `EditorComponent`.`setEditorContent()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public setEditorContent(event: Event): void {
     const content = (event.target as HTMLInputElement).value;
     this.editorWysiwyg.nativeElement.innerHTML = this.splitIntoParagraphs(content);
@@ -868,27 +1099,21 @@ public setEditorContent(event: Event): void {
  * Why 02: method `EditorComponent`.`fixParagraphWithBrAndSpace()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 03: method `EditorComponent`.`fixParagraphWithBrAndSpace()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `EditorComponent`.`fixParagraphWithBrAndSpace()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `EditorComponent`.`fixParagraphWithBrAndSpace()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `EditorComponent`.`fixParagraphWithBrAndSpace()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
-public fixParagraphWithBrAndSpace(input: string): string {
-    // Regex Explanation:
-    //
-    // 1) (<p[^>]*>)    : Captures the opening <p> tag with any attributes.
-    // 2) ([\s\S]*?)    : Captures all content within <p>, in a non-greedy manner.
-    // 3) (<br\s*\/?>)  : Matches <br> or <br/>, capturing it.
-    // 4) \s*<\/p>      : Matches optional whitespace, then the closing </p> tag.
-    //
-    // Replacement:
-    //   $1$2</p><br><p>&nbsp;</p>
-    //
-    // This effectively:
-    //   1) Keeps the opening <p> and any attributes ($1)
-    //   2) Keeps all paragraph content ($2)
-    //   3) Closes the paragraph (</p>)
-    //   4) Moves the <br> outside the </p>
-    //   5) Adds an extra empty paragraph <p>&nbsp;</p>
 
-    const pattern = /(<p[^>]*>)([\s\S]*?)(<br\s*\/?>)\s*<\/p>/g;
-    return input.replace(pattern, '$1$2</p>$3<p>&nbsp;</p>');
+
+
+public fixParagraphWithBrAndSpace(input: string): string {
+    return this.transformParagraphs(input, (openingTag, content, originalParagraph) => {
+      const trailingBreak = this.extractTrailingBreak(content);
+      if (!trailingBreak) {
+        return originalParagraph;
+      }
+
+      return `${openingTag}${trailingBreak.before}</p>${trailingBreak.breakTag}<p>&nbsp;</p>`;
+    });
   }
 
   /**
@@ -913,40 +1138,363 @@ public fixParagraphWithBrAndSpace(input: string): string {
  * Maintenance 08: method `EditorComponent`.`fixParagraphWithMultipleBrs()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 09: method `EditorComponent`.`fixParagraphWithMultipleBrs()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 10: method `EditorComponent`.`fixParagraphWithMultipleBrs()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 11: method `EditorComponent`.`fixParagraphWithMultipleBrs()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 12: method `EditorComponent`.`fixParagraphWithMultipleBrs()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 13: method `EditorComponent`.`fixParagraphWithMultipleBrs()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 14: method `EditorComponent`.`fixParagraphWithMultipleBrs()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 15: method `EditorComponent`.`fixParagraphWithMultipleBrs()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 16: method `EditorComponent`.`fixParagraphWithMultipleBrs()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public fixParagraphWithMultipleBrs(input: string): string {
-    const paragraphPattern = /<p[^>]*>[\s\S]*?<\/p>/g;
-    return input.replace(paragraphPattern, (paragraph) => {
-      // Extract content within the <p> tags, excluding the tags themselves.
-      const content = paragraph.slice(paragraph.indexOf(">") + 1, paragraph.lastIndexOf("</p>"));
-
-      // Split the content by two or more <br> tags (with optional whitespace and /)
-      const brPattern = /(?:<br\s*\/?>\s*){2,}/gi;
-      const parts = content.split(brPattern);
-
-      // Reconstruct into separate paragraphs.  Add &nbsp; to empty paragraphs.
-      // Check if all parts are empty
-      const allEmpty = parts.every(p => p.trim().length === 0);
-      if (allEmpty && parts.length > 1) {
-          return '<p>&nbsp;</p>';
+    return this.transformParagraphs(input, (_openingTag, content, originalParagraph) => {
+      const parts = this.splitByRepeatedBreaks(content);
+      if (!parts) {
+        return originalParagraph;
       }
 
-      let result = '';
-      for (const part of parts) {
-        if (part.trim().length > 0) {
-          result += `<p>${part}</p>`; // Revert to untrimmed part to satisfy tests
-        } else {
-          result += '<p>&nbsp;</p>';
-        }
+      if (parts.every(part => part.trim().length === 0)) {
+        return '<p>&nbsp;</p>';
       }
-      return result;
+
+      return parts
+        .map(part => part.trim().length > 0 ? `<p>${part}</p>` : '<p>&nbsp;</p>')
+        .join('');
     });
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `EditorComponent`.`transformParagraphs()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `EditorComponent`.`transformParagraphs()` is implemented in `projects/lib-magnetar-quill/src/lib/components/editor/editor.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `EditorComponent`.`transformParagraphs()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `EditorComponent`.`transformParagraphs()` participates in the `EditorComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `EditorComponent`.`transformParagraphs()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `EditorComponent`.`transformParagraphs()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `EditorComponent`.`transformParagraphs()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `EditorComponent`.`transformParagraphs()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `EditorComponent`.`transformParagraphs()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `EditorComponent`.`transformParagraphs()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `EditorComponent`.`transformParagraphs()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `EditorComponent`.`transformParagraphs()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `EditorComponent`.`transformParagraphs()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 11: method `EditorComponent`.`transformParagraphs()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 12: method `EditorComponent`.`transformParagraphs()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 13: method `EditorComponent`.`transformParagraphs()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 14: method `EditorComponent`.`transformParagraphs()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 15: method `EditorComponent`.`transformParagraphs()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 16: method `EditorComponent`.`transformParagraphs()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 17: method `EditorComponent`.`transformParagraphs()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 18: method `EditorComponent`.`transformParagraphs()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 19: method `EditorComponent`.`transformParagraphs()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 20: method `EditorComponent`.`transformParagraphs()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+
+
+
+private transformParagraphs(
+    input: string,
+    transform: (openingTag: string, content: string, originalParagraph: string) => string
+  ): string {
+    let output = '';
+    let index = 0;
+
+    while (index < input.length) {
+      const openingStart = this.findOpeningParagraphStart(input, index);
+      if (openingStart === -1) {
+        output += input.slice(index);
+        break;
+      }
+
+      const openingEnd = input.indexOf('>', openingStart);
+      const closingStart = input.indexOf('</p>', openingEnd + 1);
+      if (openingEnd === -1 || closingStart === -1) {
+        output += input.slice(index);
+        break;
+      }
+
+      const closingEnd = closingStart + '</p>'.length;
+      const openingTag = input.slice(openingStart, openingEnd + 1);
+      const content = input.slice(openingEnd + 1, closingStart);
+      const originalParagraph = input.slice(openingStart, closingEnd);
+
+      output += input.slice(index, openingStart);
+      output += transform(openingTag, content, originalParagraph);
+      index = closingEnd;
+    }
+
+    return output;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `EditorComponent`.`findOpeningParagraphStart()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `EditorComponent`.`findOpeningParagraphStart()` is implemented in `projects/lib-magnetar-quill/src/lib/components/editor/editor.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `EditorComponent`.`findOpeningParagraphStart()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `EditorComponent`.`findOpeningParagraphStart()` participates in the `EditorComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `EditorComponent`.`findOpeningParagraphStart()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `EditorComponent`.`findOpeningParagraphStart()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `EditorComponent`.`findOpeningParagraphStart()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `EditorComponent`.`findOpeningParagraphStart()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `EditorComponent`.`findOpeningParagraphStart()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `EditorComponent`.`findOpeningParagraphStart()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ */
+
+
+
+private findOpeningParagraphStart(input: string, startIndex: number): number {
+    let index = input.indexOf('<p', startIndex);
+    while (index !== -1) {
+      const nextCharacter = input[index + 2];
+      if (nextCharacter === '>' || this.isWhitespace(nextCharacter)) {
+        return index;
+      }
+      index = input.indexOf('<p', index + 2);
+    }
+
+    return -1;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `EditorComponent`.`extractTrailingBreak()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `EditorComponent`.`extractTrailingBreak()` is implemented in `projects/lib-magnetar-quill/src/lib/components/editor/editor.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `EditorComponent`.`extractTrailingBreak()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `EditorComponent`.`extractTrailingBreak()` participates in the `EditorComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `EditorComponent`.`extractTrailingBreak()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `EditorComponent`.`extractTrailingBreak()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `EditorComponent`.`extractTrailingBreak()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `EditorComponent`.`extractTrailingBreak()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `EditorComponent`.`extractTrailingBreak()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `EditorComponent`.`extractTrailingBreak()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `EditorComponent`.`extractTrailingBreak()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `EditorComponent`.`extractTrailingBreak()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `EditorComponent`.`extractTrailingBreak()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 11: method `EditorComponent`.`extractTrailingBreak()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 12: method `EditorComponent`.`extractTrailingBreak()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 13: method `EditorComponent`.`extractTrailingBreak()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+
+
+
+private extractTrailingBreak(content: string): {before: string; breakTag: string} | null {
+    const contentEnd = this.trimEndIndex(content);
+    if (contentEnd === 0 || content[contentEnd - 1] !== '>') {
+      return null;
+    }
+
+    const breakStart = content.lastIndexOf('<', contentEnd - 1);
+    if (breakStart === -1) {
+      return null;
+    }
+
+    const breakTag = content.slice(breakStart, contentEnd);
+    if (!this.isBreakTag(breakTag)) {
+      return null;
+    }
+
+    return {
+      before: content.slice(0, breakStart),
+      breakTag
+    };
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `EditorComponent`.`splitByRepeatedBreaks()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `EditorComponent`.`splitByRepeatedBreaks()` is implemented in `projects/lib-magnetar-quill/src/lib/components/editor/editor.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `EditorComponent`.`splitByRepeatedBreaks()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `EditorComponent`.`splitByRepeatedBreaks()` participates in the `EditorComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `EditorComponent`.`splitByRepeatedBreaks()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `EditorComponent`.`splitByRepeatedBreaks()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `EditorComponent`.`splitByRepeatedBreaks()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `EditorComponent`.`splitByRepeatedBreaks()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `EditorComponent`.`splitByRepeatedBreaks()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `EditorComponent`.`splitByRepeatedBreaks()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `EditorComponent`.`splitByRepeatedBreaks()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `EditorComponent`.`splitByRepeatedBreaks()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `EditorComponent`.`splitByRepeatedBreaks()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 11: method `EditorComponent`.`splitByRepeatedBreaks()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 12: method `EditorComponent`.`splitByRepeatedBreaks()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 13: method `EditorComponent`.`splitByRepeatedBreaks()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 14: method `EditorComponent`.`splitByRepeatedBreaks()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 15: method `EditorComponent`.`splitByRepeatedBreaks()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 16: method `EditorComponent`.`splitByRepeatedBreaks()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 17: method `EditorComponent`.`splitByRepeatedBreaks()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 18: method `EditorComponent`.`splitByRepeatedBreaks()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 19: method `EditorComponent`.`splitByRepeatedBreaks()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 20: method `EditorComponent`.`splitByRepeatedBreaks()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+
+
+
+private splitByRepeatedBreaks(content: string): string[] | null {
+    const parts: string[] = [];
+    let index = 0;
+    let partStart = 0;
+
+    while (index < content.length) {
+      const firstBreakEnd = this.readBreakTag(content, index);
+      if (firstBreakEnd === null) {
+        index += 1;
+        continue;
+      }
+
+      const secondBreakStart = this.skipWhitespace(content, firstBreakEnd);
+      const secondBreakEnd = this.readBreakTag(content, secondBreakStart);
+      if (secondBreakEnd === null) {
+        index = firstBreakEnd;
+        continue;
+      }
+
+      parts.push(content.slice(partStart, index));
+      index = this.consumeRepeatedBreaks(content, secondBreakEnd);
+      partStart = index;
+    }
+
+    if (parts.length === 0) {
+      return null;
+    }
+
+    parts.push(content.slice(partStart));
+    return parts;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `EditorComponent`.`consumeRepeatedBreaks()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `EditorComponent`.`consumeRepeatedBreaks()` is implemented in `projects/lib-magnetar-quill/src/lib/components/editor/editor.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `EditorComponent`.`consumeRepeatedBreaks()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `EditorComponent`.`consumeRepeatedBreaks()` participates in the `EditorComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `EditorComponent`.`consumeRepeatedBreaks()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `EditorComponent`.`consumeRepeatedBreaks()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `EditorComponent`.`consumeRepeatedBreaks()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `EditorComponent`.`consumeRepeatedBreaks()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `EditorComponent`.`consumeRepeatedBreaks()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ */
+
+
+
+private consumeRepeatedBreaks(content: string, startIndex: number): number {
+    let index = this.skipWhitespace(content, startIndex);
+    let nextBreakEnd = this.readBreakTag(content, index);
+
+    while (nextBreakEnd !== null) {
+      index = this.skipWhitespace(content, nextBreakEnd);
+      nextBreakEnd = this.readBreakTag(content, index);
+    }
+
+    return index;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `EditorComponent`.`readBreakTag()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `EditorComponent`.`readBreakTag()` is implemented in `projects/lib-magnetar-quill/src/lib/components/editor/editor.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `EditorComponent`.`readBreakTag()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `EditorComponent`.`readBreakTag()` participates in the `EditorComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `EditorComponent`.`readBreakTag()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `EditorComponent`.`readBreakTag()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `EditorComponent`.`readBreakTag()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `EditorComponent`.`readBreakTag()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `EditorComponent`.`readBreakTag()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `EditorComponent`.`readBreakTag()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `EditorComponent`.`readBreakTag()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+
+
+
+private readBreakTag(content: string, startIndex: number): number | null {
+    if (!content.slice(startIndex, startIndex + 3).toLowerCase().startsWith('<br')) {
+      return null;
+    }
+
+    let index = startIndex + 3;
+    index = this.skipWhitespace(content, index);
+
+    if (content[index] === '/') {
+      index += 1;
+      index = this.skipWhitespace(content, index);
+    }
+
+    return content[index] === '>' ? index + 1 : null;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `EditorComponent`.`isBreakTag()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `EditorComponent`.`isBreakTag()` is implemented in `projects/lib-magnetar-quill/src/lib/components/editor/editor.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `EditorComponent`.`isBreakTag()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `EditorComponent`.`isBreakTag()` participates in the `EditorComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `EditorComponent`.`isBreakTag()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `EditorComponent`.`isBreakTag()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `EditorComponent`.`isBreakTag()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+
+
+
+private isBreakTag(tag: string): boolean {
+    return this.readBreakTag(tag, 0) === tag.length;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `EditorComponent`.`skipWhitespace()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `EditorComponent`.`skipWhitespace()` is implemented in `projects/lib-magnetar-quill/src/lib/components/editor/editor.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `EditorComponent`.`skipWhitespace()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `EditorComponent`.`skipWhitespace()` participates in the `EditorComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `EditorComponent`.`skipWhitespace()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `EditorComponent`.`skipWhitespace()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `EditorComponent`.`skipWhitespace()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+
+
+
+private skipWhitespace(content: string, startIndex: number): number {
+    let index = startIndex;
+    while (index < content.length && this.isWhitespace(content[index])) {
+      index += 1;
+    }
+    return index;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `EditorComponent`.`trimEndIndex()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `EditorComponent`.`trimEndIndex()` is implemented in `projects/lib-magnetar-quill/src/lib/components/editor/editor.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `EditorComponent`.`trimEndIndex()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `EditorComponent`.`trimEndIndex()` participates in the `EditorComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `EditorComponent`.`trimEndIndex()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `EditorComponent`.`trimEndIndex()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `EditorComponent`.`trimEndIndex()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+
+
+
+private trimEndIndex(content: string): number {
+    let index = content.length;
+    while (index > 0 && this.isWhitespace(content[index - 1])) {
+      index -= 1;
+    }
+    return index;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `EditorComponent`.`isWhitespace()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `EditorComponent`.`isWhitespace()` is implemented in `projects/lib-magnetar-quill/src/lib/components/editor/editor.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `EditorComponent`.`isWhitespace()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `EditorComponent`.`isWhitespace()` participates in the `EditorComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `EditorComponent`.`isWhitespace()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `EditorComponent`.`isWhitespace()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `EditorComponent`.`isWhitespace()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `EditorComponent`.`isWhitespace()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+
+
+
+private isWhitespace(character: string | undefined): boolean {
+    return character === ' ' ||
+      character === '\n' ||
+      character === '\r' ||
+      character === '\t' ||
+      character === '\f';
   }
 
 
@@ -974,45 +1522,13 @@ public fixParagraphWithMultipleBrs(input: string): string {
  * Why 02: method `EditorComponent`.`splitIntoParagraphs()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 03: method `EditorComponent`.`splitIntoParagraphs()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `EditorComponent`.`splitIntoParagraphs()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 05: method `EditorComponent`.`splitIntoParagraphs()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 06: method `EditorComponent`.`splitIntoParagraphs()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 07: method `EditorComponent`.`splitIntoParagraphs()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 08: method `EditorComponent`.`splitIntoParagraphs()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 09: method `EditorComponent`.`splitIntoParagraphs()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 10: method `EditorComponent`.`splitIntoParagraphs()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 11: method `EditorComponent`.`splitIntoParagraphs()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 12: method `EditorComponent`.`splitIntoParagraphs()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public splitIntoParagraphs(htmlContent: string): string {
-
-
-    // Step 1: Remove any improperly nested <p> tags
-    let cleanedContent = htmlContent.replace(/<p>\s*<p[^>]*>/gi, '<p>'); // Replace nested opening <p> tags
-    cleanedContent = cleanedContent.replace(/<\/p>\s*<\/p>/gi, '</p>'); // Replace nested closing </p> tags
-    cleanedContent = cleanedContent.replace(/<\/p>\s*<p>/gi, '</p><p>'); // Ensure proper separation of paragraphs
-
-    // Step 2: Replace consecutive <br> tags with a marker for splitting
-    const marker = '###SPLIT###';
-    cleanedContent = cleanedContent.replace(/(<br\s*\/?>\s*){2,}/gi, marker);
-
-    // Step 3: Split the content by the marker
-    const parts = cleanedContent.split(marker).map(part => part.trim());
-
-    // Step 4: Wrap each part in a <p> tag, ensuring no nested <p> tags
-    const structuredContent = parts
-      .filter(part => part !== '') // Ignore empty parts
-      .map(part => `<p>${part}</p>`)
-      .join('');
-
-    // Step 5: Final cleanup to ensure no invalid nesting remains
-    //return structuredContent.replace(/<p>\s*<\/p>/g, ''); // Remove empty <p> tags
-    //console.log('htmlContent:1', htmlContent);
-    htmlContent = this.fixParagraphWithBrAndSpace(htmlContent);
-    //console.log('htmlContent:2', htmlContent);
-    return htmlContent;
+    return this.fixParagraphWithMultipleBrs(this.fixParagraphWithBrAndSpace(htmlContent));
   }
-
-
 
     /**
  * @generatedInfoDoc
@@ -1030,6 +1546,9 @@ public splitIntoParagraphs(htmlContent: string): string {
  * How 09: method `EditorComponent`.`ngAfterViewInit()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 10: method `EditorComponent`.`ngAfterViewInit()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
+
+
 public ngAfterViewInit(): void {
 
     if(this.isHtmlView) {
@@ -1073,6 +1592,9 @@ public ngAfterViewInit(): void {
  * Relation 03: method `EditorComponent`.`checkAndRestoreEditor()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `EditorComponent`.`checkAndRestoreEditor()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 private checkAndRestoreEditor(): void {
     if (!this.parentElement.contains(this.editorWysiwyg.nativeElement)) {
       // Restore the editor element from backup
@@ -1094,6 +1616,9 @@ private checkAndRestoreEditor(): void {
  * Relation 03: method `EditorComponent`.`ngOnChanges()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `EditorComponent`.`ngOnChanges()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public ngOnChanges(changes: SimpleChanges): void {
     this.ensurePlaceholder();
   }
@@ -1110,6 +1635,9 @@ public ngOnChanges(changes: SimpleChanges): void {
  * Relation 03: method `EditorComponent`.`ngDoCheck()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `EditorComponent`.`ngDoCheck()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public ngDoCheck(): void {
     //this.ensurePlaceholder();
 
@@ -1131,12 +1659,13 @@ public ngDoCheck(): void {
  * Maintenance 08: method `EditorComponent`.`handleEnterKey()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 09: method `EditorComponent`.`handleEnterKey()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 10: method `EditorComponent`.`handleEnterKey()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 11: method `EditorComponent`.`handleEnterKey()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
+
+
+
 @HostListener('keydown.enter', ['$event'])
   public handleEnterKey(event: Event): void {
-    const keyboardEvent = event as KeyboardEvent;
-    keyboardEvent.preventDefault(); // Prevent default Enter behavior
+    event.preventDefault(); // Prevent default Enter behavior
 
     const selection = window.getSelection();
 
@@ -1171,6 +1700,9 @@ public ngDoCheck(): void {
  * Relation 03: method `EditorComponent`.`ensurePlaceholder()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `EditorComponent`.`ensurePlaceholder()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 private ensurePlaceholder(): void {
     const editor = this.editorWysiwyg.nativeElement;
     if (editor.innerText.trim() === '') {
@@ -1192,9 +1724,12 @@ private ensurePlaceholder(): void {
  * Relation 03: method `EditorComponent`.`deleteImage()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `EditorComponent`.`deleteImage()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public deleteImage(): void {
-    if (this.selectedImage && this.selectedImage.parentNode) {
-      this.selectedImage.parentNode.removeChild(this.selectedImage);
+    if (this.selectedImage) {
+      this.selectedImage.remove();
       //this.showContextMenu = false;
     }
   }

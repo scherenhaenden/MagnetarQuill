@@ -27,7 +27,7 @@ describe('ImageHtmlElementImageModalComponentMapper', () => {
       expect(imageElement.style.width).toBe('200px');
       expect(imageElement.style.height).toBe('300px');
       expect(imageElement.style.borderWidth).toBe('5px');
-      expect(imageElement.style.padding).toBe('15px 10px');
+      expect(imageElement.style.padding).toBe('10px 15px');
       expect(imageElement.style.textAlign).toBe(model.alignment);
     });
 

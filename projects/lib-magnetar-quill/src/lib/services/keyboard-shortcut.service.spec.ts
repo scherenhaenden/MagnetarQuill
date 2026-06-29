@@ -101,6 +101,18 @@ describe('KeyboardShortcutService', () => {
     });
   });
 
+  it('should log an error and return if FormattingService is not available (simulated)', () => {
+    (service as unknown as { fmt: FormattingService | null }).fmt = null;
+
+    const event = dispatchKeydownEvent('b', { ctrlKey: true });
+
+    expect(consoleErrorSpy).toHaveBeenCalledWith('FormattingService is not available in KeyboardShortcutService.');
+    expect(mockFormattingService.toggleBold).not.toHaveBeenCalled();
+    expect(event.preventDefault).not.toHaveBeenCalled();
+    expect(event.stopImmediatePropagation).not.toHaveBeenCalled();
+    (service as unknown as { fmt: FormattingService | null }).fmt = mockFormattingService;
+  });
+
   describe('Target Element Filtering', () => {
     it('should ignore shortcuts when target is an INPUT element', () => {
       const input = document.createElement('input');
@@ -127,15 +139,81 @@ describe('KeyboardShortcutService', () => {
           target: internalDiv
         };
 
+        // Find the expected method name from the mock service spy object
+        let expectedMethod: keyof FormattingService | null = null;
+        let expectedArgs: unknown[] = [];
+
+        switch (shortcut.action) {
+          case ShortcutAction.Bold:            expectedMethod = 'toggleBold'; break;
+          case ShortcutAction.Italic:          expectedMethod = 'toggleItalic'; break;
+          case ShortcutAction.Underline:       expectedMethod = 'toggleUnderline'; break;
+          case ShortcutAction.Strikethrough:   expectedMethod = 'toggleStrikethrough'; break;
+          case ShortcutAction.Superscript:     expectedMethod = 'toggleSuperscript'; break;
+          case ShortcutAction.Subscript:       expectedMethod = 'toggleSubscript'; break;
+          case ShortcutAction.OrderedList:     expectedMethod = 'toggleList'; expectedArgs = ['ordered']; break;
+          case ShortcutAction.UnorderedList:   expectedMethod = 'toggleList'; expectedArgs = ['unordered']; break;
+          case ShortcutAction.Indent:          expectedMethod = 'indent'; break;
+          case ShortcutAction.Outdent:         expectedMethod = 'outdent'; break;
+          case ShortcutAction.Blockquote:      expectedMethod = 'blockquote'; break;
+          case ShortcutAction.CodeBlock:       expectedMethod = 'codeBlock'; break;
+          case ShortcutAction.ClearFormatting: expectedMethod = 'clearFormatting'; break;
+          case ShortcutAction.Undo:
+          case ShortcutAction.Redo:
+             break;
+          default:
+            fail(`Unhandled ShortcutAction in test setup: ${shortcut.action}`);
+        }
+
         const event = dispatchKeydownEvent(shortcut.key, options);
 
         if (shortcut.action === ShortcutAction.Undo || shortcut.action === ShortcutAction.Redo) {
           expect(event.preventDefault).not.toHaveBeenCalled();
           expect(event.stopImmediatePropagation).not.toHaveBeenCalled();
         } else {
-          expect(event.preventDefault).toHaveBeenCalled();
+          expect(event.preventDefault).toHaveBeenCalledTimes(1);
+          expect(event.stopImmediatePropagation).toHaveBeenCalledTimes(1);
+        }
+
+        if (expectedMethod) {
+          const spyMethod = mockFormattingService[expectedMethod] as jasmine.Spy;
+          if (expectedArgs.length > 0) {
+            expect(spyMethod).toHaveBeenCalledWith(...expectedArgs);
+          } else {
+            expect(spyMethod).toHaveBeenCalled();
+          }
+          expect(spyMethod).toHaveBeenCalledTimes(1);
+
+          formattingServiceMethods.forEach(methodName => {
+            if (methodName !== expectedMethod) {
+              expect(mockFormattingService[methodName as keyof FormattingService]).not.toHaveBeenCalled();
+            }
+          });
         }
       });
+    });
+
+    it('should handle key case-insensitivity', () => {
+      const internalDiv = document.createElement('div');
+      internalDiv.contentEditable = 'true';
+      mockElement.appendChild(internalDiv);
+      const event = dispatchKeydownEvent('B', { ctrlKey: true, target: internalDiv });
+      expect(mockFormattingService.toggleBold).toHaveBeenCalled();
+      expect(event.preventDefault).toHaveBeenCalled();
+      expect(event.stopImmediatePropagation).toHaveBeenCalled();
+    });
+
+    it('should not call any method or prevent defaults if no shortcut matches', () => {
+      const internalDiv = document.createElement('div');
+      internalDiv.contentEditable = 'true';
+      mockElement.appendChild(internalDiv);
+      const event = dispatchKeydownEvent('x', { ctrlKey: true, target: internalDiv });
+
+      formattingServiceMethods.forEach(methodName => {
+        expect(mockFormattingService[methodName as keyof FormattingService]).not.toHaveBeenCalled();
+      });
+
+      expect(event.preventDefault).not.toHaveBeenCalled();
+      expect(event.stopImmediatePropagation).not.toHaveBeenCalled();
     });
   });
 });

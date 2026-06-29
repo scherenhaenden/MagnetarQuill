@@ -31,12 +31,22 @@ import {ImageModalComponentModel} from "../models/image-modal-component-model";
  * Relation 23: class `ImageService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 24: class `ImageService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 25: class `ImageService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 26: class `ImageService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 27: class `ImageService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 28: class `ImageService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 29: class `ImageService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 30: class `ImageService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 31: class `ImageService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 32: class `ImageService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 @Injectable()
 export class ImageService {
 
   // Signal to manage the selected image
   public selectedImage: WritableSignal<ImageModalComponentModel | null> = signal(null);
+  private selectedImageElement: HTMLImageElement | null = null;
 
 
     /**
@@ -49,6 +59,8 @@ export class ImageService {
  * Relation 03: constructor for class `ImageService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: constructor for class `ImageService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 constructor() { }
 
     /**
@@ -61,8 +73,11 @@ constructor() { }
  * Relation 03: method `ImageService`.`setSelectedImageOnEditor()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ImageService`.`setSelectedImageOnEditor()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
-public setSelectedImageOnEditor(mageModalComponentModel: ImageModalComponentModel): void {
+
+
+public setSelectedImageOnEditor(mageModalComponentModel: ImageModalComponentModel, imageElement: HTMLImageElement | null = null): void {
     this.selectedImage.set(mageModalComponentModel);
+    this.selectedImageElement = imageElement;
   }
 
 
@@ -78,31 +93,46 @@ public setSelectedImageOnEditor(mageModalComponentModel: ImageModalComponentMode
  * How 05: method `ImageService`.`applyImageEdits()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 06: method `ImageService`.`applyImageEdits()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 07: method `ImageService`.`applyImageEdits()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 08: method `ImageService`.`applyImageEdits()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 09: method `ImageService`.`applyImageEdits()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 10: method `ImageService`.`applyImageEdits()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 11: method `ImageService`.`applyImageEdits()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
+
+
 public applyImageEdits(): void {
-
-    // Check if a selected image exists
-    if (this.selectedImage()) {
-      const image = this.selectedImage()!;
-
-      // Find the actual <img> element in the DOM (if using direct manipulation)
-      const imgElement = document.querySelector(`img[src="${image.url}"]`) as HTMLImageElement;
-
-      if (imgElement) {
-        // Update the properties of the <img> tag
-        imgElement.src = image.url;
-        imgElement.alt = image.alt || '';
-        imgElement.style.width = image.width ? `${image.width}px` : 'auto';
-        imgElement.style.height = image.height ? `${image.height}px` : 'auto';
-        imgElement.style.borderWidth = image.border ? `${image.border}px` : '';
-        imgElement.style.padding = `${image.vPadding || 0}px ${image.hPadding || 0}px`;
-        imgElement.style.textAlign = image.alignment || 'left';
-      }
+    const image = this.selectedImage();
+    if (!image) {
+      return;
     }
+
+    const imgElement = this.selectedImageElement;
+    if (!imgElement) {
+      return;
+    }
+
+    this.updateImageElement(imgElement, image);
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImageService`.`updateImageElement()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImageService`.`updateImageElement()` is implemented in `projects/lib-magnetar-quill/src/lib/services/image.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImageService`.`updateImageElement()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImageService`.`updateImageElement()` participates in the `ImageService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImageService`.`updateImageElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImageService`.`updateImageElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImageService`.`updateImageElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ImageService`.`updateImageElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `ImageService`.`updateImageElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `ImageService`.`updateImageElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ */
+
+
+private updateImageElement(imgElement: HTMLImageElement, image: ImageModalComponentModel): void {
+    imgElement.src = image.url;
+    imgElement.alt = image.alt || '';
+    imgElement.style.width = image.width ? `${image.width}px` : 'auto';
+    imgElement.style.height = image.height ? `${image.height}px` : 'auto';
+    imgElement.style.borderWidth = image.border ? `${image.border}px` : '';
+    imgElement.style.padding = `${image.hPadding || 0}px ${image.vPadding || 0}px`;
+    imgElement.style.textAlign = image.alignment || 'left';
   }
 
 
@@ -117,8 +147,11 @@ public applyImageEdits(): void {
  * Relation 03: method `ImageService`.`clearSelectedImage()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ImageService`.`clearSelectedImage()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 public clearSelectedImage(): void {
     this.selectedImage.set(null);
+    this.selectedImageElement = null;
   }
 
     /**
@@ -133,6 +166,8 @@ public clearSelectedImage(): void {
  * How 05: method `ImageService`.`getBase64()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 06: method `ImageService`.`getBase64()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
+
 public getBase64(file: File): Promise<string> {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();

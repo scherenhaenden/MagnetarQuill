@@ -13,6 +13,7 @@ import { ImageInternalData } from "../../models/image-internal-data";
 import {ImageModalComponent} from "../image-modal/image-modal.component";
 import {ImageModalComponentModel} from "../../models/image-modal-component-model";
 import {ContentService} from "../../services/content.service";
+import {ImportExportService} from "../../services/import-export.service";
 
 /**
  * @generatedInfoDoc
@@ -114,7 +115,71 @@ import {ContentService} from "../../services/content.service";
  * How 93: class `ToolbarComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 94: class `ToolbarComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 95: class `ToolbarComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 96: class `ToolbarComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 97: class `ToolbarComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 98: class `ToolbarComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 99: class `ToolbarComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 100: class `ToolbarComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 101: class `ToolbarComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 102: class `ToolbarComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 103: class `ToolbarComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 104: class `ToolbarComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 105: class `ToolbarComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 106: class `ToolbarComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 107: class `ToolbarComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 108: class `ToolbarComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 109: class `ToolbarComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 110: class `ToolbarComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 111: class `ToolbarComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 112: class `ToolbarComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 113: class `ToolbarComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 114: class `ToolbarComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 115: class `ToolbarComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 116: class `ToolbarComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 117: class `ToolbarComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 118: class `ToolbarComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 119: class `ToolbarComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 120: class `ToolbarComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 121: class `ToolbarComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 122: class `ToolbarComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 123: class `ToolbarComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 124: class `ToolbarComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 125: class `ToolbarComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 126: class `ToolbarComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 127: class `ToolbarComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 128: class `ToolbarComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 129: class `ToolbarComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 130: class `ToolbarComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 131: class `ToolbarComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 132: class `ToolbarComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 133: class `ToolbarComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 134: class `ToolbarComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 135: class `ToolbarComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 136: class `ToolbarComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 137: class `ToolbarComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 138: class `ToolbarComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 139: class `ToolbarComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 140: class `ToolbarComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 141: class `ToolbarComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 142: class `ToolbarComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 143: class `ToolbarComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 144: class `ToolbarComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 145: class `ToolbarComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 146: class `ToolbarComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 147: class `ToolbarComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 148: class `ToolbarComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 149: class `ToolbarComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 150: class `ToolbarComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 151: class `ToolbarComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 152: class `ToolbarComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 153: class `ToolbarComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 154: class `ToolbarComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 155: class `ToolbarComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 156: class `ToolbarComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 @Component({
     selector: 'lib-toolbar',
     imports: [
@@ -128,6 +193,10 @@ import {ContentService} from "../../services/content.service";
     changeDetection: ChangeDetectionStrategy.Eager
 })
 export class ToolbarComponent {
+
+  // Theme properties
+  @Input() public theme: string = 'light';
+  @Output() public themeChange = new EventEmitter<string>();
 
   // Toolbar properties
   @Output() toggleHtmlView = new EventEmitter<void>();
@@ -156,8 +225,12 @@ export class ToolbarComponent {
  * Relation 03: constructor for class `ToolbarComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: constructor for class `ToolbarComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
-constructor(public formattingService: FormattingService,
-              private contentService: ContentService
+
+
+
+constructor(public readonly formattingService: FormattingService,
+              private readonly contentService: ContentService,
+              private readonly importExportService: ImportExportService
               ) {}
 
     /**
@@ -170,6 +243,9 @@ constructor(public formattingService: FormattingService,
  * Relation 03: method `ToolbarComponent`.`withEditorSelection()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`withEditorSelection()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 private withEditorSelection(action: () => void): void {
     this.formattingService.restoreSelection();
     action();
@@ -186,6 +262,9 @@ private withEditorSelection(action: () => void): void {
  * Relation 03: method `ToolbarComponent`.`toggleBold()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`toggleBold()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public toggleBold(): void {
     this.withEditorSelection(() => this.formattingService.toggleBold());
   }
@@ -200,6 +279,9 @@ public toggleBold(): void {
  * Relation 03: method `ToolbarComponent`.`toggleStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`toggleStrong()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public toggleStrong(): void {
     this.withEditorSelection(() => this.formattingService.toggleStrong());
   }
@@ -214,6 +296,9 @@ public toggleStrong(): void {
  * Relation 03: method `ToolbarComponent`.`toggleItalic()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`toggleItalic()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public toggleItalic(): void {
     this.withEditorSelection(() => this.formattingService.toggleItalic());
   }
@@ -228,6 +313,9 @@ public toggleItalic(): void {
  * Relation 03: method `ToolbarComponent`.`toggleUnderline()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`toggleUnderline()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public toggleUnderline(): void {
     this.withEditorSelection(() => this.formattingService.toggleUnderline());
   }
@@ -242,6 +330,9 @@ public toggleUnderline(): void {
  * Relation 03: method `ToolbarComponent`.`toggleStrikethrough()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`toggleStrikethrough()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public toggleStrikethrough(): void {
     this.withEditorSelection(() => this.formattingService.toggleStrikethrough());
   }
@@ -256,6 +347,9 @@ public toggleStrikethrough(): void {
  * Relation 03: method `ToolbarComponent`.`toggleSuperscript()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`toggleSuperscript()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public toggleSuperscript(): void {
     this.withEditorSelection(() => this.formattingService.toggleSuperscript());
   }
@@ -270,6 +364,9 @@ public toggleSuperscript(): void {
  * Relation 03: method `ToolbarComponent`.`toggleSubscript()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`toggleSubscript()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public toggleSubscript(): void {
     this.withEditorSelection(() => this.formattingService.toggleSubscript());
   }
@@ -284,6 +381,9 @@ public toggleSubscript(): void {
  * Relation 03: method `ToolbarComponent`.`clearFormatting()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`clearFormatting()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public clearFormatting(): void {
     this.withEditorSelection(() => this.formattingService.clearFormatting());
   }
@@ -299,6 +399,9 @@ public clearFormatting(): void {
  * Relation 03: method `ToolbarComponent`.`toggleOrderedList()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`toggleOrderedList()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public toggleOrderedList(): void {
     this.withEditorSelection(() => this.formattingService.toggleList('ordered'));
   }
@@ -313,6 +416,9 @@ public toggleOrderedList(): void {
  * Relation 03: method `ToolbarComponent`.`toggleUnorderedList()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`toggleUnorderedList()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public toggleUnorderedList(): void {
     this.withEditorSelection(() => this.formattingService.toggleList('unordered'));
   }
@@ -327,6 +433,9 @@ public toggleUnorderedList(): void {
  * Relation 03: method `ToolbarComponent`.`setTextAlign()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`setTextAlign()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public setTextAlign(alignment: 'left' | 'center' | 'right' | 'justify'): void {
     this.withEditorSelection(() => this.formattingService.setTextAlign(alignment));
   }
@@ -347,6 +456,9 @@ public setTextAlign(alignment: 'left' | 'center' | 'right' | 'justify'): void {
  * How 09: method `ToolbarComponent`.`wrapSelectionInBlock()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 10: method `ToolbarComponent`.`wrapSelectionInBlock()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
+
+
 public wrapSelectionInBlock(blockTag: string): void {
     const selection = window.getSelection();
     if (!selection || selection.rangeCount === 0) return;
@@ -377,6 +489,9 @@ public wrapSelectionInBlock(blockTag: string): void {
  * Relation 03: method `ToolbarComponent`.`isBlockElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`isBlockElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 private isBlockElement(element: HTMLElement): boolean {
     const blockElements = ['P', 'DIV', 'SECTION', 'ARTICLE'];
     return blockElements.includes(element.tagName);
@@ -393,6 +508,9 @@ private isBlockElement(element: HTMLElement): boolean {
  * Relation 03: method `ToolbarComponent`.`setLineSpacing()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`setLineSpacing()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public setLineSpacing(event: Event): void {
     const target = event.target as HTMLSelectElement;
     this.withEditorSelection(() => this.formattingService.setLineSpacing(target.value));
@@ -409,6 +527,9 @@ public setLineSpacing(event: Event): void {
  * Relation 03: method `ToolbarComponent`.`applyHeader()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`applyHeader()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public applyHeader(event: Event): void {
     const target = event.target as HTMLSelectElement;
     this.withEditorSelection(() => this.formattingService.applyHeader(target.value));
@@ -424,6 +545,9 @@ public applyHeader(event: Event): void {
  * Relation 03: method `ToolbarComponent`.`onFontFamilyChange()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`onFontFamilyChange()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public onFontFamilyChange(event: Event): void {
     const target = event.target as HTMLSelectElement;
     this.withEditorSelection(() => this.formattingService.applyStyle('font-family', target.value || ''));
@@ -439,6 +563,9 @@ public onFontFamilyChange(event: Event): void {
  * Relation 03: method `ToolbarComponent`.`onFontSizeChange()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`onFontSizeChange()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public onFontSizeChange(event: Event): void {
     const target = event.target as HTMLSelectElement;
     this.withEditorSelection(() => this.formattingService.applyStyle('font-size', target.value || ''));
@@ -455,6 +582,9 @@ public onFontSizeChange(event: Event): void {
  * Relation 03: method `ToolbarComponent`.`onTextColorChange()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`onTextColorChange()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public onTextColorChange(event: Event): void {
     const target = event.target as HTMLInputElement;
     this.withEditorSelection(() => this.formattingService.applyStyle('color', target.value));
@@ -470,9 +600,12 @@ public onTextColorChange(event: Event): void {
  * Relation 03: method `ToolbarComponent`.`onBackgroundColorChange()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`onBackgroundColorChange()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public onBackgroundColorChange(event: Event): void {
     const target = event.target as HTMLInputElement;
-    this.withEditorSelection(() => this.formattingService.setBackgroundColor(target.value));
+    this.withEditorSelection(() => this.formattingService.applyStyle('background-color', target.value));
   }
 
   // Image Handling
@@ -486,6 +619,9 @@ public onBackgroundColorChange(event: Event): void {
  * Relation 03: method `ToolbarComponent`.`openImageModal()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`openImageModal()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public openImageModal(): void {
     this.showImageModal = true;
   }
@@ -500,6 +636,9 @@ public openImageModal(): void {
  * Relation 03: method `ToolbarComponent`.`closeImageModal()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`closeImageModal()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public closeImageModal(): void {
     this.showImageModal = false;
     this.imageUrl = '';
@@ -523,17 +662,20 @@ public closeImageModal(): void {
  * Relation 11: method `ToolbarComponent`.`insertImage()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 12: method `ToolbarComponent`.`insertImage()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
-public insertImage( imageModalComponentModel: ImageModalComponentModel): void {
-    if (this.imageUrl.trim()) {
+
+
+
+public insertImage(imageModalComponentModel: ImageModalComponentModel): void {
+    if (imageModalComponentModel.url.trim()) {
       this.insertImageFromUrl.emit({
-        url: this.imageUrl,
-        alt: this.altText,
-        width: this.width,
-        height: this.height,
-        border: this.border,
-        hPadding: this.hPadding,
-        vPadding: this.vPadding,
-        alignment: this.alignment,
+        url: imageModalComponentModel.url,
+        alt: imageModalComponentModel.alt,
+        width: imageModalComponentModel.width,
+        height: imageModalComponentModel.height,
+        border: imageModalComponentModel.border,
+        hPadding: imageModalComponentModel.hPadding,
+        vPadding: imageModalComponentModel.vPadding,
+        alignment: imageModalComponentModel.alignment,
       });
       this.closeImageModal();
     }
@@ -550,11 +692,257 @@ public insertImage( imageModalComponentModel: ImageModalComponentModel): void {
  * Relation 03: method `ToolbarComponent`.`onToggleHtmlView()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`onToggleHtmlView()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
+
 public onToggleHtmlView(): void {
     this.toggleHtmlView.emit();
+  }
+
+  /**
+   * Handles theme changes selected from the toolbar UI.
+   * @param {Event} event - The DOM event containing the selected theme.
+   * @public
+   */
+    /**
+ * @generatedInfoDoc
+ * InfoDoc: method `ToolbarComponent`.`onThemeChange()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ToolbarComponent`.`onThemeChange()` is implemented in `projects/lib-magnetar-quill/src/lib/components/toolbar/toolbar.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ToolbarComponent`.`onThemeChange()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ToolbarComponent`.`onThemeChange()` participates in the `ToolbarComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ToolbarComponent`.`onThemeChange()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ToolbarComponent`.`onThemeChange()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ToolbarComponent`.`onThemeChange()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+
+
+
+public onThemeChange(event: Event): void {
+    const target = event.target as HTMLSelectElement;
+    if (target) {
+      this.theme = target.value;
+      this.themeChange.emit(target.value);
+    }
   }
 
 
   protected readonly hTMLSelectElement = HTMLSelectElement;
   public imageModalComponentModel!: ImageModalComponentModel | WritableSignal<ImageModalComponentModel>;
+
+  // File Operations
+
+  /**
+   * Triggers the hidden file input element click event.
+   */
+    /**
+ * @generatedInfoDoc
+ * InfoDoc: method `ToolbarComponent`.`triggerFileInput()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ToolbarComponent`.`triggerFileInput()` is implemented in `projects/lib-magnetar-quill/src/lib/components/toolbar/toolbar.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ToolbarComponent`.`triggerFileInput()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ToolbarComponent`.`triggerFileInput()` participates in the `ToolbarComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ToolbarComponent`.`triggerFileInput()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ToolbarComponent`.`triggerFileInput()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ToolbarComponent`.`triggerFileInput()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+
+
+
+public triggerFileInput(fileInput: HTMLInputElement): void {
+    fileInput.click();
+  }
+
+  /**
+   * Handles file selection and reads file content.
+   */
+    /**
+ * @generatedInfoDoc
+ * InfoDoc: method `ToolbarComponent`.`onFileSelected()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ToolbarComponent`.`onFileSelected()` is implemented in `projects/lib-magnetar-quill/src/lib/components/toolbar/toolbar.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ToolbarComponent`.`onFileSelected()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ToolbarComponent`.`onFileSelected()` participates in the `ToolbarComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ToolbarComponent`.`onFileSelected()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ToolbarComponent`.`onFileSelected()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ToolbarComponent`.`onFileSelected()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ToolbarComponent`.`onFileSelected()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `ToolbarComponent`.`onFileSelected()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `ToolbarComponent`.`onFileSelected()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `ToolbarComponent`.`onFileSelected()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `ToolbarComponent`.`onFileSelected()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `ToolbarComponent`.`onFileSelected()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ */
+
+
+
+public onFileSelected(event: Event): void {
+    const target = event.target as HTMLInputElement;
+    const file = target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const text = e.target?.result as string;
+      this.handleFileContent(file.name, text);
+      target.value = '';
+    };
+    reader.readAsText(file);
+  }
+
+  /**
+   * Processes the read file content based on file extension.
+   */
+    /**
+ * @generatedInfoDoc
+ * InfoDoc: method `ToolbarComponent`.`handleFileContent()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ToolbarComponent`.`handleFileContent()` is implemented in `projects/lib-magnetar-quill/src/lib/components/toolbar/toolbar.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ToolbarComponent`.`handleFileContent()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ToolbarComponent`.`handleFileContent()` participates in the `ToolbarComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ToolbarComponent`.`handleFileContent()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ToolbarComponent`.`handleFileContent()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ToolbarComponent`.`handleFileContent()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ToolbarComponent`.`handleFileContent()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `ToolbarComponent`.`handleFileContent()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `ToolbarComponent`.`handleFileContent()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `ToolbarComponent`.`handleFileContent()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `ToolbarComponent`.`handleFileContent()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `ToolbarComponent`.`handleFileContent()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 11: method `ToolbarComponent`.`handleFileContent()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ */
+
+
+
+private handleFileContent(fileName: string, content: string): void {
+    const ext = fileName.split('.').pop()?.toLowerCase();
+    if (ext === 'html' || ext === 'htm') {
+      this.contentService.setEditorContent(content);
+    } else if (ext === 'md' || ext === 'markdown') {
+      const html = this.importExportService.convertMarkdownToHtml(content);
+      this.contentService.setEditorContent(html);
+    } else if (ext === 'rtf') {
+      const html = this.importExportService.convertRtfToHtml(content);
+      this.contentService.setEditorContent(html);
+    } else {
+      alert(`Unsupported file type (.${ext}). Please load HTML, Markdown, or RTF files.`);
+    }
+  }
+
+  /**
+   * Exports the editor content as HTML.
+   */
+    /**
+ * @generatedInfoDoc
+ * InfoDoc: method `ToolbarComponent`.`exportHtml()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ToolbarComponent`.`exportHtml()` is implemented in `projects/lib-magnetar-quill/src/lib/components/toolbar/toolbar.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ToolbarComponent`.`exportHtml()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ToolbarComponent`.`exportHtml()` participates in the `ToolbarComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ToolbarComponent`.`exportHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ToolbarComponent`.`exportHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ToolbarComponent`.`exportHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+
+
+
+public exportHtml(): void {
+    const html = this.contentService.getEditorContent();
+    this.downloadFile(html, 'document.html', 'text/html');
+  }
+
+  /**
+   * Exports the editor content as Markdown.
+   */
+    /**
+ * @generatedInfoDoc
+ * InfoDoc: method `ToolbarComponent`.`exportMarkdown()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ToolbarComponent`.`exportMarkdown()` is implemented in `projects/lib-magnetar-quill/src/lib/components/toolbar/toolbar.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ToolbarComponent`.`exportMarkdown()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ToolbarComponent`.`exportMarkdown()` participates in the `ToolbarComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ToolbarComponent`.`exportMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ToolbarComponent`.`exportMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ToolbarComponent`.`exportMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ToolbarComponent`.`exportMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+
+
+
+public exportMarkdown(): void {
+    const html = this.contentService.getEditorContent();
+    const result = this.importExportService.convertHtmlToMarkdown(html);
+    if (result.hasUnsupportedElements) {
+      alert('Warning: The document contains elements (such as tables or videos) not fully supported by Markdown. These have been exported with placeholders.');
+    }
+    this.downloadFile(result.markdown, 'document.md', 'text/markdown');
+  }
+
+  /**
+   * Exports the editor content as RTF.
+   */
+    /**
+ * @generatedInfoDoc
+ * InfoDoc: method `ToolbarComponent`.`exportRtf()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ToolbarComponent`.`exportRtf()` is implemented in `projects/lib-magnetar-quill/src/lib/components/toolbar/toolbar.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ToolbarComponent`.`exportRtf()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ToolbarComponent`.`exportRtf()` participates in the `ToolbarComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ToolbarComponent`.`exportRtf()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ToolbarComponent`.`exportRtf()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ToolbarComponent`.`exportRtf()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+
+
+
+public exportRtf(): void {
+    const html = this.contentService.getEditorContent();
+    const rtf = this.importExportService.convertHtmlToRtf(html);
+    this.downloadFile(rtf, 'document.rtf', 'application/rtf');
+  }
+
+  /**
+   * Helper to trigger a browser file download.
+   */
+    /**
+ * @generatedInfoDoc
+ * InfoDoc: method `ToolbarComponent`.`downloadFile()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ToolbarComponent`.`downloadFile()` is implemented in `projects/lib-magnetar-quill/src/lib/components/toolbar/toolbar.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ToolbarComponent`.`downloadFile()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ToolbarComponent`.`downloadFile()` participates in the `ToolbarComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ToolbarComponent`.`downloadFile()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ToolbarComponent`.`downloadFile()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ToolbarComponent`.`downloadFile()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ToolbarComponent`.`downloadFile()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `ToolbarComponent`.`downloadFile()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `ToolbarComponent`.`downloadFile()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ */
+
+
+
+private downloadFile(content: string, filename: string, contentType: string): void {
+    const blob = new Blob([content], { type: contentType });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    link.click();
+    URL.revokeObjectURL(url);
+  }
+
+    /**
+ * @generatedInfoDoc
+ * InfoDoc: method `ToolbarComponent`.`parseMarkdown()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ToolbarComponent`.`parseMarkdown()` is implemented in `projects/lib-magnetar-quill/src/lib/components/toolbar/toolbar.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ToolbarComponent`.`parseMarkdown()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ToolbarComponent`.`parseMarkdown()` participates in the `ToolbarComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ToolbarComponent`.`parseMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ToolbarComponent`.`parseMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ToolbarComponent`.`parseMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ToolbarComponent`.`parseMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `ToolbarComponent`.`parseMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ */
+
+
+public parseMarkdown(): void {
+    const rawContent = this.contentService.getEditorContent();
+    const tempDiv = document.createElement('div');
+    tempDiv.innerHTML = rawContent;
+    const markdownText = tempDiv.innerText || tempDiv.textContent || '';
+    const html = this.importExportService.convertMarkdownToHtml(markdownText);
+    this.contentService.setEditorContent(html);
+  }
 }

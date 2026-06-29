@@ -137,7 +137,7 @@ To build the library reliably, use:
 The library currently declares:
 
 - Angular peer dependencies: `^22.0.0`
-- Library package version: `0.10.0`
+- Library package version: `0.10.2`
 
 ### **Repository Structure Relevant to the Build**
 
@@ -390,10 +390,55 @@ Here’s the updated table with the latest progress:
 | 17    | HTML and Markdown Export                              | 🔴 Not Started| Version 0.17 - File Export |
 | 18    | File Loading (HTML & RTF)                             | 🔴 Not Started| Version 0.18 - File Import |
 | 19    | Full-Screen Mode                                      | 🔴 Not Started| Version 0.19 - Full-Screen |
-| 20    | Light and Dark Theme Support                          | 🔴 Not Started| Version 0.20 - Theme Customization |
+| 20    | Light and Dark Theme Support                          | ✅ Completed  | Version 0.20 - Theme Customization |
 | 21    | Plugin System for Custom Toolbar Tools                | 🔴 Not Started| Version 0.21 - Plugin Support |
 
 *(Status Key: ✅ Completed | 🔄 In Progress | 🔴 Not Started)*
+
+-----
+
+## **Theme Customization Guide** 🎨
+
+`magnetar-quill` supports dynamic theme toggling and deep customization using standard CSS Custom Properties (Variables).
+
+### **Theme API**
+You can bind the theme input property and listen to changes:
+```html
+<magnetar-quill [(theme)]="editorTheme"></magnetar-quill>
+```
+Supported values for `theme` are:
+* `'light'` (Default)
+* `'dark'`
+* `'custom'`
+* Any custom string matching your CSS classes (e.g. `'theme-ocean'`).
+
+### **Theme Overrides via CSS Variables**
+To customize any color palette (especially the `'custom'` theme), you can override the target CSS custom properties globally or scoped to the editor element:
+
+```css
+/* Customizing the theme-custom class on the editor */
+magnetar-quill.theme-custom {
+  --mq-bg-color: #f0fdf4;       /* Container background */
+  --mq-text-color: #14532d;     /* Default text color */
+  --mq-border-color: #166534;   /* Component border */
+  --mq-toolbar-bg: #dcfce7;     /* Toolbar background */
+  --mq-toolbar-border: #15803d; /* Toolbar borders */
+  --mq-editor-bg: #ffffff;      /* Editor editing area */
+  --mq-primary-color: #15803d;  /* Active button/outline highlights */
+}
+```
+
+#### **List of Available CSS Variables:**
+| Variable Name | Description | Default (Light) |
+|---|---|---|
+| `--mq-bg-color` | Container overall background | `#ffffff` |
+| `--mq-text-color` | Base text color | `#212529` |
+| `--mq-border-color` | Border color for editor and inputs | `#dee2e6` |
+| `--mq-toolbar-bg` | Toolbar background color | `#f8f9fa` |
+| `--mq-toolbar-border` | Toolbar divider/border color | `#dee2e6` |
+| `--mq-editor-bg` | Editing canvas background color | `#ffffff` |
+| `--mq-blockquote-border`| Quote sidebar accent | `#6c757d` |
+| `--mq-primary-color` | Main highlight / active state color | `#4f46e5` |
 
 -----
 
