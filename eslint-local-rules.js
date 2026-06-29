@@ -102,8 +102,83 @@ function getLineAndColumnFromIndex(text, index) {
   };
 }
 
+function getBareEslintDisableDirective(commentValue) {
+  const trimmed = commentValue.trim();
+  const match = trimmed.match(/^eslint-disable(?:-next-line|-line)?\b/);
+  if (!match) {
+    return null;
+  }
+
+  const rest = trimmed.slice(match[0].length).trim();
+  return rest === '' || rest.startsWith('--') ? match[0] : null;
+}
+
+function isMutableParameterProperty(node) {
+  return node.type === 'TSParameterProperty' &&
+    node.readonly !== true &&
+    ['private', 'protected', 'public'].includes(node.accessibility);
+}
+
 module.exports = {
   rules: {
+    'no-bare-eslint-disable': {
+      meta: {
+        type: 'suggestion',
+        docs: {
+          description: 'Require ESLint disable directives to list the disabled rule names.'
+        },
+        schema: [],
+        messages: {
+          specifyRules: 'Specify the ESLint rule names disabled by this {{directive}} comment.'
+        }
+      },
+      create(context) {
+        return {
+          Program() {
+            for (const comment of context.sourceCode.getAllComments()) {
+              const directive = getBareEslintDisableDirective(comment.value);
+              if (!directive) {
+                continue;
+              }
+
+              context.report({
+                loc: comment.loc,
+                messageId: 'specifyRules',
+                data: {
+                  directive
+                }
+              });
+            }
+          }
+        };
+      }
+    },
+    'readonly-parameter-properties': {
+      meta: {
+        type: 'suggestion',
+        docs: {
+          description: 'Require constructor parameter properties to be readonly when they are injected as class fields.'
+        },
+        schema: [],
+        messages: {
+          addReadonly: 'Mark this constructor parameter property as readonly.'
+        }
+      },
+      create(context) {
+        return {
+          TSParameterProperty(node) {
+            if (!isMutableParameterProperty(node)) {
+              return;
+            }
+
+            context.report({
+              node,
+              messageId: 'addReadonly'
+            });
+          }
+        };
+      }
+    },
     'cognitive-complexity': {
       meta: {
         type: 'suggestion',

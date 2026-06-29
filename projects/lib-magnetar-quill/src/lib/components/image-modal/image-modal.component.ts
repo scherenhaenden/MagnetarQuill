@@ -48,6 +48,7 @@ import {ClickOutsideDirective} from "../../directives/click-outside.directive";
  */
 
 
+
 @Component({
     selector: 'lib-image-modal',
     imports: [
@@ -79,7 +80,8 @@ export class ImageModalComponent {
  */
 
 
-constructor(private imageService: ImageService) {
+
+constructor(private readonly imageService: ImageService) {
   }
 
   @Input() isEditMode: boolean = true;
@@ -95,6 +97,7 @@ constructor(private imageService: ImageService) {
  * Relation 03: setter `ImageModalComponent`.`imageModalComponentModel` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: setter `ImageModalComponent`.`imageModalComponentModel` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 
 @Input()
@@ -118,6 +121,7 @@ constructor(private imageService: ImageService) {
  */
 
 
+
 get imageModalComponentModel(): ImageModalComponentModel {
     return this._imageModalComponentModel;
   }
@@ -137,6 +141,7 @@ get imageModalComponentModel(): ImageModalComponentModel {
  * Maintenance 04: method `ImageModalComponent`.`onSubmit()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `ImageModalComponent`.`onSubmit()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
 
 
 public onSubmit(): ImageModalComponentModel {
@@ -160,6 +165,7 @@ public onSubmit(): ImageModalComponentModel {
  */
 
 
+
 public onCancel(): void {
     this.cancel.emit();
   }
@@ -174,6 +180,7 @@ public onCancel(): void {
  * Relation 03: method `ImageModalComponent`.`toggleAspectRatio()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ImageModalComponent`.`toggleAspectRatio()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 
 public toggleAspectRatio(): void {
@@ -195,6 +202,7 @@ public toggleAspectRatio(): void {
  * Relation 03: method `ImageModalComponent`.`setOriginalRatio()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ImageModalComponent`.`setOriginalRatio()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 
 private setOriginalRatio(): number| null {
@@ -219,6 +227,7 @@ private setOriginalRatio(): number| null {
  * Relation 03: method `ImageModalComponent`.`updateHeight()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ImageModalComponent`.`updateHeight()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 
 public updateHeight(): void {

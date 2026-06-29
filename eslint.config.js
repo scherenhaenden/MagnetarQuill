@@ -34,10 +34,12 @@ module.exports = tseslint.config(
       'prefer-const': 'warn',
       'sonar-local/array-sort-compare': 'error',
       'sonar-local/cognitive-complexity': ['error', {max: 15}],
+      'sonar-local/no-bare-eslint-disable': 'error',
       'sonar-local/no-risky-regex': 'error',
       'sonar-local/prefer-modern-dom-before': 'error',
       'sonar-local/prefer-modern-dom-remove': 'error',
-      'sonar-local/prefer-number-static-methods': 'error'
+      'sonar-local/prefer-number-static-methods': 'error',
+      'sonar-local/readonly-parameter-properties': 'error'
     }
   },
   {
@@ -46,6 +48,8 @@ module.exports = tseslint.config(
       'sonar-local': sonarLocal
     },
     rules: {
+      'sonar-local/cognitive-complexity': ['error', {max: 15}],
+      'sonar-local/no-bare-eslint-disable': 'error',
       'sonar-local/no-risky-regex': 'error',
       'sonar-local/prefer-number-static-methods': 'error'
     }

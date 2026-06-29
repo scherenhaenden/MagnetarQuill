@@ -32,6 +32,7 @@ export type EditorTheme = 'light' | 'dark' | 'custom';
  * Relation 03: function `isEditorTheme()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: function `isEditorTheme()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 function isEditorTheme(value: string): value is EditorTheme {
   return ['light', 'dark', 'custom'].includes(value);
 }
@@ -88,6 +89,7 @@ function isEditorTheme(value: string): value is EditorTheme {
  * How 45: class `LibMagnetarQuillComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 46: class `LibMagnetarQuillComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
 
 
 @Component({
@@ -165,6 +167,7 @@ export class LibMagnetarQuillComponent {
  */
 
 
+
 public get imageModalComponentModel(): ImageModalComponentModel {
     return this._imageModalComponentModel;
   }
@@ -185,6 +188,7 @@ public get imageModalComponentModel(): ImageModalComponentModel {
  * Relation 03: setter `LibMagnetarQuillComponent`.`imageModalComponentModel` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: setter `LibMagnetarQuillComponent`.`imageModalComponentModel` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 
 public set imageModalComponentModel(value: ImageModalComponentModel) {
@@ -210,6 +214,7 @@ public set imageModalComponentModel(value: ImageModalComponentModel) {
  * Relation 03: setter `LibMagnetarQuillComponent`.`content` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: setter `LibMagnetarQuillComponent`.`content` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 
 @Input()
@@ -246,13 +251,14 @@ public set imageModalComponentModel(value: ImageModalComponentModel) {
  */
 
 
+
 public constructor(
-    private contentService: ContentService,
-    private formattingService: FormattingService,
-    public imageService: ImageService,
-    private keyboardShortcutService: KeyboardShortcutService,
-    private cdRef: ChangeDetectorRef,
-    private el: ElementRef
+    private readonly contentService: ContentService,
+    private readonly formattingService: FormattingService,
+    public readonly imageService: ImageService,
+    private readonly keyboardShortcutService: KeyboardShortcutService,
+    private readonly cdRef: ChangeDetectorRef,
+    private readonly el: ElementRef
   ) {
     this.keyboardShortcutService.initialize(this.el.nativeElement);
   }
@@ -270,6 +276,7 @@ public constructor(
  * Relation 03: method `LibMagnetarQuillComponent`.`closeModal()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `LibMagnetarQuillComponent`.`closeModal()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 
 public closeModal(): void {
@@ -293,6 +300,7 @@ public closeModal(): void {
  */
 
 
+
 public toggleHtmlView(): void {
     this.isHtmlView = !this.isHtmlView;
   }
@@ -312,6 +320,7 @@ public toggleHtmlView(): void {
  */
 
 
+
 public openImageEditModal(): void {
     this.showImageModal = true;
   }
@@ -329,6 +338,7 @@ public openImageEditModal(): void {
  * Relation 03: method `LibMagnetarQuillComponent`.`clearImageToEdit()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `LibMagnetarQuillComponent`.`clearImageToEdit()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 
 public clearImageToEdit(): void {
@@ -351,6 +361,7 @@ public clearImageToEdit(): void {
  * Maintenance 04: method `LibMagnetarQuillComponent`.`onThemeChange()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `LibMagnetarQuillComponent`.`onThemeChange()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
 
 
 public onThemeChange(newTheme: string): void {
@@ -377,6 +388,7 @@ public onThemeChange(newTheme: string): void {
  * Relation 03: method `LibMagnetarQuillComponent`.`onEditorContentChanged()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `LibMagnetarQuillComponent`.`onEditorContentChanged()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 
 public onEditorContentChanged(newContent: string): void {
