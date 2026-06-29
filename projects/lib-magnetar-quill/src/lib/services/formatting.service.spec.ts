@@ -17,6 +17,32 @@ describe('FormattingService', () => {
     service = TestBed.inject(FormattingService);
   });
 
+  function selectContainerContents(container: HTMLElement): void {
+    const range = document.createRange();
+    range.selectNodeContents(container);
+
+    const selection = window.getSelection()!;
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }
+
+  function selectText(textNode: Text, startOffset: number, endOffset: number): void {
+    const range = document.createRange();
+    range.setStart(textNode, startOffset);
+    range.setEnd(textNode, endOffset);
+
+    const selection = window.getSelection()!;
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }
+
+  function expectNoStyledSpan(container: HTMLElement, styleName: string, value: string): void {
+    const matchingSpan = Array.from(container.querySelectorAll('span'))
+      .find(span => span.style.getPropertyValue(styleName).includes(value));
+
+    expect(matchingSpan).toBeUndefined();
+  }
+
   describe('toggleBold', () => {
     it('should toggle the boldActive signal and apply/remove bold style', () => {
       spyOn(service, 'applyStyle');
@@ -32,6 +58,100 @@ describe('FormattingService', () => {
       service.toggleBold();
       expect(service.removeFormatting).toHaveBeenCalledWith('font-weight', 'bold');
       expect(service.boldActive()).toBeFalse();
+    });
+
+    it('should remove bold from a previously bolded selection', () => {
+      const container = document.createElement('div');
+      container.contentEditable = 'true';
+      container.textContent = 'Bold text';
+      document.body.appendChild(container);
+      selectContainerContents(container);
+
+      service.boldActive.set(false);
+      service.toggleBold();
+      expect(container.querySelector('span')?.style.fontWeight).toBe('bold');
+
+      service.toggleBold();
+      expectNoStyledSpan(container, 'font-weight', 'bold');
+      expect(container.textContent).toBe('Bold text');
+
+      container.remove();
+    });
+  });
+
+  describe('toggleStrong', () => {
+    it('should remove strong only from the selected text inside a shared strong element', () => {
+      const container = document.createElement('div');
+      container.contentEditable = 'true';
+      container.innerHTML = '<strong>One Two</strong>';
+      document.body.appendChild(container);
+
+      const strongText = container.querySelector('strong')!.firstChild as Text;
+      selectText(strongText, 0, 3);
+
+      service.strongActive.set(true);
+      service.toggleStrong();
+
+      expect(container.textContent).toBe('One Two');
+      expect(container.innerHTML).toBe('One<strong> Two</strong>');
+      expect(window.getSelection()?.toString()).toBe('One');
+
+      container.remove();
+    });
+
+    it('should not mark bold active for text that is only strong', () => {
+      const container = document.createElement('div');
+      container.contentEditable = 'true';
+      container.innerHTML = '<strong>Strong only</strong>';
+      document.body.appendChild(container);
+
+      const strongText = container.querySelector('strong')!.firstChild as Text;
+      selectText(strongText, 0, strongText.length);
+
+      service.updateFormatStates();
+
+      expect(service.strongActive()).toBeTrue();
+      expect(service.boldActive()).toBeFalse();
+
+      container.remove();
+    });
+
+    it('should keep strong when removing bold from text that has both formats', () => {
+      const container = document.createElement('div');
+      container.contentEditable = 'true';
+      container.innerHTML = '<strong><span style="font-weight: bold;">Both</span></strong>';
+      document.body.appendChild(container);
+
+      const formattedText = container.querySelector('span')!.firstChild as Text;
+      selectText(formattedText, 0, formattedText.length);
+
+      service.boldActive.set(true);
+      service.toggleBold();
+
+      expect(container.textContent).toBe('Both');
+      expect(container.querySelector('strong')).not.toBeNull();
+      expectNoStyledSpan(container, 'font-weight', 'bold');
+
+      container.remove();
+    });
+
+    it('should keep inline bold when removing strong from text that has both formats', () => {
+      const container = document.createElement('div');
+      container.contentEditable = 'true';
+      container.innerHTML = '<span style="font-weight: bold;"><strong>Both</strong></span>';
+      document.body.appendChild(container);
+
+      const formattedText = container.querySelector('strong')!.firstChild as Text;
+      selectText(formattedText, 0, formattedText.length);
+
+      service.strongActive.set(true);
+      service.toggleStrong();
+
+      expect(container.textContent).toBe('Both');
+      expect(container.querySelector('strong')).toBeNull();
+      expect(container.querySelector('span')?.style.fontWeight).toBe('bold');
+
+      container.remove();
     });
   });
 
@@ -50,6 +170,24 @@ describe('FormattingService', () => {
       service.toggleItalic();
       expect(service.removeFormatting).toHaveBeenCalledWith('font-style', 'italic');
       expect(service.italicActive()).toBeFalse();
+    });
+
+    it('should remove italic from a previously italicized selection', () => {
+      const container = document.createElement('div');
+      container.contentEditable = 'true';
+      container.textContent = 'Italic text';
+      document.body.appendChild(container);
+      selectContainerContents(container);
+
+      service.italicActive.set(false);
+      service.toggleItalic();
+      expect(container.querySelector('span')?.style.fontStyle).toBe('italic');
+
+      service.toggleItalic();
+      expectNoStyledSpan(container, 'font-style', 'italic');
+      expect(container.textContent).toBe('Italic text');
+
+      container.remove();
     });
   });
 
@@ -87,6 +225,24 @@ describe('FormattingService', () => {
       expect(service.removeFormatting).toHaveBeenCalledWith('text-decoration', 'line-through');
       expect(service.strikethroughActive()).toBeFalse();
     });
+
+    it('should remove strikethrough from a previously struck selection', () => {
+      const container = document.createElement('div');
+      container.contentEditable = 'true';
+      container.textContent = 'Strike text';
+      document.body.appendChild(container);
+      selectContainerContents(container);
+
+      service.strikethroughActive.set(false);
+      service.toggleStrikethrough();
+      expect(container.querySelector('span')?.style.textDecoration).toContain('line-through');
+
+      service.toggleStrikethrough();
+      expectNoStyledSpan(container, 'text-decoration', 'line-through');
+      expect(container.textContent).toBe('Strike text');
+
+      container.remove();
+    });
   });
 
   describe('applyHeader', () => {
@@ -94,6 +250,7 @@ describe('FormattingService', () => {
       const mockRange = {
         extractContents: jasmine.createSpy().and.returnValue(document.createTextNode('Sample Text')),
         insertNode: jasmine.createSpy(),
+        cloneRange: jasmine.createSpy().and.callFake(() => mockRange),
         selectNodeContents: jasmine.createSpy(), // Mock the missing method
       };
 
@@ -129,23 +286,38 @@ describe('FormattingService', () => {
 
       spyOn(service, 'splitRangeIntoParagraphs').and.returnValue([paragraph1, paragraph2]);
 
+      const mockRange = {
+        commonAncestorContainer: document.createElement('div'), // Needs to be HTMLElement
+        cloneRange: jasmine.createSpy().and.callFake(() => mockRange),
+      } as unknown as Range;
+
+      const mockSelection = {
+        isCollapsed: false,
+        rangeCount: 1,
+        getRangeAt: jasmine.createSpy().and.returnValue(mockRange),
+      } as unknown as Selection;
+
+      spyOn(window, 'getSelection').and.returnValue(mockSelection);
+
       service.setTextAlign('center');
       expect(paragraph1.style.textAlign).toBe('center');
       expect(paragraph2.style.textAlign).toBe('center');
     });
   });
 
-  describe('onBackgroundColorChange', () => {
+  describe('setBackgroundColor', () => {
     it('should change the background color of selected elements', () => {
-      const mockEvent = { target: { value: '#ff0000' } } as unknown as Event;
       const element1 = document.createElement('div');
       const element2 = document.createElement('div');
 
       mockContentService.getSelectedElements.and.returnValue([element1, element2]);
 
-      service.onBackgroundColorChange(mockEvent);
-      expect(element1.style.backgroundColor).toBe('#ff0000');
-      expect(element2.style.backgroundColor).toBe('#ff0000');
+      service.setBackgroundColor('#ff0000');
+      // Browsers normalize colors to RGB in style properties
+      // NOTE: This assertion handles both simple RGB normalization and potential exact hex match
+      const color = element1.style.backgroundColor;
+      const isRed = color === 'rgb(255, 0, 0)' || color === '#ff0000' || color === 'red';
+      expect(isRed).toBeTrue();
     });
   });
 
@@ -171,7 +343,7 @@ describe('FormattingService', () => {
       expect(container.querySelector('p')).not.toBeNull();
       expect(container.querySelector('img')).not.toBeNull();
 
-      document.body.removeChild(container);
+      container.remove();
     });
 
     it('should preserve multiple block paragraphs and their text', () => {
@@ -195,7 +367,7 @@ describe('FormattingService', () => {
       expect(paragraphs[0].textContent?.trim()).toBe('One');
       expect(paragraphs[1].textContent?.trim()).toBe('Two');
 
-      document.body.removeChild(container);
+      container.remove();
     });
   });
 

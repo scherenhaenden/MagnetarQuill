@@ -45,6 +45,41 @@ body {
     color: rgba(255, 255, 255, 0.9);
     font-weight: 300;
   }
+
+  .demo-theme-selector {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+
+    .theme-select {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      outline: none;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.4);
+        border-color: rgba(255, 255, 255, 0.4);
+      }
+
+      option {
+        background: #2d3748;
+        color: white;
+      }
+    }
+  }
 }
 
 /* ===== MAIN CONTENT ===== */
@@ -70,14 +105,17 @@ body {
   transition: width 0.1s ease-out;
   display: flex;
   flex-direction: column;
+  animation: fadeInUp 0.6s ease-out;
 }
 
 .editor-section {
   margin-right: 0.5rem;
+  animation-delay: 0.1s;
 }
 
 .preview-section {
   margin-left: 0.5rem;
+  animation-delay: 0.2s;
 }
 
 .section-title {
@@ -293,17 +331,4 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.editor-section,
-.preview-section {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-.editor-section {
-  animation-delay: 0.1s;
-}
-
-.preview-section {
-  animation-delay: 0.2s;
 }
