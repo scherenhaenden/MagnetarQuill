@@ -9,7 +9,7 @@
     "build-lib": "ng build lib-magnetar-quill",
     "build-lib-watch": "ng build lib-magnetar-quill --watch --configuration development",
     "serve-with-lib": ". ~/.nvm/nvm.sh && nvm use && npm run build-lib && ng serve --port 4200",
-    "serve-with-lib-linux": "bash -lc 'npm run build-lib-watch & build_pid=$!; trap \"kill $build_pid 2>/dev/null\" EXIT; npm run start -- --port 4200'",
+    "serve-with-lib-linux": "bash -lc 'npm run build-lib-watch & build_pid=$!; npm run start -- --port 4200 & start_pid=$!; trap \"kill $build_pid $start_pid 2>/dev/null\" EXIT; wait -n $build_pid $start_pid'",
     "test": "ng test --watch=false --code-coverage",
     "test-ci": "ng test --watch=false --no-progress --browsers=ChromeHeadlessCI --code-coverage",
     "test-lib-magnetar-quill": "ng test lib-magnetar-quill --watch=false --code-coverage",

@@ -12,6 +12,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
  * Maintenance 04: class `SafeHtmlPipe` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 
+
 @Pipe({
   name: 'safeHtml',
   standalone: true
@@ -30,7 +31,8 @@ export class SafeHtmlPipe implements PipeTransform {
  * Maintenance 04: method `SafeHtmlPipe`.`transform()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 
-public transform(value: string): SafeHtml {
-    return this.sanitizer.bypassSecurityTrustHtml(value);
+
+public transform(value: string | null | undefined): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(value ?? '');
   }
 }

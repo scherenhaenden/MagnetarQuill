@@ -9,13 +9,14 @@
       <!-- Left Preview Section -->
       <div class="preview">
         <h4>Preview</h4>
-        <img [src]="imageModalComponentModel.url"
-             [alt]="imageModalComponentModel.alt || 'Image preview'"
-             [style.width.px]="imageModalComponentModel.width"
-             [style.height.px]="imageModalComponentModel.height"
-             [style.borderWidth.px]="imageModalComponentModel.border"
-             [style.padding]="imageModalComponentModel.hPadding + 'px ' + imageModalComponentModel.vPadding + 'px'"
-             [style.textAlign]="imageModalComponentModel.alignment" />
+        <div [style.text-align]="imageModalComponentModel.alignment">
+          <img [src]="imageModalComponentModel.url"
+               [alt]="imageModalComponentModel.alt || 'Image preview'"
+               [style.width.px]="imageModalComponentModel.width"
+               [style.height.px]="imageModalComponentModel.height"
+               [style.borderWidth.px]="imageModalComponentModel.border"
+               [style.padding]="imageModalComponentModel.hPadding + 'px ' + imageModalComponentModel.vPadding + 'px'" />
+        </div>
       </div>
       <!-- Right Form Section -->
       <div class="form-section">
@@ -49,6 +50,11 @@
           <option value="left">Left</option>
           <option value="center">Center</option>
           <option value="right">Right</option>
+          <option value="start">Start</option>
+          <option value="end">End</option>
+          <option value="justify">Justify</option>
+          <option value="stretch">Stretch</option>
+          <option value="justify-all">Justify All</option>
         </select>
       </div>
     </div>

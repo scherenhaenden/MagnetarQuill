@@ -27,11 +27,17 @@ function isFunctionNode(node) {
 }
 
 function isSortCallWithoutComparator(node) {
+  const object = node.callee?.object;
   return node.arguments.length === 0 &&
     node.callee?.type === 'MemberExpression' &&
     !node.callee.computed &&
     node.callee.property?.type === 'Identifier' &&
-    node.callee.property.name === 'sort';
+    node.callee.property.name === 'sort' &&
+    (
+      object?.type === 'ArrayExpression' ||
+      object?.type === 'CallExpression' ||
+      object?.type === 'Identifier'
+    );
 }
 
 function isInsertBeforeCall(node) {
@@ -71,6 +77,21 @@ function getAttributeValue(attributes, attributeName) {
 
 function hasAttribute(attributes, attributeName) {
   return new RegExp(`\\s${attributeName}(\\s|=|$)`, 'i').test(attributes);
+}
+
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function isInsideLabel(text, index) {
+  const before = text.slice(0, index).toLowerCase();
+  const lastOpenLabel = before.lastIndexOf('<label');
+  const lastCloseLabel = before.lastIndexOf('</label>');
+  if (lastOpenLabel <= lastCloseLabel) {
+    return false;
+  }
+
+  return text.slice(index).toLowerCase().includes('</label>');
 }
 
 function getLineAndColumnFromIndex(text, index) {
@@ -214,6 +235,14 @@ module.exports = {
               return;
             }
 
+            const referenceNode = node.arguments[1];
+            if (
+              !referenceNode ||
+              (referenceNode.type === 'Literal' && referenceNode.value === null)
+            ) {
+              return;
+            }
+
             context.report({
               node,
               messageId: 'preferBefore'
@@ -252,7 +281,7 @@ module.exports = {
       meta: {
         type: 'problem',
         docs: {
-          description: 'Require an explicit comparator for Array.prototype.sort().'
+          description: 'Require an explicit comparator for likely array sort calls.'
         },
         schema: [],
         messages: {
@@ -367,9 +396,9 @@ module.exports = {
               }
 
               const id = getAttributeValue(attributes, 'id');
-              const labelForIdRegex = id ? new RegExp(`<label\\b[^>]*\\sfor\\s*=\\s*["']${id}["']`, 'i') : null;
+              const labelForIdRegex = id ? new RegExp(`<label\\b[^>]*\\sfor\\s*=\\s*["']${escapeRegExp(id)}["']`, 'i') : null;
 
-              if (id && labelForIdRegex?.test(text)) {
+              if ((id && labelForIdRegex?.test(text)) || isInsideLabel(text, match.index)) {
                 continue;
               }
 

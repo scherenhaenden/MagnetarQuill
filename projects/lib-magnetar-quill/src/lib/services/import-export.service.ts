@@ -361,6 +361,7 @@ export interface MarkdownExportResult {
  * Relation 347: class `ImportExportService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -376,6 +377,7 @@ export class ImportExportService {
  * Relation 03: constructor for class `ImportExportService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: constructor for class `ImportExportService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 constructor(private logService: LogService) {}
 
@@ -437,6 +439,7 @@ constructor(private logService: LogService) {}
  * Maintenance 48: method `ImportExportService`.`convertMarkdownToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 49: method `ImportExportService`.`convertMarkdownToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
 
 public convertMarkdownToHtml(md: string): string {
     if (!md) return '';
@@ -530,6 +533,7 @@ public convertMarkdownToHtml(md: string): string {
  * Maintenance 08: method `ImportExportService`.`parseInlineMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 09: method `ImportExportService`.`parseInlineMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
 
 private parseInlineMarkdown(text: string): string {
     let escaped = this.escapeHtml(text);
@@ -643,6 +647,7 @@ private parseInlineMarkdown(text: string): string {
  * Relation 79: method `ImportExportService`.`convertHtmlToMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 80: method `ImportExportService`.`convertHtmlToMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 public convertHtmlToMarkdown(html: string): MarkdownExportResult {
     if (!html) return { markdown: '', hasUnsupportedElements: false };
@@ -884,6 +889,7 @@ public convertHtmlToMarkdown(html: string): MarkdownExportResult {
  * Relation 127: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
 
+
 public convertRtfToHtml(rtf: string): string {
     if (!rtf) return '';
 
@@ -1117,6 +1123,7 @@ public convertRtfToHtml(rtf: string): string {
  * Maintenance 52: method `ImportExportService`.`convertHtmlToRtf()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 
+
 public convertHtmlToRtf(html: string): string {
     if (!html) return '{\\rtf1\\ansi\\deff0\n{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\n\\viewkind4\\uc1\\pard\\lang1033\\f0\\fs24\n\\par\n}';
 
@@ -1197,6 +1204,7 @@ public convertHtmlToRtf(html: string): string {
  * Why 06: method `ImportExportService`.`escapeHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
 
+
 private escapeHtml(text: string): string {
     return text
       .replace(/&/g, '&amp;')
@@ -1217,6 +1225,7 @@ private escapeHtml(text: string): string {
  * Maintenance 04: method `ImportExportService`.`escapeRtf()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `ImportExportService`.`escapeRtf()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
 
 private escapeRtf(text: string): string {
     return text

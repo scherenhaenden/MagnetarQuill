@@ -178,6 +178,7 @@ import {ImportExportService} from "../../services/import-export.service";
  * Maintenance 156: class `ToolbarComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 
+
 @Component({
     selector: 'lib-toolbar',
     imports: [
@@ -188,7 +189,7 @@ import {ImportExportService} from "../../services/import-export.service";
     standalone: true,
     templateUrl: './toolbar.component.html',
     styleUrl: './toolbar.component.less',
-    changeDetection: ChangeDetectionStrategy.Eager
+    changeDetection: ChangeDetectionStrategy.Default
 })
 export class ToolbarComponent {
 
@@ -224,6 +225,7 @@ export class ToolbarComponent {
  * Maintenance 04: constructor for class `ToolbarComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 
+
 constructor(public formattingService: FormattingService,
               private contentService: ContentService,
               private importExportService: ImportExportService
@@ -239,6 +241,7 @@ constructor(public formattingService: FormattingService,
  * Relation 03: method `ToolbarComponent`.`withEditorSelection()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`withEditorSelection()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 private withEditorSelection(action: () => void): void {
     this.formattingService.restoreSelection();
@@ -257,6 +260,7 @@ private withEditorSelection(action: () => void): void {
  * Maintenance 04: method `ToolbarComponent`.`toggleBold()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 
+
 public toggleBold(): void {
     this.withEditorSelection(() => this.formattingService.toggleBold());
   }
@@ -271,6 +275,7 @@ public toggleBold(): void {
  * Relation 03: method `ToolbarComponent`.`toggleStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`toggleStrong()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 public toggleStrong(): void {
     this.withEditorSelection(() => this.formattingService.toggleStrong());
@@ -287,6 +292,7 @@ public toggleStrong(): void {
  * Maintenance 04: method `ToolbarComponent`.`toggleItalic()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 
+
 public toggleItalic(): void {
     this.withEditorSelection(() => this.formattingService.toggleItalic());
   }
@@ -301,6 +307,7 @@ public toggleItalic(): void {
  * Relation 03: method `ToolbarComponent`.`toggleUnderline()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`toggleUnderline()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 public toggleUnderline(): void {
     this.withEditorSelection(() => this.formattingService.toggleUnderline());
@@ -317,6 +324,7 @@ public toggleUnderline(): void {
  * Maintenance 04: method `ToolbarComponent`.`toggleStrikethrough()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 
+
 public toggleStrikethrough(): void {
     this.withEditorSelection(() => this.formattingService.toggleStrikethrough());
   }
@@ -331,6 +339,7 @@ public toggleStrikethrough(): void {
  * Relation 03: method `ToolbarComponent`.`toggleSuperscript()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`toggleSuperscript()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 public toggleSuperscript(): void {
     this.withEditorSelection(() => this.formattingService.toggleSuperscript());
@@ -347,6 +356,7 @@ public toggleSuperscript(): void {
  * Maintenance 04: method `ToolbarComponent`.`toggleSubscript()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 
+
 public toggleSubscript(): void {
     this.withEditorSelection(() => this.formattingService.toggleSubscript());
   }
@@ -361,6 +371,7 @@ public toggleSubscript(): void {
  * Relation 03: method `ToolbarComponent`.`clearFormatting()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`clearFormatting()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 public clearFormatting(): void {
     this.withEditorSelection(() => this.formattingService.clearFormatting());
@@ -378,6 +389,7 @@ public clearFormatting(): void {
  * Maintenance 04: method `ToolbarComponent`.`toggleOrderedList()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 
+
 public toggleOrderedList(): void {
     this.withEditorSelection(() => this.formattingService.toggleList('ordered'));
   }
@@ -393,6 +405,7 @@ public toggleOrderedList(): void {
  * Maintenance 04: method `ToolbarComponent`.`toggleUnorderedList()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 
+
 public toggleUnorderedList(): void {
     this.withEditorSelection(() => this.formattingService.toggleList('unordered'));
   }
@@ -407,6 +420,7 @@ public toggleUnorderedList(): void {
  * Relation 03: method `ToolbarComponent`.`setTextAlign()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`setTextAlign()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 public setTextAlign(alignment: 'left' | 'center' | 'right' | 'justify'): void {
     this.withEditorSelection(() => this.formattingService.setTextAlign(alignment));
@@ -428,6 +442,7 @@ public setTextAlign(alignment: 'left' | 'center' | 'right' | 'justify'): void {
  * How 09: method `ToolbarComponent`.`wrapSelectionInBlock()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 10: method `ToolbarComponent`.`wrapSelectionInBlock()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
 
 public wrapSelectionInBlock(blockTag: string): void {
     const selection = window.getSelection();
@@ -460,6 +475,7 @@ public wrapSelectionInBlock(blockTag: string): void {
  * Maintenance 04: method `ToolbarComponent`.`isBlockElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 
+
 private isBlockElement(element: HTMLElement): boolean {
     const blockElements = ['P', 'DIV', 'SECTION', 'ARTICLE'];
     return blockElements.includes(element.tagName);
@@ -476,6 +492,7 @@ private isBlockElement(element: HTMLElement): boolean {
  * Relation 03: method `ToolbarComponent`.`setLineSpacing()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`setLineSpacing()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 public setLineSpacing(event: Event): void {
     const target = event.target as HTMLSelectElement;
@@ -494,6 +511,7 @@ public setLineSpacing(event: Event): void {
  * Maintenance 04: method `ToolbarComponent`.`applyHeader()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 
+
 public applyHeader(event: Event): void {
     const target = event.target as HTMLSelectElement;
     this.withEditorSelection(() => this.formattingService.applyHeader(target.value));
@@ -510,6 +528,7 @@ public applyHeader(event: Event): void {
  * Maintenance 04: method `ToolbarComponent`.`onFontFamilyChange()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 
+
 public onFontFamilyChange(event: Event): void {
     const target = event.target as HTMLSelectElement;
     this.withEditorSelection(() => this.formattingService.applyStyle('font-family', target.value || ''));
@@ -525,6 +544,7 @@ public onFontFamilyChange(event: Event): void {
  * Relation 03: method `ToolbarComponent`.`onFontSizeChange()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`onFontSizeChange()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 public onFontSizeChange(event: Event): void {
     const target = event.target as HTMLSelectElement;
@@ -543,6 +563,7 @@ public onFontSizeChange(event: Event): void {
  * Maintenance 04: method `ToolbarComponent`.`onTextColorChange()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 
+
 public onTextColorChange(event: Event): void {
     const target = event.target as HTMLInputElement;
     this.withEditorSelection(() => this.formattingService.applyStyle('color', target.value));
@@ -558,6 +579,7 @@ public onTextColorChange(event: Event): void {
  * Relation 03: method `ToolbarComponent`.`onBackgroundColorChange()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`onBackgroundColorChange()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 public onBackgroundColorChange(event: Event): void {
     const target = event.target as HTMLInputElement;
@@ -576,6 +598,7 @@ public onBackgroundColorChange(event: Event): void {
  * Maintenance 04: method `ToolbarComponent`.`openImageModal()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 
+
 public openImageModal(): void {
     this.showImageModal = true;
   }
@@ -590,6 +613,7 @@ public openImageModal(): void {
  * Relation 03: method `ToolbarComponent`.`closeImageModal()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`closeImageModal()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 public closeImageModal(): void {
     this.showImageModal = false;
@@ -615,17 +639,18 @@ public closeImageModal(): void {
  * Maintenance 12: method `ToolbarComponent`.`insertImage()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 
+
 public insertImage(imageModalComponentModel: ImageModalComponentModel): void {
-    if (this.imageUrl.trim()) {
+    if (imageModalComponentModel.url.trim()) {
       this.insertImageFromUrl.emit({
-        url: this.imageUrl,
-        alt: this.altText,
-        width: this.width,
-        height: this.height,
-        border: this.border,
-        hPadding: this.hPadding,
-        vPadding: this.vPadding,
-        alignment: this.alignment,
+        url: imageModalComponentModel.url,
+        alt: imageModalComponentModel.alt,
+        width: imageModalComponentModel.width,
+        height: imageModalComponentModel.height,
+        border: imageModalComponentModel.border,
+        hPadding: imageModalComponentModel.hPadding,
+        vPadding: imageModalComponentModel.vPadding,
+        alignment: imageModalComponentModel.alignment,
       });
       this.closeImageModal();
     }
@@ -642,6 +667,7 @@ public insertImage(imageModalComponentModel: ImageModalComponentModel): void {
  * Relation 03: method `ToolbarComponent`.`onToggleHtmlView()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`onToggleHtmlView()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 public onToggleHtmlView(): void {
     this.toggleHtmlView.emit();
@@ -662,6 +688,7 @@ public onToggleHtmlView(): void {
  * Relation 03: method `ToolbarComponent`.`onThemeChange()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ToolbarComponent`.`onThemeChange()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 public onThemeChange(event: Event): void {
     const target = event.target as HTMLSelectElement;
@@ -691,6 +718,7 @@ public onThemeChange(event: Event): void {
  * Maintenance 04: method `ToolbarComponent`.`triggerFileInput()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 
+
 public triggerFileInput(fileInput: HTMLInputElement): void {
     fileInput.click();
   }
@@ -714,6 +742,7 @@ public triggerFileInput(fileInput: HTMLInputElement): void {
  * How 09: method `ToolbarComponent`.`onFileSelected()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 10: method `ToolbarComponent`.`onFileSelected()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
 
 public onFileSelected(event: Event): void {
     const target = event.target as HTMLInputElement;
@@ -750,6 +779,7 @@ public onFileSelected(event: Event): void {
  * Relation 11: method `ToolbarComponent`.`handleFileContent()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
 
+
 private handleFileContent(fileName: string, content: string): void {
     const ext = fileName.split('.').pop()?.toLowerCase();
     if (ext === 'html' || ext === 'htm') {
@@ -779,6 +809,7 @@ private handleFileContent(fileName: string, content: string): void {
  * Maintenance 04: method `ToolbarComponent`.`exportHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 
+
 public exportHtml(): void {
     const html = this.contentService.getEditorContent();
     this.downloadFile(html, 'document.html', 'text/html');
@@ -798,6 +829,7 @@ public exportHtml(): void {
  * Maintenance 04: method `ToolbarComponent`.`exportMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `ToolbarComponent`.`exportMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
 
 public exportMarkdown(): void {
     const html = this.contentService.getEditorContent();
@@ -822,6 +854,7 @@ public exportMarkdown(): void {
  * Maintenance 04: method `ToolbarComponent`.`exportRtf()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 
+
 public exportRtf(): void {
     const html = this.contentService.getEditorContent();
     const rtf = this.importExportService.convertHtmlToRtf(html);
@@ -845,6 +878,7 @@ public exportRtf(): void {
  * Relation 07: method `ToolbarComponent`.`downloadFile()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
 
+
 private downloadFile(content: string, filename: string, contentType: string): void {
     const blob = new Blob([content], { type: contentType });
     const url = URL.createObjectURL(blob);
@@ -856,17 +890,18 @@ private downloadFile(content: string, filename: string, contentType: string): vo
   }
 
     /**
-   * @generatedInfoDoc
-   * InfoDoc: method `ToolbarComponent`.`parseMarkdown()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
-   * How: method `ToolbarComponent`.`parseMarkdown()` is implemented in `projects/lib-magnetar-quill/src/lib/components/toolbar/toolbar.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
-   * Why: method `ToolbarComponent`.`parseMarkdown()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
-   * Related: method `ToolbarComponent`.`parseMarkdown()` participates in the `ToolbarComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
-   * Why 02: method `ToolbarComponent`.`parseMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
-   * Relation 03: method `ToolbarComponent`.`parseMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
-   * Maintenance 04: method `ToolbarComponent`.`parseMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
-   * How 05: method `ToolbarComponent`.`parseMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
-   * Why 06: method `ToolbarComponent`.`parseMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
-   */
+ * @generatedInfoDoc
+ * InfoDoc: method `ToolbarComponent`.`parseMarkdown()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ToolbarComponent`.`parseMarkdown()` is implemented in `projects/lib-magnetar-quill/src/lib/components/toolbar/toolbar.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ToolbarComponent`.`parseMarkdown()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ToolbarComponent`.`parseMarkdown()` participates in the `ToolbarComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ToolbarComponent`.`parseMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ToolbarComponent`.`parseMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ToolbarComponent`.`parseMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ToolbarComponent`.`parseMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `ToolbarComponent`.`parseMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ */
+
 public parseMarkdown(): void {
     const rawContent = this.contentService.getEditorContent();
     const tempDiv = document.createElement('div');
