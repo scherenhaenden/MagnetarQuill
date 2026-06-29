@@ -99,7 +99,7 @@ function isEditorTheme(value: string): value is EditorTheme {
     standalone: true,
     templateUrl: './lib-magnetar-quill.component.html',
     styleUrl: './lib-magnetar-quill.component.less',
-    changeDetection: ChangeDetectionStrategy.Default,
+    changeDetection: ChangeDetectionStrategy.Eager,
     providers: [FormattingService, ContentService, KeyboardShortcutService, ImageService, LogService],
     host: {
       '[class]': '"magnetar-quill-container theme-" + theme'

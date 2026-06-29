@@ -190,7 +190,7 @@ import {ImportExportService} from "../../services/import-export.service";
     standalone: true,
     templateUrl: './toolbar.component.html',
     styleUrl: './toolbar.component.less',
-    changeDetection: ChangeDetectionStrategy.Default
+    changeDetection: ChangeDetectionStrategy.Eager
 })
 export class ToolbarComponent {
 

@@ -60,7 +60,7 @@ import {ClickOutsideDirective} from "../../directives/click-outside.directive";
     standalone: true,
     templateUrl: './image-modal.component.html',
     styleUrl: './image-modal.component.css',
-    changeDetection: ChangeDetectionStrategy.Default
+    changeDetection: ChangeDetectionStrategy.Eager
 })
 export class ImageModalComponent {
 

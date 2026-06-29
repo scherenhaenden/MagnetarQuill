@@ -373,7 +373,7 @@ import {Subject, takeUntil} from 'rxjs';
     standalone: true,
     templateUrl: './editor.component.html',
     styleUrl: './editor.component.less',
-    changeDetection: ChangeDetectionStrategy.Default
+    changeDetection: ChangeDetectionStrategy.Eager
 })
 export class EditorComponent implements OnInit, AfterViewInit, OnChanges, DoCheck, OnDestroy {
 
