@@ -3,6 +3,7 @@ import { ToolbarComponent } from './toolbar.component';
 import { FormattingService } from '../../services/formatting.service';
 import { ContentService } from '../../services/content.service';
 import { ImportExportService } from '../../services/import-export.service';
+import { TableService } from '../../services/table.service';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
@@ -83,6 +84,17 @@ describe('ToolbarComponent', () => {
         const event = new MouseEvent('mousedown', { cancelable: true });
         spyOn(event, 'preventDefault');
         insertImageBtn!.nativeElement.dispatchEvent(event);
+        expect(event.preventDefault).toHaveBeenCalled();
+    });
+
+    it('should prevent default on mousedown for "Insert Table" button', () => {
+        const buttons = fixture.debugElement.queryAll(By.css('button'));
+        const insertTableBtn = buttons.find(el => el.nativeElement.textContent.includes('Insert Table'));
+        expect(insertTableBtn).toBeTruthy('Could not find Insert Table button');
+
+        const event = new MouseEvent('mousedown', { cancelable: true });
+        spyOn(event, 'preventDefault');
+        insertTableBtn!.nativeElement.dispatchEvent(event);
         expect(event.preventDefault).toHaveBeenCalled();
     });
   });
@@ -208,6 +220,53 @@ describe('ToolbarComponent', () => {
       expect(contentService.getEditorContent).toHaveBeenCalled();
       expect(importExportService.convertMarkdownToHtml).toHaveBeenCalledWith('# Header');
       expect(contentService.setEditorContent).toHaveBeenCalledWith('<h1>Header</h1>');
+    });
+  });
+
+  describe('Table Operations', () => {
+    let tableService: TableService;
+
+    beforeEach(() => {
+      tableService = TestBed.inject(TableService);
+    });
+
+    it('should toggle showTableModal when clicking Insert Table button', () => {
+      expect(component.showTableModal).toBeFalse();
+      const buttons = fixture.debugElement.queryAll(By.css('button'));
+      const insertTableBtn = buttons.find(el => el.nativeElement.textContent.includes('Insert Table'));
+      insertTableBtn!.nativeElement.click();
+      expect(component.showTableModal).toBeTrue();
+    });
+
+    it('should call tableService.insertTable and hide modal onTableSubmit', () => {
+      spyOn(tableService, 'insertTable');
+      component.showTableModal = true;
+      component.onTableSubmit({ rows: 4, cols: 5 });
+      expect(tableService.insertTable).toHaveBeenCalledWith(4, 5);
+      expect(component.showTableModal).toBeFalse();
+    });
+
+    it('should show editing controls when active cell is not null', () => {
+      const cellElement = document.createElement('td') as HTMLTableCellElement;
+      tableService.activeCell.set(cellElement);
+      fixture.detectChanges();
+
+      const buttons = fixture.debugElement.queryAll(By.css('button'));
+      const addRowBtn = buttons.find(el => el.nativeElement.textContent.includes('Add Row Above'));
+      expect(addRowBtn).toBeTruthy('Could not find Add Row Above button when cell is active');
+    });
+
+    it('should call border change and color change handlers', () => {
+      spyOn(tableService, 'setCellBorder');
+      spyOn(tableService, 'setCellBackgroundColor');
+
+      const mockEventBorder = { target: { value: 'dashed' } } as any;
+      component.onCellBorderChange(mockEventBorder);
+      expect(tableService.setCellBorder).toHaveBeenCalledWith('dashed');
+
+      const mockEventColor = { target: { value: '#ff0000' } } as any;
+      component.onCellBgColorChange(mockEventColor);
+      expect(tableService.setCellBackgroundColor).toHaveBeenCalledWith('#ff0000');
     });
   });
 });

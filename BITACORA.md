@@ -24,6 +24,16 @@ Typical categories include:
 **Entry:** State Change: Created integration branch `feature/merge-unmerged-branches` and merged target unmerged branches `feature/markdown-support`, `origin/fix/paste-formatting-master` (using ours strategy as its fixes were already incorporated at a more advanced state), and `origin/feature/update-index-main-project` (using ours strategy option to reject TypeScript downgrade and preserve Angular 22 environment). Full build and all 136 tests verified successful.
 
 ---
+**Timestamp:** 2026-06-11 12:30 UTC
+**Author:** Antigravity
+**Entry:** State Change: Completed implementation of `task-208` (Table Insertion and Editing) under milestone `ms-02` on branch `feature/table-support`; transitioned state to `in_review`.
+
+---
+**Timestamp:** 2026-06-11 11:30 UTC
+**Author:** Codex
+**Entry:** State Change: Initiated `task-208` (Table support) in `in_progress` on branch `feature/table-support`; planning to implement table insertion dialog and cell styling capabilities.
+
+---
 **Timestamp:** 2026-06-11 11:27 UTC
 **Author:** Codex
 **Entry:** State Change: Completed implementation of `task-207` (HTML/Markdown Import-Export and RTF Load); transitioned state to `in_review` and submitted Pull Request #91 against integration branch `version/0.1`.

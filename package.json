@@ -16,7 +16,8 @@
     "lint": "npm run lint:info-docs && npm run lint:styles && ng lint",
     "lint:info-docs": "node scripts/info-docs.mjs --check",
     "lint:styles": "node scripts/style-lint.mjs",
-    "docs:generate:info-docs": "node scripts/info-docs.mjs --write"
+    "docs:generate:info-docs": "node scripts/info-docs.mjs --write",
+    "validate": "bash scripts/validate.sh"
   },
   "private": true,
   "dependencies": {

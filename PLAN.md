@@ -21,13 +21,14 @@ This plan captures milestones, tasks, effort estimates, and task status; its str
 | `task-205` | `ms-02` | Upgrade workspace to Angular 22 | Core Team | 3 | 15 | `done` | Upgraded workspace and publishable library peer dependencies to Angular `^22.0.0`; restored Angular ESLint linting and verified lint/build gates. |
 | `task-206` | `ms-02` | Implement Light/Dark/Custom Theme Support | Core Team | 3 | 15 | `in_review` | Theme customization API, CSS variables, and toolbar controls. |
 | `task-207` | `ms-02` | Implement HTML/Markdown Import-Export and RTF Load | Core Team | 3 | 15 | `in_review` | File import/export toolbar inputs, parsing services, and unit tests. |
+| `task-208` | `ms-02` | Implement Table Insertion and Editing | Core Team | 4 | 20 | `in_review` | Implementing table creation dialog, formatting options, and DOM controls. |
 | `task-301` | `ms-03` | Formalize release checklist | Delivery Team | 6 | 30 | `planned` | Planned after ms-02 acceptance. |
 
 ## Effort Summary
-- **Total effort:** 35 pts
+- **Total effort:** 39 pts
 - **Completed:** 9 pts
 - **In progress:** 5 pts
-- **In review:** 9 pts
+- **In review:** 13 pts
 - **Remaining:** 12 pts
 
 ## State Definitions

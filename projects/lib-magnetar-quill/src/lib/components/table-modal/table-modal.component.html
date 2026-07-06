@@ -1,0 +1,18 @@
+<div class="modal-overlay">
+  <div class="modal-content" libClickOutside (clickOutside)="onCancel()">
+    <h3>Insert Table</h3>
+    <div class="modal-body">
+      <div class="form-section">
+        <label for="table-modal-rows">Rows*</label>
+        <input id="table-modal-rows" type="number" [(ngModel)]="rows" min="1" max="100" required />
+
+        <label for="table-modal-cols" style="margin-top: 15px;">Columns*</label>
+        <input id="table-modal-cols" type="number" [(ngModel)]="cols" min="1" max="100" required />
+      </div>
+    </div>
+    <div class="modal-actions">
+      <button (click)="onSubmit()">Insert</button>
+      <button (click)="onCancel()">Cancel</button>
+    </div>
+  </div>
+</div>

@@ -14,6 +14,8 @@ import {ImageModalComponent} from "../image-modal/image-modal.component";
 import {ImageModalComponentModel} from "../../models/image-modal-component-model";
 import {ContentService} from "../../services/content.service";
 import {ImportExportService} from "../../services/import-export.service";
+import {TableService} from "../../services/table.service";
+import {TableModalComponent} from "../table-modal/table-modal.component";
 
 /**
  * @generatedInfoDoc
@@ -176,6 +178,13 @@ import {ImportExportService} from "../../services/import-export.service";
  * Why 154: class `ToolbarComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 155: class `ToolbarComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 156: class `ToolbarComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+<<<<<<< HEAD
+=======
+ * How 157: class `ToolbarComponent` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 158: class `ToolbarComponent` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 159: class `ToolbarComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 160: class `ToolbarComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+>>>>>>> feature/table-support
  */
 
 
@@ -185,7 +194,8 @@ import {ImportExportService} from "../../services/import-export.service";
     imports: [
         NgIf,
         FormsModule,
-        ImageModalComponent
+        ImageModalComponent,
+        TableModalComponent
     ],
     standalone: true,
     templateUrl: './toolbar.component.html',
@@ -206,6 +216,7 @@ export class ToolbarComponent {
   @Input() imageToEdit: ImageInternalData | null = null;
 
   public showImageModal: boolean = false;
+  public showTableModal: boolean = false;
   public imageUrl: string = '';
   public altText: string = '';
   public width: number | null = null;
@@ -225,12 +236,10 @@ export class ToolbarComponent {
  * Relation 03: constructor for class `ToolbarComponent` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: constructor for class `ToolbarComponent` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
-
-
-
 constructor(public readonly formattingService: FormattingService,
               private readonly contentService: ContentService,
-              private readonly importExportService: ImportExportService
+              private readonly importExportService: ImportExportService,
+              public readonly tableService: TableService
               ) {}
 
     /**
@@ -935,8 +944,6 @@ private downloadFile(content: string, filename: string, contentType: string): vo
  * How 05: method `ToolbarComponent`.`parseMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 06: method `ToolbarComponent`.`parseMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
-
-
 public parseMarkdown(): void {
     const rawContent = this.contentService.getEditorContent();
     const tempDiv = document.createElement('div');
@@ -944,5 +951,50 @@ public parseMarkdown(): void {
     const markdownText = tempDiv.innerText || tempDiv.textContent || '';
     const html = this.importExportService.convertMarkdownToHtml(markdownText);
     this.contentService.setEditorContent(html);
+  }
+
+    /**
+   * @generatedInfoDoc
+   * InfoDoc: method `ToolbarComponent`.`onTableSubmit()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+   * How: method `ToolbarComponent`.`onTableSubmit()` is implemented in `projects/lib-magnetar-quill/src/lib/components/toolbar/toolbar.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+   * Why: method `ToolbarComponent`.`onTableSubmit()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+   * Related: method `ToolbarComponent`.`onTableSubmit()` participates in the `ToolbarComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+   * Why 02: method `ToolbarComponent`.`onTableSubmit()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+   * Relation 03: method `ToolbarComponent`.`onTableSubmit()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+   * Maintenance 04: method `ToolbarComponent`.`onTableSubmit()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+   */
+public onTableSubmit(event: { rows: number, cols: number }): void {
+    this.tableService.insertTable(event.rows, event.cols);
+    this.showTableModal = false;
+  }
+
+    /**
+   * @generatedInfoDoc
+   * InfoDoc: method `ToolbarComponent`.`onCellBorderChange()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+   * How: method `ToolbarComponent`.`onCellBorderChange()` is implemented in `projects/lib-magnetar-quill/src/lib/components/toolbar/toolbar.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+   * Why: method `ToolbarComponent`.`onCellBorderChange()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+   * Related: method `ToolbarComponent`.`onCellBorderChange()` participates in the `ToolbarComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+   * Why 02: method `ToolbarComponent`.`onCellBorderChange()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+   * Relation 03: method `ToolbarComponent`.`onCellBorderChange()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+   * Maintenance 04: method `ToolbarComponent`.`onCellBorderChange()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+   */
+public onCellBorderChange(event: Event): void {
+    const select = event.target as HTMLSelectElement;
+    this.tableService.setCellBorder(select.value as 'solid' | 'dashed' | 'none');
+  }
+
+    /**
+   * @generatedInfoDoc
+   * InfoDoc: method `ToolbarComponent`.`onCellBgColorChange()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+   * How: method `ToolbarComponent`.`onCellBgColorChange()` is implemented in `projects/lib-magnetar-quill/src/lib/components/toolbar/toolbar.component.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+   * Why: method `ToolbarComponent`.`onCellBgColorChange()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+   * Related: method `ToolbarComponent`.`onCellBgColorChange()` participates in the `ToolbarComponent` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+   * Why 02: method `ToolbarComponent`.`onCellBgColorChange()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+   * Relation 03: method `ToolbarComponent`.`onCellBgColorChange()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+   * Maintenance 04: method `ToolbarComponent`.`onCellBgColorChange()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+   */
+public onCellBgColorChange(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    this.tableService.setCellBackgroundColor(input.value);
   }
 }
