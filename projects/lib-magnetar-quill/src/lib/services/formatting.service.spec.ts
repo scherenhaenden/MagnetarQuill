@@ -77,6 +77,28 @@ describe('FormattingService', () => {
 
       container.remove();
     });
+
+    it('should remove numeric inline bold weights without treating strong as bold', () => {
+      const container = document.createElement('div');
+      container.contentEditable = 'true';
+      container.innerHTML = '<span style="font-weight: 700;">Bold text</span>';
+      document.body.appendChild(container);
+
+      const boldText = container.querySelector('span')!.firstChild as Text;
+      selectText(boldText, 0, boldText.length);
+
+      service.updateFormatStates();
+      expect(service.boldActive()).toBeTrue();
+      expect(service.strongActive()).toBeFalse();
+
+      service.toggleBold();
+
+      expectNoStyledSpan(container, 'font-weight', '700');
+      expect(container.querySelector('strong')).toBeNull();
+      expect(container.textContent).toBe('Bold text');
+
+      container.remove();
+    });
   });
 
   describe('toggleStrong', () => {
@@ -189,6 +211,24 @@ describe('FormattingService', () => {
 
       container.remove();
     });
+
+    it('should unwrap semantic italic tags when toggling italic off', () => {
+      const container = document.createElement('div');
+      container.contentEditable = 'true';
+      container.innerHTML = '<em>Italic text</em>';
+      document.body.appendChild(container);
+
+      const italicText = container.querySelector('em')!.firstChild as Text;
+      selectText(italicText, 0, italicText.length);
+
+      service.italicActive.set(true);
+      service.toggleItalic();
+
+      expect(container.querySelector('em')).toBeNull();
+      expect(container.textContent).toBe('Italic text');
+
+      container.remove();
+    });
   });
 
   describe('toggleUnderline', () => {
@@ -206,6 +246,24 @@ describe('FormattingService', () => {
       service.toggleUnderline();
       expect(service.removeFormatting).toHaveBeenCalledWith('text-decoration', 'underline');
       expect(service.underlineActive()).toBeFalse();
+    });
+
+    it('should unwrap semantic underline tags when toggling underline off', () => {
+      const container = document.createElement('div');
+      container.contentEditable = 'true';
+      container.innerHTML = '<u>Underline text</u>';
+      document.body.appendChild(container);
+
+      const underlineText = container.querySelector('u')!.firstChild as Text;
+      selectText(underlineText, 0, underlineText.length);
+
+      service.underlineActive.set(true);
+      service.toggleUnderline();
+
+      expect(container.querySelector('u')).toBeNull();
+      expect(container.textContent).toBe('Underline text');
+
+      container.remove();
     });
   });
 
@@ -239,6 +297,24 @@ describe('FormattingService', () => {
 
       service.toggleStrikethrough();
       expectNoStyledSpan(container, 'text-decoration', 'line-through');
+      expect(container.textContent).toBe('Strike text');
+
+      container.remove();
+    });
+
+    it('should unwrap semantic strikethrough tags when toggling strikethrough off', () => {
+      const container = document.createElement('div');
+      container.contentEditable = 'true';
+      container.innerHTML = '<del>Strike text</del>';
+      document.body.appendChild(container);
+
+      const strikeText = container.querySelector('del')!.firstChild as Text;
+      selectText(strikeText, 0, strikeText.length);
+
+      service.strikethroughActive.set(true);
+      service.toggleStrikethrough();
+
+      expect(container.querySelector('del')).toBeNull();
       expect(container.textContent).toBe('Strike text');
 
       container.remove();

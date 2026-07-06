@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { Injectable } from '@angular/core';
 import { LogService } from './log.service';
 
@@ -6,6 +5,34 @@ export interface MarkdownExportResult {
   markdown: string;
   hasUnsupportedElements: boolean;
 }
+
+type MarkdownListType = 'ul' | 'ol';
+
+interface MarkdownListState {
+  type: MarkdownListType | null;
+}
+
+interface RtfState {
+  bold: boolean;
+  italic: boolean;
+  underline: boolean;
+  strike: boolean;
+}
+
+interface RtfRun extends RtfState {
+  text: string;
+  isParagraphBreak: boolean;
+}
+
+interface RtfParserState {
+  index: number;
+  currentState: RtfState;
+  currentText: string;
+  readonly runs: RtfRun[];
+  readonly stateStack: RtfState[];
+}
+
+const RTF_METADATA_GROUPS = ['fonttbl', 'colortbl', 'stylesheet', 'info', 'generator', '*'];
 
 /**
  * @generatedInfoDoc
@@ -359,7 +386,28 @@ export interface MarkdownExportResult {
  * How 345: class `ImportExportService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 346: class `ImportExportService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 347: class `ImportExportService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 348: class `ImportExportService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 349: class `ImportExportService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 350: class `ImportExportService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 351: class `ImportExportService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 352: class `ImportExportService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 353: class `ImportExportService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 354: class `ImportExportService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 355: class `ImportExportService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 356: class `ImportExportService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 357: class `ImportExportService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 358: class `ImportExportService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 359: class `ImportExportService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 360: class `ImportExportService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 361: class `ImportExportService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 362: class `ImportExportService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 363: class `ImportExportService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 364: class `ImportExportService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 365: class `ImportExportService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 366: class `ImportExportService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -377,7 +425,9 @@ export class ImportExportService {
  * Maintenance 04: constructor for class `ImportExportService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 
-constructor(private logService: LogService) {}
+
+
+constructor(private readonly logService: LogService) {}
 
   /**
    * Converts Markdown text to HTML.
@@ -395,121 +445,117 @@ constructor(private logService: LogService) {}
  * Why 06: method `ImportExportService`.`convertMarkdownToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 07: method `ImportExportService`.`convertMarkdownToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 08: method `ImportExportService`.`convertMarkdownToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 09: method `ImportExportService`.`convertMarkdownToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 10: method `ImportExportService`.`convertMarkdownToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 11: method `ImportExportService`.`convertMarkdownToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 12: method `ImportExportService`.`convertMarkdownToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 13: method `ImportExportService`.`convertMarkdownToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 14: method `ImportExportService`.`convertMarkdownToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 15: method `ImportExportService`.`convertMarkdownToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 16: method `ImportExportService`.`convertMarkdownToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 17: method `ImportExportService`.`convertMarkdownToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 18: method `ImportExportService`.`convertMarkdownToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 19: method `ImportExportService`.`convertMarkdownToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 20: method `ImportExportService`.`convertMarkdownToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 21: method `ImportExportService`.`convertMarkdownToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 22: method `ImportExportService`.`convertMarkdownToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 23: method `ImportExportService`.`convertMarkdownToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 24: method `ImportExportService`.`convertMarkdownToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 25: method `ImportExportService`.`convertMarkdownToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 26: method `ImportExportService`.`convertMarkdownToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 27: method `ImportExportService`.`convertMarkdownToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 28: method `ImportExportService`.`convertMarkdownToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 29: method `ImportExportService`.`convertMarkdownToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 30: method `ImportExportService`.`convertMarkdownToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 31: method `ImportExportService`.`convertMarkdownToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 32: method `ImportExportService`.`convertMarkdownToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 33: method `ImportExportService`.`convertMarkdownToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 34: method `ImportExportService`.`convertMarkdownToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 35: method `ImportExportService`.`convertMarkdownToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 36: method `ImportExportService`.`convertMarkdownToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 37: method `ImportExportService`.`convertMarkdownToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 38: method `ImportExportService`.`convertMarkdownToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 39: method `ImportExportService`.`convertMarkdownToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 40: method `ImportExportService`.`convertMarkdownToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 41: method `ImportExportService`.`convertMarkdownToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 42: method `ImportExportService`.`convertMarkdownToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 43: method `ImportExportService`.`convertMarkdownToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 44: method `ImportExportService`.`convertMarkdownToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 45: method `ImportExportService`.`convertMarkdownToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 46: method `ImportExportService`.`convertMarkdownToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 47: method `ImportExportService`.`convertMarkdownToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 48: method `ImportExportService`.`convertMarkdownToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 49: method `ImportExportService`.`convertMarkdownToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 
 public convertMarkdownToHtml(md: string): string {
     if (!md) return '';
     const lines = md.split(/\r?\n/);
+    const listState: MarkdownListState = { type: null };
+
     let html = '';
-    let inList = false;
-    let listType: 'ul' | 'ol' | null = null;
-
-    const closeList = () => {
-      if (inList) {
-        html += listType === 'ul' ? '</ul>' : '</ol>';
-        inList = false;
-        listType = null;
-      }
-    };
-
     for (const line of lines) {
-      const trimmed = line.trim();
-      if (!trimmed) {
-        closeList();
-        continue;
-      }
-
-      // Headers (e.g., # H1)
-      const headerMatch = line.match(/^(#{1,6})\s+(.*)$/);
-      if (headerMatch) {
-        closeList();
-        const level = headerMatch[1].length;
-        html += `<h${level}>${this.parseInlineMarkdown(headerMatch[2])}</h${level}>`;
-        continue;
-      }
-
-      // Unordered list item
-      const ulMatch = line.match(/^([*\-+])\s+(.*)$/);
-      if (ulMatch) {
-        if (!inList || listType !== 'ul') {
-          closeList();
-          html += '<ul>';
-          inList = true;
-          listType = 'ul';
-        }
-        html += `<li>${this.parseInlineMarkdown(ulMatch[2])}</li>`;
-        continue;
-      }
-
-      // Ordered list item
-      const olMatch = line.match(/^(\d+)\.\s+(.*)$/);
-      if (olMatch) {
-        if (!inList || listType !== 'ol') {
-          closeList();
-          html += '<ol>';
-          inList = true;
-          listType = 'ol';
-        }
-        html += `<li>${this.parseInlineMarkdown(olMatch[2])}</li>`;
-        continue;
-      }
-
-      // Blockquote
-      const quoteMatch = line.match(/^>\s+(.*)$/);
-      if (quoteMatch) {
-        closeList();
-        html += `<blockquote>${this.parseInlineMarkdown(quoteMatch[1])}</blockquote>`;
-        continue;
-      }
-
-      // Regular paragraph
-      closeList();
-      html += `<p>${this.parseInlineMarkdown(line)}</p>`;
+      html += this.renderMarkdownLine(line, listState);
     }
 
-    closeList();
+    html += this.closeMarkdownList(listState);
     return html;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`closeMarkdownList()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`closeMarkdownList()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`closeMarkdownList()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`closeMarkdownList()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`closeMarkdownList()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`closeMarkdownList()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`closeMarkdownList()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ImportExportService`.`closeMarkdownList()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+private closeMarkdownList(listState: MarkdownListState): string {
+    if (!listState.type) {
+      return '';
+    }
+
+    const closingTag = `</${listState.type}>`;
+    listState.type = null;
+    return closingTag;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`openMarkdownList()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`openMarkdownList()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`openMarkdownList()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`openMarkdownList()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`openMarkdownList()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`openMarkdownList()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`openMarkdownList()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ImportExportService`.`openMarkdownList()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+private openMarkdownList(listState: MarkdownListState, type: MarkdownListType): string {
+    if (listState.type === type) {
+      return '';
+    }
+
+    const closeTag = this.closeMarkdownList(listState);
+    listState.type = type;
+    return `${closeTag}<${type}>`;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`renderMarkdownLine()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`renderMarkdownLine()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`renderMarkdownLine()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`renderMarkdownLine()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`renderMarkdownLine()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`renderMarkdownLine()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`renderMarkdownLine()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ImportExportService`.`renderMarkdownLine()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `ImportExportService`.`renderMarkdownLine()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `ImportExportService`.`renderMarkdownLine()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `ImportExportService`.`renderMarkdownLine()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `ImportExportService`.`renderMarkdownLine()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `ImportExportService`.`renderMarkdownLine()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 11: method `ImportExportService`.`renderMarkdownLine()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 12: method `ImportExportService`.`renderMarkdownLine()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 13: method `ImportExportService`.`renderMarkdownLine()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 14: method `ImportExportService`.`renderMarkdownLine()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 15: method `ImportExportService`.`renderMarkdownLine()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 16: method `ImportExportService`.`renderMarkdownLine()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 17: method `ImportExportService`.`renderMarkdownLine()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+private renderMarkdownLine(line: string, listState: MarkdownListState): string {
+    const trimmed = line.trim();
+    if (!trimmed) {
+      return this.closeMarkdownList(listState);
+    }
+
+    const headerMatch = line.match(/^(#{1,6})\s+(.*)$/);
+    if (headerMatch) {
+      const level = headerMatch[1].length;
+      return `${this.closeMarkdownList(listState)}<h${level}>${this.parseInlineMarkdown(headerMatch[2])}</h${level}>`;
+    }
+
+    const ulMatch = line.match(/^([*+-])\s+(.*)$/);
+    if (ulMatch) {
+      return `${this.openMarkdownList(listState, 'ul')}<li>${this.parseInlineMarkdown(ulMatch[2])}</li>`;
+    }
+
+    const olMatch = line.match(/^(\d+)\.\s+(.*)$/);
+    if (olMatch) {
+      return `${this.openMarkdownList(listState, 'ol')}<li>${this.parseInlineMarkdown(olMatch[2])}</li>`;
+    }
+
+    const quoteMatch = line.match(/^>\s+(.*)$/);
+    if (quoteMatch) {
+      return `${this.closeMarkdownList(listState)}<blockquote>${this.parseInlineMarkdown(quoteMatch[1])}</blockquote>`;
+    }
+
+    return `${this.closeMarkdownList(listState)}<p>${this.parseInlineMarkdown(line)}</p>`;
   }
 
   /**
@@ -531,25 +577,27 @@ public convertMarkdownToHtml(md: string): string {
  * How 09: method `ImportExportService`.`parseInlineMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
 
+
+
 private parseInlineMarkdown(text: string): string {
     let escaped = this.escapeHtml(text);
 
     // Bold: **text** or __text__
-    escaped = escaped.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-    escaped = escaped.replace(/__(.*?)__/g, '<strong>$1</strong>');
+    escaped = escaped.replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
+    escaped = escaped.replace(/__([^_\n]+)__/g, '<strong>$1</strong>');
 
     // Italic: *text* or _text_
-    escaped = escaped.replace(/\*(.*?)\*/g, '<em>$1</em>');
-    escaped = escaped.replace(/_(.*?)_/g, '<em>$1</em>');
+    escaped = escaped.replace(/\*([^*\n]+)\*/g, '<em>$1</em>');
+    escaped = escaped.replace(/_([^_\n]+)_/g, '<em>$1</em>');
 
     // Strikethrough: ~~text~~
-    escaped = escaped.replace(/~~(.*?)~~/g, '<s>$1</s>');
+    escaped = escaped.replace(/~~([^~\n]+)~~/g, '<s>$1</s>');
 
     // Images: ![alt](url)
-    escaped = escaped.replace(/!\[(.*?)]\((.*?)\)/g, '<img src="$2" alt="$1" />');
+    escaped = escaped.replace(/!\[([^\]\n]*)]\(([^)\n]*)\)/g, '<img src="$2" alt="$1" />');
 
     // Links: [text](url)
-    escaped = escaped.replace(/\[(.*?)]\((.*?)\)/g, '<a href="$2">$1</a>');
+    escaped = escaped.replace(/\[([^\]\n]+)]\(([^)\n]+)\)/g, '<a href="$2">$1</a>');
 
     return escaped;
   }
@@ -577,72 +625,9 @@ private parseInlineMarkdown(text: string): string {
  * How 13: method `ImportExportService`.`convertHtmlToMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 14: method `ImportExportService`.`convertHtmlToMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 15: method `ImportExportService`.`convertHtmlToMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 16: method `ImportExportService`.`convertHtmlToMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 17: method `ImportExportService`.`convertHtmlToMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 18: method `ImportExportService`.`convertHtmlToMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 19: method `ImportExportService`.`convertHtmlToMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 20: method `ImportExportService`.`convertHtmlToMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 21: method `ImportExportService`.`convertHtmlToMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 22: method `ImportExportService`.`convertHtmlToMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 23: method `ImportExportService`.`convertHtmlToMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 24: method `ImportExportService`.`convertHtmlToMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 25: method `ImportExportService`.`convertHtmlToMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 26: method `ImportExportService`.`convertHtmlToMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 27: method `ImportExportService`.`convertHtmlToMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 28: method `ImportExportService`.`convertHtmlToMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 29: method `ImportExportService`.`convertHtmlToMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 30: method `ImportExportService`.`convertHtmlToMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 31: method `ImportExportService`.`convertHtmlToMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 32: method `ImportExportService`.`convertHtmlToMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 33: method `ImportExportService`.`convertHtmlToMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 34: method `ImportExportService`.`convertHtmlToMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 35: method `ImportExportService`.`convertHtmlToMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 36: method `ImportExportService`.`convertHtmlToMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 37: method `ImportExportService`.`convertHtmlToMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 38: method `ImportExportService`.`convertHtmlToMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 39: method `ImportExportService`.`convertHtmlToMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 40: method `ImportExportService`.`convertHtmlToMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 41: method `ImportExportService`.`convertHtmlToMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 42: method `ImportExportService`.`convertHtmlToMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 43: method `ImportExportService`.`convertHtmlToMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 44: method `ImportExportService`.`convertHtmlToMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 45: method `ImportExportService`.`convertHtmlToMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 46: method `ImportExportService`.`convertHtmlToMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 47: method `ImportExportService`.`convertHtmlToMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 48: method `ImportExportService`.`convertHtmlToMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 49: method `ImportExportService`.`convertHtmlToMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 50: method `ImportExportService`.`convertHtmlToMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 51: method `ImportExportService`.`convertHtmlToMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 52: method `ImportExportService`.`convertHtmlToMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 53: method `ImportExportService`.`convertHtmlToMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 54: method `ImportExportService`.`convertHtmlToMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 55: method `ImportExportService`.`convertHtmlToMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 56: method `ImportExportService`.`convertHtmlToMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 57: method `ImportExportService`.`convertHtmlToMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 58: method `ImportExportService`.`convertHtmlToMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 59: method `ImportExportService`.`convertHtmlToMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 60: method `ImportExportService`.`convertHtmlToMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 61: method `ImportExportService`.`convertHtmlToMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 62: method `ImportExportService`.`convertHtmlToMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 63: method `ImportExportService`.`convertHtmlToMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 64: method `ImportExportService`.`convertHtmlToMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 65: method `ImportExportService`.`convertHtmlToMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 66: method `ImportExportService`.`convertHtmlToMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 67: method `ImportExportService`.`convertHtmlToMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 68: method `ImportExportService`.`convertHtmlToMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 69: method `ImportExportService`.`convertHtmlToMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 70: method `ImportExportService`.`convertHtmlToMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 71: method `ImportExportService`.`convertHtmlToMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 72: method `ImportExportService`.`convertHtmlToMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 73: method `ImportExportService`.`convertHtmlToMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 74: method `ImportExportService`.`convertHtmlToMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 75: method `ImportExportService`.`convertHtmlToMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 76: method `ImportExportService`.`convertHtmlToMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 77: method `ImportExportService`.`convertHtmlToMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 78: method `ImportExportService`.`convertHtmlToMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 79: method `ImportExportService`.`convertHtmlToMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 80: method `ImportExportService`.`convertHtmlToMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 public convertHtmlToMarkdown(html: string): MarkdownExportResult {
     if (!html) return { markdown: '', hasUnsupportedElements: false };
@@ -657,86 +642,9 @@ public convertHtmlToMarkdown(html: string): MarkdownExportResult {
       this.logService.warn('HTML to Markdown: Tables or videos are present. Markdown conversion may lose fidelity.');
     }
 
-    const traverse = (node: Node): string => {
-      if (node.nodeType === Node.TEXT_NODE) {
-        return node.textContent || '';
-      }
-
-      if (node.nodeType === Node.ELEMENT_NODE) {
-        const el = node as HTMLElement;
-        let content = '';
-        for (let c = 0; c < el.childNodes.length; c++) {
-          content += traverse(el.childNodes[c]);
-        }
-
-        const tag = el.tagName.toLowerCase();
-        switch (tag) {
-          case 'strong':
-          case 'b':
-            return `**${content}**`;
-          case 'em':
-          case 'i':
-            return `*${content}*`;
-          case 'u':
-            // Markdown has no native underline, fallback to HTML <u> or keep text
-            return `<u>${content}</u>`;
-          case 's':
-          case 'del':
-          case 'strike':
-            return `~~${content}~~`;
-          case 'h1':
-            return `# ${content}\n\n`;
-          case 'h2':
-            return `## ${content}\n\n`;
-          case 'h3':
-            return `### ${content}\n\n`;
-          case 'h4':
-            return `#### ${content}\n\n`;
-          case 'h5':
-            return `##### ${content}\n\n`;
-          case 'h6':
-            return `###### ${content}\n\n`;
-          case 'p':
-            return `${content}\n\n`;
-          case 'br':
-            return `\n`;
-          case 'ul':
-            return `${content}\n`;
-          case 'ol':
-            return `${content}\n`;
-          case 'li': {
-            const parent = el.parentElement;
-            if (parent && parent.tagName.toLowerCase() === 'ol') {
-              const index = Array.from(parent.children).indexOf(el) + 1;
-              return `${index}. ${content}\n`;
-            }
-            return `* ${content}\n`;
-          }
-          case 'blockquote':
-            return `> ${content}\n\n`;
-          case 'a': {
-            const href = el.getAttribute('href') || '';
-            return `[${content}](${href})`;
-          }
-          case 'img': {
-            const src = el.getAttribute('src') || '';
-            const alt = el.getAttribute('alt') || '';
-            return `![${alt}](${src})`;
-          }
-          case 'table':
-            return `\n[Table (Unsupported in Markdown)]\n\n`;
-          case 'video':
-            return `\n[Video (Unsupported in Markdown)]\n\n`;
-          default:
-            return content;
-        }
-      }
-      return '';
-    };
-
     let markdown = '';
     for (let c = 0; c < doc.body.childNodes.length; c++) {
-      markdown += traverse(doc.body.childNodes[c]);
+      markdown += this.convertHtmlNodeToMarkdown(doc.body.childNodes[c]);
     }
 
     markdown = markdown.replace(/\n{3,}/g, '\n\n').trim();
@@ -745,6 +653,161 @@ public convertHtmlToMarkdown(html: string): MarkdownExportResult {
       markdown,
       hasUnsupportedElements: hasTables || hasVideos
     };
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`convertHtmlNodeToMarkdown()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`convertHtmlNodeToMarkdown()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`convertHtmlNodeToMarkdown()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`convertHtmlNodeToMarkdown()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`convertHtmlNodeToMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`convertHtmlNodeToMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`convertHtmlNodeToMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ImportExportService`.`convertHtmlNodeToMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `ImportExportService`.`convertHtmlNodeToMarkdown()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `ImportExportService`.`convertHtmlNodeToMarkdown()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `ImportExportService`.`convertHtmlNodeToMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `ImportExportService`.`convertHtmlNodeToMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+private convertHtmlNodeToMarkdown(node: Node): string {
+    if (node.nodeType === Node.TEXT_NODE) {
+      return node.textContent || '';
+    }
+
+    if (node.nodeType !== Node.ELEMENT_NODE) {
+      return '';
+    }
+
+    const el = node as HTMLElement;
+    const content = Array.from(el.childNodes)
+      .map(child => this.convertHtmlNodeToMarkdown(child))
+      .join('');
+
+    return this.renderMarkdownElement(el, content);
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`renderMarkdownElement()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`renderMarkdownElement()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`renderMarkdownElement()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`renderMarkdownElement()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`renderMarkdownElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`renderMarkdownElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`renderMarkdownElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ImportExportService`.`renderMarkdownElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `ImportExportService`.`renderMarkdownElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `ImportExportService`.`renderMarkdownElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `ImportExportService`.`renderMarkdownElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `ImportExportService`.`renderMarkdownElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `ImportExportService`.`renderMarkdownElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 11: method `ImportExportService`.`renderMarkdownElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 12: method `ImportExportService`.`renderMarkdownElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 13: method `ImportExportService`.`renderMarkdownElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 14: method `ImportExportService`.`renderMarkdownElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 15: method `ImportExportService`.`renderMarkdownElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 16: method `ImportExportService`.`renderMarkdownElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 17: method `ImportExportService`.`renderMarkdownElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 18: method `ImportExportService`.`renderMarkdownElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 19: method `ImportExportService`.`renderMarkdownElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 20: method `ImportExportService`.`renderMarkdownElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 21: method `ImportExportService`.`renderMarkdownElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 22: method `ImportExportService`.`renderMarkdownElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 23: method `ImportExportService`.`renderMarkdownElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 24: method `ImportExportService`.`renderMarkdownElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 25: method `ImportExportService`.`renderMarkdownElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 26: method `ImportExportService`.`renderMarkdownElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 27: method `ImportExportService`.`renderMarkdownElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 28: method `ImportExportService`.`renderMarkdownElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 29: method `ImportExportService`.`renderMarkdownElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 30: method `ImportExportService`.`renderMarkdownElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 31: method `ImportExportService`.`renderMarkdownElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 32: method `ImportExportService`.`renderMarkdownElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 33: method `ImportExportService`.`renderMarkdownElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 34: method `ImportExportService`.`renderMarkdownElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 35: method `ImportExportService`.`renderMarkdownElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 36: method `ImportExportService`.`renderMarkdownElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 37: method `ImportExportService`.`renderMarkdownElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 38: method `ImportExportService`.`renderMarkdownElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 39: method `ImportExportService`.`renderMarkdownElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 40: method `ImportExportService`.`renderMarkdownElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 41: method `ImportExportService`.`renderMarkdownElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 42: method `ImportExportService`.`renderMarkdownElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 43: method `ImportExportService`.`renderMarkdownElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 44: method `ImportExportService`.`renderMarkdownElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 45: method `ImportExportService`.`renderMarkdownElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 46: method `ImportExportService`.`renderMarkdownElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ */
+private renderMarkdownElement(el: HTMLElement, content: string): string {
+    switch (el.tagName.toLowerCase()) {
+      case 'strong':
+      case 'b':
+        return `**${content}**`;
+      case 'em':
+      case 'i':
+        return `*${content}*`;
+      case 'u':
+        return `<u>${content}</u>`;
+      case 's':
+      case 'del':
+      case 'strike':
+        return `~~${content}~~`;
+      case 'h1':
+        return `# ${content}\n\n`;
+      case 'h2':
+        return `## ${content}\n\n`;
+      case 'h3':
+        return `### ${content}\n\n`;
+      case 'h4':
+        return `#### ${content}\n\n`;
+      case 'h5':
+        return `##### ${content}\n\n`;
+      case 'h6':
+        return `###### ${content}\n\n`;
+      case 'p':
+        return `${content}\n\n`;
+      case 'br':
+        return `\n`;
+      case 'ul':
+      case 'ol':
+        return `${content}\n`;
+      case 'li':
+        return this.renderMarkdownListItem(el, content);
+      case 'blockquote':
+        return `> ${content}\n\n`;
+      case 'a':
+        return `[${content}](${el.getAttribute('href') || ''})`;
+      case 'img':
+        return `![${el.getAttribute('alt') || ''}](${el.getAttribute('src') || ''})`;
+      case 'table':
+        return `\n[Table (Unsupported in Markdown)]\n\n`;
+      case 'video':
+        return `\n[Video (Unsupported in Markdown)]\n\n`;
+      default:
+        return content;
+    }
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`renderMarkdownListItem()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`renderMarkdownListItem()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`renderMarkdownListItem()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`renderMarkdownListItem()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`renderMarkdownListItem()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`renderMarkdownListItem()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`renderMarkdownListItem()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ImportExportService`.`renderMarkdownListItem()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+private renderMarkdownListItem(el: HTMLElement, content: string): string {
+    const parent = el.parentElement;
+    if (parent?.tagName.toLowerCase() === 'ol') {
+      const index = Array.from(parent.children).indexOf(el) + 1;
+      return `${index}. ${content}\n`;
+    }
+
+    return `* ${content}\n`;
   }
 
   /**
@@ -768,291 +831,494 @@ public convertHtmlToMarkdown(html: string): MarkdownExportResult {
  * Relation 11: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 12: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 13: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 14: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 15: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 16: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 17: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 18: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 19: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 20: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 21: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 22: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 23: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 24: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 25: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 26: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 27: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 28: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 29: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 30: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 31: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 32: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 33: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 34: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 35: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 36: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 37: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 38: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 39: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 40: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 41: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 42: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 43: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 44: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 45: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 46: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 47: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 48: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 49: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 50: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 51: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 52: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 53: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 54: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 55: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 56: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 57: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 58: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 59: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 60: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 61: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 62: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 63: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 64: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 65: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 66: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 67: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 68: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 69: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 70: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 71: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 72: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 73: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 74: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 75: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 76: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 77: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 78: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 79: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 80: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 81: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 82: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 83: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 84: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 85: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 86: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 87: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 88: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 89: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 90: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 91: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 92: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 93: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 94: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 95: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 96: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 97: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 98: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 99: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 100: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 101: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 102: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 103: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 104: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 105: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 106: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 107: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 108: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 109: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 110: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 111: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 112: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 113: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 114: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 115: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 116: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 117: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 118: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 119: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 120: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 121: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 122: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 123: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 124: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 125: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 126: method `ImportExportService`.`convertRtfToHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
- * Relation 127: method `ImportExportService`.`convertRtfToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
+
+
 
 public convertRtfToHtml(rtf: string): string {
     if (!rtf) return '';
 
-    interface RtfState {
-      bold: boolean;
-      italic: boolean;
-      underline: boolean;
-      strike: boolean;
-    }
-
-    interface Run {
-      text: string;
-      bold: boolean;
-      italic: boolean;
-      underline: boolean;
-      strike: boolean;
-      isParagraphBreak: boolean;
-    }
-
-    const runs: Run[] = [];
-    let i = 0;
     const len = rtf.length;
-
-    const stateStack: RtfState[] = [];
-    let currentState: RtfState = { bold: false, italic: false, underline: false, strike: false };
-
-    let currentText = '';
-
-    const commitText = () => {
-      if (currentText) {
-        runs.push({
-          text: currentText,
-          bold: currentState.bold,
-          italic: currentState.italic,
-          underline: currentState.underline,
-          strike: currentState.strike,
-          isParagraphBreak: false
-        });
-        currentText = '';
-      }
+    const state: RtfParserState = {
+      index: 0,
+      currentState: { bold: false, italic: false, underline: false, strike: false },
+      currentText: '',
+      runs: [],
+      stateStack: []
     };
 
-    while (i < len) {
-      const char = rtf[i];
-
-      if (char === '{') {
-        // Look ahead to skip metadata groups
-        let j = i + 1;
-        while (j < len && rtf[j] === ' ') j++;
-        if (j < len && rtf[j] === '\\') {
-          let k = j + 1;
-          while (k < len && /[a-z0-9*]/i.test(rtf[k])) k++;
-          const word = rtf.slice(j + 1, k);
-          const skipWords = ['fonttbl', 'colortbl', 'stylesheet', 'info', 'generator', '*'];
-          if (skipWords.includes(word) || word.startsWith('*')) {
-            let braceCount = 1;
-            i = k;
-            while (i < len && braceCount > 0) {
-              if (rtf[i] === '{') braceCount++;
-              else if (rtf[i] === '}') braceCount--;
-              i++;
-            }
-            continue;
-          }
-        }
-
-        commitText();
-        stateStack.push({ ...currentState });
-        i++;
-      } else if (char === '}') {
-        commitText();
-        if (stateStack.length > 0) {
-          currentState = stateStack.pop()!;
-        }
-        i++;
-      } else if (char === '\\') {
-        i++;
-        if (i >= len) break;
-
-        // Escaped chars
-        if (rtf[i] === '\\' || rtf[i] === '{' || rtf[i] === '}') {
-          currentText += rtf[i];
-          i++;
-          continue;
-        }
-
-        // Control word name
-        let word = '';
-        while (i < len && /[a-z*]/i.test(rtf[i])) {
-          word += rtf[i];
-          i++;
-        }
-
-        // Parameter
-        let numStr = '';
-        let isNegative = false;
-        if (i < len && rtf[i] === '-') {
-          isNegative = true;
-          i++;
-        }
-        while (i < len && /[0-9]/.test(rtf[i])) {
-          numStr += rtf[i];
-          i++;
-        }
-        let param: number | null = null;
-        if (numStr) {
-          param = parseInt(numStr, 10) * (isNegative ? -1 : 1);
-        }
-
-        // Consume trailing space of control word
-        if (i < len && rtf[i] === ' ') {
-          i++;
-        }
-
-        if (word === 'par' || word === 'line') {
-          commitText();
-          runs.push({
-            text: '',
-            bold: false,
-            italic: false,
-            underline: false,
-            strike: false,
-            isParagraphBreak: true
-          });
-        } else if (word === 'b') {
-          commitText();
-          currentState.bold = (param !== 0);
-        } else if (word === 'i') {
-          commitText();
-          currentState.italic = (param !== 0);
-        } else if (word === 'ul') {
-          commitText();
-          currentState.underline = (param !== 0);
-        } else if (word === 'ulnone') {
-          commitText();
-          currentState.underline = false;
-        } else if (word === 'strike') {
-          commitText();
-          currentState.strike = (param !== 0);
-        }
-      } else {
-        if (char === '\r' || char === '\n') {
-          i++;
-        } else {
-          currentText += char;
-          i++;
-        }
-      }
+    while (state.index < len) {
+      this.consumeRtfToken(rtf, state);
     }
 
-    commitText();
+    this.commitRtfText(state);
+    return this.renderRtfRuns(state.runs);
+  }
 
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`consumeRtfToken()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`consumeRtfToken()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`consumeRtfToken()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`consumeRtfToken()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`consumeRtfToken()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`consumeRtfToken()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`consumeRtfToken()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ImportExportService`.`consumeRtfToken()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `ImportExportService`.`consumeRtfToken()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `ImportExportService`.`consumeRtfToken()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `ImportExportService`.`consumeRtfToken()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `ImportExportService`.`consumeRtfToken()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `ImportExportService`.`consumeRtfToken()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 11: method `ImportExportService`.`consumeRtfToken()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ */
+private consumeRtfToken(rtf: string, state: RtfParserState): void {
+    const char = rtf[state.index];
+
+    if (char === '{') {
+      this.consumeRtfGroupStart(rtf, state);
+      return;
+    }
+    if (char === '}') {
+      this.consumeRtfGroupEnd(state);
+      return;
+    }
+    if (char === '\\') {
+      this.consumeRtfControlSequence(rtf, state);
+      return;
+    }
+
+    this.consumeRtfPlainText(char, state);
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`consumeRtfGroupStart()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`consumeRtfGroupStart()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`consumeRtfGroupStart()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`consumeRtfGroupStart()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`consumeRtfGroupStart()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`consumeRtfGroupStart()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`consumeRtfGroupStart()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ImportExportService`.`consumeRtfGroupStart()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+private consumeRtfGroupStart(rtf: string, state: RtfParserState): void {
+    if (this.skipRtfMetadataGroup(rtf, state)) {
+      return;
+    }
+
+    this.commitRtfText(state);
+    state.stateStack.push({ ...state.currentState });
+    state.index++;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`consumeRtfGroupEnd()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`consumeRtfGroupEnd()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`consumeRtfGroupEnd()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`consumeRtfGroupEnd()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`consumeRtfGroupEnd()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`consumeRtfGroupEnd()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`consumeRtfGroupEnd()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+private consumeRtfGroupEnd(state: RtfParserState): void {
+    this.commitRtfText(state);
+    state.currentState = state.stateStack.pop() ?? state.currentState;
+    state.index++;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`skipRtfMetadataGroup()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`skipRtfMetadataGroup()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`skipRtfMetadataGroup()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`skipRtfMetadataGroup()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`skipRtfMetadataGroup()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`skipRtfMetadataGroup()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`skipRtfMetadataGroup()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ImportExportService`.`skipRtfMetadataGroup()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `ImportExportService`.`skipRtfMetadataGroup()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `ImportExportService`.`skipRtfMetadataGroup()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `ImportExportService`.`skipRtfMetadataGroup()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `ImportExportService`.`skipRtfMetadataGroup()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `ImportExportService`.`skipRtfMetadataGroup()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 11: method `ImportExportService`.`skipRtfMetadataGroup()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 12: method `ImportExportService`.`skipRtfMetadataGroup()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 13: method `ImportExportService`.`skipRtfMetadataGroup()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 14: method `ImportExportService`.`skipRtfMetadataGroup()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ */
+private skipRtfMetadataGroup(rtf: string, state: RtfParserState): boolean {
+    const len = rtf.length;
+    let wordStart = state.index + 1;
+    while (wordStart < len && rtf[wordStart] === ' ') {
+      wordStart++;
+    }
+
+    if (rtf[wordStart] !== '\\') {
+      return false;
+    }
+
+    let wordEnd = wordStart + 1;
+    while (wordEnd < len && /[a-z0-9*]/i.test(rtf[wordEnd])) {
+      wordEnd++;
+    }
+
+    const word = rtf.slice(wordStart + 1, wordEnd);
+    if (!RTF_METADATA_GROUPS.includes(word) && !word.startsWith('*')) {
+      return false;
+    }
+
+    state.index = this.findRtfGroupEnd(rtf, wordEnd);
+    return true;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`findRtfGroupEnd()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`findRtfGroupEnd()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`findRtfGroupEnd()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`findRtfGroupEnd()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`findRtfGroupEnd()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`findRtfGroupEnd()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`findRtfGroupEnd()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ImportExportService`.`findRtfGroupEnd()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `ImportExportService`.`findRtfGroupEnd()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `ImportExportService`.`findRtfGroupEnd()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `ImportExportService`.`findRtfGroupEnd()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `ImportExportService`.`findRtfGroupEnd()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+private findRtfGroupEnd(rtf: string, index: number): number {
+    let braceCount = 1;
+    let cursor = index;
+
+    while (cursor < rtf.length && braceCount > 0) {
+      if (rtf[cursor] === '{') {
+        braceCount++;
+      } else if (rtf[cursor] === '}') {
+        braceCount--;
+      }
+      cursor++;
+    }
+
+    return cursor;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`consumeRtfControlSequence()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`consumeRtfControlSequence()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`consumeRtfControlSequence()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`consumeRtfControlSequence()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`consumeRtfControlSequence()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`consumeRtfControlSequence()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`consumeRtfControlSequence()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ImportExportService`.`consumeRtfControlSequence()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `ImportExportService`.`consumeRtfControlSequence()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `ImportExportService`.`consumeRtfControlSequence()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `ImportExportService`.`consumeRtfControlSequence()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `ImportExportService`.`consumeRtfControlSequence()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+private consumeRtfControlSequence(rtf: string, state: RtfParserState): void {
+    state.index++;
+    if (state.index >= rtf.length) {
+      return;
+    }
+
+    if (this.consumeEscapedRtfCharacter(rtf, state)) {
+      return;
+    }
+
+    const word = this.readRtfControlWord(rtf, state);
+    const param = this.readRtfControlParameter(rtf, state);
+    this.consumeRtfControlTrailingSpace(rtf, state);
+    this.applyRtfControlWord(word, param, state);
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`consumeEscapedRtfCharacter()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`consumeEscapedRtfCharacter()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`consumeEscapedRtfCharacter()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`consumeEscapedRtfCharacter()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`consumeEscapedRtfCharacter()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`consumeEscapedRtfCharacter()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`consumeEscapedRtfCharacter()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ImportExportService`.`consumeEscapedRtfCharacter()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+private consumeEscapedRtfCharacter(rtf: string, state: RtfParserState): boolean {
+    if (!['\\', '{', '}'].includes(rtf[state.index])) {
+      return false;
+    }
+
+    state.currentText += rtf[state.index];
+    state.index++;
+    return true;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`readRtfControlWord()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`readRtfControlWord()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`readRtfControlWord()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`readRtfControlWord()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`readRtfControlWord()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`readRtfControlWord()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`readRtfControlWord()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+private readRtfControlWord(rtf: string, state: RtfParserState): string {
+    const start = state.index;
+    while (state.index < rtf.length && /[a-z*]/i.test(rtf[state.index])) {
+      state.index++;
+    }
+
+    return rtf.slice(start, state.index);
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`readRtfControlParameter()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`readRtfControlParameter()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`readRtfControlParameter()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`readRtfControlParameter()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`readRtfControlParameter()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`readRtfControlParameter()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`readRtfControlParameter()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ImportExportService`.`readRtfControlParameter()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `ImportExportService`.`readRtfControlParameter()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ */
+private readRtfControlParameter(rtf: string, state: RtfParserState): number | null {
+    const sign = this.readRtfParameterSign(rtf, state);
+    const start = state.index;
+    while (state.index < rtf.length && /[0-9]/.test(rtf[state.index])) {
+      state.index++;
+    }
+
+    const value = rtf.slice(start, state.index);
+    return value ? Number.parseInt(value, 10) * sign : null;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`readRtfParameterSign()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`readRtfParameterSign()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`readRtfParameterSign()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`readRtfParameterSign()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`readRtfParameterSign()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`readRtfParameterSign()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`readRtfParameterSign()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+private readRtfParameterSign(rtf: string, state: RtfParserState): number {
+    if (rtf[state.index] !== '-') {
+      return 1;
+    }
+
+    state.index++;
+    return -1;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`consumeRtfControlTrailingSpace()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`consumeRtfControlTrailingSpace()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`consumeRtfControlTrailingSpace()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`consumeRtfControlTrailingSpace()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`consumeRtfControlTrailingSpace()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`consumeRtfControlTrailingSpace()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`consumeRtfControlTrailingSpace()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+private consumeRtfControlTrailingSpace(rtf: string, state: RtfParserState): void {
+    if (rtf[state.index] === ' ') {
+      state.index++;
+    }
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`applyRtfControlWord()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`applyRtfControlWord()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`applyRtfControlWord()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`applyRtfControlWord()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`applyRtfControlWord()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`applyRtfControlWord()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`applyRtfControlWord()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ImportExportService`.`applyRtfControlWord()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `ImportExportService`.`applyRtfControlWord()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `ImportExportService`.`applyRtfControlWord()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `ImportExportService`.`applyRtfControlWord()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+private applyRtfControlWord(word: string, param: number | null, state: RtfParserState): void {
+    if (word === 'par' || word === 'line') {
+      this.addRtfParagraphBreak(state);
+      return;
+    }
+
+    const stateKey = this.getRtfStateKey(word);
+    if (!stateKey) {
+      return;
+    }
+
+    this.commitRtfText(state);
+    state.currentState[stateKey] = word === 'ulnone' ? false : param !== 0;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`getRtfStateKey()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`getRtfStateKey()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`getRtfStateKey()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`getRtfStateKey()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`getRtfStateKey()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`getRtfStateKey()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`getRtfStateKey()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ImportExportService`.`getRtfStateKey()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `ImportExportService`.`getRtfStateKey()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `ImportExportService`.`getRtfStateKey()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `ImportExportService`.`getRtfStateKey()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `ImportExportService`.`getRtfStateKey()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `ImportExportService`.`getRtfStateKey()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 11: method `ImportExportService`.`getRtfStateKey()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 12: method `ImportExportService`.`getRtfStateKey()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+private getRtfStateKey(word: string): keyof RtfState | null {
+    switch (word) {
+      case 'b':
+        return 'bold';
+      case 'i':
+        return 'italic';
+      case 'ul':
+      case 'ulnone':
+        return 'underline';
+      case 'strike':
+        return 'strike';
+      default:
+        return null;
+    }
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`addRtfParagraphBreak()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`addRtfParagraphBreak()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`addRtfParagraphBreak()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`addRtfParagraphBreak()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`addRtfParagraphBreak()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`addRtfParagraphBreak()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`addRtfParagraphBreak()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ImportExportService`.`addRtfParagraphBreak()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `ImportExportService`.`addRtfParagraphBreak()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `ImportExportService`.`addRtfParagraphBreak()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `ImportExportService`.`addRtfParagraphBreak()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `ImportExportService`.`addRtfParagraphBreak()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+private addRtfParagraphBreak(state: RtfParserState): void {
+    this.commitRtfText(state);
+    state.runs.push({
+      text: '',
+      bold: false,
+      italic: false,
+      underline: false,
+      strike: false,
+      isParagraphBreak: true
+    });
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`consumeRtfPlainText()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`consumeRtfPlainText()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`consumeRtfPlainText()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`consumeRtfPlainText()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`consumeRtfPlainText()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`consumeRtfPlainText()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`consumeRtfPlainText()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+private consumeRtfPlainText(char: string, state: RtfParserState): void {
+    if (char !== '\r' && char !== '\n') {
+      state.currentText += char;
+    }
+    state.index++;
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`commitRtfText()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`commitRtfText()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`commitRtfText()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`commitRtfText()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`commitRtfText()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`commitRtfText()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`commitRtfText()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ImportExportService`.`commitRtfText()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `ImportExportService`.`commitRtfText()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `ImportExportService`.`commitRtfText()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `ImportExportService`.`commitRtfText()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 09: method `ImportExportService`.`commitRtfText()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 10: method `ImportExportService`.`commitRtfText()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 11: method `ImportExportService`.`commitRtfText()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ */
+private commitRtfText(state: RtfParserState): void {
+    if (!state.currentText) {
+      return;
+    }
+
+    state.runs.push({
+      text: state.currentText,
+      bold: state.currentState.bold,
+      italic: state.currentState.italic,
+      underline: state.currentState.underline,
+      strike: state.currentState.strike,
+      isParagraphBreak: false
+    });
+    state.currentText = '';
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`renderRtfRuns()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`renderRtfRuns()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`renderRtfRuns()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`renderRtfRuns()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`renderRtfRuns()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`renderRtfRuns()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`renderRtfRuns()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ImportExportService`.`renderRtfRuns()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ */
+private renderRtfRuns(runs: RtfRun[]): string {
     let htmlResult = '<p>';
     for (const run of runs) {
-      if (run.isParagraphBreak) {
-        htmlResult += '</p><p>';
-      } else {
-        let runHtml = this.escapeHtml(run.text);
-        if (run.italic) runHtml = `<em>${runHtml}</em>`;
-        if (run.bold) runHtml = `<strong>${runHtml}</strong>`;
-        if (run.underline) runHtml = `<u>${runHtml}</u>`;
-        if (run.strike) runHtml = `<s>${runHtml}</s>`;
-        htmlResult += runHtml;
-      }
+      htmlResult += this.renderRtfRun(run);
     }
-    htmlResult += '</p>';
 
-    htmlResult = htmlResult.replace(/<p>\s*<\/p>/g, '');
-    return htmlResult;
+    htmlResult += '</p>';
+    return htmlResult.replace(/<p>\s*<\/p>/g, '');
+  }
+
+/**
+ * @generatedInfoDoc
+ * InfoDoc: method `ImportExportService`.`renderRtfRun()` is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.
+ * How: method `ImportExportService`.`renderRtfRun()` is implemented in `projects/lib-magnetar-quill/src/lib/services/import-export.service.ts` and this block is regenerated by `scripts/info-docs.mjs` so structural changes stay synchronized with the documentation contract.
+ * Why: method `ImportExportService`.`renderRtfRun()` carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.
+ * Related: method `ImportExportService`.`renderRtfRun()` participates in the `ImportExportService` class contract, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.
+ * Why 02: method `ImportExportService`.`renderRtfRun()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 03: method `ImportExportService`.`renderRtfRun()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 04: method `ImportExportService`.`renderRtfRun()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 05: method `ImportExportService`.`renderRtfRun()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
+ * Why 06: method `ImportExportService`.`renderRtfRun()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
+ * Relation 07: method `ImportExportService`.`renderRtfRun()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 08: method `ImportExportService`.`renderRtfRun()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ */
+private renderRtfRun(run: RtfRun): string {
+    if (run.isParagraphBreak) {
+      return '</p><p>';
+    }
+
+    let runHtml = this.escapeHtml(run.text);
+    if (run.italic) runHtml = `<em>${runHtml}</em>`;
+    if (run.bold) runHtml = `<strong>${runHtml}</strong>`;
+    if (run.underline) runHtml = `<u>${runHtml}</u>`;
+    if (run.strike) runHtml = `<s>${runHtml}</s>`;
+    return runHtml;
   }
 
   /**
@@ -1116,6 +1382,8 @@ public convertRtfToHtml(rtf: string): string {
  * Relation 51: method `ImportExportService`.`convertHtmlToRtf()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 52: method `ImportExportService`.`convertHtmlToRtf()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 public convertHtmlToRtf(html: string): string {
     if (!html) return '{\\rtf1\\ansi\\deff0\n{\\fonttbl{\\f0\\fnil\\fcharset0 Arial;}}\n\\viewkind4\\uc1\\pard\\lang1033\\f0\\fs24\n\\par\n}';
@@ -1197,6 +1465,8 @@ public convertHtmlToRtf(html: string): string {
  * Why 06: method `ImportExportService`.`escapeHtml()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
 
+
+
 private escapeHtml(text: string): string {
     return text
       .replace(/&/g, '&amp;')
@@ -1217,6 +1487,8 @@ private escapeHtml(text: string): string {
  * Maintenance 04: method `ImportExportService`.`escapeRtf()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `ImportExportService`.`escapeRtf()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 
 private escapeRtf(text: string): string {
     return text

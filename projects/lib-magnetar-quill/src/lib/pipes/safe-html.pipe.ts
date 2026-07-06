@@ -1,5 +1,5 @@
-import { Pipe, PipeTransform, inject } from '@angular/core';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { Pipe, PipeTransform, SecurityContext, inject } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 /**
  * @generatedInfoDoc
@@ -30,7 +30,7 @@ export class SafeHtmlPipe implements PipeTransform {
  * Maintenance 04: method `SafeHtmlPipe`.`transform()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
 
-public transform(value: string): SafeHtml {
-    return this.sanitizer.bypassSecurityTrustHtml(value);
+public transform(value: string | null | undefined): string {
+    return this.sanitizer.sanitize(SecurityContext.HTML, value ?? '') ?? '';
   }
 }

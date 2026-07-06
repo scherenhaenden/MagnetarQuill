@@ -137,7 +137,7 @@ To build the library reliably, use:
 The library currently declares:
 
 - Angular peer dependencies: `^22.0.0`
-- Library package version: `0.10.0`
+- Library package version: `0.10.2`
 
 ### **Repository Structure Relevant to the Build**
 
