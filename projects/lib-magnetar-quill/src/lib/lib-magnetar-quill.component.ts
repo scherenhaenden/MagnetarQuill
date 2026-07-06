@@ -377,6 +377,7 @@ public onThemeChange(newTheme: string): void {
   /**
    * Emits the new content to the parent component when the editor content changes.
    * @param {string} newContent - The updated HTML content from the editor.
+   * @public
    */
     /**
  * @generatedInfoDoc
