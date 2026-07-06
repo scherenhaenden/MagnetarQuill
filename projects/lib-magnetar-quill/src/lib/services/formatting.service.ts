@@ -1490,9 +1490,9 @@ const SEMANTIC_STYLE_TAGS = new Map<RemovableStyleKey, ReadonlySet<string>>([
  * Why 1474: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 1475: class `FormattingService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 1476: class `FormattingService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 1477: class `FormattingService` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 1478: class `FormattingService` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
+
 
 
 
@@ -1527,6 +1527,8 @@ export class FormattingService {
 
 
 
+
+
 constructor(private readonly contentService: ContentService) { }
 
 
@@ -1544,6 +1546,8 @@ constructor(private readonly contentService: ContentService) { }
  * Relation 03: method `FormattingService`.`saveSelection()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`saveSelection()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 
@@ -1573,6 +1577,8 @@ public saveSelection(): void {
  * Relation 07: method `FormattingService`.`restoreSelection()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 08: method `FormattingService`.`restoreSelection()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 
@@ -1608,6 +1614,8 @@ public restoreSelection(): void {
 
 
 
+
+
 private setActiveRange(range: Range): void {
     this.lastActiveRange = range.cloneRange();
     const selection = window.getSelection();
@@ -1630,6 +1638,8 @@ private setActiveRange(range: Range): void {
  * Relation 03: method `FormattingService`.`getActiveRange()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`getActiveRange()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 
@@ -1672,6 +1682,8 @@ private getActiveRange(): Range | null {
  * Why 14: method `FormattingService`.`updateFormatStates()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 15: method `FormattingService`.`updateFormatStates()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
+
+
 
 
 
@@ -1725,6 +1737,8 @@ public updateFormatStates(): void {
 
 
 
+
+
 private collectFormatStates(startNode: Node | null): {
     isBold: boolean;
     isItalic: boolean;
@@ -1767,6 +1781,8 @@ private collectFormatStates(startNode: Node | null): {
  * Relation 07: method `FormattingService`.`mergeElementFormatStates()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 08: method `FormattingService`.`mergeElementFormatStates()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 
@@ -1822,6 +1838,8 @@ private mergeElementFormatStates(
  * Why 22: method `FormattingService`.`getSelectedFontFamily()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 23: method `FormattingService`.`getSelectedFontFamily()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
+
+
 
 
 
@@ -1885,6 +1903,8 @@ private getSelectedFontFamily(range: Range, fallbackNode: Node | null): string {
 
 
 
+
+
 private getFontFamilyFromNode(node: Node | null): string {
     let current: Node | null = node;
     while (current && current.nodeType !== Node.ELEMENT_NODE) {
@@ -1929,6 +1949,8 @@ private getFontFamilyFromNode(node: Node | null): string {
  * Why 22: method `FormattingService`.`getSelectedFontSize()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 23: method `FormattingService`.`getSelectedFontSize()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
+
+
 
 
 
@@ -1990,6 +2012,8 @@ private getSelectedFontSize(range: Range, fallbackNode: Node | null): string {
 
 
 
+
+
 private getFontSizeFromNode(node: Node | null): string {
     let current: Node | null = node;
     while (current && current.nodeType !== Node.ELEMENT_NODE) {
@@ -2032,6 +2056,8 @@ private getFontSizeFromNode(node: Node | null): string {
  * Why 22: method `FormattingService`.`getSelectedTextColor()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 23: method `FormattingService`.`getSelectedTextColor()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
+
+
 
 
 
@@ -2093,6 +2119,8 @@ private getSelectedTextColor(range: Range, fallbackNode: Node | null): string {
 
 
 
+
+
 private getTextColorFromNode(node: Node | null): string {
     let current: Node | null = node;
     while (current && current.nodeType !== Node.ELEMENT_NODE) {
@@ -2120,6 +2148,8 @@ private getTextColorFromNode(node: Node | null): string {
  * Relation 07: method `FormattingService`.`normalizeColorValue()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 08: method `FormattingService`.`normalizeColorValue()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 
@@ -2175,6 +2205,8 @@ private normalizeColorValue(value: string): string {
 
 
 
+
+
 private toggler(activeSignal: WritableSignal<boolean>, styleName: string, value: string): void {
     if (activeSignal()) {
       this.removeFormatting(styleName, value);
@@ -2198,6 +2230,8 @@ private toggler(activeSignal: WritableSignal<boolean>, styleName: string, value:
  * Relation 03: method `FormattingService`.`toggleBold()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`toggleBold()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 
@@ -2248,6 +2282,8 @@ public toggleBold(): void {
 
 
 
+
+
 public toggleStrong(): void {
     const selection = window.getSelection();
     const range = this.getActiveRange();
@@ -2282,6 +2318,8 @@ public toggleStrong(): void {
 
 
 
+
+
 private findSelectedStrongElement(range: Range): HTMLElement | null {
     return this.findStrongAncestor(range.commonAncestorContainer) ??
       this.findStrongAncestor(range.startContainer) ??
@@ -2302,6 +2340,8 @@ private findSelectedStrongElement(range: Range): HTMLElement | null {
  * Relation 07: method `FormattingService`.`findStrongAncestor()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 08: method `FormattingService`.`findStrongAncestor()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 
@@ -2346,6 +2386,8 @@ private findStrongAncestor(node: Node | null): HTMLElement | null {
 
 
 
+
+
 private unwrapStrongSelection(range: Range, selection: Selection, strongElement: HTMLElement): void {
     const beforeFragment = this.cloneStrongSide(range, strongElement, 'before');
     const selectedFragment = range.cloneContents();
@@ -2383,6 +2425,8 @@ private unwrapStrongSelection(range: Range, selection: Selection, strongElement:
 
 
 
+
+
 private cloneStrongSide(range: Range, strongElement: HTMLElement, side: 'before' | 'after'): DocumentFragment {
     const sideRange = document.createRange();
     if (side === 'before') {
@@ -2407,6 +2451,8 @@ private cloneStrongSide(range: Range, strongElement: HTMLElement, side: 'before'
  * Maintenance 04: method `FormattingService`.`insertStrongSide()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `FormattingService`.`insertStrongSide()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 
 
 
@@ -2441,6 +2487,8 @@ private insertStrongSide(fragment: DocumentFragment, strongElement: HTMLElement)
 
 
 
+
+
 private restoreSelectionRange(selection: Selection, nodes: Node[]): void {
     const connectedNodes = nodes.filter(node => node.isConnected);
     if (connectedNodes.length === 0) {
@@ -2467,6 +2515,8 @@ private restoreSelectionRange(selection: Selection, nodes: Node[]): void {
  * Why 06: method `FormattingService`.`wrapSelectionInStrong()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 07: method `FormattingService`.`wrapSelectionInStrong()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
+
+
 
 
 
@@ -2514,6 +2564,8 @@ private wrapSelectionInStrong(range: Range, selection: Selection): void {
 
 
 
+
+
 public toggleItalic(): void {
     this.toggler(this.italicActive, 'font-style', 'italic');
   }
@@ -2533,6 +2585,8 @@ public toggleItalic(): void {
 
 
 
+
+
 public toggleUnderline(): void {
     this.toggler(this.underlineActive, 'text-decoration', 'underline');
   }
@@ -2547,6 +2601,8 @@ public toggleUnderline(): void {
  * Relation 03: method `FormattingService`.`toggleStrikethrough()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`toggleStrikethrough()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 
@@ -2577,6 +2633,8 @@ public toggleStrikethrough(): void {
  * How 13: method `FormattingService`.`toggleList()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 14: method `FormattingService`.`toggleList()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
+
 
 
 
@@ -2625,6 +2683,8 @@ public toggleList(type: 'ordered' | 'unordered'): void {
 
 
 
+
+
 public applyHeader(headerLevel: string): void {
     const range = this.getActiveRange();
     if (range) {
@@ -2657,6 +2717,8 @@ public applyHeader(headerLevel: string): void {
  * How 09: method `FormattingService`.`applyStyle()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 10: method `FormattingService`.`applyStyle()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
+
 
 
 
@@ -2695,7 +2757,11 @@ public applyStyle(styleName: string, value: string): void {
  * How 09: method `FormattingService`.`styleMatches()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 10: method `FormattingService`.`styleMatches()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 11: method `FormattingService`.`styleMatches()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
+ * Maintenance 12: method `FormattingService`.`styleMatches()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
+ * How 13: method `FormattingService`.`styleMatches()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 
 
 
@@ -2750,10 +2816,9 @@ private styleMatches(element: HTMLElement, styleName: string, value: string): bo
  * How 17: method `FormattingService`.`removeStyleFromElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 18: method `FormattingService`.`removeStyleFromElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 19: method `FormattingService`.`removeStyleFromElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
- * Maintenance 20: method `FormattingService`.`removeStyleFromElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
- * How 21: method `FormattingService`.`removeStyleFromElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
- * Why 22: method `FormattingService`.`removeStyleFromElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
+
 
 
 
@@ -2826,6 +2891,8 @@ private removeStyleFromElement(element: HTMLElement, styleName: string, value: s
  * Why 30: method `FormattingService`.`collectMatchingStyleElements()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 31: method `FormattingService`.`collectMatchingStyleElements()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
+
+
 
 
 
@@ -2935,6 +3002,8 @@ private static readonly VOID_TAGS = new Set([
 
 
 
+
+
 public clearFormatting(): void {
   const range = this.getActiveRange();
   if (!range || range.collapsed) {
@@ -3013,6 +3082,8 @@ public clearFormatting(): void {
 
 
 
+
+
 private stripFormattingNode(node: Node): Node {
   if (node.nodeType === Node.TEXT_NODE) {
     return document.createTextNode(node.textContent || '');
@@ -3052,6 +3123,8 @@ private stripFormattingNode(node: Node): Node {
 
 
 
+
+
 private createStrippedBlockElement(element: HTMLElement, tag: string): HTMLElement {
     const strippedElement = document.createElement(tag.toLowerCase());
     Array.from(element.childNodes).forEach(child => {
@@ -3071,6 +3144,8 @@ private createStrippedBlockElement(element: HTMLElement, tag: string): HTMLEleme
  * Maintenance 04: method `FormattingService`.`createStrippedVoidElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `FormattingService`.`createStrippedVoidElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 
 
 
@@ -3100,6 +3175,8 @@ private createStrippedVoidElement(element: HTMLElement, tag: string): HTMLElemen
 
 
 
+
+
 private copyImageAttribute(source: HTMLImageElement, target: HTMLElement, attributeName: string): void {
     const attributeValue = source.getAttribute(attributeName);
     if (attributeValue) {
@@ -3118,6 +3195,8 @@ private copyImageAttribute(source: HTMLImageElement, target: HTMLElement, attrib
  * Maintenance 04: method `FormattingService`.`createStrippedInlineFragment()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `FormattingService`.`createStrippedInlineFragment()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 
 
 
@@ -3156,6 +3235,8 @@ private createStrippedInlineFragment(element: HTMLElement): DocumentFragment {
  * Maintenance 16: method `FormattingService`.`applyStyleV2()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 17: method `FormattingService`.`applyStyleV2()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 
 
 
@@ -3208,6 +3289,8 @@ public applyStyleV2(styleName: string, value: string): void {
 
 
 
+
+
 private unwrap(element: HTMLElement): Node[] {
     const parent = element.parentNode;
     const unwrappedNodes: Node[] = [];
@@ -3239,6 +3322,8 @@ private unwrap(element: HTMLElement): Node[] {
 
 
 
+
+
 public toggleSuperscript(): void {
     this.wrapSelectionWithTag('sup');
   }
@@ -3253,6 +3338,8 @@ public toggleSuperscript(): void {
  * Relation 03: method `FormattingService`.`toggleSubscript()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`toggleSubscript()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 
@@ -3280,6 +3367,8 @@ public toggleSubscript(): void {
  * Relation 11: method `FormattingService`.`wrapSelectionWithTag()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 12: method `FormattingService`.`wrapSelectionWithTag()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 
@@ -3344,6 +3433,8 @@ public wrapSelectionWithTag(tagName: string): void {
 
 
 
+
+
 public removeFormatting(styleName: string, value: string): void {
     const selection = window.getSelection();
     const range = this.getActiveRange();
@@ -3385,6 +3476,8 @@ public removeFormatting(styleName: string, value: string): void {
 
 
 
+
+
 public setTextAlign(alignment: string): void {
     const range = this.getActiveRange();
     if (!range) {
@@ -3417,6 +3510,8 @@ public setTextAlign(alignment: string): void {
 
 
 
+
+
 private findRangeParentParagraph(range: Range): HTMLElement | null {
     const container = this.normalizeContainerElement(range.commonAncestorContainer);
     return container ? this.findParentParagraph(container) : null;
@@ -3432,6 +3527,8 @@ private findRangeParentParagraph(range: Range): HTMLElement | null {
  * Relation 03: method `FormattingService`.`normalizeContainerElement()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`normalizeContainerElement()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 
@@ -3462,6 +3559,8 @@ private normalizeContainerElement(container: Node): HTMLElement | null {
  * Why 10: method `FormattingService`.`splitRangeIntoParagraphs()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 11: method `FormattingService`.`splitRangeIntoParagraphs()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
+
+
 
 
 
@@ -3501,6 +3600,8 @@ public splitRangeIntoParagraphs(range: Range): HTMLElement[] {
 
 
 
+
+
 public findParentParagraph(element: HTMLElement): HTMLElement | null {
     while (element && element.tagName !== 'P') {
       element = element.parentElement as HTMLElement;
@@ -3519,6 +3620,8 @@ public findParentParagraph(element: HTMLElement): HTMLElement | null {
  * Relation 03: method `FormattingService`.`getTargetBlocks()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`getTargetBlocks()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 
@@ -3543,6 +3646,8 @@ private getTargetBlocks(): HTMLElement[] {
  * Maintenance 04: method `FormattingService`.`getCaretTargetBlocks()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `FormattingService`.`getCaretTargetBlocks()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 
 
 
@@ -3575,6 +3680,8 @@ private getCaretTargetBlocks(): HTMLElement[] {
 
 
 
+
+
 private findNearestTargetBlock(node: Node | null): HTMLElement | null {
     let currentNode = node;
     while (currentNode) {
@@ -3601,6 +3708,8 @@ private findNearestTargetBlock(node: Node | null): HTMLElement | null {
 
 
 
+
+
 private isTargetBlock(node: Node): node is HTMLElement {
     return node instanceof HTMLElement && ['P', 'LI', 'DIV', 'SECTION', 'ARTICLE'].includes(node.tagName);
   }
@@ -3616,6 +3725,8 @@ private isTargetBlock(node: Node): node is HTMLElement {
  * Relation 03: method `FormattingService`.`setLineSpacing()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`setLineSpacing()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 
@@ -3637,6 +3748,8 @@ public setLineSpacing(value: string): void {
  * Relation 03: method `FormattingService`.`setBackgroundColor()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`setBackgroundColor()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 
@@ -3668,6 +3781,8 @@ public setBackgroundColor(value: string): void {
 
 
 
+
+
 public indent(): void {
     const blocks = this.getTargetBlocks();
     blocks.forEach(el => this.adjustIndent(el, +FormattingService.INDENT_STEP_PX));
@@ -3685,6 +3800,8 @@ public indent(): void {
  * Relation 03: method `FormattingService`.`adjustIndent()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`adjustIndent()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 
@@ -3716,6 +3833,8 @@ private adjustIndent(el: HTMLElement, delta: number): void {
  * Maintenance 12: method `FormattingService`.`wrapOrUnwrapBlock()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 13: method `FormattingService`.`wrapOrUnwrapBlock()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 
 
 
@@ -3763,6 +3882,8 @@ private wrapOrUnwrapBlock(tag: 'blockquote' | 'pre'): void {
 
 
 
+
+
 public outdent(): void {
     const blocks = this.getTargetBlocks();
     blocks.forEach(el => this.adjustIndent(el, -FormattingService.INDENT_STEP_PX));
@@ -3784,6 +3905,8 @@ public outdent(): void {
 
 
 
+
+
 public blockquote(): void {
     this.wrapOrUnwrapBlock('blockquote');
   }
@@ -3799,6 +3922,8 @@ public blockquote(): void {
  * Relation 03: method `FormattingService`.`codeBlock()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `FormattingService`.`codeBlock()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 

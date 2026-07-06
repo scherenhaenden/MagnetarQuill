@@ -144,13 +144,13 @@
     <button (mousedown)="$event.preventDefault()" (click)="tableService.setCellVerticalAlignment('middle')" title="Align Cell Middle">Cell Middle</button>
     <button (mousedown)="$event.preventDefault()" (click)="tableService.setCellVerticalAlignment('bottom')" title="Align Cell Bottom">Cell Bottom</button>
 
-    <select (change)="onCellBorderChange($event)" title="Cell Border Style">
+    <select id="mq-cell-border-style" aria-label="Cell Border Style" (change)="onCellBorderChange($event)" title="Cell Border Style">
       <option value="solid">Solid Border</option>
       <option value="dashed">Dashed Border</option>
       <option value="none">No Border</option>
     </select>
 
-    <input type="color" (change)="onCellBgColorChange($event)" title="Cell Background Color" />
+    <input id="mq-cell-background-color" aria-label="Cell Background Color" type="color" (change)="onCellBgColorChange($event)" title="Cell Background Color" />
 
     <button (mousedown)="$event.preventDefault()" (click)="tableService.mergeRight()" title="Merge Right">Merge Right</button>
     <button (mousedown)="$event.preventDefault()" (click)="tableService.mergeDown()" title="Merge Down">Merge Down</button>

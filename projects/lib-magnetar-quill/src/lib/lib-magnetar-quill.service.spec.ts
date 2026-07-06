@@ -4,7 +4,6 @@ import { By } from '@angular/platform-browser';
 
 describe('LibMagnetarQuillComponent', () => {
   let fixture: ComponentFixture<LibMagnetarQuillComponent>;
-  let component: LibMagnetarQuillComponent;
   let editor: HTMLElement;
 
   beforeEach(async () => {
@@ -13,7 +12,6 @@ describe('LibMagnetarQuillComponent', () => {
     }).compileComponents();
 
     fixture = TestBed.createComponent(LibMagnetarQuillComponent);
-    component = fixture.componentInstance;
     fixture.detectChanges();
     const editorDebug = fixture.debugElement.query(By.css('lib-editor'));
     editor = editorDebug.nativeElement;

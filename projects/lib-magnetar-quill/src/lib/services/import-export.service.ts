@@ -409,6 +409,8 @@ const RTF_METADATA_GROUPS = ['fonttbl', 'colortbl', 'stylesheet', 'info', 'gener
 
 
 
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -424,6 +426,8 @@ export class ImportExportService {
  * Relation 03: constructor for class `ImportExportService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: constructor for class `ImportExportService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 
@@ -446,6 +450,8 @@ constructor(private readonly logService: LogService) {}
  * Relation 07: method `ImportExportService`.`convertMarkdownToHtml()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 08: method `ImportExportService`.`convertMarkdownToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 
@@ -474,6 +480,8 @@ public convertMarkdownToHtml(md: string): string {
  * Maintenance 04: method `ImportExportService`.`closeMarkdownList()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `ImportExportService`.`closeMarkdownList()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 private closeMarkdownList(listState: MarkdownListState): string {
     if (!listState.type) {
       return '';
@@ -495,6 +503,8 @@ private closeMarkdownList(listState: MarkdownListState): string {
  * Maintenance 04: method `ImportExportService`.`openMarkdownList()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `ImportExportService`.`openMarkdownList()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 private openMarkdownList(listState: MarkdownListState, type: MarkdownListType): string {
     if (listState.type === type) {
       return '';
@@ -528,6 +538,8 @@ private openMarkdownList(listState: MarkdownListState, type: MarkdownListType): 
  * Maintenance 16: method `ImportExportService`.`renderMarkdownLine()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 17: method `ImportExportService`.`renderMarkdownLine()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 private renderMarkdownLine(line: string, listState: MarkdownListState): string {
     const trimmed = line.trim();
     if (!trimmed) {
@@ -576,6 +588,8 @@ private renderMarkdownLine(line: string, listState: MarkdownListState): string {
  * Maintenance 08: method `ImportExportService`.`parseInlineMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 09: method `ImportExportService`.`parseInlineMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 
 
 
@@ -629,6 +643,8 @@ private parseInlineMarkdown(text: string): string {
 
 
 
+
+
 public convertHtmlToMarkdown(html: string): MarkdownExportResult {
     if (!html) return { markdown: '', hasUnsupportedElements: false };
 
@@ -670,6 +686,8 @@ public convertHtmlToMarkdown(html: string): MarkdownExportResult {
  * Maintenance 08: method `ImportExportService`.`convertHtmlNodeToMarkdown()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 09: method `ImportExportService`.`convertHtmlNodeToMarkdown()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 private convertHtmlNodeToMarkdown(node: Node): string {
     if (node.nodeType === Node.TEXT_NODE) {
       return node.textContent || '';
@@ -739,6 +757,8 @@ private convertHtmlNodeToMarkdown(node: Node): string {
  * How 45: method `ImportExportService`.`renderMarkdownElement()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 46: method `ImportExportService`.`renderMarkdownElement()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
+
 private renderMarkdownElement(el: HTMLElement, content: string): string {
     switch (el.tagName.toLowerCase()) {
       case 'strong':
@@ -800,6 +820,8 @@ private renderMarkdownElement(el: HTMLElement, content: string): string {
  * Maintenance 04: method `ImportExportService`.`renderMarkdownListItem()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `ImportExportService`.`renderMarkdownListItem()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 private renderMarkdownListItem(el: HTMLElement, content: string): string {
     const parent = el.parentElement;
     if (parent?.tagName.toLowerCase() === 'ol') {
@@ -832,6 +854,8 @@ private renderMarkdownListItem(el: HTMLElement, content: string): string {
  * Maintenance 12: method `ImportExportService`.`convertRtfToHtml()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 13: method `ImportExportService`.`convertRtfToHtml()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 
 
 
@@ -872,6 +896,8 @@ public convertRtfToHtml(rtf: string): string {
  * Why 10: method `ImportExportService`.`consumeRtfToken()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 11: method `ImportExportService`.`consumeRtfToken()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
+
+
 private consumeRtfToken(rtf: string, state: RtfParserState): void {
     const char = rtf[state.index];
 
@@ -902,6 +928,8 @@ private consumeRtfToken(rtf: string, state: RtfParserState): void {
  * Maintenance 04: method `ImportExportService`.`consumeRtfGroupStart()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `ImportExportService`.`consumeRtfGroupStart()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 private consumeRtfGroupStart(rtf: string, state: RtfParserState): void {
     if (this.skipRtfMetadataGroup(rtf, state)) {
       return;
@@ -922,6 +950,8 @@ private consumeRtfGroupStart(rtf: string, state: RtfParserState): void {
  * Relation 03: method `ImportExportService`.`consumeRtfGroupEnd()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ImportExportService`.`consumeRtfGroupEnd()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 private consumeRtfGroupEnd(state: RtfParserState): void {
     this.commitRtfText(state);
     state.currentState = state.stateStack.pop() ?? state.currentState;
@@ -948,6 +978,8 @@ private consumeRtfGroupEnd(state: RtfParserState): void {
  * How 13: method `ImportExportService`.`skipRtfMetadataGroup()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 14: method `ImportExportService`.`skipRtfMetadataGroup()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
+
 private skipRtfMetadataGroup(rtf: string, state: RtfParserState): boolean {
     const len = rtf.length;
     let wordStart = state.index + 1;
@@ -988,6 +1020,8 @@ private skipRtfMetadataGroup(rtf: string, state: RtfParserState): boolean {
  * Maintenance 08: method `ImportExportService`.`findRtfGroupEnd()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 09: method `ImportExportService`.`findRtfGroupEnd()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 private findRtfGroupEnd(rtf: string, index: number): number {
     let braceCount = 1;
     let cursor = index;
@@ -1019,6 +1053,8 @@ private findRtfGroupEnd(rtf: string, index: number): number {
  * Maintenance 08: method `ImportExportService`.`consumeRtfControlSequence()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 09: method `ImportExportService`.`consumeRtfControlSequence()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 private consumeRtfControlSequence(rtf: string, state: RtfParserState): void {
     state.index++;
     if (state.index >= rtf.length) {
@@ -1046,6 +1082,8 @@ private consumeRtfControlSequence(rtf: string, state: RtfParserState): void {
  * Maintenance 04: method `ImportExportService`.`consumeEscapedRtfCharacter()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `ImportExportService`.`consumeEscapedRtfCharacter()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 private consumeEscapedRtfCharacter(rtf: string, state: RtfParserState): boolean {
     if (!['\\', '{', '}'].includes(rtf[state.index])) {
       return false;
@@ -1066,6 +1104,8 @@ private consumeEscapedRtfCharacter(rtf: string, state: RtfParserState): boolean 
  * Relation 03: method `ImportExportService`.`readRtfControlWord()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ImportExportService`.`readRtfControlWord()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 private readRtfControlWord(rtf: string, state: RtfParserState): string {
     const start = state.index;
     while (state.index < rtf.length && /[a-z*]/i.test(rtf[state.index])) {
@@ -1087,6 +1127,8 @@ private readRtfControlWord(rtf: string, state: RtfParserState): string {
  * How 05: method `ImportExportService`.`readRtfControlParameter()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 06: method `ImportExportService`.`readRtfControlParameter()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
+
 private readRtfControlParameter(rtf: string, state: RtfParserState): number | null {
     const sign = this.readRtfParameterSign(rtf, state);
     const start = state.index;
@@ -1108,6 +1150,8 @@ private readRtfControlParameter(rtf: string, state: RtfParserState): number | nu
  * Relation 03: method `ImportExportService`.`readRtfParameterSign()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ImportExportService`.`readRtfParameterSign()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 private readRtfParameterSign(rtf: string, state: RtfParserState): number {
     if (rtf[state.index] !== '-') {
       return 1;
@@ -1127,6 +1171,8 @@ private readRtfParameterSign(rtf: string, state: RtfParserState): number {
  * Relation 03: method `ImportExportService`.`consumeRtfControlTrailingSpace()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ImportExportService`.`consumeRtfControlTrailingSpace()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 private consumeRtfControlTrailingSpace(rtf: string, state: RtfParserState): void {
     if (rtf[state.index] === ' ') {
       state.index++;
@@ -1147,6 +1193,8 @@ private consumeRtfControlTrailingSpace(rtf: string, state: RtfParserState): void
  * Relation 07: method `ImportExportService`.`applyRtfControlWord()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 08: method `ImportExportService`.`applyRtfControlWord()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 private applyRtfControlWord(word: string, param: number | null, state: RtfParserState): void {
     if (word === 'par' || word === 'line') {
       this.addRtfParagraphBreak(state);
@@ -1180,6 +1228,8 @@ private applyRtfControlWord(word: string, param: number | null, state: RtfParser
  * Relation 11: method `ImportExportService`.`getRtfStateKey()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 12: method `ImportExportService`.`getRtfStateKey()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 private getRtfStateKey(word: string): keyof RtfState | null {
     switch (word) {
       case 'b':
@@ -1211,6 +1261,8 @@ private getRtfStateKey(word: string): keyof RtfState | null {
  * Maintenance 08: method `ImportExportService`.`addRtfParagraphBreak()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 09: method `ImportExportService`.`addRtfParagraphBreak()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 private addRtfParagraphBreak(state: RtfParserState): void {
     this.commitRtfText(state);
     state.runs.push({
@@ -1233,6 +1285,8 @@ private addRtfParagraphBreak(state: RtfParserState): void {
  * Relation 03: method `ImportExportService`.`consumeRtfPlainText()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ImportExportService`.`consumeRtfPlainText()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 private consumeRtfPlainText(char: string, state: RtfParserState): void {
     if (char !== '\r' && char !== '\n') {
       state.currentText += char;
@@ -1257,6 +1311,8 @@ private consumeRtfPlainText(char: string, state: RtfParserState): void {
  * Why 10: method `ImportExportService`.`commitRtfText()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 11: method `ImportExportService`.`commitRtfText()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
+
+
 private commitRtfText(state: RtfParserState): void {
     if (!state.currentText) {
       return;
@@ -1284,6 +1340,8 @@ private commitRtfText(state: RtfParserState): void {
  * Maintenance 04: method `ImportExportService`.`renderRtfRuns()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `ImportExportService`.`renderRtfRuns()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 private renderRtfRuns(runs: RtfRun[]): string {
     let htmlResult = '<p>';
     for (const run of runs) {
@@ -1308,6 +1366,8 @@ private renderRtfRuns(runs: RtfRun[]): string {
  * Relation 07: method `ImportExportService`.`renderRtfRun()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 08: method `ImportExportService`.`renderRtfRun()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 private renderRtfRun(run: RtfRun): string {
     if (run.isParagraphBreak) {
       return '</p><p>';
@@ -1382,6 +1442,8 @@ private renderRtfRun(run: RtfRun): string {
  * Relation 51: method `ImportExportService`.`convertHtmlToRtf()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 52: method `ImportExportService`.`convertHtmlToRtf()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 
@@ -1467,6 +1529,8 @@ public convertHtmlToRtf(html: string): string {
 
 
 
+
+
 private escapeHtml(text: string): string {
     return text
       .replace(/&/g, '&amp;')
@@ -1487,6 +1551,8 @@ private escapeHtml(text: string): string {
  * Maintenance 04: method `ImportExportService`.`escapeRtf()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `ImportExportService`.`escapeRtf()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 
 
 

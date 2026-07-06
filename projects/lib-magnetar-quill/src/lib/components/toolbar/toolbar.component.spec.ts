@@ -5,12 +5,16 @@ import { ContentService } from '../../services/content.service';
 import { ImportExportService } from '../../services/import-export.service';
 import { TableService } from '../../services/table.service';
 import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 
 describe('ToolbarComponent', () => {
+  type ToolbarComponentFileLoader = {
+    handleFileContent(filename: string, content: string): void;
+  };
+
   let component: ToolbarComponent;
   let fixture: ComponentFixture<ToolbarComponent>;
   let formattingService: jasmine.SpyObj<FormattingService>;
+  let contentService: ContentService;
 
   beforeEach(async () => {
     const formattingSpy = jasmine.createSpyObj('FormattingService', ['applyStyle', 'clearFormatting', 'toggleBold', 'toggleItalic', 'toggleUnderline', 'toggleStrikethrough', 'toggleSuperscript', 'toggleSubscript', 'toggleList', 'applyHeader', 'setTextAlign', 'saveSelection', 'restoreSelection', 'updateFormatStates', 'toggleStrong', 'setLineSpacing', 'setBackgroundColor'], {
@@ -37,11 +41,49 @@ describe('ToolbarComponent', () => {
     fixture = TestBed.createComponent(ToolbarComponent);
     component = fixture.componentInstance;
     formattingService = TestBed.inject(FormattingService) as jasmine.SpyObj<FormattingService>;
+    contentService = TestBed.inject(ContentService);
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should publish active editor HTML after applying toolbar formatting', () => {
+    const editor = document.createElement('div');
+    editor.contentEditable = 'true';
+    editor.innerHTML = '<p style="text-align: center;"><strong>Synced</strong></p>';
+    document.body.appendChild(editor);
+    spyOn(contentService, 'setEditorContent');
+    spyOn(component.contentChanged, 'emit');
+
+    const range = document.createRange();
+    range.selectNodeContents(editor);
+    const selection = window.getSelection();
+    selection?.removeAllRanges();
+    selection?.addRange(range);
+
+    component.toggleBold();
+
+    expect(formattingService.restoreSelection).toHaveBeenCalled();
+    expect(formattingService.toggleBold).toHaveBeenCalled();
+    expect(contentService.setEditorContent).toHaveBeenCalledWith(editor.innerHTML);
+    expect(component.contentChanged.emit).toHaveBeenCalledWith(editor.innerHTML);
+
+    selection?.removeAllRanges();
+    editor.remove();
+  });
+
+  it('should not publish toolbar content when there is no active editor selection', () => {
+    window.getSelection()?.removeAllRanges();
+    spyOn(contentService, 'setEditorContent');
+    spyOn(component.contentChanged, 'emit');
+
+    component.setTextAlign('justify');
+
+    expect(formattingService.setTextAlign).toHaveBeenCalledWith('justify');
+    expect(contentService.setEditorContent).not.toHaveBeenCalled();
+    expect(component.contentChanged.emit).not.toHaveBeenCalled();
   });
 
   describe('Focus Theft Prevention (mousedown.preventDefault)', () => {
@@ -192,21 +234,21 @@ describe('ToolbarComponent', () => {
       spyOn(importExportService, 'convertRtfToHtml').and.returnValue('<p>rtf</p>');
 
       // Test HTML
-      (component as any).handleFileContent('test.html', '<h1>html</h1>');
+      (component as unknown as ToolbarComponentFileLoader).handleFileContent('test.html', '<h1>html</h1>');
       expect(contentService.setEditorContent).toHaveBeenCalledWith('<h1>html</h1>');
 
       // Test MD
-      (component as any).handleFileContent('test.md', '# md');
+      (component as unknown as ToolbarComponentFileLoader).handleFileContent('test.md', '# md');
       expect(importExportService.convertMarkdownToHtml).toHaveBeenCalledWith('# md');
       expect(contentService.setEditorContent).toHaveBeenCalledWith('<p>md</p>');
 
       // Test RTF
-      (component as any).handleFileContent('test.rtf', 'rtf-data');
+      (component as unknown as ToolbarComponentFileLoader).handleFileContent('test.rtf', 'rtf-data');
       expect(importExportService.convertRtfToHtml).toHaveBeenCalledWith('rtf-data');
       expect(contentService.setEditorContent).toHaveBeenCalledWith('<p>rtf</p>');
 
       // Test Unsupported
-      (component as any).handleFileContent('test.pdf', 'pdf-data');
+      (component as unknown as ToolbarComponentFileLoader).handleFileContent('test.pdf', 'pdf-data');
       expect(window.alert).toHaveBeenCalledWith(jasmine.stringContaining('Unsupported file type'));
     });
 
@@ -260,11 +302,11 @@ describe('ToolbarComponent', () => {
       spyOn(tableService, 'setCellBorder');
       spyOn(tableService, 'setCellBackgroundColor');
 
-      const mockEventBorder = { target: { value: 'dashed' } } as any;
+      const mockEventBorder = { target: { value: 'dashed' } } as unknown as Event;
       component.onCellBorderChange(mockEventBorder);
       expect(tableService.setCellBorder).toHaveBeenCalledWith('dashed');
 
-      const mockEventColor = { target: { value: '#ff0000' } } as any;
+      const mockEventColor = { target: { value: '#ff0000' } } as unknown as Event;
       component.onCellBgColorChange(mockEventColor);
       expect(tableService.setCellBackgroundColor).toHaveBeenCalledWith('#ff0000');
     });

@@ -74,6 +74,8 @@ import {BehaviorSubject} from "rxjs";
  */
 
 
+
+
 @Injectable()
 export class ContentService {
 
@@ -95,6 +97,8 @@ export class ContentService {
  */
 
 
+
+
 public setEditorContent(htmlContent: string): void {
     this.editorContent.next(htmlContent);
   }
@@ -110,6 +114,8 @@ public setEditorContent(htmlContent: string): void {
  * Relation 03: method `ContentService`.`getEditorContent()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ContentService`.`getEditorContent()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 public getEditorContent(): string {
@@ -129,6 +135,8 @@ public getEditorContent(): string {
  * Maintenance 04: method `ContentService`.`insertImage()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 05: method `ContentService`.`insertImage()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 
 
 public insertImage(imageData: { url: string, alt?: string, width?: number, height?: number }): void {
@@ -160,6 +168,8 @@ public insertImage(imageData: { url: string, alt?: string, width?: number, heigh
  * Relation 11: method `ContentService`.`insertHtmlAtCursor()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 12: method `ContentService`.`insertHtmlAtCursor()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 public insertHtmlAtCursor(html: string): void {
@@ -198,6 +208,8 @@ public insertHtmlAtCursor(html: string): void {
  */
 
 
+
+
 public insertTextAtCursor(text: string): void {
     const selection = window.getSelection();
     if (!selection || selection.rangeCount === 0) return;
@@ -233,6 +245,8 @@ public insertTextAtCursor(text: string): void {
  * Maintenance 12: method `ContentService`.`insertImageFromUrl()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 13: method `ContentService`.`insertImageFromUrl()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 
 
 public insertImageFromUrl(imageData: ImageInternalData): void {
@@ -273,6 +287,8 @@ public insertImageFromUrl(imageData: ImageInternalData): void {
  * Maintenance 12: method `ContentService`.`getSelectedElements()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 13: method `ContentService`.`getSelectedElements()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
+
 
 
 public getSelectedElements(): HTMLElement[] {

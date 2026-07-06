@@ -41,6 +41,8 @@ import {ImageModalComponentModel} from "../models/image-modal-component-model";
  */
 
 
+
+
 @Injectable()
 export class ImageService {
 
@@ -61,6 +63,8 @@ export class ImageService {
  */
 
 
+
+
 constructor() { }
 
     /**
@@ -73,6 +77,8 @@ constructor() { }
  * Relation 03: method `ImageService`.`setSelectedImageOnEditor()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ImageService`.`setSelectedImageOnEditor()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 public setSelectedImageOnEditor(mageModalComponentModel: ImageModalComponentModel, imageElement: HTMLImageElement | null = null): void {
@@ -94,6 +100,8 @@ public setSelectedImageOnEditor(mageModalComponentModel: ImageModalComponentMode
  * Why 06: method `ImageService`.`applyImageEdits()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 07: method `ImageService`.`applyImageEdits()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
+
+
 
 
 public applyImageEdits(): void {
@@ -125,6 +133,8 @@ public applyImageEdits(): void {
  */
 
 
+
+
 private updateImageElement(imgElement: HTMLImageElement, image: ImageModalComponentModel): void {
     imgElement.src = image.url;
     imgElement.alt = image.alt || '';
@@ -149,6 +159,8 @@ private updateImageElement(imgElement: HTMLImageElement, image: ImageModalCompon
  */
 
 
+
+
 public clearSelectedImage(): void {
     this.selectedImage.set(null);
     this.selectedImageElement = null;
@@ -166,6 +178,8 @@ public clearSelectedImage(): void {
  * How 05: method `ImageService`.`getBase64()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 06: method `ImageService`.`getBase64()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
+
 
 
 public getBase64(file: File): Promise<string> {

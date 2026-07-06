@@ -1,5 +1,5 @@
 // File: keyboard-shortcut.service.ts
-import { Injectable, OnDestroy, inject, ElementRef } from '@angular/core';
+import { Injectable, OnDestroy, inject } from '@angular/core';
 import { Subject } from 'rxjs';
 import {FormattingService} from "./formatting.service";
 import {SHORTCUTS} from "../models/shortcut-map";
@@ -71,6 +71,8 @@ import {ShortcutAction} from "../models/key-shortcuts";
  */
 
 
+
+
 @Injectable()
 export class KeyboardShortcutService implements OnDestroy {
 
@@ -90,6 +92,8 @@ export class KeyboardShortcutService implements OnDestroy {
  * Relation 03: constructor for class `KeyboardShortcutService` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: constructor for class `KeyboardShortcutService` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 constructor() {
@@ -114,6 +118,8 @@ constructor() {
  */
 
 
+
+
 public initialize(element: HTMLElement): void {
     this.editorElement = element;
   }
@@ -129,6 +135,8 @@ public initialize(element: HTMLElement): void {
  * Relation 03: method `KeyboardShortcutService`.`ngOnDestroy()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `KeyboardShortcutService`.`ngOnDestroy()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
+
 
 
 public ngOnDestroy(): void {
