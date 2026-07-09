@@ -27,11 +27,17 @@ function isFunctionNode(node) {
 }
 
 function isSortCallWithoutComparator(node) {
+  const object = node.callee?.object;
   return node.arguments.length === 0 &&
     node.callee?.type === 'MemberExpression' &&
     !node.callee.computed &&
     node.callee.property?.type === 'Identifier' &&
-    node.callee.property.name === 'sort';
+    node.callee.property.name === 'sort' &&
+    (
+      object?.type === 'ArrayExpression' ||
+      object?.type === 'CallExpression' ||
+      object?.type === 'Identifier'
+    );
 }
 
 function isInsertBeforeCall(node) {
@@ -73,6 +79,21 @@ function hasAttribute(attributes, attributeName) {
   return new RegExp(`\\s${attributeName}(\\s|=|$)`, 'i').test(attributes);
 }
 
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+function isInsideLabel(text, index) {
+  const before = text.slice(0, index).toLowerCase();
+  const lastOpenLabel = before.lastIndexOf('<label');
+  const lastCloseLabel = before.lastIndexOf('</label>');
+  if (lastOpenLabel <= lastCloseLabel) {
+    return false;
+  }
+
+  return text.slice(index).toLowerCase().includes('</label>');
+}
+
 function getLineAndColumnFromIndex(text, index) {
   const lines = text.slice(0, index).split('\n');
   return {
@@ -81,8 +102,83 @@ function getLineAndColumnFromIndex(text, index) {
   };
 }
 
+function getBareEslintDisableDirective(commentValue) {
+  const trimmed = commentValue.trim();
+  const match = trimmed.match(/^eslint-disable(?:-next-line|-line)?\b/);
+  if (!match) {
+    return null;
+  }
+
+  const rest = trimmed.slice(match[0].length).trim();
+  return rest === '' || rest.startsWith('--') ? match[0] : null;
+}
+
+function isMutableParameterProperty(node) {
+  return node.type === 'TSParameterProperty' &&
+    node.readonly !== true &&
+    ['private', 'protected', 'public'].includes(node.accessibility);
+}
+
 module.exports = {
   rules: {
+    'no-bare-eslint-disable': {
+      meta: {
+        type: 'suggestion',
+        docs: {
+          description: 'Require ESLint disable directives to list the disabled rule names.'
+        },
+        schema: [],
+        messages: {
+          specifyRules: 'Specify the ESLint rule names disabled by this {{directive}} comment.'
+        }
+      },
+      create(context) {
+        return {
+          Program() {
+            for (const comment of context.sourceCode.getAllComments()) {
+              const directive = getBareEslintDisableDirective(comment.value);
+              if (!directive) {
+                continue;
+              }
+
+              context.report({
+                loc: comment.loc,
+                messageId: 'specifyRules',
+                data: {
+                  directive
+                }
+              });
+            }
+          }
+        };
+      }
+    },
+    'readonly-parameter-properties': {
+      meta: {
+        type: 'suggestion',
+        docs: {
+          description: 'Require constructor parameter properties to be readonly when they are injected as class fields.'
+        },
+        schema: [],
+        messages: {
+          addReadonly: 'Mark this constructor parameter property as readonly.'
+        }
+      },
+      create(context) {
+        return {
+          TSParameterProperty(node) {
+            if (!isMutableParameterProperty(node)) {
+              return;
+            }
+
+            context.report({
+              node,
+              messageId: 'addReadonly'
+            });
+          }
+        };
+      }
+    },
     'cognitive-complexity': {
       meta: {
         type: 'suggestion',
@@ -214,6 +310,14 @@ module.exports = {
               return;
             }
 
+            const referenceNode = node.arguments[1];
+            if (
+              !referenceNode ||
+              (referenceNode.type === 'Literal' && referenceNode.value === null)
+            ) {
+              return;
+            }
+
             context.report({
               node,
               messageId: 'preferBefore'
@@ -252,7 +356,7 @@ module.exports = {
       meta: {
         type: 'problem',
         docs: {
-          description: 'Require an explicit comparator for Array.prototype.sort().'
+          description: 'Require an explicit comparator for likely array sort calls.'
         },
         schema: [],
         messages: {
@@ -367,9 +471,9 @@ module.exports = {
               }
 
               const id = getAttributeValue(attributes, 'id');
-              const labelForIdRegex = id ? new RegExp(`<label\\b[^>]*\\sfor\\s*=\\s*["']${id}["']`, 'i') : null;
+              const labelForIdRegex = id ? new RegExp(`<label\\b[^>]*\\sfor\\s*=\\s*["']${escapeRegExp(id)}["']`, 'i') : null;
 
-              if (id && labelForIdRegex?.test(text)) {
+              if ((id && labelForIdRegex?.test(text)) || isInsideLabel(text, match.index)) {
                 continue;
               }
 

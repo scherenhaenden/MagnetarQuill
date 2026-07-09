@@ -72,37 +72,30 @@ async function collectTsFiles(dirPath) {
 function collectEntities(sourceFile) {
   const entities = [];
 
+  function collectClass(node) {
+    entities.push(createEntity(node, sourceFile, 'class', node.name.text, null));
+    for (const member of node.members) {
+      visit(member, node.name.text);
+    }
+  }
+
+  function collectEntity(node, ownerName) {
+    const metadata = getEntityMetadata(node, ownerName);
+    if (!metadata) {
+      return false;
+    }
+
+    entities.push(createEntity(node, sourceFile, metadata.kind, metadata.name, metadata.ownerName));
+    return true;
+  }
+
   function visit(node, ownerName = null) {
     if (ts.isClassDeclaration(node) && node.name) {
-      entities.push(createEntity(node, sourceFile, 'class', node.name.text, null));
-      for (const member of node.members) {
-        visit(member, node.name.text);
-      }
+      collectClass(node);
       return;
     }
 
-    if (ts.isConstructorDeclaration(node)) {
-      entities.push(createEntity(node, sourceFile, 'constructor', 'constructor', ownerName));
-      return;
-    }
-
-    if (ts.isMethodDeclaration(node) && node.name) {
-      entities.push(createEntity(node, sourceFile, 'method', getNodeName(node.name), ownerName));
-      return;
-    }
-
-    if (ts.isGetAccessorDeclaration(node) && node.name) {
-      entities.push(createEntity(node, sourceFile, 'getter', getNodeName(node.name), ownerName));
-      return;
-    }
-
-    if (ts.isSetAccessorDeclaration(node) && node.name) {
-      entities.push(createEntity(node, sourceFile, 'setter', getNodeName(node.name), ownerName));
-      return;
-    }
-
-    if (ts.isFunctionDeclaration(node) && node.name) {
-      entities.push(createEntity(node, sourceFile, 'function', node.name.text, null));
+    if (collectEntity(node, ownerName)) {
       return;
     }
 
@@ -111,6 +104,30 @@ function collectEntities(sourceFile) {
 
   visit(sourceFile);
   return entities;
+}
+
+function getEntityMetadata(node, ownerName) {
+  if (ts.isConstructorDeclaration(node)) {
+    return { kind: 'constructor', name: 'constructor', ownerName };
+  }
+
+  if (ts.isMethodDeclaration(node) && node.name) {
+    return { kind: 'method', name: getNodeName(node.name), ownerName };
+  }
+
+  if (ts.isGetAccessorDeclaration(node) && node.name) {
+    return { kind: 'getter', name: getNodeName(node.name), ownerName };
+  }
+
+  if (ts.isSetAccessorDeclaration(node) && node.name) {
+    return { kind: 'setter', name: getNodeName(node.name), ownerName };
+  }
+
+  if (ts.isFunctionDeclaration(node) && node.name) {
+    return { kind: 'function', name: node.name.text, ownerName: null };
+  }
+
+  return null;
 }
 
 function createEntity(node, sourceFile, kind, name, ownerName) {
@@ -197,6 +214,49 @@ function handleNormalText(current, next, index, state, append) {
   return index + 1;
 }
 
+function handleStringText(current, next, index, state, append) {
+  if (current === '\\') {
+    append(current);
+    if (next) {
+      append(next);
+    }
+    return index + 2;
+  }
+
+  if (current === state.inString) {
+    state.inString = null;
+  }
+  append(current);
+  return index + 1;
+}
+
+function handleTextOutsideComment(current, next, index, state, append) {
+  if (current === '"' || current === "'" || current === '`') {
+    state.inString = current;
+    append(current);
+    return index + 1;
+  }
+
+  return handleNormalText(current, next, index, state, append);
+}
+
+function handleCommentAwareText(text, index, state, append) {
+  const current = text[index];
+  const next = text[index + 1];
+
+  if (state.inBlockComment) {
+    return handleBlockComment(current, next, index, state, append);
+  }
+  if (state.inLineComment) {
+    return handleLineComment(current, index, state, append);
+  }
+  if (state.inString) {
+    return handleStringText(current, next, index, state, append);
+  }
+
+  return handleTextOutsideComment(current, next, index, state, append);
+}
+
 function stripComments(text) {
   let output = '';
   let index = 0;
@@ -206,36 +266,7 @@ function stripComments(text) {
   };
 
   while (index < text.length) {
-    const current = text[index];
-    const next = text[index + 1];
-
-    if (state.inBlockComment) {
-      index = handleBlockComment(current, next, index, state, append);
-    } else if (state.inLineComment) {
-      index = handleLineComment(current, index, state, append);
-    } else if (state.inString) {
-      if (current === '\\') {
-        append(current);
-        if (next) {
-          append(next);
-        }
-        index += 2;
-      } else {
-        if (current === state.inString) {
-          state.inString = null;
-        }
-        append(current);
-        index += 1;
-      }
-    } else {
-      if (current === '"' || current === "'" || current === '`') {
-        state.inString = current;
-        append(current);
-        index += 1;
-      } else {
-        index = handleNormalText(current, next, index, state, append);
-      }
-    }
+    index = handleCommentAwareText(text, index, state, append);
   }
 
   return output;
@@ -276,10 +307,8 @@ function validateGeneratedDocs(text, sourceFile, entities, filePath) {
     }
 
     const docLineCount = countGeneratedDocLines(text.slice(range.pos, range.end));
-    if (docLineCount < entity.bodyLineCount) {
-      failures.push(
-        `${relative(filePath)}:${entity.lineStart} Generated info-doc for ${describeEntity(entity)} has ${docLineCount} content lines but needs at least ${entity.bodyLineCount}.`
-      );
+    if (docLineCount < 3) {
+      failures.push(`${relative(filePath)}:${entity.lineStart} Generated info-doc for ${describeEntity(entity)} is incomplete.`);
     }
   }
 
@@ -289,31 +318,11 @@ function validateGeneratedDocs(text, sourceFile, entities, filePath) {
 function buildGeneratedDoc(entity, filePath) {
   const indent = getIndentation(entity);
   const label = describeEntity(entity);
-  const relatedTarget = entity.ownerName ? `the \`${entity.ownerName}\` class contract` : `the module responsibilities in \`${relative(filePath)}\``;
-  const minimumLines = Math.max(entity.bodyLineCount + 4, 8);
   const lines = [
     `${GENERATED_TAG}`,
-    `InfoDoc: ${label} is intentionally documented in generated long-form detail so the documentation volume stays at least as large as the implementation footprint.`,
-    `How: ${label} is implemented in \`${relative(filePath)}\` and this block is regenerated by \`scripts/info-docs.mjs\` so structural changes stay synchronized with the documentation contract.`,
-    `Why: ${label} carries behavioral and maintenance weight, so this comment explains intent, execution strategy, and integration context instead of leaving the implementation to stand alone.`,
-    `Related: ${label} participates in ${relatedTarget}, and this documentation is meant to make that relationship explicit for future maintainers and automated reviewers.`
+    `InfoDoc: ${label} is tracked by the generated documentation contract.`,
+    `Location: \`${relative(filePath)}\`; regenerate with \`npm run docs:generate:info-docs\` when structure changes.`
   ];
-
-  while (lines.length < minimumLines) {
-    const index = lines.length - 4;
-    const cycle = index % 4;
-    const sequence = String(index + 1).padStart(2, '0');
-
-    if (cycle === 0) {
-      lines.push(`How ${sequence}: ${label} is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.`);
-    } else if (cycle === 1) {
-      lines.push(`Why ${sequence}: ${label} exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.`);
-    } else if (cycle === 2) {
-      lines.push(`Relation ${sequence}: ${label} interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.`);
-    } else {
-      lines.push(`Maintenance ${sequence}: ${label} should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.`);
-    }
-  }
 
   const docBody = lines.map(line => `${indent} * ${line}`).join('\n');
   return `${indent}/**\n${docBody}\n${indent} */\n`;

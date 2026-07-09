@@ -19,6 +19,36 @@ Typical categories include:
 
 ## Entries
 ---
+**Timestamp:** 2026-07-09 08:32 UTC
+**Author:** Antigravity
+**Entry:** State Change: Bumped workspace and library version metadata to `0.10.4` and synchronized references across documentation and package files.
+
+---
+**Timestamp:** 2026-07-09 07:30 UTC
+**Author:** Antigravity
+**Entry:** State Change: Completed recovery and update of product-facing `README.md` from `origin/version/0.8` baseline; moved generic project model template text to `docs/Governance-Model.md`, audited changes in `docs/Documentation-Recovery-Audit-origin-version-0.8.md`, and ran full quality validation suite (`npm run quality:report`) successfully.
+
+---
+**Timestamp:** 2026-07-06 10:15 UTC
+**Author:** Codex
+**Entry:** State Change: Completed bound-editor formatting synchronization fix on branch `codex/fix-format-sync`; toolbar formatting actions now emit shared HTML, synced editor rendering preserves safe inline formatting styles, unsafe HTML/style payloads remain stripped, and workspace/library versions were aligned to `0.10.3`.
+
+---
+**Timestamp:** 2026-07-06 09:37 UTC
+**Author:** Antigravity
+**Entry:** State Change: Created integration branch `feature/merge-unmerged-branches` and merged target unmerged branches `feature/markdown-support`, `origin/fix/paste-formatting-master` (using ours strategy as its fixes were already incorporated at a more advanced state), and `origin/feature/update-index-main-project` (using ours strategy option to reject TypeScript downgrade and preserve Angular 22 environment). Full build and all 136 tests verified successful.
+
+---
+**Timestamp:** 2026-06-11 12:30 UTC
+**Author:** Antigravity
+**Entry:** State Change: Completed implementation of `task-208` (Table Insertion and Editing) under milestone `ms-02` on branch `feature/table-support`; transitioned state to `in_review`.
+
+---
+**Timestamp:** 2026-06-11 11:30 UTC
+**Author:** Codex
+**Entry:** State Change: Initiated `task-208` (Table support) in `in_progress` on branch `feature/table-support`; planning to implement table insertion dialog and cell styling capabilities.
+
+---
 **Timestamp:** 2026-06-11 11:27 UTC
 **Author:** Codex
 **Entry:** State Change: Completed implementation of `task-207` (HTML/Markdown Import-Export and RTF Load); transitioned state to `in_review` and submitted Pull Request #91 against integration branch `version/0.1`.

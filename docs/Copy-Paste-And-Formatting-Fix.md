@@ -88,14 +88,40 @@ The implementation:
 
 This is important because `ToolbarComponent.withEditorSelection(...)` restores the last saved range before every toolbar action. If a style removal deletes or unwraps a node, the saved range must not keep pointing at the removed node.
 
+## Bound Editor Formatting Sync Fix
+
+### Problem
+
+When two `magnetar-quill` instances were bound to the same external `content` value, normal typing propagated between editors, but toolbar formatting did not reliably preserve the same HTML in the second editor.
+
+The first phase of the fix made toolbar actions emit the active editor HTML, but the receiving editor still rendered different HTML because the inbound sync path used Angular HTML sanitization. That path preserved the text but stripped inline formatting styles such as:
+
+- `font-weight: bold`
+- `text-align: left`
+- `text-align: center`
+- `text-align: right`
+- `text-align: justify`
+
+### Fix
+
+Toolbar actions now publish the active contenteditable editor's `innerHTML` through the same public `contentChange` path used by typing and paste.
+
+The editor sync path now sanitizes inbound editor HTML without dropping safe formatting styles. It still removes unsafe content before writing to the editor DOM:
+
+- unsafe elements such as `script`, `iframe`, `embed`, and `object`
+- event-handler attributes such as `onclick`
+- `srcdoc`
+- `javascript:` URLs in `href` or `src`
+- unsafe style values containing `url(...)`, `expression(...)`, or `javascript:`
+
 ## Version Change
 
-The root package and library package are both set to `0.10.1`:
+The root package and library package are both set to `0.10.4`:
 
 - `package.json`
 - `projects/lib-magnetar-quill/package.json`
 
-The root package-lock version was updated to match.
+The root package-lock version was updated to match. Version `0.10.4` (bumped from `0.10.3`) is a patch release for bound-editor formatting synchronization and safe editor HTML rehydration.
 
 ## Verification Commands
 
@@ -138,6 +164,12 @@ Formatting tests now verify real DOM behavior:
 - Strikethrough can be applied and then removed.
 - Strong can be removed from only the selected slice inside a shared `<strong>` element.
 - Strong and inline bold can be toggled independently when both formats are present.
+
+Bound editor sync tests now verify:
+
+- Synced content preserves `font-weight: bold`.
+- Synced content preserves `text-align`.
+- Unsafe synced HTML is removed without dropping safe formatting styles.
 
 These tests intentionally avoid only spying on method calls because that missed the original bug: the method was called, but the DOM was not actually cleaned.
 

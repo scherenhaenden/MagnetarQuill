@@ -5,8 +5,7 @@
     Toggle HTML View
   </button>
 
-  <label for="fontFamilySelect" class="sr-only">Font Family</label>
-  <select id="fontFamilySelect" [value]="formattingService.currentFontFamily()" (change)="onFontFamilyChange($event)">
+  <select aria-label="Font Family" [value]="formattingService.currentFontFamily()" (change)="onFontFamilyChange($event)">
     <option value=""></option>
     <option value="Arial">Arial</option>
     <option value="Times New Roman">Times New Roman</option>
@@ -14,8 +13,7 @@
     <!-- Add more fonts as needed -->
   </select>
 
-  <label for="fontSizeSelect" class="sr-only">Font Size</label>
-  <select id="fontSizeSelect" [value]="formattingService.currentFontSize()" (change)="onFontSizeChange($event)">
+  <select aria-label="Font Size" [value]="formattingService.currentFontSize()" (change)="onFontSizeChange($event)">
     <option value=""></option>
     <option value="12px">12px</option>
     <option value="14px">14px</option>
@@ -102,8 +100,8 @@
 
   <!-- Header Level Dropdown -->
   <label for="headerLevelSelect" class="sr-only">Header Level</label>
-  <select id="headerLevelSelect" (change)="applyHeader($event)" title="Header Level">
-    <option value="" selected>Normal</option>
+  <select id="headerLevelSelect" [value]="formattingService.currentHeader()" (change)="applyHeader($event)" title="Header Level">
+    <option value="">Normal</option>
     <option value="h1">H1</option>
     <option value="h2">H2</option>
     <option value="h3">H3</option>
@@ -115,8 +113,7 @@
   <button (mousedown)="$event.preventDefault()" (click)="openImageModal()">Insert Image</button>
 
   <!-- Theme Selector -->
-  <label for="themeSelect" class="sr-only">Theme Select</label>
-  <select id="themeSelect" [value]="theme" (change)="onThemeChange($event)" title="Theme Select">
+  <select aria-label="Editor Theme" [value]="theme" (change)="onThemeChange($event)" title="Theme Select">
     <option value="light">☀️ Light</option>
     <option value="dark">🌙 Dark</option>
     <option value="custom">🎨 Custom</option>
@@ -129,6 +126,36 @@
   <button (mousedown)="$event.preventDefault()" (click)="exportMarkdown()" title="Export Markdown">Export Markdown</button>
   <button (mousedown)="$event.preventDefault()" (click)="exportRtf()" title="Export RTF">Export RTF</button>
   <button (mousedown)="$event.preventDefault()" (click)="parseMarkdown()" title="Parse Markdown">Parse Markdown</button>
+  <button (mousedown)="$event.preventDefault()" (click)="showTableModal = true" title="Insert Table">Insert Table</button>
+
+  <ng-container *ngIf="tableService.activeCell()">
+    <button (mousedown)="$event.preventDefault()" (click)="addRowAbove()" title="Add Row Above">Add Row Above</button>
+    <button (mousedown)="$event.preventDefault()" (click)="addRowBelow()" title="Add Row Below">Add Row Below</button>
+    <button (mousedown)="$event.preventDefault()" (click)="deleteRow()" title="Delete Row">Delete Row</button>
+    <button (mousedown)="$event.preventDefault()" (click)="addColumnBefore()" title="Add Column Before">Add Col Before</button>
+    <button (mousedown)="$event.preventDefault()" (click)="addColumnAfter()" title="Add Column After">Add Col After</button>
+    <button (mousedown)="$event.preventDefault()" (click)="deleteColumn()" title="Delete Column">Delete Col</button>
+    
+    <button (mousedown)="$event.preventDefault()" (click)="setCellAlignment('left')" title="Align Cell Left">Cell Left</button>
+    <button (mousedown)="$event.preventDefault()" (click)="setCellAlignment('center')" title="Align Cell Center">Cell Center</button>
+    <button (mousedown)="$event.preventDefault()" (click)="setCellAlignment('right')" title="Align Cell Right">Cell Right</button>
+    
+    <button (mousedown)="$event.preventDefault()" (click)="setCellVerticalAlignment('top')" title="Align Cell Top">Cell Top</button>
+    <button (mousedown)="$event.preventDefault()" (click)="setCellVerticalAlignment('middle')" title="Align Cell Middle">Cell Middle</button>
+    <button (mousedown)="$event.preventDefault()" (click)="setCellVerticalAlignment('bottom')" title="Align Cell Bottom">Cell Bottom</button>
+
+    <select aria-label="Cell Border Style" (change)="onCellBorderChange($event)" title="Cell Border Style">
+      <option value="solid">Solid Border</option>
+      <option value="dashed">Dashed Border</option>
+      <option value="none">No Border</option>
+    </select>
+
+    <input aria-label="Cell Background Color" type="color" (change)="onCellBgColorChange($event)" title="Cell Background Color" />
+
+    <button (mousedown)="$event.preventDefault()" (click)="mergeRight()" title="Merge Right">Merge Right</button>
+    <button (mousedown)="$event.preventDefault()" (click)="mergeDown()" title="Merge Down">Merge Down</button>
+    <button (mousedown)="$event.preventDefault()" (click)="splitCell()" title="Split Cell">Split Cell</button>
+  </ng-container>
 
 </div>
 
@@ -141,3 +168,9 @@
   (cancel)="showImageModal = false"
 
 ></lib-image-modal>
+
+<lib-table-modal
+  *ngIf="showTableModal"
+  (cancel)="showTableModal = false"
+  (submit)="onTableSubmit($event)"
+></lib-table-modal>
