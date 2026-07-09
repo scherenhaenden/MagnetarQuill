@@ -19,6 +19,11 @@ Typical categories include:
 
 ## Entries
 ---
+**Timestamp:** 2026-07-09 07:30 UTC
+**Author:** Antigravity
+**Entry:** State Change: Completed recovery and update of product-facing `README.md` from `origin/version/0.8` baseline; moved generic project model template text to `docs/Governance-Model.md`, audited changes in `docs/Documentation-Recovery-Audit-origin-version-0.8.md`, and ran full quality validation suite (`npm run quality:report`) successfully.
+
+---
 **Timestamp:** 2026-07-06 10:15 UTC
 **Author:** Codex
 **Entry:** State Change: Completed bound-editor formatting synchronization fix on branch `codex/fix-format-sync`; toolbar formatting actions now emit shared HTML, synced editor rendering preserves safe inline formatting styles, unsafe HTML/style payloads remain stripped, and workspace/library versions were aligned to `0.10.3`.
