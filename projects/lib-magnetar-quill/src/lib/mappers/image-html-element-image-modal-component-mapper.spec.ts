@@ -71,6 +71,19 @@ describe('ImageHtmlElementImageModalComponentMapper', () => {
       expect(model.alignment).toBe(imageElement.style.textAlign);
     });
 
+    it('should preserve horizontal and vertical padding in a round trip', () => {
+      const model = new ImageModalComponentModel();
+      model.url = 'https://example.com/image.jpg';
+      model.hPadding = 10;
+      model.vPadding = 15;
+
+      const imageElement = mapper.mapImageModalComponentToImageHtmlElement(model);
+      const mappedModel = mapper.mapImageHtmlElementToImageModalComponent(imageElement);
+
+      expect(mappedModel.hPadding).toBe(10);
+      expect(mappedModel.vPadding).toBe(15);
+    });
+
     it('should handle missing properties and set defaults', () => {
       const imageElement = document.createElement('img');
       imageElement.src = 'https://example.com/image.jpg';

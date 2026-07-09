@@ -1,8 +1,8 @@
 # Status of MagnetarQuill
 
 ## Progress Summary
-**Overall completion:** 31%
-`[######--------------] 31%`
+**Overall completion:** 23% (effort-based, 9/39 pts completed)
+`[#####---------------] 23%`
 
 ## Current Milestones
 - `ms-01` Project Initiation — **In Progress**
@@ -19,3 +19,7 @@
 
 4. **Risk:** Dependency supply-chain constraints can delay framework upgrades.  
    **Mitigation:** Keep historical registry blockers visible and rerun install, lint, build, and library build after framework upgrades.
+
+## Current Validation Notes
+- Bound editor formatting sync was verified with `npm run build-lib`, `npm run lint:info-docs`, and `npm run test-lib-magnetar-quill` (`164 SUCCESS`, branch coverage `56.06%` over the `55%` threshold).
+- Library and workspace package metadata are aligned to version `0.10.4`.

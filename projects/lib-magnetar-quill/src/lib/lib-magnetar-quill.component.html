@@ -3,6 +3,7 @@
   (insertImageFromUrl)="editor.insertImageFromUrl($event)"
   [imageToEdit]="updateModel"
   (clearImageToEdit)="clearImageToEdit()"
+  (contentChanged)="onEditorContentChanged($event)"
   [theme]="theme"
   (themeChange)="onThemeChange($event)"
   class="toolbar">
@@ -25,4 +26,3 @@
   (cancel)="clearImageToEdit()" >
 
 </lib-image-modal>
-

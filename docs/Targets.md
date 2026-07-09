@@ -31,8 +31,8 @@
 ---
 
 ## 6. Testing and QA (Future)
-- **Status**: ![❌](https://img.shields.io/badge/Status-Not_Started-red)
-- **Description**: Thorough testing of all features to ensure functionality across different platforms and browsers.
+- **Status**: ![⚠️](https://img.shields.io/badge/Status-In_Progress-yellow)
+- **Description**: Thorough testing of all features to ensure functionality across different platforms and browsers. The repository now includes `npm run quality:report` to run info-doc lint, style lint, Angular lint, library tests with coverage, library build, application build, and report generation.
 
 ---
 

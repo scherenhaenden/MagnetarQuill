@@ -3,13 +3,18 @@ import { ToolbarComponent } from './toolbar.component';
 import { FormattingService } from '../../services/formatting.service';
 import { ContentService } from '../../services/content.service';
 import { ImportExportService } from '../../services/import-export.service';
+import { TableService } from '../../services/table.service';
 import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 
 describe('ToolbarComponent', () => {
+  type ToolbarComponentFileLoader = {
+    handleFileContent(filename: string, content: string): void;
+  };
+
   let component: ToolbarComponent;
   let fixture: ComponentFixture<ToolbarComponent>;
   let formattingService: jasmine.SpyObj<FormattingService>;
+  let contentService: ContentService;
 
   beforeEach(async () => {
     const formattingSpy = jasmine.createSpyObj('FormattingService', ['applyStyle', 'clearFormatting', 'toggleBold', 'toggleItalic', 'toggleUnderline', 'toggleStrikethrough', 'toggleSuperscript', 'toggleSubscript', 'toggleList', 'applyHeader', 'setTextAlign', 'saveSelection', 'restoreSelection', 'updateFormatStates', 'toggleStrong', 'setLineSpacing', 'setBackgroundColor'], {
@@ -20,7 +25,8 @@ describe('ToolbarComponent', () => {
       strikethroughActive: () => false,
       currentFontFamily: () => '',
       currentFontSize: () => '',
-      currentTextColor: () => '#000000'
+      currentTextColor: () => '#000000',
+      currentHeader: () => ''
     });
 
     await TestBed.configureTestingModule({
@@ -36,11 +42,49 @@ describe('ToolbarComponent', () => {
     fixture = TestBed.createComponent(ToolbarComponent);
     component = fixture.componentInstance;
     formattingService = TestBed.inject(FormattingService) as jasmine.SpyObj<FormattingService>;
+    contentService = TestBed.inject(ContentService);
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should publish active editor HTML after applying toolbar formatting', () => {
+    const editor = document.createElement('div');
+    editor.contentEditable = 'true';
+    editor.innerHTML = '<p style="text-align: center;"><strong>Synced</strong></p>';
+    document.body.appendChild(editor);
+    spyOn(contentService, 'setEditorContent');
+    spyOn(component.contentChanged, 'emit');
+
+    const range = document.createRange();
+    range.selectNodeContents(editor);
+    const selection = window.getSelection();
+    selection?.removeAllRanges();
+    selection?.addRange(range);
+
+    component.toggleBold();
+
+    expect(formattingService.restoreSelection).toHaveBeenCalled();
+    expect(formattingService.toggleBold).toHaveBeenCalled();
+    expect(contentService.setEditorContent).toHaveBeenCalledWith(editor.innerHTML);
+    expect(component.contentChanged.emit).toHaveBeenCalledWith(editor.innerHTML);
+
+    selection?.removeAllRanges();
+    editor.remove();
+  });
+
+  it('should not publish toolbar content when there is no active editor selection', () => {
+    window.getSelection()?.removeAllRanges();
+    spyOn(contentService, 'setEditorContent');
+    spyOn(component.contentChanged, 'emit');
+
+    component.setTextAlign('justify');
+
+    expect(formattingService.setTextAlign).toHaveBeenCalledWith('justify');
+    expect(contentService.setEditorContent).not.toHaveBeenCalled();
+    expect(component.contentChanged.emit).not.toHaveBeenCalled();
   });
 
   describe('Focus Theft Prevention (mousedown.preventDefault)', () => {
@@ -83,6 +127,17 @@ describe('ToolbarComponent', () => {
         const event = new MouseEvent('mousedown', { cancelable: true });
         spyOn(event, 'preventDefault');
         insertImageBtn!.nativeElement.dispatchEvent(event);
+        expect(event.preventDefault).toHaveBeenCalled();
+    });
+
+    it('should prevent default on mousedown for "Insert Table" button', () => {
+        const buttons = fixture.debugElement.queryAll(By.css('button'));
+        const insertTableBtn = buttons.find(el => el.nativeElement.textContent.includes('Insert Table'));
+        expect(insertTableBtn).toBeTruthy('Could not find Insert Table button');
+
+        const event = new MouseEvent('mousedown', { cancelable: true });
+        spyOn(event, 'preventDefault');
+        insertTableBtn!.nativeElement.dispatchEvent(event);
         expect(event.preventDefault).toHaveBeenCalled();
     });
   });
@@ -180,21 +235,21 @@ describe('ToolbarComponent', () => {
       spyOn(importExportService, 'convertRtfToHtml').and.returnValue('<p>rtf</p>');
 
       // Test HTML
-      (component as any).handleFileContent('test.html', '<h1>html</h1>');
+      (component as unknown as ToolbarComponentFileLoader).handleFileContent('test.html', '<h1>html</h1>');
       expect(contentService.setEditorContent).toHaveBeenCalledWith('<h1>html</h1>');
 
       // Test MD
-      (component as any).handleFileContent('test.md', '# md');
+      (component as unknown as ToolbarComponentFileLoader).handleFileContent('test.md', '# md');
       expect(importExportService.convertMarkdownToHtml).toHaveBeenCalledWith('# md');
       expect(contentService.setEditorContent).toHaveBeenCalledWith('<p>md</p>');
 
       // Test RTF
-      (component as any).handleFileContent('test.rtf', 'rtf-data');
+      (component as unknown as ToolbarComponentFileLoader).handleFileContent('test.rtf', 'rtf-data');
       expect(importExportService.convertRtfToHtml).toHaveBeenCalledWith('rtf-data');
       expect(contentService.setEditorContent).toHaveBeenCalledWith('<p>rtf</p>');
 
       // Test Unsupported
-      (component as any).handleFileContent('test.pdf', 'pdf-data');
+      (component as unknown as ToolbarComponentFileLoader).handleFileContent('test.pdf', 'pdf-data');
       expect(window.alert).toHaveBeenCalledWith(jasmine.stringContaining('Unsupported file type'));
     });
 
@@ -208,6 +263,53 @@ describe('ToolbarComponent', () => {
       expect(contentService.getEditorContent).toHaveBeenCalled();
       expect(importExportService.convertMarkdownToHtml).toHaveBeenCalledWith('# Header');
       expect(contentService.setEditorContent).toHaveBeenCalledWith('<h1>Header</h1>');
+    });
+  });
+
+  describe('Table Operations', () => {
+    let tableService: TableService;
+
+    beforeEach(() => {
+      tableService = TestBed.inject(TableService);
+    });
+
+    it('should toggle showTableModal when clicking Insert Table button', () => {
+      expect(component.showTableModal).toBeFalse();
+      const buttons = fixture.debugElement.queryAll(By.css('button'));
+      const insertTableBtn = buttons.find(el => el.nativeElement.textContent.includes('Insert Table'));
+      insertTableBtn!.nativeElement.click();
+      expect(component.showTableModal).toBeTrue();
+    });
+
+    it('should call tableService.insertTable and hide modal onTableSubmit', () => {
+      spyOn(tableService, 'insertTable');
+      component.showTableModal = true;
+      component.onTableSubmit({ rows: 4, cols: 5 });
+      expect(tableService.insertTable).toHaveBeenCalledWith(4, 5);
+      expect(component.showTableModal).toBeFalse();
+    });
+
+    it('should show editing controls when active cell is not null', () => {
+      const cellElement = document.createElement('td') as HTMLTableCellElement;
+      tableService.activeCell.set(cellElement);
+      fixture.detectChanges();
+
+      const buttons = fixture.debugElement.queryAll(By.css('button'));
+      const addRowBtn = buttons.find(el => el.nativeElement.textContent.includes('Add Row Above'));
+      expect(addRowBtn).toBeTruthy('Could not find Add Row Above button when cell is active');
+    });
+
+    it('should call border change and color change handlers', () => {
+      spyOn(tableService, 'setCellBorder');
+      spyOn(tableService, 'setCellBackgroundColor');
+
+      const mockEventBorder = { target: { value: 'dashed' } } as unknown as Event;
+      component.onCellBorderChange(mockEventBorder);
+      expect(tableService.setCellBorder).toHaveBeenCalledWith('dashed');
+
+      const mockEventColor = { target: { value: '#ff0000' } } as unknown as Event;
+      component.onCellBgColorChange(mockEventColor);
+      expect(tableService.setCellBackgroundColor).toHaveBeenCalledWith('#ff0000');
     });
   });
 });

@@ -24,6 +24,8 @@
    - **Headers**: Custom header levels (H1, H2, etc.).
    - **Line spacing**: Control the space between lines and paragraphs.
    - **Block formats**: Paragraph, preformatted text, and custom styles for specific content blocks.
+   - **Selection behavior**: Alignment and block-level formatting must apply to every selected live block, including multi-paragraph selections and select-all selections.
+   - **Toolbar state**: Header controls must reflect the current selected heading level. Headings can be removed by choosing the Normal option.
 
 5. **Media Management**:
    - **Image settings**: Adjust image properties like size, alt text, and link embedding.
@@ -68,3 +70,7 @@
 
 16. **Plugin Architecture**:
     - The editor should support **plugins** for extending functionality, allowing developers to add custom features or tools in a modular way.
+
+17. **Quality Validation**:
+    - The repository should provide one command that runs required lints, style checks, tests with coverage, and builds.
+    - The command should write a Markdown report with check status, logs, and coverage.
