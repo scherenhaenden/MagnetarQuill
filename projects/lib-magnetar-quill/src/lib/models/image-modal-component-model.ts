@@ -16,6 +16,7 @@
 
 
 
+
 export class ImageModalComponentModel {
   public url: string = '';
   public alt: string = '';

@@ -14,19 +14,19 @@ Inspired by the most extreme phenomena in the universe, the **Magnetar**, and co
 ---
 
 ## **Table of Contents** 📚
-- [Features](#features-🌟)
-- [Installation](#installation-🛠)
-- [Quick Start](#quick-start-🚀)
-- [Usage](#usage-✍️)
-- [Plugin Architecture](#plugin-architecture-🔌)
-- [Theming & Customization](#theming--customization-🎨)
-- [Available Commands](#available-commands-📜)
-- [Quality Validation](#quality-validation-🧪)
-- [Roadmap](#roadmap-🛣)
-- [Contributing](#contributing-🤝)
-- [License](#license-📄)
-- [Stay Connected](#stay-connected-💬)
-- [Project Progress](#project-progress-🏗️)
+- [Features](#features)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Usage](#usage)
+- [Plugin Architecture](#plugin-architecture)
+- [Theming & Customization](#theming--customization)
+- [Available Commands](#available-commands)
+- [Quality Validation](#quality-validation)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+- [Stay Connected](#stay-connected)
+- [Project Progress](#project-progress)
 
 ---
 

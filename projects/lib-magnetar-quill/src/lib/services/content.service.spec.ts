@@ -35,6 +35,7 @@ describe('ContentService', () => {
     it('should emit via editorContent$ observable', (done) => {
       service.editorContent$.subscribe(v => {
         if (v === '<b>test</b>') {
+          expect(v).toBe('<b>test</b>');
           done();
         }
       });

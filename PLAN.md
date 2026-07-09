@@ -28,8 +28,8 @@ This plan captures milestones, tasks, effort estimates, and task status; its str
 - **Total effort:** 39 pts
 - **Completed:** 9 pts
 - **In progress:** 5 pts
-- **In review:** 13 pts
-- **Remaining:** 12 pts
+- **In review:** 15 pts
+- **Remaining:** 10 pts
 
 ## State Definitions
 - `planned`: Identified and approved for backlog, not yet ready to start.

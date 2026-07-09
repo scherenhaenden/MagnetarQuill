@@ -16,7 +16,7 @@ echo ""
 
 # 2. Testing
 echo -e "${YELLOW}[2/4] Running Unit Tests (without coverage thresholds)...${NC}"
-npx ng test lib-magnetar-quill --watch=false
+npx ng test lib-magnetar-quill --watch=false --browsers=ChromeHeadless
 TEST_STATUS=$?
 echo ""
 

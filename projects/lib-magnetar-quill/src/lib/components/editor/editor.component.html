@@ -19,7 +19,6 @@
   (focus)="scrollToTopOnFocus()"
   (paste)="onPaste($event)"
   (input)="onContentChange(editorWysiwyg.innerHTML, false)"
-  (keyup.enter)="onContentChange(editorWysiwyg.innerHTML, false)"
 >
   <!-- User content goes here -->
 </div>
@@ -51,4 +50,3 @@
      [style.left.px]="contextMenuPosition.x">
   <button (click)="openImageEdit()">Edit Properties</button>
 </div>
-

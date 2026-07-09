@@ -1,8 +1,8 @@
 # Status of MagnetarQuill
 
 ## Progress Summary
-**Overall completion:** 32%
-`[######--------------] 32%`
+**Overall completion:** 23% (effort-based, 9/39 pts completed)
+`[#####---------------] 23%`
 
 ## Current Milestones
 - `ms-01` Project Initiation — **In Progress**

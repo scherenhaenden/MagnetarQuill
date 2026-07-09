@@ -31,6 +31,7 @@ import {ImageModalComponentModel} from "../models/image-modal-component-model";
 
 
 
+
 export class ImageHtmlElementImageModalComponentMapper {
 
     /**
@@ -52,6 +53,7 @@ export class ImageHtmlElementImageModalComponentMapper {
 
 
 
+
 public mapImageModalComponentToImageHtmlElement(imageModalComponentModel: ImageModalComponentModel): HTMLImageElement {
 
     // Create the image element
@@ -62,7 +64,7 @@ public mapImageModalComponentToImageHtmlElement(imageModalComponentModel: ImageM
     imageElement.style.width = imageModalComponentModel.width ? `${imageModalComponentModel.width}px` : 'auto';
     imageElement.style.height = imageModalComponentModel.height ? `${imageModalComponentModel.height}px` : 'auto';
     imageElement.style.borderWidth = `${imageModalComponentModel.border || 0}px`;
-    imageElement.style.padding = `${imageModalComponentModel.hPadding || 0}px ${imageModalComponentModel.vPadding || 0}px`;
+    imageElement.style.padding = `${imageModalComponentModel.vPadding || 0}px ${imageModalComponentModel.hPadding || 0}px`;
     imageElement.style.textAlign = imageModalComponentModel.alignment || 'left';
 
     return imageElement;
@@ -84,6 +86,7 @@ public mapImageModalComponentToImageHtmlElement(imageModalComponentModel: ImageM
  * How 09: method `ImageHtmlElementImageModalComponentMapper`.`mapImageHtmlElementToImageModalComponent()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 10: method `ImageHtmlElementImageModalComponentMapper`.`mapImageHtmlElementToImageModalComponent()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
 
 
 

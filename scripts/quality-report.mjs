@@ -4,6 +4,7 @@ import path from 'node:path';
 
 const ROOT = process.cwd();
 const REPORT_DIR = path.join(ROOT, 'reports', 'quality');
+const STEP_TIMEOUT_MS = 10 * 60 * 1000;
 
 const STEPS = [
   {
@@ -62,6 +63,7 @@ function runStep(step) {
     cwd: ROOT,
     encoding: 'utf8',
     shell: false,
+    timeout: STEP_TIMEOUT_MS,
   });
   const durationMs = performance.now() - started;
   const output = `${result.stdout ?? ''}${result.stderr ?? ''}`;

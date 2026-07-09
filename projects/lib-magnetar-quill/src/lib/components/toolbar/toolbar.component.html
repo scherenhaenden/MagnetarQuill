@@ -129,32 +129,32 @@
   <button (mousedown)="$event.preventDefault()" (click)="showTableModal = true" title="Insert Table">Insert Table</button>
 
   <ng-container *ngIf="tableService.activeCell()">
-    <button (mousedown)="$event.preventDefault()" (click)="tableService.addRowAbove()" title="Add Row Above">Add Row Above</button>
-    <button (mousedown)="$event.preventDefault()" (click)="tableService.addRowBelow()" title="Add Row Below">Add Row Below</button>
-    <button (mousedown)="$event.preventDefault()" (click)="tableService.deleteRow()" title="Delete Row">Delete Row</button>
-    <button (mousedown)="$event.preventDefault()" (click)="tableService.addColumnBefore()" title="Add Column Before">Add Col Before</button>
-    <button (mousedown)="$event.preventDefault()" (click)="tableService.addColumnAfter()" title="Add Column After">Add Col After</button>
-    <button (mousedown)="$event.preventDefault()" (click)="tableService.deleteColumn()" title="Delete Column">Delete Col</button>
+    <button (mousedown)="$event.preventDefault()" (click)="addRowAbove()" title="Add Row Above">Add Row Above</button>
+    <button (mousedown)="$event.preventDefault()" (click)="addRowBelow()" title="Add Row Below">Add Row Below</button>
+    <button (mousedown)="$event.preventDefault()" (click)="deleteRow()" title="Delete Row">Delete Row</button>
+    <button (mousedown)="$event.preventDefault()" (click)="addColumnBefore()" title="Add Column Before">Add Col Before</button>
+    <button (mousedown)="$event.preventDefault()" (click)="addColumnAfter()" title="Add Column After">Add Col After</button>
+    <button (mousedown)="$event.preventDefault()" (click)="deleteColumn()" title="Delete Column">Delete Col</button>
     
-    <button (mousedown)="$event.preventDefault()" (click)="tableService.setCellAlignment('left')" title="Align Cell Left">Cell Left</button>
-    <button (mousedown)="$event.preventDefault()" (click)="tableService.setCellAlignment('center')" title="Align Cell Center">Cell Center</button>
-    <button (mousedown)="$event.preventDefault()" (click)="tableService.setCellAlignment('right')" title="Align Cell Right">Cell Right</button>
+    <button (mousedown)="$event.preventDefault()" (click)="setCellAlignment('left')" title="Align Cell Left">Cell Left</button>
+    <button (mousedown)="$event.preventDefault()" (click)="setCellAlignment('center')" title="Align Cell Center">Cell Center</button>
+    <button (mousedown)="$event.preventDefault()" (click)="setCellAlignment('right')" title="Align Cell Right">Cell Right</button>
     
-    <button (mousedown)="$event.preventDefault()" (click)="tableService.setCellVerticalAlignment('top')" title="Align Cell Top">Cell Top</button>
-    <button (mousedown)="$event.preventDefault()" (click)="tableService.setCellVerticalAlignment('middle')" title="Align Cell Middle">Cell Middle</button>
-    <button (mousedown)="$event.preventDefault()" (click)="tableService.setCellVerticalAlignment('bottom')" title="Align Cell Bottom">Cell Bottom</button>
+    <button (mousedown)="$event.preventDefault()" (click)="setCellVerticalAlignment('top')" title="Align Cell Top">Cell Top</button>
+    <button (mousedown)="$event.preventDefault()" (click)="setCellVerticalAlignment('middle')" title="Align Cell Middle">Cell Middle</button>
+    <button (mousedown)="$event.preventDefault()" (click)="setCellVerticalAlignment('bottom')" title="Align Cell Bottom">Cell Bottom</button>
 
-    <select id="mq-cell-border-style" aria-label="Cell Border Style" (change)="onCellBorderChange($event)" title="Cell Border Style">
+    <select aria-label="Cell Border Style" (change)="onCellBorderChange($event)" title="Cell Border Style">
       <option value="solid">Solid Border</option>
       <option value="dashed">Dashed Border</option>
       <option value="none">No Border</option>
     </select>
 
-    <input id="mq-cell-background-color" aria-label="Cell Background Color" type="color" (change)="onCellBgColorChange($event)" title="Cell Background Color" />
+    <input aria-label="Cell Background Color" type="color" (change)="onCellBgColorChange($event)" title="Cell Background Color" />
 
-    <button (mousedown)="$event.preventDefault()" (click)="tableService.mergeRight()" title="Merge Right">Merge Right</button>
-    <button (mousedown)="$event.preventDefault()" (click)="tableService.mergeDown()" title="Merge Down">Merge Down</button>
-    <button (mousedown)="$event.preventDefault()" (click)="tableService.splitCell()" title="Split Cell">Split Cell</button>
+    <button (mousedown)="$event.preventDefault()" (click)="mergeRight()" title="Merge Right">Merge Right</button>
+    <button (mousedown)="$event.preventDefault()" (click)="mergeDown()" title="Merge Down">Merge Down</button>
+    <button (mousedown)="$event.preventDefault()" (click)="splitCell()" title="Split Cell">Split Cell</button>
   </ng-container>
 
 </div>

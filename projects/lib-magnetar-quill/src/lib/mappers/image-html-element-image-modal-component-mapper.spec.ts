@@ -27,7 +27,7 @@ describe('ImageHtmlElementImageModalComponentMapper', () => {
       expect(imageElement.style.width).toBe('200px');
       expect(imageElement.style.height).toBe('300px');
       expect(imageElement.style.borderWidth).toBe('5px');
-      expect(imageElement.style.padding).toBe('10px 15px');
+      expect(imageElement.style.padding).toBe('15px 10px');
       expect(imageElement.style.textAlign).toBe(model.alignment);
     });
 
@@ -69,6 +69,19 @@ describe('ImageHtmlElementImageModalComponentMapper', () => {
       expect(model.hPadding).toBe(10);
       expect(model.vPadding).toBe(15);
       expect(model.alignment).toBe(imageElement.style.textAlign);
+    });
+
+    it('should preserve horizontal and vertical padding in a round trip', () => {
+      const model = new ImageModalComponentModel();
+      model.url = 'https://example.com/image.jpg';
+      model.hPadding = 10;
+      model.vPadding = 15;
+
+      const imageElement = mapper.mapImageModalComponentToImageHtmlElement(model);
+      const mappedModel = mapper.mapImageHtmlElementToImageModalComponent(imageElement);
+
+      expect(mappedModel.hPadding).toBe(10);
+      expect(mappedModel.vPadding).toBe(15);
     });
 
     it('should handle missing properties and set defaults', () => {

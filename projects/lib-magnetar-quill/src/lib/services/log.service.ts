@@ -55,6 +55,7 @@ export type LogTarget = (message: string, level: LogLevel, timestamp: Date) => v
 
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -79,6 +80,7 @@ export class LogService {
 
 
 
+
 constructor() { }
 
   /**
@@ -96,6 +98,7 @@ constructor() { }
  * Relation 03: method `LogService`.`addTarget()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `LogService`.`addTarget()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 
 
@@ -125,6 +128,7 @@ public addTarget(level: LogLevel, target: LogTarget): void {
 
 
 
+
 public setConsoleLogging(enabled: boolean): void {
     this.consoleEnabled = enabled;
   }
@@ -147,6 +151,7 @@ public setConsoleLogging(enabled: boolean): void {
 
 
 
+
 public enableLevel(level: LogLevel): void {
     this.enabledLevels.add(level);
   }
@@ -165,6 +170,7 @@ public enableLevel(level: LogLevel): void {
  * Relation 03: method `LogService`.`disableLevel()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `LogService`.`disableLevel()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 
 
@@ -193,6 +199,7 @@ public disableLevel(level: LogLevel): void {
  * Maintenance 08: method `LogService`.`log()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  * How 09: method `LogService`.`log()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  */
+
 
 
 
@@ -231,6 +238,7 @@ public log(level: LogLevel, message: string): void {
 
 
 
+
 public debug(message: string): void {
     this.log('DEBUG', message);
   }
@@ -245,6 +253,7 @@ public debug(message: string): void {
  * Relation 03: method `LogService`.`info()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `LogService`.`info()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 
 
@@ -267,6 +276,7 @@ public info(message: string): void {
 
 
 
+
 public warn(message: string): void {
     this.log('WARN', message);
   }
@@ -281,6 +291,7 @@ public warn(message: string): void {
  * Relation 03: method `LogService`.`error()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `LogService`.`error()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 
 
@@ -310,6 +321,7 @@ public error(message: string): void {
 
 
 
+
 private formatMessage(level: LogLevel, message: string, timestamp: Date): string {
     return `[${timestamp.toISOString()}] [${level}] ${message}`;
   }
@@ -328,6 +340,7 @@ private formatMessage(level: LogLevel, message: string, timestamp: Date): string
  * Relation 03: method `LogService`.`getHistory()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `LogService`.`getHistory()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 
 
@@ -354,6 +367,7 @@ public getHistory(): Array<{ level: LogLevel, message: string, timestamp: Date }
 
 
 
+
 public setHistoryLimit(limit: number): void {
     this.historyLimit = limit;
   }
@@ -371,6 +385,7 @@ public setHistoryLimit(limit: number): void {
  * Relation 03: method `LogService`.`clearHistory()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `LogService`.`clearHistory()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 
 

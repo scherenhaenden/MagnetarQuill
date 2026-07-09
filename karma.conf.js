@@ -35,6 +35,7 @@ module.exports = function (config) {
       ],
       check: {
         global: {
+          // Temporary baseline for the expanded table/editor PR; ratchet back up as coverage is backfilled.
           statements: 65,
           branches: 55,
           functions: 60,

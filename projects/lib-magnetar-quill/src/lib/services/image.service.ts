@@ -43,6 +43,7 @@ import {ImageModalComponentModel} from "../models/image-modal-component-model";
 
 
 
+
 @Injectable()
 export class ImageService {
 
@@ -65,6 +66,7 @@ export class ImageService {
 
 
 
+
 constructor() { }
 
     /**
@@ -81,8 +83,9 @@ constructor() { }
 
 
 
-public setSelectedImageOnEditor(mageModalComponentModel: ImageModalComponentModel, imageElement: HTMLImageElement | null = null): void {
-    this.selectedImage.set(mageModalComponentModel);
+
+public setSelectedImageOnEditor(imageModalComponentModel: ImageModalComponentModel, imageElement: HTMLImageElement | null = null): void {
+    this.selectedImage.set(imageModalComponentModel);
     this.selectedImageElement = imageElement;
   }
 
@@ -100,6 +103,7 @@ public setSelectedImageOnEditor(mageModalComponentModel: ImageModalComponentMode
  * Why 06: method `ImageService`.`applyImageEdits()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  * Relation 07: method `ImageService`.`applyImageEdits()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  */
+
 
 
 
@@ -135,13 +139,14 @@ public applyImageEdits(): void {
 
 
 
+
 private updateImageElement(imgElement: HTMLImageElement, image: ImageModalComponentModel): void {
     imgElement.src = image.url;
     imgElement.alt = image.alt || '';
     imgElement.style.width = image.width ? `${image.width}px` : 'auto';
     imgElement.style.height = image.height ? `${image.height}px` : 'auto';
     imgElement.style.borderWidth = image.border ? `${image.border}px` : '';
-    imgElement.style.padding = `${image.hPadding || 0}px ${image.vPadding || 0}px`;
+    imgElement.style.padding = `${image.vPadding || 0}px ${image.hPadding || 0}px`;
     imgElement.style.textAlign = image.alignment || 'left';
   }
 
@@ -157,6 +162,7 @@ private updateImageElement(imgElement: HTMLImageElement, image: ImageModalCompon
  * Relation 03: method `ImageService`.`clearSelectedImage()` interacts with adjacent services, components, models, or platform APIs, and this note exists to keep those dependencies visible during review and refactor work.
  * Maintenance 04: method `ImageService`.`clearSelectedImage()` should be updated together with its surrounding call sites, tests, templates, and lifecycle wiring whenever the implementation intent or observable behavior changes.
  */
+
 
 
 
@@ -178,6 +184,7 @@ public clearSelectedImage(): void {
  * How 05: method `ImageService`.`getBase64()` is executed through concrete statements in the implementation body, and this line records that the algorithmic path and state transitions are considered part of the documented design.
  * Why 06: method `ImageService`.`getBase64()` exists to preserve editor behavior, developer clarity, and future-change safety, which is why the generated documentation deliberately mirrors the scale of the code beneath it.
  */
+
 
 
 
