@@ -100,8 +100,8 @@
 
   <!-- Header Level Dropdown -->
   <label for="headerLevelSelect" class="sr-only">Header Level</label>
-  <select id="headerLevelSelect" (change)="applyHeader($event)" title="Header Level">
-    <option value="" selected>Normal</option>
+  <select id="headerLevelSelect" [value]="formattingService.currentHeader()" (change)="applyHeader($event)" title="Header Level">
+    <option value="">Normal</option>
     <option value="h1">H1</option>
     <option value="h2">H2</option>
     <option value="h3">H3</option>

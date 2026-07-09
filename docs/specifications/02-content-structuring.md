@@ -10,7 +10,7 @@
 - **Custom Header Levels**:
   - **Available Levels**: H1, H2, H3, H4, H5, H6.
   - **UI Element**: A dropdown in the toolbar displaying header options (e.g., "Heading 1", "Heading 2", etc.).
-  - **Behavior**: When a header level is selected, it changes the format of the current paragraph or the selected text to the appropriate header level.
+  - **Behavior**: When a header level is selected, it changes the format of the current paragraph or every selected live block to the appropriate header level. Selecting Normal converts selected heading blocks back to paragraphs.
   - **Shortcut**: Provide shortcuts for header levels (e.g., `Ctrl+1` for H1, `Ctrl+2` for H2).
   - **Implementation**:
     - HTML: Uses `<h1>`, `<h2>`, `<h3>`, etc., tags.
@@ -22,6 +22,8 @@
 
 - **Multiple Headings in Selection**:
   - If the selection spans multiple paragraphs with different headings, the editor should show the heading as “mixed” or "indeterminate" in the UI.
+  - If every selected block shares the same heading level, the toolbar should show that active heading level.
+  - With the current native select UI, re-selecting the already active heading option does not emit `change`; users remove a heading by selecting Normal.
 
 ---
 
@@ -98,7 +100,7 @@
 
 ### **User Flow for Content Structuring**
 
-- **Headers**: When a user selects a header option (H1, H2, etc.), the current paragraph or selected block will change its format to that header level. If the user selects a custom header style, it will apply the associated styles (font, color, size).
+- **Headers**: When a user selects a header option (H1, H2, etc.), the current paragraph or selected block(s) will change their format to that header level. If the user selects Normal, heading blocks are converted back to paragraphs. If the user selects a custom header style, it will apply the associated styles (font, color, size).
   
 - **Lists**: Lists will automatically format paragraphs as ordered or unordered lists. Pressing `Enter` creates a new list item, and pressing `Tab` indents it to create a nested list. `Shift+Tab` will decrease the indent level, making the list item part of the previous level.
 
@@ -121,5 +123,4 @@
 - **Empty List Items**: If a user creates a list item but leaves it empty and presses `Enter`, the list should end, and the cursor should return to a regular paragraph.
 
 - **Custom Block Removal**: When switching from a custom block to a regular paragraph, ensure that all custom styles are properly cleared.
-
 

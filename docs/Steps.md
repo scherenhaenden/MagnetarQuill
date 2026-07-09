@@ -25,6 +25,7 @@
 5. **Enable Custom Headers (H1-H6)**:
    - Develop header options (H1 to H6) in the toolbar, allowing users to quickly change paragraph styles.
    - Provide keyboard shortcuts (e.g., `Ctrl+1` for H1, `Ctrl+2` for H2).
+   - Current behavior: the toolbar reflects the active heading level, and selecting Normal converts headings back to paragraph text.
 
 6. **Integrate Indentation Control for Lists & Paragraphs**:
    - Implement indentation increase and decrease for lists and paragraphs using `Tab` and `Shift+Tab`.
@@ -103,6 +104,10 @@
 20. **Create Plugin System for Custom Toolbar Tools**:
     - Build the initial plugin system, allowing developers to add custom tools to the editor’s toolbar.
     - Ensure plugins can be activated, deactivated, and configured via a plugin manager.
+
+21. **Maintain One-command Quality Validation**:
+   - Use `npm run quality:report` before release or handoff.
+   - Review `reports/quality/latest.md` for lint, style, test, build, and coverage status.
 
 ---
 

@@ -1081,4 +1081,28 @@
 9. **Customization & Theming**
 10. **Plugin Architecture**
 11. **Security**
+12. **Quality Validation**
 
+---
+
+### **12. Quality Validation**
+
+- **One-command suite**:
+  - Run `npm run quality:report` from the repository root.
+  - The command runs generated info-doc validation, style lint, Angular lint, library unit tests with coverage, library build, and application build.
+
+- **Report output**:
+  - Latest report: `reports/quality/latest.md`.
+  - Timestamped reports: `reports/quality/quality-report-<timestamp>.md`.
+  - Raw logs for each check: `reports/quality/<timestamp>-<check>.log`.
+
+- **Current verified baseline**:
+  - Overall status: PASS.
+  - Unit tests: 283 passed.
+  - Statements: 80.18%.
+  - Branches: 74.05%.
+  - Functions: 78.28%.
+  - Lines: 80.29%.
+
+- **Known warning**:
+  - The application build currently passes with an initial bundle budget warning.

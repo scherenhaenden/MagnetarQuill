@@ -25,7 +25,8 @@ describe('ToolbarComponent', () => {
       strikethroughActive: () => false,
       currentFontFamily: () => '',
       currentFontSize: () => '',
-      currentTextColor: () => '#000000'
+      currentTextColor: () => '#000000',
+      currentHeader: () => ''
     });
 
     await TestBed.configureTestingModule({

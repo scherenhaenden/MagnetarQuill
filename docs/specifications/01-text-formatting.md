@@ -59,7 +59,7 @@
 - **Text Alignment**:
   - **Options**: Left, Right, Center, Justify.
   - **UI Element**: A set of buttons in the toolbar for each alignment option.
-  - **Behavior**: Applies to the entire paragraph in which the cursor is located or to multiple selected paragraphs.
+  - **Behavior**: Applies to the entire paragraph or block in which the cursor is located, or to every selected live block when multiple paragraphs/headings/list items are selected.
   - **Implementation**: Uses `style="text-align: ..."`.
   
 - **Line Spacing**:
@@ -87,7 +87,7 @@
 #### **1.5 Custom Styles**
 
 - **UI Element**: Dropdown for predefined styles (e.g., Heading 1, Heading 2, Paragraph).
-- **Behavior**: Applies a predefined style to the selected text, changing its font, size, color, etc.
+- **Behavior**: Applies a predefined block style to the selected block(s). The toolbar reflects the active heading level when the selection is inside a heading. Choosing `Normal` converts the selected heading block(s) back to paragraph text.
 - **Implementation**: Predefined styles map to CSS classes (e.g., `.heading1`, `.paragraph`).
 - **Custom Styles**: Users can create and save their own styles with custom settings for font, color, size, etc.
 
@@ -109,6 +109,6 @@
 ### **Edge Cases**
 - **Mixed Formatting**: When text with mixed formatting is selected, the toolbar should reflect an "indeterminate" state (e.g., the bold button is highlighted if part of the selection is bold).
 - **Nested Formatting**: Handle cases where users apply overlapping formatting (e.g., bold inside italic text), ensuring consistent behavior across different browsers.
+- **Native Heading Select**: Re-selecting the already active heading option does not emit a native `change` event. The supported toggle-off path for headings in the current toolbar is selecting `Normal`.
 
 ---
-

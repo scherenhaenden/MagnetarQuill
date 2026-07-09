@@ -17,6 +17,7 @@
     "lint:info-docs": "node scripts/info-docs.mjs --check",
     "lint:styles": "node scripts/style-lint.mjs",
     "docs:generate:info-docs": "node scripts/info-docs.mjs --write",
+    "quality:report": "node scripts/quality-report.mjs",
     "validate": "bash scripts/validate.sh"
   },
   "private": true,
