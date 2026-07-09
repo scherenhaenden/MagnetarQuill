@@ -1,0 +1,27 @@
+
+> magnetar-quill@0.10.3 build-lib
+> ng build lib-magnetar-quill
+
+Building Angular Package
+
+------------------------------------------------------------------------------
+Building entry point 'magnetar-quill'
+------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------
+Built Angular Package
+- from: /home/edward/Development/MagnetarQuill/projects/lib-magnetar-quill
+- to:   /home/edward/Development/MagnetarQuill/dist/lib-magnetar-quill
+------------------------------------------------------------------------------
+
+Build at: 2026-07-09T06:57:54.805Z - Time: 1369ms
+
+- Compiling with Angular sources in partial compilation mode.
+✔ Compiling with Angular sources in partial compilation mode.
+- Writing FESM and DTS bundles
+✔ Writing FESM and DTS bundles
+- Copying assets
+✔ Copying assets
+- Writing package manifest
+✔ Writing package manifest
+✔ Built magnetar-quill

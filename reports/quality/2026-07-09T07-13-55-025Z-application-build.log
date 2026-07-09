@@ -1,0 +1,20 @@
+
+> magnetar-quill@0.10.3 build
+> ng build
+
+❯ Building...
+✔ Building...
+Initial chunk files   | Names         |  Raw size | Estimated transfer size
+main-UTVXOTKS.js      | main          | 950.45 kB |               522.32 kB
+polyfills-RV3JTMEC.js | polyfills     |  35.78 kB |                11.63 kB
+styles-O2CGLES7.css   | styles        |  27 bytes |                27 bytes
+
+                      | Initial total | 986.26 kB |               533.98 kB
+
+Application bundle generation complete. [2.832 seconds] - 2026-07-09T07:13:58.257Z
+
+Output location: /home/edward/Development/MagnetarQuill/dist/magnetar-quill
+
+▲ [WARNING] bundle initial exceeded maximum budget. Budget 500.00 kB was not met by 486.26 kB with a total of 986.26 kB.
+
+
