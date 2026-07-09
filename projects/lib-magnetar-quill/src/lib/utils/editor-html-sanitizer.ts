@@ -10,6 +10,7 @@ export interface EditorHtmlSanitizerOptions {
 export function sanitizeEditorHtml(html: string, options: EditorHtmlSanitizerOptions = {}): string {
   const preserveStyles = options.preserveStyles ?? true;
   const template = document.createElement('template');
+  // Parse into an inert tree so sanitized paths can inspect/remove unsafe nodes; unsanitized paste bypasses this helper.
   template.innerHTML = html;
 
   template.content
