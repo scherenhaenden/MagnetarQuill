@@ -116,12 +116,12 @@ The editor sync path now sanitizes inbound editor HTML without dropping safe for
 
 ## Version Change
 
-The root package and library package are both set to `0.10.3`:
+The root package and library package are both set to `0.10.4`:
 
 - `package.json`
 - `projects/lib-magnetar-quill/package.json`
 
-The root package-lock version was updated to match. Version `0.10.3` is a patch release for bound-editor formatting synchronization and safe editor HTML rehydration.
+The root package-lock version was updated to match. Version `0.10.4` (bumped from `0.10.3`) is a patch release for bound-editor formatting synchronization and safe editor HTML rehydration.
 
 ## Verification Commands
 

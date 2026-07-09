@@ -22,4 +22,4 @@
 
 ## Current Validation Notes
 - Bound editor formatting sync was verified with `npm run build-lib`, `npm run lint:info-docs`, and `npm run test-lib-magnetar-quill` (`164 SUCCESS`, branch coverage `56.06%` over the `55%` threshold).
-- Library and workspace package metadata are aligned to version `0.10.3`.
+- Library and workspace package metadata are aligned to version `0.10.4`.

@@ -17,13 +17,13 @@ The following branches were audited for documentation modifications:
 - **Wrong Status (`0.9` to `HEAD` before recovery):** A generic template explaining the "Canonical Project Model" structure and schemas, devoid of any editor-specific details.
 - **Action Taken:**
   - Restored the root `README.md` as a product-focused document, based on the `0.8` version.
-  - Updated the repository URL to `https://github.com/scherenhaenden/MagnetarQuill.git` and version references to `0.10.3`.
+  - Updated the repository URL to `https://github.com/scherenhaenden/MagnetarQuill.git` and version references to `0.10.4`.
   - Added `npm run quality:report` under available commands and documented the quality validation suite.
   - Moved the generic Canonical Project Model template text to a dedicated file: [docs/Governance-Model.md](file:///home/edward/Development/MagnetarQuill/docs/Governance-Model.md).
 
 ### 2. Project Progress Table (Root `README.md`)
 - **Old Status (`0.8`):** Steps 8 to 12 were marked `🔄 In Progress`, and later steps were marked `🔴 Not Started`.
-- **Actual Status (`0.10.3`):** Multiple features have since been completed and merged into the active branch.
+- **Actual Status (`0.10.4`):** Multiple features have since been completed and merged into the active branch.
 - **Action Taken:** Updated the checklist table to accurately represent the current completion status:
   - **Step 8: Image Insertion and Editing** | ✅ Completed (V0.8)
   - **Step 9: Copy-Paste Image Support** | ✅ Completed (V0.9)
