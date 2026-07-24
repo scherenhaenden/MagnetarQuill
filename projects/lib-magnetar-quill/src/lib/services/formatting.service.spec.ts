@@ -77,6 +77,28 @@ describe('FormattingService', () => {
 
       container.remove();
     });
+
+    it('should remove numeric inline bold weights without treating strong as bold', () => {
+      const container = document.createElement('div');
+      container.contentEditable = 'true';
+      container.innerHTML = '<span style="font-weight: 700;">Bold text</span>';
+      document.body.appendChild(container);
+
+      const boldText = container.querySelector('span')!.firstChild as Text;
+      selectText(boldText, 0, boldText.length);
+
+      service.updateFormatStates();
+      expect(service.boldActive()).toBeTrue();
+      expect(service.strongActive()).toBeFalse();
+
+      service.toggleBold();
+
+      expectNoStyledSpan(container, 'font-weight', '700');
+      expect(container.querySelector('strong')).toBeNull();
+      expect(container.textContent).toBe('Bold text');
+
+      container.remove();
+    });
   });
 
   describe('toggleStrong', () => {
@@ -189,6 +211,24 @@ describe('FormattingService', () => {
 
       container.remove();
     });
+
+    it('should unwrap semantic italic tags when toggling italic off', () => {
+      const container = document.createElement('div');
+      container.contentEditable = 'true';
+      container.innerHTML = '<em>Italic text</em>';
+      document.body.appendChild(container);
+
+      const italicText = container.querySelector('em')!.firstChild as Text;
+      selectText(italicText, 0, italicText.length);
+
+      service.italicActive.set(true);
+      service.toggleItalic();
+
+      expect(container.querySelector('em')).toBeNull();
+      expect(container.textContent).toBe('Italic text');
+
+      container.remove();
+    });
   });
 
   describe('toggleUnderline', () => {
@@ -206,6 +246,24 @@ describe('FormattingService', () => {
       service.toggleUnderline();
       expect(service.removeFormatting).toHaveBeenCalledWith('text-decoration', 'underline');
       expect(service.underlineActive()).toBeFalse();
+    });
+
+    it('should unwrap semantic underline tags when toggling underline off', () => {
+      const container = document.createElement('div');
+      container.contentEditable = 'true';
+      container.innerHTML = '<u>Underline text</u>';
+      document.body.appendChild(container);
+
+      const underlineText = container.querySelector('u')!.firstChild as Text;
+      selectText(underlineText, 0, underlineText.length);
+
+      service.underlineActive.set(true);
+      service.toggleUnderline();
+
+      expect(container.querySelector('u')).toBeNull();
+      expect(container.textContent).toBe('Underline text');
+
+      container.remove();
     });
   });
 
@@ -243,65 +301,98 @@ describe('FormattingService', () => {
 
       container.remove();
     });
+
+    it('should unwrap semantic strikethrough tags when toggling strikethrough off', () => {
+      const container = document.createElement('div');
+      container.contentEditable = 'true';
+      container.innerHTML = '<del>Strike text</del>';
+      document.body.appendChild(container);
+
+      const strikeText = container.querySelector('del')!.firstChild as Text;
+      selectText(strikeText, 0, strikeText.length);
+
+      service.strikethroughActive.set(true);
+      service.toggleStrikethrough();
+
+      expect(container.querySelector('del')).toBeNull();
+      expect(container.textContent).toBe('Strike text');
+
+      container.remove();
+    });
   });
 
   describe('applyHeader', () => {
-    it('should wrap the selected text with the specified header level', () => {
-      const mockRange = {
-        extractContents: jasmine.createSpy().and.returnValue(document.createTextNode('Sample Text')),
-        insertNode: jasmine.createSpy(),
-        cloneRange: jasmine.createSpy().and.callFake(() => mockRange),
-        selectNodeContents: jasmine.createSpy(), // Mock the missing method
-      };
-
-      const mockSelection = {
-        rangeCount: 1,
-        getRangeAt: jasmine.createSpy().and.returnValue(mockRange),
-        removeAllRanges: jasmine.createSpy(),
-        addRange: jasmine.createSpy(),
-      };
-
-      spyOn(window, 'getSelection').and.returnValue(mockSelection as unknown as Selection);
+    it('should convert the selected block to the specified header level', () => {
+      const container = document.createElement('div');
+      container.contentEditable = 'true';
+      container.innerHTML = '<p>Sample Text</p>';
+      document.body.appendChild(container);
+      selectContainerContents(container.querySelector('p')!);
 
       service.applyHeader('h1');
 
-      // Verify that the header element is inserted
-      expect(mockRange.insertNode).toHaveBeenCalledWith(jasmine.any(HTMLElement));
-      const insertedElement = mockRange.insertNode.calls.argsFor(0)[0] as HTMLElement;
-      expect(insertedElement.tagName).toBe('H1');
-      expect(insertedElement.textContent).toBe('Sample Text');
+      expect(container.innerHTML).toBe('<h1>Sample Text</h1>');
+      expect(service.currentHeader()).toBe('h1');
 
-      // Verify selection adjustments
-      expect(mockSelection.removeAllRanges).toHaveBeenCalled();
-      expect(mockSelection.addRange).toHaveBeenCalled();
+      container.remove();
+    });
+
+    it('should toggle a selected matching header back to normal text', () => {
+      const container = document.createElement('div');
+      container.contentEditable = 'true';
+      container.innerHTML = '<h1>Sample Text</h1>';
+      document.body.appendChild(container);
+      selectContainerContents(container.querySelector('h1')!);
+
+      service.updateFormatStates();
+      expect(service.currentHeader()).toBe('h1');
+
+      service.applyHeader('h1');
+
+      expect(container.innerHTML).toBe('<p>Sample Text</p>');
+      expect(service.currentHeader()).toBe('');
+
+      container.remove();
     });
   });
 
   describe('setTextAlign', () => {
-    it('should set the text alignment for the selected paragraphs', () => {
-      const paragraph1 = document.createElement('p');
-      paragraph1.textContent = 'Paragraph 1';
-      const paragraph2 = document.createElement('p');
-      paragraph2.textContent = 'Paragraph 2';
+    it('should set the text alignment for every selected live paragraph', () => {
+      const container = document.createElement('div');
+      container.contentEditable = 'true';
+      container.innerHTML = '<p>Paragraph 1</p><p>Paragraph 2</p>';
+      document.body.appendChild(container);
 
-      spyOn(service, 'splitRangeIntoParagraphs').and.returnValue([paragraph1, paragraph2]);
-
-      const mockRange = {
-        commonAncestorContainer: document.createElement('div'), // Needs to be HTMLElement
-        cloneRange: jasmine.createSpy().and.callFake(() => mockRange),
-      } as unknown as Range;
-
-      const mockSelection = {
-        isCollapsed: false,
-        rangeCount: 1,
-        getRangeAt: jasmine.createSpy().and.returnValue(mockRange),
-      } as unknown as Selection;
-
-      spyOn(window, 'getSelection').and.returnValue(mockSelection);
+      const range = document.createRange();
+      range.setStartBefore(container.firstElementChild!);
+      range.setEndAfter(container.lastElementChild!);
+      const selection = window.getSelection()!;
+      selection.removeAllRanges();
+      selection.addRange(range);
 
       service.setTextAlign('center');
-      expect(paragraph1.style.textAlign).toBe('center');
-      expect(paragraph2.style.textAlign).toBe('center');
+
+      expect((container.children[0] as HTMLElement).style.textAlign).toBe('center');
+      expect((container.children[1] as HTMLElement).style.textAlign).toBe('center');
+
+      container.remove();
+    });
+
+    it('should set text alignment for the caret block when there is no range selection', () => {
+      const container = document.createElement('div');
+      container.contentEditable = 'true';
+      container.innerHTML = '<p>Paragraph 1</p><p>Paragraph 2</p>';
+      document.body.appendChild(container);
+
+      const text = container.querySelector('p')!.firstChild as Text;
+      selectText(text, 2, 2);
+
+      service.setTextAlign('right');
+
+      expect((container.children[0] as HTMLElement).style.textAlign).toBe('right');
+      expect((container.children[1] as HTMLElement).style.textAlign).toBe('');
+
+      container.remove();
     });
   });
 

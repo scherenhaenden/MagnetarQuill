@@ -1,0 +1,4 @@
+
+> magnetar-quill@0.10.4 lint:info-docs
+> node scripts/info-docs.mjs --check
+

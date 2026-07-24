@@ -20,5 +20,8 @@
    - **Symptom**: When copying and pasting content into the editor, the flow of outward updates seems to lock or get blocked. If you then go to the end of the text and continue typing, the event is still not emitted.
    - **Workaround/Trigger**: To force the outward update functionality to work, the user has to go to the beginning of the text, press `Enter` (new line), and then press `Backspace/Return` (delete the new line to return to the start of the editor). Only after this manual sequence do outward events resume working properly. The internal state update always works, but the outward one does not. It is possible that the copy-paste action locks/blocks a listener or change detection mechanism.
 
-
+6. **Heading Dropdown Toggle UX**:
+   - **Issue**: The current heading control is a native `<select>`. Native selects do not fire `change` when the user chooses the already-selected option again.
+   - **Current Behavior**: Selecting `Normal` removes H1-H6 formatting from selected heading blocks.
+   - **Future Option**: Replace the heading select with a custom menu or segmented control if repeated-click toggle behavior is required exactly like Bold/Italic buttons.
 

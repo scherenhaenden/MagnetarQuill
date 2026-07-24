@@ -4,7 +4,6 @@ import { KeyboardShortcutService } from './keyboard-shortcut.service';
 import { FormattingService } from './formatting.service';
 import { ShortcutAction } from '../models/key-shortcuts';
 import { SHORTCUTS } from '../models/shortcut-map';
-import { ElementRef } from '@angular/core';
 
 // Helper function to dispatch keydown events
 function dispatchKeydownEvent(
@@ -44,10 +43,8 @@ function dispatchKeydownEvent(
 describe('KeyboardShortcutService', () => {
   let service: KeyboardShortcutService;
   let mockFormattingService: jasmine.SpyObj<FormattingService>;
-  let consoleWarnSpy: jasmine.Spy;
   let consoleErrorSpy: jasmine.Spy;
   const mockElement = document.createElement('div');
-  const mockElementRef = new ElementRef(mockElement);
 
   const formattingServiceMethods = [
     'toggleBold', 'toggleItalic', 'toggleUnderline', 'toggleStrikethrough',
@@ -67,7 +64,7 @@ describe('KeyboardShortcutService', () => {
 
     service = TestBed.inject(KeyboardShortcutService);
     service.initialize(mockElement);
-    consoleWarnSpy = spyOn(console, 'warn');
+    spyOn(console, 'warn');
     consoleErrorSpy = spyOn(console, 'error');
   });
 
