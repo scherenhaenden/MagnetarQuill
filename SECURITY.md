@@ -2,20 +2,23 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+Security fixes are provided for the current `0.x` release line only. Please
+upgrade to the latest published release before reporting an issue.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| Version | Supported |
+| ------- | --------- |
+| 0.10.x  | Yes       |
+| < 0.10  | No        |
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+Please report suspected vulnerabilities privately through [GitHub's private
+security advisory form](https://github.com/scherenhaenden/MagnetarQuill/security/advisories/new).
+Include a clear description, affected versions, reproduction steps or a proof
+of concept, and any potential impact.
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+We will acknowledge reports within 7 days and provide status updates while we
+investigate. Please do not disclose the issue publicly until we agree on a
+fix and disclosure timeline. If a report is accepted, we will prepare a fix
+and credit the reporter where appropriate; if it is declined, we will explain
+the reason.
