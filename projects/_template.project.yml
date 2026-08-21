@@ -47,15 +47,15 @@ tasks:
   - id: task-206
     title: implement-theme-customization
     owner: core-team
-    state: in_review
+    state: done
   - id: task-207
     title: implement-markdown-rtf-import-export
     owner: core-team
-    state: in_review
+    state: done
   - id: task-208
     title: implement-table-support
     owner: core-team
-    state: in_review
+    state: done
 
 risks:
   - id: risk-001

@@ -19,6 +19,11 @@ Typical categories include:
 
 ## Entries
 ---
+**Timestamp:** 2026-08-21 15:31 UTC
+**Author:** Codex
+**Entry:** State Change: Bumped workspace and library release metadata to `0.11.0` after merging theme, HTML/Markdown/RTF import-export, table support, and their Playwright N2N coverage. Updated the canonical plan and project template: tasks `task-206`, `task-207`, and `task-208` are now `done`.
+
+---
 **Timestamp:** 2026-07-09 08:32 UTC
 **Author:** Antigravity
 **Entry:** State Change: Bumped workspace and library version metadata to `0.10.4` and synchronized references across documentation and package files.
