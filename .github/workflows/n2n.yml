@@ -1,0 +1,23 @@
+name: N2N tests
+
+on:
+  pull_request:
+  push:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  playwright:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.23.1
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: ./node_modules/.bin/playwright install --with-deps chromium
+      - run: npm run test:n2n
