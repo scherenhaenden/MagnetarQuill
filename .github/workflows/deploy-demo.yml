@@ -12,17 +12,17 @@ jobs:
     steps:
       # 1. Code aus dem Repository holen
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # 2. Node.js installieren
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 24.16.0
 
       # 3. Abhängigkeiten installieren
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       # 4. Library bauen
       - name: Build Angular Library
@@ -37,4 +37,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist/[projekt-name]
+          publish_dir: dist/magnetar-quill/browser
