@@ -1,6 +1,6 @@
 {
   "name": "magnetar-quill",
-  "version": "0.11.0",
+  "version": "0.11.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -30,32 +30,32 @@
     "@angular/forms": "^22.0.0",
     "@angular/platform-browser": "^22.0.0",
     "@angular/platform-browser-dynamic": "^22.0.0",
-    "@angular/router": "^22.0.0",
+    "@angular/router": "^22.2.0",
     "rxjs": "~7.8.2",
     "tslib": "^2.3.0",
-    "zone.js": "~0.16.0"
+    "zone.js": "~0.16.3"
   },
   "devDependencies": {
     "@angular-devkit/core": "^22.0.0",
     "@angular-devkit/schematics": "^22.0.0",
-    "@angular/build": "^22.1.5",
-    "@angular/cli": "^22.1.5",
+    "@angular/build": "^22.2.2",
+    "@angular/cli": "^22.2.2",
     "@angular/compiler-cli": "^22.0.0",
     "@eslint/js": "^10.0.1",
-    "@playwright/test": "^1.62.1",
+    "@playwright/test": "^1.64.0",
     "@schematics/angular": "^22.0.0",
     "@types/jasmine": "~5.1.0",
-    "angular-eslint": "^22.0.0",
-    "eslint": "^10.0.3",
+    "angular-eslint": "^22.6.0",
+    "eslint": "^10.12.0",
     "istanbul-lib-instrument": "^6.0.3",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
-    "karma-jasmine-html-reporter": "~2.1.0",
-    "ng-packagr": "^22.0.0",
+    "karma-jasmine-html-reporter": "~2.3.0",
+    "ng-packagr": "^22.2.4",
     "typescript": "^6.0.0",
-    "typescript-eslint": "^8.61.0"
+    "typescript-eslint": "^8.71.1"
   }
 }

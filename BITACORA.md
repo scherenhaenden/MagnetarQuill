@@ -19,6 +19,11 @@ Typical categories include:
 
 ## Entries
 ---
+**Timestamp:** 2026-10-11 15:20 UTC
+**Author:** Antigravity
+**Entry:** State Change: Bumped workspace and library release metadata to `0.11.1` following SemVer patch release policy after integrating security updates, Dependabot PRs (#115, #116, #117, #118, #119), and Angular 22.2.2 toolchain dependencies. Verified linting, unit tests (286/286), builds, and Playwright N2N tests.
+
+---
 **Timestamp:** 2026-08-21 15:31 UTC
 **Author:** Codex
 **Entry:** State Change: Bumped workspace and library release metadata to `0.11.0` after merging theme, HTML/Markdown/RTF import-export, table support, and their Playwright N2N coverage. Updated the canonical plan and project template: tasks `task-206`, `task-207`, and `task-208` are now `done`.

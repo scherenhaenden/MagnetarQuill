@@ -137,7 +137,7 @@ To build the library reliably, use:
 The library currently declares:
 
 - Angular peer dependencies: `^22.0.0`
-- Library package version: `0.11.0`
+- Library package version: `0.11.1`
 
 ### **Repository Structure Relevant to the Build**
 
@@ -378,20 +378,20 @@ Here’s the updated table with the latest progress:
 | 5     | Text Alignment & Line Spacing                         | ✅ Completed  | Version 0.5 - Text Alignment & Spacing |
 | 6     | Ordered and Unordered Lists                           | ✅ Completed | Version 0.6 - Lists |
 | 7     | Custom Headers (H1-H6)                                | ✅ Completed | Version 0.7 - Headers |
-| 8     | Image Insertion and Editing                           | 🔄 In Progress| Version 0.8 - Image Support |
+| 8     | Image Insertion and Editing                           | ✅ Completed  | Version 0.8 - Image Support |
 | 9     | Copy-Paste Image Support                              | ✅ Completed  | Version 0.9 - Image Clipboard |
-| 10    | Table Insertion and Editing                           | 🔄 In Progress| Version 0.10 - Table Management |
-| 11    | Object Context Menu                                   | 🔄 In Progress| Version 0.11 - Object Management |
-| 12    | Drag-and-Drop Object Repositioning                    | 🔄 In Progress| Version 0.12 - Object Repositioning |
-| 13    | Rich Text Copy-Paste Support                          | 🔴 Not Started| Version 0.13 - Rich Text Clipboard |
-| 14    | Text Sanitization on Paste                            | 🔴 Not Started| Version 0.14 - Paste Sanitization |
-| 15    | Undo/Redo Functionality                               | 🔴 Not Started| Version 0.15 - Undo/Redo |
-| 16    | Multi-Step History Support                            | 🔴 Not Started| Version 0.16 - History Features |
-| 17    | HTML and Markdown Export                              | 🔴 Not Started| Version 0.17 - File Export |
-| 18    | File Loading (HTML & RTF)                             | 🔴 Not Started| Version 0.18 - File Import |
-| 19    | Full-Screen Mode                                      | 🔴 Not Started| Version 0.19 - Full-Screen |
+| 10    | Table Insertion and Editing                           | ✅ Completed  | Version 0.10 - Table Management |
+| 11    | Object Context Menu                                   | ✅ Completed  | Version 0.11 - Object Management |
+| 12    | Drag-and-Drop Object Repositioning                    | 🔴 Not Started | Version 0.12 - Object Repositioning |
+| 13    | Rich Text Copy-Paste Support                          | 🔄 In Progress| Version 0.13 - Rich Text Clipboard |
+| 14    | Text Sanitization on Paste                            | ✅ Completed  | Version 0.14 - Paste Sanitization |
+| 15    | Undo/Redo Functionality                               | 🔴 Not Started | Version 0.15 - Undo/Redo (native browser stack is utilized; custom toolbar buttons not started) |
+| 16    | Multi-Step History Support                            | 🔴 Not Started | Version 0.16 - History Features |
+| 17    | HTML and Markdown Export                              | ✅ Completed  | Version 0.17 - File Export |
+| 18    | File Loading (HTML & RTF)                             | ✅ Completed  | Version 0.18 - File Import |
+| 19    | Full-Screen Mode                                      | 🔴 Not Started | Version 0.19 - Full-Screen |
 | 20    | Light and Dark Theme Support                          | ✅ Completed  | Version 0.20 - Theme Customization |
-| 21    | Plugin System for Custom Toolbar Tools                | 🔴 Not Started| Version 0.21 - Plugin Support |
+| 21    | Plugin System for Custom Toolbar Tools                | 🔴 Not Started | Version 0.21 - Plugin Support |
 
 *(Status Key: ✅ Completed | 🔄 In Progress | 🔴 Not Started)*
 
